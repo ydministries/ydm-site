@@ -1,0 +1,2054 @@
+{
+  "_meta": {
+    "version": 1,
+    "pass": "1b — CPTs + remaining singletons",
+    "source": "archive/wordpress/scrape/pages/*.json",
+    "generator": "scripts/extract_pass_1b.py",
+    "filter": "strings appearing on >= 6 pages treated as chrome (already in Pass 1a global.*)",
+    "status": "draft — awaiting Mikey page-by-page review",
+    "conventions": {
+      "key_shape": "namespace.slug.section.field",
+      "namespaces": [
+        "ministry",
+        "event",
+        "campaign",
+        "profile",
+        "sermon",
+        "singleton"
+      ],
+      "missing_value": "null means no scrape source — __needs_authoring__: true"
+    }
+  },
+  "campaign": {
+    "supportydm": {
+      "meta.title": {
+        "type": "text",
+        "value": "Support Our Ministry"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Support Our Ministry"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Support our ministry today—your generosity helps us spread the Gospel, serve families, and impact lives for Christ."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "At Yeshua Deliverance Ministries (YDM), our mission is to reach souls, build families, and impact communities with the love and power of Jesus Christ. Every donation you make is more than just a contribution—it is a seed of faith that fuels the growth and expansion of our ministries."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Your generosity enables us to spread the Gospel, nurture believers in their walk with Christ, and create opportunities for transformation both locally and globally. By supporting YDM, you partner with us in teaching, serving, equipping leaders, strengthening families, and extending compassion to those in need."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "Whether given once or as a monthly commitment, your gift has eternal impact. Together, we can continue to build a strong foundation of faith that will bless generations to come."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "🙏 Thank you for standing with YDM and helping us advance the Kingdom of God."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "Your generosity directly supports the growth and impact of Yeshua Deliverance Ministries (YDM) in meaningful ways, such as:"
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "Every time you give to YDM, you’re helping fulfill the mission to reach people for Christ."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "At YDM, Your generosity makes a difference! Every gift helps us spread hope, serve our community, and share God’s love with those in need. Thank you for being a part of this mission!"
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "Your gift helps Yeshua Deliverance Ministries build a Creator’s Studio, equipping us with the tools to share God’s word worldwide through podcasts, videos, and digital media."
+      },
+      "sections.h2_1": {
+        "type": "text",
+        "value": "About this Campaign"
+      },
+      "sections.h2_2": {
+        "type": "text",
+        "value": "Give Today"
+      },
+      "sections.h2_3": {
+        "type": "text",
+        "value": "Related Campaigns"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Donation Details"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Support Our Ministry"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "YDM Tech Fund"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fydministries.ca%2Fcampaigns%2Fsupportydm%2F"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fydministries.ca%2Fcampaigns%2Fsupportydm%2F&text=Support%20our%20ministry%20today—your%20generosity%20helps%20us%20spread%20the%20Gospel,%20serve%20families,%20and%20impact%20lives%20for%20Christ."
+      },
+      "cta.3.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.3.href": {
+        "type": "url",
+        "value": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fydministries.ca%2Fcampaigns%2Fsupportydm%2F&title=Support%20Our%20Ministry&summary=Support%20our%20ministry%20today—your%20generosity%20helps%20us%20spread%20the%20Gospel,%20serve%20families,%20and%20impact%20lives%20for%20Christ.&source=https%3A%2F%2Fydministries.ca%2Fcampaigns%2Fsupportydm%2F"
+      },
+      "cta.4.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.4.href": {
+        "type": "url",
+        "value": "mailto:?subject=Support%20Our%20Ministry&body=Support%20our%20ministry%20today—your%20generosity%20helps%20us%20spread%20the%20Gospel,%20serve%20families,%20and%20impact%20lives%20for%20Christ.https%3A%2F%2Fydministries.ca%2Fcampaigns%2Fsupportydm%2F"
+      }
+    },
+    "techfund": {
+      "meta.title": {
+        "type": "text",
+        "value": "YDM Tech Fund"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "YDM Tech Fund"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Your donation isn’t just a financial contribution; it’s a commitment to nurturing a community where education thrives, and healthcare is accessible to all."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Yeshua Deliverance Ministries is launching aTech Fundraiserto build our Creator’s Studio—a dedicated space where we will produce podcasts, YouTube videos, worship messages, and other digital content to share the gospel with excellence."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Currently we are operating on outdated equipment that no longer performs at it’s full intended potential. We would love to update our tech space with the necessary equipment needed to serve you better."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "This studio will give us the tools to reach far beyond our physical walls, creating an online presence that inspires, teaches, and empowers people worldwide. Every gift helps us purchase the equipment and resources needed to bring this vision to life."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Together, we can spread God’s word further and stronger through the power of media."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "Your generous support will go directly toward:"
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "Every time you give to YDM, you’re helping fulfill the mission to reach people for Christ."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "At YDM, Your generosity makes a difference! Every gift helps us spread hope, serve our community, and share God’s love with those in need. Thank you for being a part of this mission!"
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "Your gift helps Yeshua Deliverance Ministries build a Creator’s Studio, equipping us with the tools to share God’s word worldwide through podcasts, videos, and digital media."
+      },
+      "sections.h2_1": {
+        "type": "text",
+        "value": "About the Campaign"
+      },
+      "sections.h2_2": {
+        "type": "text",
+        "value": "Give Today"
+      },
+      "sections.h2_3": {
+        "type": "text",
+        "value": "Related Campaigns"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Donation Details"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Support Our Ministry"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "YDM Tech Fund"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fydministries.ca%2Fcampaigns%2Ftechfund%2F"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fydministries.ca%2Fcampaigns%2Ftechfund%2F&text=Your%20donation%20isn't%20just%20a%20financial%20contribution;%20it's%20a%20commitment%20to%20nurturing%20a%20community%20where%20education%20thrives,%20and%20healthcare%20is%20accessible%20to%20all.%20"
+      },
+      "cta.3.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.3.href": {
+        "type": "url",
+        "value": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fydministries.ca%2Fcampaigns%2Ftechfund%2F&title=YDM%20Tech%20Fund&summary=Your%20donation%20isn't%20just%20a%20financial%20contribution;%20it's%20a%20commitment%20to%20nurturing%20a%20community%20where%20education%20thrives,%20and%20healthcare%20is%20accessible%20to%20all.%20&source=https%3A%2F%2Fydministries.ca%2Fcampaigns%2Ftechfund%2F"
+      },
+      "cta.4.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.4.href": {
+        "type": "url",
+        "value": "mailto:?subject=YDM%20Tech%20Fund&body=Your%20donation%20isn't%20just%20a%20financial%20contribution;%20it's%20a%20commitment%20to%20nurturing%20a%20community%20where%20education%20thrives,%20and%20healthcare%20is%20accessible%20to%20all.%20https%3A%2F%2Fydministries.ca%2Fcampaigns%2Ftechfund%2F"
+      }
+    }
+  },
+  "event": {
+    "weekly_bible_study_group": {
+      "meta.title": {
+        "type": "text",
+        "value": "Weekly Bible Study Group"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Weekly Bible Study Group"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Weekly Bible Study"
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Join usEvery Thursday night at 7:00 PMfor an uplifting time of fellowship and study at theMississauga Church of God(inside theSalvation Army Erin Mills Church)."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Our Bible study gatherings are a chance to dive deeper into God’s Word, grow in faith, and build lasting connections with others. Whether you are new to studying the Bible or have been walking with Christ for years, you’ll find encouragement, insight, and a welcoming community."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "📍Location:Salvation Army Erin Mills Church – Home of Mississauga Church of God🕖Time:Thursdays @ 7:00 PM"
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Come ready to learn, share, and be strengthened in your spiritual walk. Everyone is welcome!"
+      }
+    },
+    "young_adults_connect": {
+      "meta.title": {
+        "type": "text",
+        "value": "Yeshua Sunday Service"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Yeshua Sunday Service"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "You are warmly invited to attend ourYeshua Sunday Service, hosted byBishop H. O. Wilson, held every4th Sunday of the month at 1:00 PMat theMississauga Church of God(located inside the Salvation Army Erin Mills Church, 2460 The Collegeway, Mississauga, ON)."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "This sacred gathering is dedicated to exalting the name of our Lord and Savior, Yeshua the Messiah, through worship, the ministry of the Word, and the fellowship of believers. We welcome all who desire to draw nearer to Christ, be strengthened in faith, and experience the power of God’s presence."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "We extend this invitation to you, your family, and your friends to join us in lifting high the name of Yeshua. May this service be a time of spiritual renewal and blessing for all who attend."
+      }
+    }
+  },
+  "ministry": {
+    "ask_bishop": {
+      "meta.title": {
+        "type": "text",
+        "value": "Ask Bishop"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Ask Bishop"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "The Children’s Ministry helps children grow and develop into spiritual teens, young adults, and ultimately spiritual men/women of God, who will make a lasting impact for the Kingdom of Christ. Through the various children’s ministries here at Shiloh, we believe that a firm spiritual foundation can be made that will anchor our children forever. Children’s Church meets 2nd, 3rd, & 4th Sunday. Nursery meets every Sunday.We have a vibrant curriculum that children love and learn from, as well as family resources designed to meet the needs of today’s families. Children are encouraged to open their hearts to God through worship and study in a safe and loving environment.Our Nursery- Kinder Director, Monique Rios, and our Children’s Director, Juli Godsil, are both available to help you in the most important task any parent can have – helping your child develop a relationship with God!Heaven makes space for every child and so do we."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "For some kids, we have the joy of working a little harder to make sure they are welcomed well. We call this our Breakthrough ministry and we seek to support neuro-diverse and special needs children. Parents and staff collaborate to find the best fit for the child. We have three different approaches:Early Years (Ages 0-6): Inclusion modelElementary (1st – 6th Grade): Inclusion modelBreakthrough (1st Grade – 18 years old): Sensory sensitive classroom"
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "We believe our church is richer for these little ones and we seek to partner with Gods’ dreams and purposes for them. For more information and to notify us that your child will be joining us, please email: example@cmsmasters.com"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Welcome to Small Groups Ministry!"
+      }
+    },
+    "family": {
+      "meta.title": {
+        "type": "text",
+        "value": "Family Ministry"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Family Ministry"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Family is at the center of God’s design, and YDM’s Family Ministry is devoted to helping families thrive in faith and unity. Bishop H. O. Wilson, as a Licensed Marriage Officer, brings biblical wisdom and compassion to weddings, pre-marital counseling, and marriage ceremonies. These services honor the sacred covenant of marriage and prepare couples for lifelong commitment built on a Christ-centered foundation."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "In addition to marriage, the ministry provides baby and child dedication services, affirming parents’ desire to raise their children in the faith and committing the church community to support them. Through consistent teaching and practical biblical guidance, YDM empowers families to build homes where love, prayer, and faith are central."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "The Family Ministry extends its impact through parenting workshops and family seminars that address the unique challenges of today’s households. Bishop Wilson also facilitates marriage enrichment retreats where couples can strengthen their bond and rediscover joy in their relationship. Whether counseling young couples, supporting parents in their spiritual responsibilities, or guiding families through difficult seasons, YDM provides care and teaching that nurture healthy, Christ-centered families."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "This ministry believes that when families are strong, the church and community become stronger as well. By providing biblical tools, supportive community, and practical guidance, the Family Ministry helps families build a legacy of faith that can be passed on for generations."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Welcome to Children’s Ministry!"
+      }
+    },
+    "leadership": {
+      "meta.title": {
+        "type": "text",
+        "value": "Leadership & Development"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Leadership & Development"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Strong churches are built on strong leaders, and the Leadership & Development Ministry at YDM exists to equip men and women for excellence in service. Under the guidance of Bishop H. O. Wilson, this ministry focuses on developing leaders who are biblically grounded, Spirit-led, and practically prepared to face the challenges of ministry today."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Leadership training programs cover everything from preaching and teaching skills to organizational development, pastoral care, and effective communication. These training opportunities are designed not only for current leaders but also for those who feel the call of God on their lives and want to be mentored into greater roles of responsibility. Through teaching, encouragement, and hands-on experience, YDM helps leaders rise to their full potential in Christ."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Beyond structured training, the Leadership & Development Ministry provides mentorship for pastors, ministers, and emerging leaders who desire personal guidance and spiritual accountability. Bishop Wilson also facilitates leadership retreats and conferences that allow participants to step away from daily responsibilities and focus on renewal, vision, and growth."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "Recognizing the importance of accessibility, online training modules are also being developed to ensure that leaders worldwide can benefit from YDM’s leadership resources. The heartbeat of this ministry is to invest in leaders who will, in turn, disciple others and multiply the work of the Kingdom. By equipping leaders with both spiritual depth and practical skill, YDM ensures that the church remains strong, relevant, and effective in its mission."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Leadership & Development Ministry"
+      }
+    },
+    "outreach": {
+      "meta.title": {
+        "type": "text",
+        "value": "Compassion & Outreach"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Compassion & Outreach"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "The Compassion & Outreach Ministry at YDM exists to embody the love of Christ by reaching beyond the walls of the church to those most in need. Bishop H. O. Wilson leads this ministry with a heart of service, bringing comfort, encouragement, and hope to the sick, the elderly, the incarcerated, and the marginalized."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Hospital ministry provides prayer and support to those walking through illness, while senior nursing home visits offer fellowship and compassion to elders who may feel forgotten. Prison ministry brings the light of Christ to those behind bars, offering spiritual counsel, encouragement, and a reminder of God’s unchanging love. Chaplaincy services extend YDM’s reach into diverse settings, offering pastoral care to people of all backgrounds and circumstances."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "In addition to these vital ministries, the Compassion & Outreach Ministry organizes community food and clothing drives that meet practical needs while opening doors for gospel conversations. Youth mentorship and outreach programs also provide guidance and encouragement to young people, helping them make wise choices and find purpose in Christ."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "At its heart, this ministry reflects the compassion of Jesus, who cared for the poor, the sick, and the oppressed. Every outreach effort is grounded in the belief that small acts of kindness can lead to eternal transformation. By partnering with YDM in outreach, you are helping to touch lives with the healing, hope, and love of Christ."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Compassion & Outreach Ministry!"
+      }
+    },
+    "partnership": {
+      "meta.title": {
+        "type": "text",
+        "value": "Partnership & Support Ministry"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Partnership & Support Ministry"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "The Partnership & Support Ministry invites individuals and families to join hands with YDM in advancing the Kingdom of God. Ministry is never meant to be done alone, and Bishop H. O. Wilson believes in the power of shared vision and partnership."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "By standing with YDM through prayer, giving, and encouragement, partners become part of every soul touched, every leader trained, and every community reached. Opportunities to partner financially ensure that YDM’s ministries remain strong, sustainable, and able to expand into new areas of impact."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "A commitment to excellence in stewardship and service means every contribution is used effectively for Kingdom work."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "For some kids, we have the joy of working a little harder to make sure they are welcomed well. We call this our Breakthrough ministry and we seek to support neuro-diverse and special needs children. Parents and staff collaborate to find the best fit for the child. We have three different approaches:Early Years (Ages 0-6): Inclusion modelElementary (1st – 6th Grade): Inclusion modelBreakthrough (1st Grade – 18 years old): Sensory sensitive classroom"
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "We believe our church is richer for these little ones and we seek to partner with Gods’ dreams and purposes for them. For more information and to notify us that your child will be joining us, please email: example@cmsmasters.com"
+      }
+    },
+    "wordwide": {
+      "meta.title": {
+        "type": "text",
+        "value": "Worldwide Ministry (Online)"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Worldwide Ministry (Online)"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "The Worldwide Ministry (Online) is YDM’s commitment to spreading the gospel beyond geographical limits. Through modern technology and digital platforms, Bishop H. O. Wilson ensures that the life-changing message of Jesus Christ is accessible to people everywhere."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Sermons, teachings, and ministry events are available through our online video library, making biblical content accessible at any time. This ministry offers relevant, engaging, and Spirit-filled teaching designed to reach both young and old, meeting people where they are with the timeless truth of God’s Word. In a world that is constantly connected, the Worldwide Ministry serves as a digital mission field, equipping and inspiring believers globally."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "This ministry also organizes live-streamed global prayer gatherings, allowing individuals from around the world to unite in worship and intercession. Online Bible study groups and discipleship courses create space for deeper learning, accountability, and community for those unable to attend in person."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "The Worldwide Ministry exists not just to share content but to build relationships, foster discipleship, and create a global community of faith. By embracing technology, YDM fulfills the Great Commission in a way that is relevant to the digital age. Whether you are joining from across town or across the world, the Worldwide Ministry invites you to connect, grow, and encounter Christ online."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "WOrldwide Ministry - (Online)"
+      }
+    },
+    "worship": {
+      "meta.title": {
+        "type": "text",
+        "value": "Worship Ministry"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Worship Ministry"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "In-Person: The Worship Ministry at Yeshua Deliverance Ministries is the heartbeat of our fellowship, where the presence of God is honored and His Word is proclaimed with clarity and passion. Led by Bishop H. O. Wilson, this ministry brings together preaching, teaching, and Spirit-led worship to inspire believers and invite seekers into a life-changing encounter with Christ. Monthly preaching and teaching services provide biblical instruction that is both relevant and practical, equipping individuals to apply God’s truth in daily living. Baptism services, a sacred celebration of new life in Christ, mark milestones of faith and strengthen our community. Beyond the pulpit, our worldwide video library allows members and friends to access sermons, teaching, and ministry events at their convenience, ensuring that the Word continues to build and nurture faith even outside church gatherings."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "In addition to regular gatherings, the Worship Ministry in-future seek to organize special worship nights and revival services that encourage spiritual renewal and deeper connection with God. These events provide opportunities for extended times of praise, intercession, and teaching that refresh the spirit and energize the soul. The ministry also invests in training worship leaders (and previously, musicians), ensuring that every aspect of worship is marked by excellence and a true heart of devotion."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "At its core, this ministry is not about performance but about ushering people into the presence of God, where healing, transformation, and deliverance take place. Whether you attend in person, watch online, or participate in a baptism celebration, the Worship Ministry is committed to helping you encounter the living Christ in a way that strengthens your walk and inspires your worship."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "Worship Service – Every 4th Sunday of the month – 1:00 PMBible Study – Thursdays – 7:30pm"
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Mississauga Church of God(Inside the Savation Army Erin Mills Church)"
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "2460 The Collegeway, Mississauga, ON L5L 1V3"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "YDM Worship Ministry!"
+      }
+    }
+  },
+  "profile": {
+    "bishopwilson": {
+      "meta.title": {
+        "type": "text",
+        "value": "Bishop Huel O. Wilson"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Bishop Huel O. Wilson"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Bishop Huel O. Wilson is a devoted servant of God with a lifelong commitment to preaching, teaching, and shepherding God’s people."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "From his early years in faith to his decades of ministry, he has remained steadfast in his calling to share the Gospel, encourage families, and guide believers in their spiritual journey. Known for his dynamic preaching and compassionate leadership, Bishop Wilson continues to inspire and uplift those he serves with wisdom, humility, and love."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Beyond his ministry, he enjoys the simple joys of life as a family man and follower of Christ—reading the Word, spending time with his loved ones, cooking, gardening, and strengthening bonds through fellowship. His life is a testimony of faith in action, showing that true leadership flows from a heart devoted to God, service to others, and a desire to see lives transformed for the Kingdom of Christ."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Short Biography"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Education & Experience"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Working Shifts"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "My Articles"
+      }
+    },
+    "clementinawilson": {
+      "meta.title": {
+        "type": "text",
+        "value": "Clementina Wilson"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Clementina Wilson"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Short Biography"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Education & Experience"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Working Shifts"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "My Articles"
+      }
+    }
+  },
+  "sermon": {
+    "discovering_the_power_of_waiting": {
+      "meta.title": {
+        "type": "text",
+        "value": "Discovering the Power of Waiting"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Discovering the Power of Waiting"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Thanks for sharing this information is useful for us."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Is it a Good Thing, or a God Thing?"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "We  are Asking for that Help Today"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "God Loves Us"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Trust in Him"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "Search"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": ""
+      }
+    },
+    "do_not_lose_heart_your_future_in_christ_is_beyond_all_comparison": {
+      "meta.title": {
+        "type": "text",
+        "value": "Do Not Lose Heart"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Do Not Lose Heart – Your Future in Christ is Beyond All Comparison"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "So we do not lose heart. Though our outer self is wasting away, our inner self is being renewed day by day."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. Their separate existence is a myth."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. Their separate existence is a myth."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "It’s a great pleasure reading your post!"
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "Thanks."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Encouraging Christians to Reflect the Love of Jesus"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "What is the Future of Religion"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "What Questions Should You Ask?"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Other Useful Information"
+      },
+      "sections.h3_5": {
+        "type": "text",
+        "value": "Momentary and Light Afflictions"
+      },
+      "sections.h3_6": {
+        "type": "text",
+        "value": "If You Need More Help"
+      },
+      "sections.h3_7": {
+        "type": "text",
+        "value": "How to Develop a Habit of Worship"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F&text=We%20often%20talk%20about%20developing%20a%20daily%20habit%20of%20prayer%20and%20reading%20God’s%20Word.%20But%20what%20about%20worship?%20How%20do%20we%20practically%20incorporate%20worship%20into%20our%20busy%20schedules%20and%20develop%20a%20habit%20of%20worship?"
+      },
+      "cta.3.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.3.href": {
+        "type": "url",
+        "value": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F&title=How%20to%20Develop%20a%20Habit%20of%20Worship&summary=We%20often%20talk%20about%20developing%20a%20daily%20habit%20of%20prayer%20and%20reading%20God’s%20Word.%20But%20what%20about%20worship?%20How%20do%20we%20practically%20incorporate%20worship%20into%20our%20busy%20schedules%20and%20develop%20a%20habit%20of%20worship?&source=https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F"
+      },
+      "cta.4.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.4.href": {
+        "type": "url",
+        "value": "mailto:?subject=How%20to%20Develop%20a%20Habit%20of%20Worship&body=We%20often%20talk%20about%20developing%20a%20daily%20habit%20of%20prayer%20and%20reading%20God’s%20Word.%20But%20what%20about%20worship?%20How%20do%20we%20practically%20incorporate%20worship%20into%20our%20busy%20schedules%20and%20develop%20a%20habit%20of%20worship?https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F"
+      },
+      "cta.5.label": {
+        "type": "text",
+        "value": "Contact Us"
+      },
+      "cta.5.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/contact/"
+      },
+      "cta.6.label": {
+        "type": "text",
+        "value": "Read More"
+      },
+      "cta.6.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/how-to-develop-a-habit-of-worship/"
+      }
+    },
+    "experiencing_the_freedom_of_gods_presence": {
+      "meta.title": {
+        "type": "text",
+        "value": "Experiencing the Freedom of God’s Presence"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Experiencing the Freedom of God’s Presence"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "It was never God’s intent that we who were created in His image would experience slavery, oppression or evil of any kind."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "We are committed to providing our patients with the highest quality of care."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.The European languagesare members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words.Everyone realizeswhy a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "To an English person, it will seem like simplified English. Their separate existence is a myth. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family."
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "Their separate existence is a myth. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family."
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport."
+      },
+      "body.p10": {
+        "type": "richtext",
+        "value": "It’s a great pleasure reading your post!"
+      },
+      "body.p11": {
+        "type": "richtext",
+        "value": "Happy to be of service."
+      },
+      "body.p12": {
+        "type": "richtext",
+        "value": "Thanks for sharing this information is useful for us."
+      },
+      "body.p13": {
+        "type": "richtext",
+        "value": "Always happy to be of service."
+      },
+      "body.p14": {
+        "type": "richtext",
+        "value": "This is awesome!!!"
+      },
+      "body.p15": {
+        "type": "richtext",
+        "value": "Thanks."
+      },
+      "body.p16": {
+        "type": "richtext",
+        "value": "Happy to be of service."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "How to Help Others"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "We Must Choose to Obtain"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "The Heart of the True Father"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "We Protect Your Future"
+      },
+      "sections.h3_5": {
+        "type": "text",
+        "value": "How to Develop a Habit of Worship"
+      },
+      "sections.h3_6": {
+        "type": "text",
+        "value": "What’s Your View of Marriage?"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "Open Profile"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://faith-connect.cmsmasters.net/main/author-page/"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.3.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.3.href": {
+        "type": "url",
+        "value": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F&text=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind."
+      },
+      "cta.4.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.4.href": {
+        "type": "url",
+        "value": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F&title=Experiencing%20the%20Freedom%20of%20God’s%20Presence&summary=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind.&source=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.5.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.5.href": {
+        "type": "url",
+        "value": "mailto:?subject=Experiencing%20the%20Freedom%20of%20God’s%20Presence&body=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind.https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.6.label": {
+        "type": "text",
+        "value": "Read More"
+      },
+      "cta.6.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/how-to-develop-a-habit-of-worship/"
+      }
+    },
+    "four_things_our_church_should_still_focus_on": {
+      "meta.title": {
+        "type": "text",
+        "value": "Four Things Our Church Should Still Focus On"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Four Things Our Church Should Still Focus On"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "We now live in an era where, through Jesus, God wants to reveal and manifest himself to the world. In this era, God’s manifested presence is not meant to be rare or uncommon. It’s meant to be poured out everywhere. It’s meant to be a regular occurrence for believers to experience His presence manifested among us."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "All these things uphold our freedom in Christ and allow for us to experience God’s manifested presence. Until Christ returns let’s keep walking in these things and in our assignment to help as many as we can to find and experience the freedom we have in Christ."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "In the Old Testament God revealed and manifested himself at different times, but generally it was limited to a few and limited to one nation – Israel. In the New Testament we see that through Christ, God has chosen to manifest and pour out His Spirit on all people, from every nation whether young or old."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "Thanks for sharing this post, it’s really helpful for me."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Glad to be of service."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "This is awesome!!"
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "Thanks."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Explore New Opportunities"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Is a Public Defender Good Enough?"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "Search"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": ""
+      }
+    },
+    "how_do_i_intercede_for_family_who_dont_believe_in_jesus": {
+      "meta.title": {
+        "type": "text",
+        "value": "How Do I Intercede For Family Who Don’t Believe In Jesus?"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "How Do I Intercede For Family Who Don’t Believe In Jesus?"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Some practical knowledge that I have learned through experience, and my walk with Jesus, is simple. God is a God of peace, not a God of confusion."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.The European languages are members of the same family. Their separate existence is a myth."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "To an English person, it will seem like simplified English. Their separate existence is a myth. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family."
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "Their separate existence is a myth. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family."
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple. Their separate existence is a myth."
+      },
+      "body.p10": {
+        "type": "richtext",
+        "value": "Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. For science, music, sport."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Fuel Your Faith and Don’t Give Up"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Create a Prayer Battle Plan"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Anabaptist or Puritan?"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "Search"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": ""
+      }
+    },
+    "how_to_develop_a_habit_of_worship": {
+      "meta.title": {
+        "type": "text",
+        "value": "How to Develop a Habit of Worship"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "How to Develop a Habit of Worship"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "We often talk about developing a daily habit of prayer and reading God’s Word. But what about worship? How do we practically incorporate worship into our busy schedules and develop a habit of worship?"
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Some practical knowledge that I have learned through experience, and my walk with Jesus, is simple. God is a God of peace, not a God of confusion."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Wow, cool post, thanks for sharing."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "Happy to be of service."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Explore New Opportunities"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Where Does Our Help Come From"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "So, Where are We Asking for That Help Today?"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Do You Pray for Your Sin?"
+      },
+      "sections.h3_5": {
+        "type": "text",
+        "value": "What’s Your View of Marriage?"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F&text=We%20often%20talk%20about%20developing%20a%20daily%20habit%20of%20prayer%20and%20reading%20God’s%20Word.%20But%20what%20about%20worship?%20How%20do%20we%20practically%20incorporate%20worship%20into%20our%20busy%20schedules%20and%20develop%20a%20habit%20of%20worship?"
+      },
+      "cta.3.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.3.href": {
+        "type": "url",
+        "value": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F&title=How%20to%20Develop%20a%20Habit%20of%20Worship&summary=We%20often%20talk%20about%20developing%20a%20daily%20habit%20of%20prayer%20and%20reading%20God’s%20Word.%20But%20what%20about%20worship?%20How%20do%20we%20practically%20incorporate%20worship%20into%20our%20busy%20schedules%20and%20develop%20a%20habit%20of%20worship?&source=https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F"
+      },
+      "cta.4.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.4.href": {
+        "type": "url",
+        "value": "mailto:?subject=How%20to%20Develop%20a%20Habit%20of%20Worship&body=We%20often%20talk%20about%20developing%20a%20daily%20habit%20of%20prayer%20and%20reading%20God’s%20Word.%20But%20what%20about%20worship?%20How%20do%20we%20practically%20incorporate%20worship%20into%20our%20busy%20schedules%20and%20develop%20a%20habit%20of%20worship?https%3A%2F%2Fydministries.ca%2Fhow-to-develop-a-habit-of-worship%2F"
+      },
+      "cta.5.label": {
+        "type": "text",
+        "value": "Read More"
+      },
+      "cta.5.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/whats-your-view-of-marriage/"
+      },
+      "cta.6.label": {
+        "type": "text",
+        "value": "Reply"
+      },
+      "cta.6.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/how-to-develop-a-habit-of-worship/?replytocom=6#respond"
+      }
+    },
+    "i_ruined_my_lifeis_there_hope_for_me": {
+      "meta.title": {
+        "type": "text",
+        "value": "I Ruined My life…is There Hope for Me?"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "I Ruined My life…is There Hope for Me?"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "I know that I for one have done things in my life that I certainly regret. I think all of us have. As a pastor, I’ve heard many people’s stories about how personal sin ruined their relationships and livelihoods. It’s heartbreaking to witness the collateral damage of sin."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "We are committed to providing our patients with the highest quality of care."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. The new common language will be more simple and regular than the existing European languages."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "I know that I for one have done things in my life that I certainly regret. I think all of us have. As a pastor, I’ve heard many people’s stories about how personal sin ruined their relationships and livelihoods."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Please complete all questions. Mark the best answer from the choices given."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "Good Blog!"
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "Thanks."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Jesus, Full of Joy, Takes Joy in Loving his People and Desires His Joy to Fill his People."
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Church Quiz"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "How to Develop a Habit of Worship"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "Open Profile"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://faith-connect.cmsmasters.net/main/author-page/"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.3.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.3.href": {
+        "type": "url",
+        "value": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F&text=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind."
+      },
+      "cta.4.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.4.href": {
+        "type": "url",
+        "value": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F&title=Experiencing%20the%20Freedom%20of%20God’s%20Presence&summary=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind.&source=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.5.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.5.href": {
+        "type": "url",
+        "value": "mailto:?subject=Experiencing%20the%20Freedom%20of%20God’s%20Presence&body=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind.https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.6.label": {
+        "type": "text",
+        "value": "Read More"
+      },
+      "cta.6.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/how-to-develop-a-habit-of-worship/"
+      }
+    },
+    "westtoronto": {
+      "meta.title": {
+        "type": "text",
+        "value": "West Toronto Church of God"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "West Toronto Church of God"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Our curriculum appeals to student diversity and interest, and is rigorous and challenging. We understand each child comes to us with different talents, learning styles, and identities. And we celebrate that difference because our diversity is our strength."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Community is everything at Corlears. It’s who we are and how things get done. Everyone here is motivated by a deep commitment to making sure each child and family feels welcome and included. When everyone feels like they belong, we are stronger and smarter together. We’re a community driven to make the world a better place—starting in our own backyard."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Demonstrated by living our core values: compassion, growth, courage to act, responsibility, belonging, curiosity. You can see them cultivated in every experience for students, families and staff."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "Community is everything. It’s who we are and how things get done. Everyone here is motivated by a deep commitment to making sure each child and family feels welcome and included. When everyone feels like they belong, we are stronger and smarter together. We’re a community driven to make the world a better place—starting in our own backyard."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Learn more about our values and our story as a church by visiting the about us page."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "We are welcoming and faith-filled community dedicated to worship, service, and spiritual growth. Our mission is to share God’s love, strengthen our faith, and serve our local community with compassion."
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "We believe in the Gospel of Jesus Christ and the power of God’s love to transform lives. Our church upholds the authority of the Bible, the importance of prayer, and the calling to live out our faith through worship, fellowship, and service."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "You’ll find a warm and friendly atmosphere, uplifting worship, and a message that speaks to your everyday life. Whether you’re new to church or have been attending for years, you are welcome here just as you are."
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "There are many ways to get involved, from joining a small group or Bible study to volunteering in our ministries. Whether you have a heart for serving others, a passion for music, or a desire to grow in faith, we have a place for you!"
+      },
+      "body.p10": {
+        "type": "richtext",
+        "value": "We would love to connect with you! You can visit us in person, call us, or email us. You can also follow us on social media and sign up for our newsletter to stay updated on events and services."
+      },
+      "sections.h2_1": {
+        "type": "text",
+        "value": "Visit Out Sermons"
+      },
+      "sections.h2_2": {
+        "type": "text",
+        "value": "Our Core Values"
+      },
+      "sections.h2_3": {
+        "type": "text",
+        "value": "Meet Our Pastors"
+      },
+      "sections.h2_4": {
+        "type": "text",
+        "value": "Join us this Sunday"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "A Diverse and Inclusive Community"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Our Story"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Bishop Huel O. Wilson"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Clementina Wilson"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "meet full team"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/our-team/"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": "Attend Service in Person"
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/contact/"
+      }
+    },
+    "whats_your_view_of_marriage": {
+      "meta.title": {
+        "type": "text",
+        "value": "What’s Your View of Marriage?"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "What’s Your View of Marriage?"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Growing up, I was not enamoured with the thought of my own wedding day. For some odd reasons, I wasn’t consumed looking at wedding magazines nor dreamt about the venue or gown I should have at my future wedding."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "We are committed to providing our patients with the highest quality of care."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. The European languages are members of the same."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Please complete all questions. Mark the best answer from the choices given."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "Wow, cool post, thanks for sharing."
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "Thanks for sharing this information is useful for us."
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "God’s Plan for Marriage is to Reflect His Image"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Lead Wisely to Maximize Joy"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Serve Humbly to Multiply Joy"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "What is the Future of Religion"
+      },
+      "sections.h3_5": {
+        "type": "text",
+        "value": "Church Quiz"
+      },
+      "sections.h3_6": {
+        "type": "text",
+        "value": "How to Develop a Habit of Worship"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "Open Profile"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://faith-connect.cmsmasters.net/main/author-page/"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.3.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.3.href": {
+        "type": "url",
+        "value": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F&text=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind."
+      },
+      "cta.4.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.4.href": {
+        "type": "url",
+        "value": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F&title=Experiencing%20the%20Freedom%20of%20God’s%20Presence&summary=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind.&source=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.5.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.5.href": {
+        "type": "url",
+        "value": "mailto:?subject=Experiencing%20the%20Freedom%20of%20God’s%20Presence&body=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind.https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.6.label": {
+        "type": "text",
+        "value": "Contact Us"
+      },
+      "cta.6.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/contact/"
+      }
+    },
+    "your_mission_should_you_choose_to_accept_it": {
+      "meta.title": {
+        "type": "text",
+        "value": "Your Mission"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Your Mission – Should You Choose to Accept It"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Most of us know exactly where that line comes from. Beginning with the original TV series in 1966 to the current $4B movie franchise starring Tom Cruise, Mission: Impossible has become almost ubiquitous in our pop culture."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "We are committed to providing our patients with the highest quality of care."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "To an English person, it will seem like simplified English. Their separate existence is a myth. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth."
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "Their separate existence is a myth. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.The European languagesare members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words.Everyone realizeswhy a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport."
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce. The European languages are members of the same family."
+      },
+      "body.p10": {
+        "type": "richtext",
+        "value": "The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told."
+      },
+      "body.p11": {
+        "type": "richtext",
+        "value": "Thanks for this great post!"
+      },
+      "body.p12": {
+        "type": "richtext",
+        "value": "Thanks for sharing 🙂"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Why Do We Take on the Impossible?"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Accepting Your Mission: Impossible"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Meeting People Where They Are"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Why Does It Matter?"
+      },
+      "sections.h3_5": {
+        "type": "text",
+        "value": "How to Develop a Habit of Worship"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "Open Profile"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://faith-connect.cmsmasters.net/main/author-page/"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.3.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.3.href": {
+        "type": "url",
+        "value": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F&text=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind."
+      },
+      "cta.4.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.4.href": {
+        "type": "url",
+        "value": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F&title=Experiencing%20the%20Freedom%20of%20God’s%20Presence&summary=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind.&source=https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.5.label": {
+        "type": "text",
+        "value": ""
+      },
+      "cta.5.href": {
+        "type": "url",
+        "value": "mailto:?subject=Experiencing%20the%20Freedom%20of%20God’s%20Presence&body=It%20was%20never%20God’s%20intent%20that%20we%20who%20were%20created%20in%20His%20image%20would%20experience%20slavery,%20oppression%20or%20evil%20of%20any%20kind.https%3A%2F%2Fydministries.ca%2Fexperiencing-the-freedom-of-gods-presence%2F"
+      },
+      "cta.6.label": {
+        "type": "text",
+        "value": "Read More"
+      },
+      "cta.6.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/how-to-develop-a-habit-of-worship/"
+      }
+    }
+  },
+  "singleton": {
+    "ask": {
+      "meta.title": {
+        "type": "text",
+        "value": "Ask"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      }
+    },
+    "gallery": {
+      "meta.title": {
+        "type": "text",
+        "value": "Gallery"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Photo Gallery"
+      }
+    },
+    "huel_clementina": {
+      "meta.title": {
+        "type": "text",
+        "value": "Huel & Clementina Wilson"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Huel & Clementina Wilson"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Our curriculum appeals to student diversity and interest, and is rigorous and challenging. We understand each child comes to us with different talents, learning styles, and identities. And we celebrate that difference because our diversity is our strength."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Community is everything at Corlears. It’s who we are and how things get done. Everyone here is motivated by a deep commitment to making sure each child and family feels welcome and included. When everyone feels like they belong, we are stronger and smarter together. We’re a community driven to make the world a better place—starting in our own backyard."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Demonstrated by living our core values: compassion, growth, courage to act, responsibility, belonging, curiosity. You can see them cultivated in every experience for students, families and staff."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "Community is everything. It’s who we are and how things get done. Everyone here is motivated by a deep commitment to making sure each child and family feels welcome and included. When everyone feels like they belong, we are stronger and smarter together. We’re a community driven to make the world a better place—starting in our own backyard."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Learn more about our values and our story as a church by visiting the about us page."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "We are welcoming and faith-filled community dedicated to worship, service, and spiritual growth. Our mission is to share God’s love, strengthen our faith, and serve our local community with compassion."
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "We believe in the Gospel of Jesus Christ and the power of God’s love to transform lives. Our church upholds the authority of the Bible, the importance of prayer, and the calling to live out our faith through worship, fellowship, and service."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "You’ll find a warm and friendly atmosphere, uplifting worship, and a message that speaks to your everyday life. Whether you’re new to church or have been attending for years, you are welcome here just as you are."
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "There are many ways to get involved, from joining a small group or Bible study to volunteering in our ministries. Whether you have a heart for serving others, a passion for music, or a desire to grow in faith, we have a place for you!"
+      },
+      "body.p10": {
+        "type": "richtext",
+        "value": "We would love to connect with you! You can visit us in person, call us, or email us. You can also follow us on social media and sign up for our newsletter to stay updated on events and services."
+      },
+      "sections.h2_1": {
+        "type": "text",
+        "value": "Visit Out Sermons"
+      },
+      "sections.h2_2": {
+        "type": "text",
+        "value": "Our Core Values"
+      },
+      "sections.h2_3": {
+        "type": "text",
+        "value": "Meet Our Pastors"
+      },
+      "sections.h2_4": {
+        "type": "text",
+        "value": "Join us this Sunday"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "A Diverse and Inclusive Community"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Our Story"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Bishop Huel O. Wilson"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Clementina Wilson"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "meet full team"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/our-team/"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": "Attend Service in Person"
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/contact/"
+      }
+    },
+    "huelwilsonbio": {
+      "meta.title": {
+        "type": "text",
+        "value": "Bishop Wilson"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Bishop Wilson – Bio"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Our curriculum appeals to student diversity and interest, and is rigorous and challenging. We understand each child comes to us with different talents, learning styles, and identities. And we celebrate that difference because our diversity is our strength."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Community is everything at Corlears. It’s who we are and how things get done. Everyone here is motivated by a deep commitment to making sure each child and family feels welcome and included. When everyone feels like they belong, we are stronger and smarter together. We’re a community driven to make the world a better place—starting in our own backyard."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Demonstrated by living our core values: compassion, growth, courage to act, responsibility, belonging, curiosity. You can see them cultivated in every experience for students, families and staff."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "Community is everything. It’s who we are and how things get done. Everyone here is motivated by a deep commitment to making sure each child and family feels welcome and included. When everyone feels like they belong, we are stronger and smarter together. We’re a community driven to make the world a better place—starting in our own backyard."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Learn more about our values and our story as a church by visiting the about us page."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "We are welcoming and faith-filled community dedicated to worship, service, and spiritual growth. Our mission is to share God’s love, strengthen our faith, and serve our local community with compassion."
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "We believe in the Gospel of Jesus Christ and the power of God’s love to transform lives. Our church upholds the authority of the Bible, the importance of prayer, and the calling to live out our faith through worship, fellowship, and service."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "You’ll find a warm and friendly atmosphere, uplifting worship, and a message that speaks to your everyday life. Whether you’re new to church or have been attending for years, you are welcome here just as you are."
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "There are many ways to get involved, from joining a small group or Bible study to volunteering in our ministries. Whether you have a heart for serving others, a passion for music, or a desire to grow in faith, we have a place for you!"
+      },
+      "body.p10": {
+        "type": "richtext",
+        "value": "We would love to connect with you! You can visit us in person, call us, or email us. You can also follow us on social media and sign up for our newsletter to stay updated on events and services."
+      },
+      "sections.h2_1": {
+        "type": "text",
+        "value": "Visit Out Sermons"
+      },
+      "sections.h2_2": {
+        "type": "text",
+        "value": "Our Core Values"
+      },
+      "sections.h2_3": {
+        "type": "text",
+        "value": "Meet Our Pastors"
+      },
+      "sections.h2_4": {
+        "type": "text",
+        "value": "Join us this Sunday"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "A Diverse and Inclusive Community"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Our Story"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Bishop Huel O. Wilson"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Clementina Wilson"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "meet full team"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/our-team/"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": "Attend Service in Person"
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/contact/"
+      }
+    },
+    "live": {
+      "meta.title": {
+        "type": "text",
+        "value": "Watch Live"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Watch Live"
+      },
+      "sections.h2_1": {
+        "type": "text",
+        "value": "Related Sermons"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "Here Am I, Send Me: A Vision for Mission"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Jesus: The Ultimate Transformational Leader & How He Changes Lives"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Jesus is Coming Soon: Signs, Prophecy, & Hope"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Gilgal: The Place of New Beginnings"
+      },
+      "sections.h3_5": {
+        "type": "text",
+        "value": "Repent: The Kingdom of God Is At Hand"
+      },
+      "sections.h3_6": {
+        "type": "text",
+        "value": "The Heritage of a Godly Mother (Mothers Day 2024)"
+      }
+    },
+    "maltoncog": {
+      "meta.title": {
+        "type": "text",
+        "value": "Malton Church of God"
+      },
+      "meta.description": {
+        "type": "text",
+        "value": null,
+        "__needs_authoring__": true,
+        "__hint__": "Short SEO description, 150-160 chars"
+      },
+      "hero.title": {
+        "type": "text",
+        "value": "Malton Church of God"
+      },
+      "body.p1": {
+        "type": "richtext",
+        "value": "Our curriculum appeals to student diversity and interest, and is rigorous and challenging. We understand each child comes to us with different talents, learning styles, and identities. And we celebrate that difference because our diversity is our strength."
+      },
+      "body.p2": {
+        "type": "richtext",
+        "value": "Community is everything at Corlears. It’s who we are and how things get done. Everyone here is motivated by a deep commitment to making sure each child and family feels welcome and included. When everyone feels like they belong, we are stronger and smarter together. We’re a community driven to make the world a better place—starting in our own backyard."
+      },
+      "body.p3": {
+        "type": "richtext",
+        "value": "Demonstrated by living our core values: compassion, growth, courage to act, responsibility, belonging, curiosity. You can see them cultivated in every experience for students, families and staff."
+      },
+      "body.p4": {
+        "type": "richtext",
+        "value": "Community is everything. It’s who we are and how things get done. Everyone here is motivated by a deep commitment to making sure each child and family feels welcome and included. When everyone feels like they belong, we are stronger and smarter together. We’re a community driven to make the world a better place—starting in our own backyard."
+      },
+      "body.p5": {
+        "type": "richtext",
+        "value": "Learn more about our values and our story as a church by visiting the about us page."
+      },
+      "body.p6": {
+        "type": "richtext",
+        "value": "We are welcoming and faith-filled community dedicated to worship, service, and spiritual growth. Our mission is to share God’s love, strengthen our faith, and serve our local community with compassion."
+      },
+      "body.p7": {
+        "type": "richtext",
+        "value": "We believe in the Gospel of Jesus Christ and the power of God’s love to transform lives. Our church upholds the authority of the Bible, the importance of prayer, and the calling to live out our faith through worship, fellowship, and service."
+      },
+      "body.p8": {
+        "type": "richtext",
+        "value": "You’ll find a warm and friendly atmosphere, uplifting worship, and a message that speaks to your everyday life. Whether you’re new to church or have been attending for years, you are welcome here just as you are."
+      },
+      "body.p9": {
+        "type": "richtext",
+        "value": "There are many ways to get involved, from joining a small group or Bible study to volunteering in our ministries. Whether you have a heart for serving others, a passion for music, or a desire to grow in faith, we have a place for you!"
+      },
+      "body.p10": {
+        "type": "richtext",
+        "value": "We would love to connect with you! You can visit us in person, call us, or email us. You can also follow us on social media and sign up for our newsletter to stay updated on events and services."
+      },
+      "sections.h2_1": {
+        "type": "text",
+        "value": "Visit Out Sermons"
+      },
+      "sections.h2_2": {
+        "type": "text",
+        "value": "Our Core Values"
+      },
+      "sections.h2_3": {
+        "type": "text",
+        "value": "Meet Our Pastors"
+      },
+      "sections.h2_4": {
+        "type": "text",
+        "value": "Join us this Sunday"
+      },
+      "sections.h3_1": {
+        "type": "text",
+        "value": "A Diverse and Inclusive Community"
+      },
+      "sections.h3_2": {
+        "type": "text",
+        "value": "Our Story"
+      },
+      "sections.h3_3": {
+        "type": "text",
+        "value": "Bishop Huel O. Wilson"
+      },
+      "sections.h3_4": {
+        "type": "text",
+        "value": "Clementina Wilson"
+      },
+      "cta.1.label": {
+        "type": "text",
+        "value": "meet full team"
+      },
+      "cta.1.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/our-team/"
+      },
+      "cta.2.label": {
+        "type": "text",
+        "value": "Attend Service in Person"
+      },
+      "cta.2.href": {
+        "type": "url",
+        "value": "https://ydministries.ca/contact/"
+      }
+    }
+  }
+}

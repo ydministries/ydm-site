@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# environment variables
+.env
+.env.local
+.env*.local
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+*.pem
+
+# vercel
+.vercel/
+
+# sensitive archive files
+archive/wordpress/exports/uploads/cmsmasters/faith-connect/token-data/
+
+# large files (exceed GitHub limits)
+archive/wordpress/scrape/styles.json
+*.mp3

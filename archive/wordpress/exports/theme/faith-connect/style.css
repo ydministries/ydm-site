@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+Theme Name: Faith Connect
+Theme URI: https://faith-connect.cmsmasters.net/
+Author: cmsmasters
+Author URI: https://cmsmasters.net/
+Description: Faith Connect - Church & Religion WordPress Elementor Theme is a perfect theme for traditional and modern churches and religious organizations, church events and other community events, church donations, etc. This WordPress theme has all the needed functionality for churches including Sermons, Campaigns, Profiles and Ministries custom post types, Donations Functionality and Events support. It comes with a full WooCommerce plugin integration to sell goods from your church website to collect funds for your religious projects and church.
+Version: 1.1.1
+Tested up to: 6.6
+Requires PHP: 7.4
+License:
+License URI:
+Text Domain: faith-connect
+Domain Path: /theme-config/languages
+Copyright: cmsmasters 2024 / All Rights Reserved
+Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+
+
+.sticky,
+.bypostauthor,
+.screen-reader-text {
+  outline: none;
+}

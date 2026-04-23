@@ -1,0 +1,367 @@
+{
+  "_meta": {
+    "version": 1,
+    "generated_at": "2026-04-19",
+    "pass": "1a — singleton top-level pages",
+    "source": "archive/wordpress/scrape/pages/*.json + memory.md + wordpress-export.xml",
+    "status": "draft — awaiting Mikey page-by-page review",
+    "next_pass": "1b — CPT templates (sermon, ministry, event, campaign, blog-post, profile)",
+    "value_types": ["text", "richtext", "markdown", "html", "url", "email", "phone", "number", "date", "asset_key"],
+    "conventions": {
+      "key_shape": "page_key.section.field  (dot-separated)",
+      "placeholders": "if __placeholder__: true, Bishop must supply real copy before publish",
+      "missing_value": "null means no scrape source — must be authored fresh"
+    }
+  },
+
+  "global": {
+    "site.name": { "type": "text", "value": "Yeshua Deliverance Ministries" },
+    "site.short_name": { "type": "text", "value": "YDM" },
+    "site.tagline": { "type": "text", "value": "Ministry by Bishop H.O. Wilson" },
+    "site.secondary_tagline": { "type": "text", "value": "YDM: a home for your soul." },
+    "site.tertiary_tagline": { "type": "text", "value": "Uniting hearts in faith and fellowship." },
+    "site.legal_entity": { "type": "text", "value": "YDM inc." },
+    "site.copyright": { "type": "text", "value": "© 2026 – All Rights Reserved" },
+
+    "contact.phone": { "type": "phone", "value": "+1 (416) 895-5178" },
+    "contact.email": { "type": "email", "value": "Info@YDMinistries.ca" },
+    "contact.mailing_address": { "type": "text", "value": "P.O. Box #20001, Chinguacousy Rd, Brampton, ON L6Y 0J0" },
+    "contact.venue_name": { "type": "text", "value": "Mississauga Church of God" },
+    "contact.venue_host": { "type": "text", "value": "inside the Salvation Army Erin Mills Church" },
+    "contact.venue_address": { "type": "text", "value": "2460 The Collegeway, Mississauga, ON L5L 1V3" },
+
+    "service.sunday.label":   { "type": "text", "value": "Yeshua Sunday Service" },
+    "service.sunday.time":    { "type": "text", "value": "1:00 PM" },
+    "service.sunday.cadence": { "type": "text", "value": "Every 4th Sunday of the month" },
+    "service.biblestudy.label":   { "type": "text", "value": "Weekly Bible Study Group" },
+    "service.biblestudy.time":    { "type": "text", "value": "7:00 PM" },
+    "service.biblestudy.cadence": { "type": "text", "value": "Thursdays" },
+
+    "social.facebook":  { "type": "url", "value": "https://www.facebook.com/profile.php?id=61580380624275" },
+    "social.instagram": { "type": "url", "value": "https://www.instagram.com/yd.ministries/" },
+    "social.youtube":   { "type": "url", "value": "https://www.youtube.com/@BishopHuelWilson" },
+    "social.linkedin":  { "type": "url", "value": "https://www.linkedin.com/in/bishop-huel-wilson-3378602b/" },
+
+    "nav.header.home":       { "type": "text", "value": "Home" },
+    "nav.header.about":      { "type": "text", "value": "About" },
+    "nav.header.pages":      { "type": "text", "value": "Pages" },
+    "nav.header.sermons":    { "type": "text", "value": "Sermons" },
+    "nav.header.blog":       { "type": "text", "value": "Blog" },
+    "nav.header.contact":    { "type": "text", "value": "Contact" },
+    "nav.header.shop":       { "type": "text", "value": "Shop" },
+    "nav.header.give_cta":   { "type": "text", "value": "Give" },
+
+    "nav.footer.col_pages.title":   { "type": "text", "value": "Pages" },
+    "nav.footer.col_location.title":{ "type": "text", "value": "Location" },
+    "nav.footer.col_contact.title": { "type": "text", "value": "Contact" },
+    "nav.footer.newsletter.prompt": { "type": "text", "value": "Get updates on events and inspiration to your email." },
+    "nav.footer.newsletter.cta":    { "type": "text", "value": "Subscribe" }
+  },
+
+  "home": {
+    "_section_order": [
+      "hero", "support_banner", "service_promo", "tagline",
+      "welcome", "mission", "vision", "values", "ministries_grid",
+      "events", "featured_sermons", "leaders", "campaign_promo",
+      "get_involved", "newsletter"
+    ],
+
+    "hero.title":    { "type": "text", "value": "Ministries", "note": "fix the live-site typo 'Minstries'" },
+    "hero.subtitle": { "type": "text", "value": "Uniting hearts in faith and fellowship." },
+    "hero.cta_primary.label":   { "type": "text", "value": "Give" },
+    "hero.cta_primary.href":    { "type": "url",  "value": "/give" },
+    "hero.cta_secondary.label": { "type": "text", "value": "Join Us In-person" },
+    "hero.cta_secondary.href":  { "type": "url",  "value": "/contact" },
+    "hero.cta_tertiary.label":  { "type": "text", "value": "Watch Live" },
+    "hero.cta_tertiary.href":   { "type": "url",  "value": "/live" },
+    "hero.bg_image":            { "type": "asset_key", "value": "home.hero.bg" },
+
+    "support_banner.eyebrow": { "type": "text", "value": "Support Our Mission" },
+    "support_banner.body":    { "type": "richtext", "value": "Your generosity makes a difference! Every gift helps us spread hope, serve our community, and share God's love with those in need. Thank you for being a part of this mission!" },
+    "support_banner.ways_label":  { "type": "text", "value": "Ways to give:" },
+    "support_banner.cta_inperson.label": { "type": "text", "value": "Give In-Person" },
+    "support_banner.cta_online.label":   { "type": "text", "value": "Give Online" },
+    "support_banner.cta_online.href":    { "type": "url",  "value": "/campaigns/supportydm" },
+
+    "service_promo.time":    { "type": "text", "value": "1:00 PM Every 4th Sunday" },
+    "service_promo.venue":   { "type": "text", "value": "Inside Mississauga Church of God" },
+    "service_promo.cta.label":{ "type": "text", "value": "Plan your visit" },
+    "service_promo.cta.href":{ "type": "url",  "value": "/contact" },
+
+    "tagline.line": { "type": "text", "value": "YDM: a home for your soul." },
+
+    "welcome.eyebrow": { "type": "text", "value": "Who we are" },
+    "welcome.title":   { "type": "text", "value": "A Christ-Centered Community for Worship & Growth" },
+    "welcome.body":    { "type": "richtext", "value": "In a world that is constantly changing, some things remain constant. The love of God is one of them. We believe that everyone deserves a place where they feel known, accepted, and loved — a place to grow in their faith, find community, and discover the purpose God has for their life. Whether you are new to faith, exploring what it means to follow Jesus, or have been walking with Him for years, there is a place for you here." },
+    "welcome.kicker":  { "type": "text", "value": "You're always welcome here." },
+
+    "mission.title": { "type": "text", "value": "Our Mission" },
+    "mission.body":  { "type": "richtext", "value": "To share and spread the love of Christ through worship, discipleship, and service." },
+
+    "vision.title":  { "type": "text", "value": "Our Vision" },
+    "vision.body":   { "type": "richtext", "value": "A thriving community of empowered disciples transformed by faith, love, and action." },
+
+    "values.title":  { "type": "text", "value": "Our Values" },
+    "values.body":   { "type": "richtext", "value": "Faith, Community, Service, and Compassion." },
+
+    "ministries_grid.title":    { "type": "text", "value": "YDM Ministries" },
+    "ministries_grid.subtitle": { "type": "text", "value": null, "__needs_authoring__": true },
+    "ministries_grid.cta.label":{ "type": "text", "value": "See all ministries" },
+    "ministries_grid.cta.href": { "type": "url",  "value": "/our-ministries" },
+
+    "events.title":     { "type": "text", "value": "Upcoming Events" },
+    "events.cta.label": { "type": "text", "value": "All events" },
+    "events.cta.href":  { "type": "url",  "value": "/events-page" },
+
+    "featured_sermons.title":    { "type": "text", "value": "Featured Sermons" },
+    "featured_sermons.cta.label":{ "type": "text", "value": "Sermon Library" },
+    "featured_sermons.cta.href": { "type": "url",  "value": "/latest-sermons" },
+
+    "leaders.eyebrow":  { "type": "text", "value": "Don't miss the next service" },
+    "leaders.title":    { "type": "text", "value": "Leading with Love" },
+    "leaders.subtitle": { "type": "text", "value": "Meet Our Leaders" },
+    "leaders.cta.label":{ "type": "text", "value": "Meet the team" },
+    "leaders.cta.href": { "type": "url",  "value": "/our-team" },
+
+    "campaign_promo.title": { "type": "text", "value": "Support YDM's Mission" },
+    "campaign_promo.body":  { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "1–2 sentences. Current WP uses duplicate support-banner copy — write fresh." },
+    "campaign_promo.cta.label":{ "type": "text", "value": "Give now" },
+    "campaign_promo.cta.href": { "type": "url",  "value": "/campaigns/supportydm" },
+
+    "get_involved.title": { "type": "text", "value": "Get Involved with YDM" },
+    "get_involved.card_pray.title":   { "type": "text", "value": "Pray With Us" },
+    "get_involved.card_pray.body":    { "type": "richtext", "value": null, "__needs_authoring__": true },
+    "get_involved.card_pray.cta.label":{ "type": "text", "value": "Submit a prayer request" },
+    "get_involved.card_pray.cta.href": { "type": "url",  "value": "/prayer-requests" },
+    "get_involved.card_serve.title":  { "type": "text", "value": "Serve With Us" },
+    "get_involved.card_serve.body":   { "type": "richtext", "value": null, "__needs_authoring__": true },
+    "get_involved.card_serve.cta.label":{ "type": "text", "value": "Get in touch" },
+    "get_involved.card_serve.cta.href": { "type": "url",  "value": "/contact" },
+    "get_involved.card_partner.title":{ "type": "text", "value": "Partner With Us" },
+    "get_involved.card_partner.body": { "type": "richtext", "value": null, "__needs_authoring__": true },
+    "get_involved.card_partner.cta.label":{ "type": "text", "value": "Become a partner" },
+    "get_involved.card_partner.cta.href": { "type": "url",  "value": "/ministries/partnership" },
+
+    "newsletter.title":  { "type": "text", "value": "Stay Connected" },
+    "newsletter.prompt": { "type": "text", "value": "Get updates on events and inspiration to your email." },
+    "newsletter.cta":    { "type": "text", "value": "Subscribe" }
+  },
+
+  "about": {
+    "_page_key_alias": "aboutydm",
+    "_section_order": ["hero", "story", "beliefs", "leadership_teaser", "cta"],
+    "_note": "Current live-site About copy is CMSMasters 'Corlears' school-theme placeholder. All body fields here start null and must be authored. Beliefs section below IS authentic YDM copy (from ministry pages).",
+
+    "hero.title":    { "type": "text", "value": "About Yeshua Deliverance Ministries" },
+    "hero.subtitle": { "type": "text", "value": "A ministry rooted in worship, discipleship, and service." },
+    "hero.bg_image": { "type": "asset_key", "value": "about.hero.bg" },
+
+    "story.eyebrow": { "type": "text", "value": "Our Story" },
+    "story.title":   { "type": "text", "value": null, "__needs_authoring__": true },
+    "story.body":    { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "Bishop Wilson's founding vision, how YDM came to be, current reach. 3–5 paragraphs." },
+
+    "beliefs.title": { "type": "text", "value": "What We Believe" },
+    "beliefs.intro": { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "Optional 1-paragraph lead-in to the 5 beliefs below." },
+    "beliefs.item1.title": { "type": "text", "value": "Christ as Head" },
+    "beliefs.item1.body":  { "type": "richtext", "value": "We acknowledge Jesus Christ as the head of our church and fully submit ourselves to His will." },
+    "beliefs.item2.title": { "type": "text", "value": "Authority of Scripture" },
+    "beliefs.item2.body":  { "type": "richtext", "value": "We believe the Bible is God's inspired, authoritative, and trustworthy rule of faith and practice." },
+    "beliefs.item3.title": { "type": "text", "value": "Power of Prayer" },
+    "beliefs.item3.body":  { "type": "richtext", "value": "We believe in the power of prayer. The ministries and activities of our church are characterized by a reliance on personal and corporate prayer." },
+    "beliefs.item4.title": { "type": "text", "value": "Great Commission" },
+    "beliefs.item4.body":  { "type": "richtext", "value": "We are committed to reaching unsaved and unchurched people locally, nationally, and worldwide." },
+    "beliefs.item5.title": { "type": "text", "value": "Family" },
+    "beliefs.item5.body":  { "type": "richtext", "value": "We believe God ordained the family to glorify Him." },
+
+    "leadership_teaser.title":    { "type": "text", "value": "Led by Bishop Huel O. Wilson" },
+    "leadership_teaser.body":     { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "2–3 sentences about the leadership. Links out to /our-team and /huelwilsonbio." },
+    "leadership_teaser.cta.label":{ "type": "text", "value": "Meet our leaders" },
+    "leadership_teaser.cta.href": { "type": "url",  "value": "/our-team" },
+
+    "cta.title":    { "type": "text", "value": "Come as you are" },
+    "cta.body":     { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "Warm closing invitation — 2 sentences." },
+    "cta.primary.label": { "type": "text", "value": "Plan your visit" },
+    "cta.primary.href":  { "type": "url",  "value": "/contact" },
+    "cta.secondary.label":{ "type": "text", "value": "Watch a sermon" },
+    "cta.secondary.href": { "type": "url",  "value": "/latest-sermons" }
+  },
+
+  "contact": {
+    "_section_order": ["hero", "info", "hours", "form", "map"],
+
+    "hero.title":    { "type": "text", "value": "Contact Us" },
+    "hero.subtitle": { "type": "text", "value": "We'd love to hear from you." },
+
+    "info.title":    { "type": "text", "value": "Get in touch" },
+    "info.body":     { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "Short welcoming paragraph above the contact details." },
+    "info.phone_label":   { "type": "text", "value": "Phone" },
+    "info.email_label":   { "type": "text", "value": "Email" },
+    "info.address_label": { "type": "text", "value": "Mailing address" },
+    "info.venue_label":   { "type": "text", "value": "Worship venue" },
+
+    "hours.title": { "type": "text", "value": "When we gather" },
+    "hours.sunday_note":     { "type": "text", "value": "Yeshua Sunday Service — 1:00 PM every 4th Sunday of the month" },
+    "hours.biblestudy_note": { "type": "text", "value": "Weekly Bible Study Group — Thursdays at 7:00 PM" },
+
+    "form.title":    { "type": "text", "value": "Send us a message" },
+    "form.intro":    { "type": "richtext", "value": "Select a category so we can route your message to the right person." },
+    "form.field.name_label":    { "type": "text", "value": "Your name" },
+    "form.field.email_label":   { "type": "text", "value": "Email address" },
+    "form.field.phone_label":   { "type": "text", "value": "Phone (optional)" },
+    "form.field.org_label":     { "type": "text", "value": "Organization (optional)" },
+    "form.field.category_label":{ "type": "text", "value": "What is this about?" },
+    "form.field.message_label": { "type": "text", "value": "Your message" },
+    "form.field.consent_label": { "type": "text", "value": "Yes, I agree with the privacy policy and terms. I consent to YDM storing my submitted information privately to respond to this request." },
+    "form.submit.label":        { "type": "text", "value": "Send message" },
+    "form.success.title":       { "type": "text", "value": "Thank you — your message is on its way." },
+    "form.success.body":        { "type": "richtext", "value": "We'll get back to you as soon as possible. If this is a prayer request, our team is already lifting you up." },
+
+    "form.category.1.label": { "type": "text", "value": "General inquiry" },
+    "form.category.2.label": { "type": "text", "value": "Prayer request" },
+    "form.category.3.label": { "type": "text", "value": "Speaking invitation (weddings, conventions, podcasts, interviews)" },
+    "form.category.4.label": { "type": "text", "value": "Ask Bishop a question" },
+    "form.category.5.label": { "type": "text", "value": "Question about the Word" },
+    "form.category.6.label": { "type": "text", "value": "Shop / order question" },
+    "form.category.7.label": { "type": "text", "value": "Leadership training" },
+    "form.category.8.label": { "type": "text", "value": "Family ministry (counseling, pre-marital, relationship)" },
+    "form.category.9.label": { "type": "text", "value": "Compassion & outreach (hospital, prison, nursing home, community)" },
+
+    "map.title":  { "type": "text", "value": "Visit us" },
+    "map.embed_lat":  { "type": "number", "value": 43.5178 },
+    "map.embed_lng":  { "type": "number", "value": -79.7168 },
+    "map.caption":    { "type": "text", "value": "2460 The Collegeway, Mississauga, ON L5L 1V3 — inside Salvation Army Erin Mills Church" }
+  },
+
+  "prayer_requests": {
+    "_section_order": ["hero", "intro", "form", "wall"],
+
+    "hero.title":    { "type": "text", "value": "Prayer Requests" },
+    "hero.subtitle": { "type": "text", "value": "We pray with you." },
+
+    "intro.title": { "type": "text", "value": "Share your request" },
+    "intro.body":  { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "Warm 2-paragraph invitation. Reassure privacy. Mention Bishop and the ministry team will pray over every submission." },
+
+    "form.field.name_label":   { "type": "text", "value": "Your name (or 'Anonymous')" },
+    "form.field.email_label":  { "type": "text", "value": "Email (so we can follow up — optional)" },
+    "form.field.request_label":{ "type": "text", "value": "What would you like us to pray for?" },
+    "form.field.share_label":  { "type": "text", "value": "Share this request on our public prayer wall (first-name only)" },
+    "form.submit.label":       { "type": "text", "value": "Submit prayer request" },
+    "form.success.title":      { "type": "text", "value": "We're praying for you." },
+    "form.success.body":       { "type": "richtext", "value": "Your request has been received. The YDM prayer team will lift it up in the coming days." },
+
+    "wall.title": { "type": "text", "value": "Prayers from our community" },
+    "wall.empty_state": { "type": "text", "value": "Be the first to share a prayer request with our community." }
+  },
+
+  "our_ministries": {
+    "_page_key_alias": "our-ministries",
+    "_section_order": ["hero", "intro", "grid"],
+
+    "hero.title":    { "type": "text", "value": "Our Ministries" },
+    "hero.subtitle": { "type": "text", "value": "Seven expressions of one mission." },
+
+    "intro.body": { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "1–2 paragraphs framing the seven ministries as a unified response to YDM's mission." },
+
+    "grid.worship.tile_label":     { "type": "text", "value": "Worship Ministry" },
+    "grid.worship.tile_summary":   { "type": "text", "value": "The heartbeat of YDM — monthly preaching, weekly Bible study, worship-leader development." },
+    "grid.outreach.tile_label":    { "type": "text", "value": "Compassion & Outreach" },
+    "grid.outreach.tile_summary":  { "type": "text", "value": "Hospital, senior, prison, and community ministry — meeting needs with the love of Christ." },
+    "grid.family.tile_label":      { "type": "text", "value": "Family Ministry" },
+    "grid.family.tile_summary":    { "type": "text", "value": "Weddings, pre-marital counseling, baby dedications, parenting and marriage enrichment." },
+    "grid.worldwide.tile_label":   { "type": "text", "value": "Worldwide Ministry" },
+    "grid.worldwide.tile_summary": { "type": "text", "value": "Global reach through video, live-streamed prayer, online Bible studies, and discipleship." },
+    "grid.leadership.tile_label":  { "type": "text", "value": "Leadership & Development" },
+    "grid.leadership.tile_summary":{ "type": "text", "value": "Training pastors, ministers, and emerging leaders through mentorship, retreats, and courses." },
+    "grid.partnership.tile_label": { "type": "text", "value": "Partnership & Support" },
+    "grid.partnership.tile_summary":{ "type": "text", "value": "Recurring giving and prayer partnership — stewarding the mission together." },
+    "grid.ask_bishop.tile_label":  { "type": "text", "value": "Ask Bishop" },
+    "grid.ask_bishop.tile_summary":{ "type": "text", "value": "Submit biblical and life questions — answered privately or through YouTube teaching." }
+  },
+
+  "our_team": {
+    "_page_key_alias": "our-team",
+    "_section_order": ["hero", "intro", "roster"],
+
+    "hero.title":    { "type": "text", "value": "Our Team" },
+    "hero.subtitle": { "type": "text", "value": "Led in love, serving in unity." },
+
+    "intro.body": { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "1 paragraph. Can be minimal." },
+
+    "roster.empty_state": { "type": "text", "value": "Team profiles coming soon." }
+  },
+
+  "events_page": {
+    "_page_key_alias": "events-page",
+    "_section_order": ["hero", "intro", "list"],
+
+    "hero.title":    { "type": "text", "value": "Events" },
+    "hero.subtitle": { "type": "text", "value": "Gather with us." },
+
+    "intro.body": { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "Optional — can be single sentence introducing the list." },
+
+    "list.empty_state": { "type": "text", "value": "No upcoming events at the moment. Check back soon." },
+    "list.filter_all.label":    { "type": "text", "value": "All events" },
+    "list.filter_services.label":{ "type": "text", "value": "Services" },
+    "list.filter_studies.label":{ "type": "text", "value": "Study groups" }
+  },
+
+  "latest_sermons": {
+    "_page_key_alias": "latest-sermons",
+    "_section_order": ["hero", "intro", "featured", "list"],
+
+    "hero.title":    { "type": "text", "value": "Sermon Library" },
+    "hero.subtitle": { "type": "text", "value": "Teachings from Bishop Wilson and YDM." },
+
+    "intro.body": { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "Optional — 1 paragraph framing the library." },
+
+    "featured.title": { "type": "text", "value": "Latest sermon" },
+
+    "list.title": { "type": "text", "value": "All sermons" },
+    "list.empty_state": { "type": "text", "value": "No sermons published yet." },
+    "list.filter_all.label":       { "type": "text", "value": "All" },
+    "list.filter_expository.label":{ "type": "text", "value": "Expository" },
+    "list.filter_narrative.label": { "type": "text", "value": "Narrative" },
+    "list.filter_textual.label":   { "type": "text", "value": "Textual" },
+    "list.filter_topical.label":   { "type": "text", "value": "Topical" },
+    "list.search.placeholder":     { "type": "text", "value": "Search sermons, scripture, or series…" }
+  },
+
+  "our_campaigns": {
+    "_page_key_alias": "our-campaigns",
+    "_section_order": ["hero", "intro", "list", "other_ways"],
+
+    "hero.title":    { "type": "text", "value": "Give" },
+    "hero.subtitle": { "type": "text", "value": "Your generosity moves the mission forward." },
+
+    "intro.body": { "type": "richtext", "value": "At Yeshua Deliverance Ministries, our mission is to reach souls, build families, and impact communities with the love and power of Jesus Christ. Every donation you make is more than just a contribution — it is a seed of faith that fuels the growth and expansion of our ministries." },
+
+    "list.empty_state": { "type": "text", "value": "No active campaigns at the moment." },
+
+    "other_ways.title": { "type": "text", "value": "Other ways to give" },
+    "other_ways.inperson.label": { "type": "text", "value": "Give in person" },
+    "other_ways.inperson.body":  { "type": "richtext", "value": "At any Yeshua Sunday Service or Bible Study gathering." },
+    "other_ways.mail.label":     { "type": "text", "value": "Give by mail" },
+    "other_ways.mail.body":      { "type": "richtext", "value": "Send cheques payable to YDM inc. — P.O. Box #20001, Chinguacousy Rd, Brampton, ON L6Y 0J0." },
+    "other_ways.monthly.label":  { "type": "text", "value": "Partner with us monthly" },
+    "other_ways.monthly.body":   { "type": "richtext", "value": "Set up a recurring gift to become a YDM ministry partner." },
+
+    "thank_you.line": { "type": "text", "value": "🙏 Thank you for standing with YDM and helping us advance the Kingdom of God." }
+  },
+
+  "blog_page": {
+    "_page_key_alias": "blog-page",
+    "_section_order": ["hero", "intro", "list"],
+
+    "hero.title":    { "type": "text", "value": "Blog" },
+    "hero.subtitle": { "type": "text", "value": "Reflections on faith, life, and the Word." },
+
+    "intro.body": { "type": "richtext", "value": null, "__needs_authoring__": true, "__hint__": "Optional — 1 paragraph framing the blog." },
+
+    "list.empty_state": { "type": "text", "value": "No posts yet. Check back soon." },
+    "list.filter_all.label":    { "type": "text", "value": "All" },
+    "list.filter_faith.label":  { "type": "text", "value": "Faith" },
+    "list.filter_word.label":   { "type": "text", "value": "God's Word" },
+    "list.filter_jesus.label":  { "type": "text", "value": "Jesus" },
+    "list.search.placeholder":  { "type": "text", "value": "Search articles…" }
+  }
+}

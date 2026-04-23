@@ -1,0 +1,19 @@
+== Changelog ==
+
+
+= 1.1.1 - 2025-07-17 =
+* Bug Fix: Fix Elementor Buttons displaying in Editor.
+* Bug Fix: Fixed Events months view displaying.
+
+
+= 1.1.0 - 2025-04-22 =
+* Tweak: Importer optimization.
+* Tweak: Added `CMSMasters Framework` plugin.
+
+
+= 1.0.1 - 2025-03-12 =
+* Adding Envato Elements activation.
+
+
+= 1.0.0 - 2025-03-12 =
+* Release
