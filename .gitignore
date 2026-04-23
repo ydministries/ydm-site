@@ -19,8 +19,6 @@ npm-debug.log*
 # vercel
 .vercel/
 
-# sensitive archive files
-archive/wordpress/exports/uploads/cmsmasters/faith-connect/token-data/
 
 # large files (exceed GitHub limits)
 archive/wordpress/scrape/styles.json
