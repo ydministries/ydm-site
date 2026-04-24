@@ -144,13 +144,19 @@ async function main() {
       for (const file of files) {
         const refs = extractFieldRefs(file);
         for (const ref of refs) {
-          if (!dbKeys.has(ref.fieldKey)) {
-            allViolations.push({
-              file: ref.file,
-              line: ref.line,
-              message: `fieldKey "${ref.fieldKey}" not found in page_content table`,
-            });
-          }
+          // Direct match
+          if (dbKeys.has(ref.fieldKey)) continue;
+          // EditableLink pattern: fieldKey is a prefix, DB has .href + .label
+          if (
+            dbKeys.has(`${ref.fieldKey}.href`) &&
+            dbKeys.has(`${ref.fieldKey}.label`)
+          ) continue;
+
+          allViolations.push({
+            file: ref.file,
+            line: ref.line,
+            message: `fieldKey "${ref.fieldKey}" not found in page_content table`,
+          });
         }
       }
       console.log(`  DB: ${dbKeys.size} keys loaded from page_content`);

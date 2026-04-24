@@ -5,6 +5,23 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-04-24] - 23f3711
+- fix: DOMPurify wrap, plain-text EditableContent, .single() removal, 78 per-page SEO seed rows
+
+## [2026-04-24] - 2e946cf
+- feat: initial Next.js 16 scaffold — primitives, layout, home page, SEO metadata from DB
+
+## [2026-04-23] - e2aebbc
+- chore: R2 media mapping, CLAUDE.md 2-tier role system, remove WP styles.json
+
+## [2026-04-23] - 081cb74
+- chore: restore theme license token-data to repo
+
+## [2026-04-23] - d11d8cc
+- chore: initial commit — migration scaffolding + WP scrape + SQL migrations
+
+---
+
 ## 2026-04-07
 
 - chore: Reorganize project folder to match FOM structure

@@ -5,12 +5,14 @@ import { useContent } from "./ContentProvider";
 import type { HTMLAttributes } from "react";
 
 /**
- * Editable link — reads both href and label from page_content.
+ * EditableLink — renders an anchor whose label and href come from a paired set of DB rows.
+ * fieldKey is a PREFIX. The component reads:
+ *   `${fieldKey}.label` → visible text
+ *   `${fieldKey}.href`  → destination URL
+ * Example: <EditableLink fieldKey="cta.primary" /> reads cta.primary.label + cta.primary.href.
  *
- * Convention: the href field_key ends in ".href" and the label
- * field_key ends in ".label". Pass the base prefix as fieldKey
- * (e.g. "hero.cta_primary") and this component reads both
- * "{fieldKey}.href" and "{fieldKey}.label".
+ * Zero-fallback: missing either row → dev placeholder, prod warn.
+ * Do NOT add labelKey/hrefKey/children/fallback props — this interface is intentional.
  */
 interface EditableLinkProps extends HTMLAttributes<HTMLAnchorElement> {
   fieldKey: string;

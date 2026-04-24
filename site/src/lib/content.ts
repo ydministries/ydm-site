@@ -36,3 +36,40 @@ export async function fetchPageContent(
   }
   return map;
 }
+
+export interface AssetRow {
+  id: string;
+  asset_key: string;
+  storage_path: string;
+  alt: string | null;
+  caption: string | null;
+  width: number | null;
+  height: number | null;
+  mime_type: string | null;
+}
+
+/**
+ * Fetch assets matching a key prefix (e.g. "about." returns all about-page assets).
+ * Returns a Map keyed by asset_key.
+ */
+export async function fetchAssets(
+  prefix: string
+): Promise<Map<string, AssetRow>> {
+  const supabase = createServerClient();
+
+  const { data, error } = await supabase
+    .from("assets")
+    .select("*")
+    .like("asset_key", `${prefix}%`);
+
+  if (error) {
+    console.error(`[assets] Failed to fetch prefix="${prefix}":`, error);
+    return new Map();
+  }
+
+  const map = new Map<string, AssetRow>();
+  for (const row of data ?? []) {
+    map.set(row.asset_key, row);
+  }
+  return map;
+}
