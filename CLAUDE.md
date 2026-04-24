@@ -21,7 +21,7 @@ This project uses a **custom-built admin panel** with Supabase as the database �
 - **Database:** Supabase (PostgreSQL + Auth + Storage)
 - **CMS:** Custom admin panel at `/admin/*` with inline editing on public pages
 - **Content storage:** `page_content` table in Supabase (every piece of text on the site)
-- **Auth:** Supabase Auth with 5-tier role system (member → admin)
+- **Auth:** Supabase Auth with 2-tier role system — `bishop` (default for new users, assigned by the on_auth_user_created trigger) and `admin` (elevated, promoted manually via UPDATE profiles SET role = 'admin'). The role column has a CHECK constraint: role IN ('admin', 'bishop').
 - **Payments:** Stripe
 - **Email:** Resend
 
