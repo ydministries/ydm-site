@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ydm-gold: #D38605;
+  --color-ydm-cream: #F8F1E6;
+  --color-ydm-ink: #1A0F00;
+  --color-ydm-off: #FDFDFD;
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Barlow", sans-serif;
+}
