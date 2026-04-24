@@ -5,6 +5,9 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-04-24] - 50be2c8
+- feat: codegen 38 skeleton pages, URL restructure, EditableLink prefix pattern
+
 ## [2026-04-24] - 23f3711
 - fix: DOMPurify wrap, plain-text EditableContent, .single() removal, 78 per-page SEO seed rows
 

@@ -5,6 +5,7 @@ import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
 import { EditableContent } from "@/components/EditableContent";
 import { EditableRichText } from "@/components/EditableRichText";
+import { TextList } from "@/components/ListSection";
 
 const PAGE_KEY = "contact";
 
@@ -56,16 +57,8 @@ export default async function ContactPage() {
         </section>
         {/* section: form */}
         <section>
-          {/* TODO: EditableList not yet implemented — 9 repeating items under "form.category" */}
-          <EditableContent fieldKey="form.category.1.label" as="p" />
-          <EditableContent fieldKey="form.category.2.label" as="p" />
-          <EditableContent fieldKey="form.category.3.label" as="p" />
-          <EditableContent fieldKey="form.category.4.label" as="p" />
-          <EditableContent fieldKey="form.category.5.label" as="p" />
-          <EditableContent fieldKey="form.category.6.label" as="p" />
-          <EditableContent fieldKey="form.category.7.label" as="p" />
-          <EditableContent fieldKey="form.category.8.label" as="p" />
-          <EditableContent fieldKey="form.category.9.label" as="p" />
+          {/* validate:list-prefix="form.category" */}
+          <TextList itemPrefix="form.category" />
           <EditableContent fieldKey="form.title" as="h2" />
           <EditableRichText fieldKey="form.intro" />
           <EditableContent fieldKey="form.field.name_label" as="p" />

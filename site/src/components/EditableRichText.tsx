@@ -2,6 +2,7 @@
 
 import DOMPurify from "isomorphic-dompurify";
 import { useContent } from "./ContentProvider";
+import { useItemScope } from "./ItemProvider";
 import type { HTMLAttributes } from "react";
 
 /**
@@ -18,7 +19,12 @@ export function EditableRichText({
   ...rest
 }: EditableRichTextProps) {
   const { content } = useContent();
-  const row = content.get(fieldKey);
+  const scope = useItemScope();
+  const resolvedKey = scope
+    ? `${scope.prefix}.${scope.indexKey}.${fieldKey}`
+    : fieldKey;
+
+  const row = content.get(resolvedKey);
 
   if (!row) {
     if (process.env.NODE_ENV === "development") {
@@ -28,7 +34,7 @@ export function EditableRichText({
           style={{ color: "red", fontWeight: "bold" }}
           {...rest}
         >
-          [MISSING: {fieldKey}]
+          [MISSING: {resolvedKey}]
         </div>
       );
     }

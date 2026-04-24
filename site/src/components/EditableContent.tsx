@@ -1,6 +1,7 @@
 "use client";
 
 import { useContent } from "./ContentProvider";
+import { useItemScope } from "./ItemProvider";
 import type { ElementType, HTMLAttributes } from "react";
 
 /**
@@ -27,7 +28,14 @@ export function EditableContent({
   ...rest
 }: EditableContentProps) {
   const { content } = useContent();
-  const row = content.get(fieldKey);
+  const scope = useItemScope();
+
+  // Inside an ItemProvider, prepend the list scope to the fieldKey
+  const resolvedKey = scope
+    ? `${scope.prefix}.${scope.indexKey}.${fieldKey}`
+    : fieldKey;
+
+  const row = content.get(resolvedKey);
 
   if (!row) {
     if (process.env.NODE_ENV === "development") {
@@ -37,7 +45,7 @@ export function EditableContent({
           style={{ color: "red", fontWeight: "bold" }}
           {...rest}
         >
-          [MISSING: {fieldKey}]
+          [MISSING: {resolvedKey}]
         </Tag>
       );
     }

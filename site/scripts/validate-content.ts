@@ -34,6 +34,8 @@ interface FieldRef {
   fieldKey: string;
   file: string;
   line: number;
+  listPrefix?: string;    // set when inside a validate:list-prefix scope
+  isItemPrefix?: boolean; // set for itemPrefix="..." on EditableList
 }
 
 function findTsxFiles(dir: string): string[] {
@@ -54,13 +56,71 @@ function findTsxFiles(dir: string): string[] {
 function extractFieldRefs(filePath: string): FieldRef[] {
   const refs: FieldRef[] = [];
   const content = fs.readFileSync(filePath, "utf-8");
+  const lines = content.split("\n");
   const relPath = path.relative(process.cwd(), filePath);
 
-  const pattern = /fieldKey="([^"]+)"/g;
-  let match;
-  while ((match = pattern.exec(content)) !== null) {
-    const lineNum = content.slice(0, match.index).split("\n").length;
-    refs.push({ fieldKey: match[1], file: relPath, line: lineNum });
+  // Extract all fieldKey refs, detecting list scope from validate:list-prefix comments.
+  // Scope rule: a validate:list-prefix="X" comment applies only to the NEXT line that
+  // contains a <LinkList>, <TextList>, or <ContentBlockList> component.
+  // All other fieldKey refs are treated as top-level.
+  let pendingListPrefix: string | null = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const lineNum = i + 1;
+
+    // Detect list-prefix hint
+    const listMatch = line.match(/validate:list-prefix="([^"]+)"/);
+    if (listMatch) {
+      pendingListPrefix = listMatch[1];
+      continue;
+    }
+
+    // If this line has a list component, the itemPrefix is list-scoped — skip fieldKey extraction
+    // (the list wrapper reads itemPrefix, not fieldKey)
+    if (
+      pendingListPrefix &&
+      (line.includes("<LinkList") || line.includes("<TextList") || line.includes("<ContentBlockList"))
+    ) {
+      // Extract itemPrefix for validation
+      const ipMatch = line.match(/itemPrefix="([^"]+)"/);
+      if (ipMatch) {
+        refs.push({
+          fieldKey: ipMatch[1],
+          file: relPath,
+          line: lineNum,
+          isItemPrefix: true,
+        });
+      }
+      pendingListPrefix = null;
+      continue;
+    }
+
+    // If we had a pending prefix but this line isn't a list component, clear it
+    if (pendingListPrefix && !line.trim().startsWith("{/*")) {
+      pendingListPrefix = null;
+    }
+
+    // Extract fieldKey references from this line
+    const fieldKeyPattern = /fieldKey="([^"]*)"/g;
+    let fkMatch;
+    while ((fkMatch = fieldKeyPattern.exec(line)) !== null) {
+      const rawKey = fkMatch[1];
+      refs.push({ fieldKey: rawKey, file: relPath, line: lineNum });
+    }
+
+    // Also extract standalone itemPrefix references
+    if (line.includes("itemPrefix=") && !line.includes("<LinkList") && !line.includes("<TextList") && !line.includes("<ContentBlockList")) {
+      const ipMatch = line.match(/itemPrefix="([^"]+)"/);
+      if (ipMatch) {
+        refs.push({
+          fieldKey: ipMatch[1],
+          file: relPath,
+          line: lineNum,
+          isItemPrefix: true,
+        });
+      }
+    }
   }
   return refs;
 }
@@ -92,7 +152,12 @@ function checkSyntax(filePath: string): Violation[] {
   return violations;
 }
 
-async function fetchAllKeys(): Promise<Set<string>> {
+interface DbRow {
+  page_key: string;
+  field_key: string;
+}
+
+async function fetchAllKeys(): Promise<{ keys: Set<string>; rows: DbRow[] }> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -100,7 +165,7 @@ async function fetchAllKeys(): Promise<Set<string>> {
     console.warn(
       "⚠ NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY not set — skipping DB check"
     );
-    return new Set();
+    return { keys: new Set(), rows: [] };
   }
 
   const supabase = createClient(url, key);
@@ -122,7 +187,7 @@ async function fetchAllKeys(): Promise<Set<string>> {
     keys.add(row.field_key);
     keys.add(`${row.page_key}:${row.field_key}`);
   }
-  return keys;
+  return { keys, rows: (data ?? []) as DbRow[] };
 }
 
 // ── Main ──
@@ -138,12 +203,59 @@ async function main() {
 
   // Pass 2: DB key check
   if (!SYNTAX_ONLY) {
-    const dbKeys = await fetchAllKeys();
+    const { keys: dbKeys, rows: allDbRows } = await fetchAllKeys();
 
     if (dbKeys.size > 0) {
+      // Build a sub-key index for list validation: prefix → Set<subKey>
+      const listSubKeys = new Map<string, Set<string>>();
+      for (const row of allDbRows) {
+        // Match patterns like "beliefs.item1.title" or "cta.1.href"
+        const m = row.field_key.match(/^(.+?)\.(?:item)?\d+\.(.+)$/);
+        if (m) {
+          const [, prefix, subKey] = m;
+          if (!listSubKeys.has(prefix)) listSubKeys.set(prefix, new Set());
+          listSubKeys.get(prefix)!.add(subKey);
+        }
+      }
+
       for (const file of files) {
         const refs = extractFieldRefs(file);
         for (const ref of refs) {
+          // itemPrefix — just check that any rows with this prefix exist
+          if (ref.isItemPrefix) {
+            if (listSubKeys.has(ref.fieldKey)) continue;
+            // Also check with "item" prefix pattern
+            const hasAny = [...dbKeys].some((k) =>
+              k.match(new RegExp(`^${ref.fieldKey.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.(?:item)?\\d+\\.`))
+            );
+            if (hasAny) continue;
+            allViolations.push({
+              file: ref.file,
+              line: ref.line,
+              message: `itemPrefix "${ref.fieldKey}" has no matching rows in page_content`,
+            });
+            continue;
+          }
+
+          // List-scoped fieldKey — check against the sub-key index
+          if (ref.listPrefix) {
+            const subs = listSubKeys.get(ref.listPrefix);
+            if (subs) {
+              // Direct sub-key match
+              if (ref.fieldKey === "" || subs.has(ref.fieldKey)) continue;
+              // EditableLink inside list: empty fieldKey resolves to .href/.label
+              if (ref.fieldKey === "" && subs.has("href") && subs.has("label")) continue;
+              // Link pair: fieldKey is a sub-prefix with .href + .label
+              if (subs.has(`${ref.fieldKey}.href`) && subs.has(`${ref.fieldKey}.label`)) continue;
+            }
+            allViolations.push({
+              file: ref.file,
+              line: ref.line,
+              message: `fieldKey "${ref.fieldKey}" not found under any ${ref.listPrefix}.<n>.* in page_content`,
+            });
+            continue;
+          }
+
           // Direct match
           if (dbKeys.has(ref.fieldKey)) continue;
           // EditableLink pattern: fieldKey is a prefix, DB has .href + .label

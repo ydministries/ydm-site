@@ -5,6 +5,7 @@ import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
 import { EditableContent } from "@/components/EditableContent";
 import { EditableRichText } from "@/components/EditableRichText";
+import { LinkList } from "@/components/ListSection";
 
 const PAGE_KEY = "sermon.discovering_the_power_of_waiting";
 
@@ -51,7 +52,8 @@ export default async function SermonDiscoveringThePowerOfWaitingPage() {
         </section>
         {/* section: cta */}
         <section>
-          {/* TODO: EditableList not yet implemented — 1 repeating items under "cta" */}
+          {/* validate:list-prefix="cta" */}
+          <LinkList itemPrefix="cta" />
         </section>
       </AssetProviderWrapper>
     </ContentProviderWrapper>

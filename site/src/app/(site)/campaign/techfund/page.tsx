@@ -5,6 +5,7 @@ import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
 import { EditableContent } from "@/components/EditableContent";
 import { EditableRichText } from "@/components/EditableRichText";
+import { LinkList } from "@/components/ListSection";
 
 const PAGE_KEY = "campaign.techfund";
 
@@ -61,7 +62,8 @@ export default async function CampaignTechfundPage() {
         </section>
         {/* section: cta */}
         <section>
-          {/* TODO: EditableList not yet implemented — 4 repeating items under "cta" */}
+          {/* validate:list-prefix="cta" */}
+          <LinkList itemPrefix="cta" />
         </section>
       </AssetProviderWrapper>
     </ContentProviderWrapper>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useContent } from "./ContentProvider";
+import { useItemScope } from "./ItemProvider";
 import type { HTMLAttributes } from "react";
 
 /**
@@ -24,7 +25,12 @@ export function EditableImage({
   ...rest
 }: EditableImageProps) {
   const { content } = useContent();
-  const row = content.get(fieldKey);
+  const scope = useItemScope();
+  const resolvedKey = scope
+    ? `${scope.prefix}.${scope.indexKey}.${fieldKey}`
+    : fieldKey;
+
+  const row = content.get(resolvedKey);
 
   if (!row) {
     if (process.env.NODE_ENV === "development") {
@@ -40,7 +46,7 @@ export function EditableImage({
           }}
           {...rest}
         >
-          [MISSING IMAGE: {fieldKey}]
+          [MISSING IMAGE: {resolvedKey}]
         </div>
       );
     }

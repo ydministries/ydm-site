@@ -5,6 +5,7 @@ import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
 import { EditableContent } from "@/components/EditableContent";
 import { EditableRichText } from "@/components/EditableRichText";
+import { LinkList } from "@/components/ListSection";
 
 const PAGE_KEY = "sermon.i_ruined_my_lifeis_there_hope_for_me";
 
@@ -56,7 +57,8 @@ export default async function SermonIRuinedMyLifeisThereHopeForMePage() {
         </section>
         {/* section: cta */}
         <section>
-          {/* TODO: EditableList not yet implemented — 6 repeating items under "cta" */}
+          {/* validate:list-prefix="cta" */}
+          <LinkList itemPrefix="cta" />
         </section>
       </AssetProviderWrapper>
     </ContentProviderWrapper>

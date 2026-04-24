@@ -7,6 +7,7 @@ import { EditableContent } from "@/components/EditableContent";
 import { EditableRichText } from "@/components/EditableRichText";
 import { EditableImage } from "@/components/EditableImage";
 import { EditableLink } from "@/components/EditableLink";
+import { ContentBlockList } from "@/components/ListSection";
 
 const PAGE_KEY = "about";
 
@@ -50,17 +51,8 @@ export default async function AboutPage() {
         </section>
         {/* section: beliefs */}
         <section>
-          {/* TODO: EditableList not yet implemented — 5 repeating items under "beliefs" */}
-          <EditableContent fieldKey="beliefs.item1.title" as="h2" />
-          <EditableRichText fieldKey="beliefs.item1.body" />
-          <EditableContent fieldKey="beliefs.item2.title" as="h2" />
-          <EditableRichText fieldKey="beliefs.item2.body" />
-          <EditableContent fieldKey="beliefs.item3.title" as="h2" />
-          <EditableRichText fieldKey="beliefs.item3.body" />
-          <EditableContent fieldKey="beliefs.item4.title" as="h2" />
-          <EditableRichText fieldKey="beliefs.item4.body" />
-          <EditableContent fieldKey="beliefs.item5.title" as="h2" />
-          <EditableRichText fieldKey="beliefs.item5.body" />
+          {/* validate:list-prefix="beliefs" */}
+          <ContentBlockList itemPrefix="beliefs" subKeys={[{ key: "title", as: "h3", type: "text" as const }, { key: "body", as: "p", type: "richtext" as const }]} />
           <EditableContent fieldKey="beliefs.title" as="h2" />
           <EditableRichText fieldKey="beliefs.intro" />
         </section>

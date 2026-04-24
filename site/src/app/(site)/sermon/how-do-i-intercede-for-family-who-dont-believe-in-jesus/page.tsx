@@ -5,6 +5,7 @@ import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
 import { EditableContent } from "@/components/EditableContent";
 import { EditableRichText } from "@/components/EditableRichText";
+import { LinkList } from "@/components/ListSection";
 
 const PAGE_KEY = "sermon.how_do_i_intercede_for_family_who_dont_believe_in_jesus";
 
@@ -59,7 +60,8 @@ export default async function SermonHowDoIIntercedeForFamilyWhoDontBelieveInJesu
         </section>
         {/* section: cta */}
         <section>
-          {/* TODO: EditableList not yet implemented — 1 repeating items under "cta" */}
+          {/* validate:list-prefix="cta" */}
+          <LinkList itemPrefix="cta" />
         </section>
       </AssetProviderWrapper>
     </ContentProviderWrapper>
