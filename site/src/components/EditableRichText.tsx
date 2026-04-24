@@ -1,12 +1,12 @@
 "use client";
 
+import DOMPurify from "isomorphic-dompurify";
 import { useContent } from "./ContentProvider";
 import type { HTMLAttributes } from "react";
 
 /**
  * Renders richtext / html / markdown content from the DB.
- * Uses dangerouslySetInnerHTML — DOMPurify sanitization will be
- * added when isomorphic-dompurify is installed (Step 9).
+ * All HTML is sanitized via DOMPurify before rendering.
  */
 interface EditableRichTextProps extends HTMLAttributes<HTMLDivElement> {
   fieldKey: string;
@@ -38,7 +38,7 @@ export function EditableRichText({
   return (
     <div
       className={className}
-      dangerouslySetInnerHTML={{ __html: row.value }}
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(row.value) }}
       {...rest}
     />
   );

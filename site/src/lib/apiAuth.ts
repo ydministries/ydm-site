@@ -21,13 +21,14 @@ async function getProfile(): Promise<AuthResult | null> {
 
   if (authError || !user) return null;
 
-  const { data: profile, error: profileError } = await supabase
+  const { data, error: profileError } = await supabase
     .from("profiles")
     .select("role, email")
-    .eq("id", user.id)
-    .single();
+    .eq("id", user.id);
 
-  if (profileError || !profile) return null;
+  if (profileError || !data || data.length === 0) return null;
+
+  const profile = data[0];
 
   return {
     userId: user.id,

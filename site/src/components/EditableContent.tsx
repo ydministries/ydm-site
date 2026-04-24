@@ -4,7 +4,11 @@ import { useContent } from "./ContentProvider";
 import type { ElementType, HTMLAttributes } from "react";
 
 /**
- * Zero-fallback editable text component.
+ * Zero-fallback editable **plain text** component.
+ *
+ * Renders the DB value as a React text child — React auto-escapes it,
+ * so HTML-meaningful characters like < > & render as literal text.
+ * For rich/HTML content, use EditableRichText instead.
  *
  * No `defaultValue`. No `fallback`. No `children`. No `placeholder`.
  * Missing key → loud "[MISSING: fieldKey]" in dev.
@@ -40,22 +44,9 @@ export function EditableContent({
     return null;
   }
 
-  const value = row.value;
-
-  // For richtext/html, render as innerHTML (will add DOMPurify sanitization later)
-  if (row.value_type === "richtext" || row.value_type === "html") {
-    return (
-      <Tag
-        className={className}
-        dangerouslySetInnerHTML={{ __html: value }}
-        {...rest}
-      />
-    );
-  }
-
   return (
     <Tag className={className} {...rest}>
-      {value}
+      {row.value}
     </Tag>
   );
 }
