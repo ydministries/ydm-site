@@ -5,6 +5,9 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-04-24] - 695e7d8
+- feat: EditableList primitive, scope-aware editable keys, list-page codegen
+
 ## [2026-04-24] - 50be2c8
 - feat: codegen 38 skeleton pages, URL restructure, EditableLink prefix pattern
 

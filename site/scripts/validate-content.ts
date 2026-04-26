@@ -60,10 +60,13 @@ function extractFieldRefs(filePath: string): FieldRef[] {
   const relPath = path.relative(process.cwd(), filePath);
 
   // Extract all fieldKey refs, detecting list scope from validate:list-prefix comments.
-  // Scope rule: a validate:list-prefix="X" comment applies only to the NEXT line that
-  // contains a <LinkList>, <TextList>, or <ContentBlockList> component.
-  // All other fieldKey refs are treated as top-level.
+  // Scope rule: a validate:list-prefix="X" comment applies to the NEXT line that
+  // contains a <LinkList>, <TextList>, or <ContentBlockList> (single-line) or
+  // <EditableList> (multi-line, scope spans until the closing /> or </EditableList>).
+  // Nested fieldKey refs inside an EditableList scope resolve against <prefix>.<n>.<key>.
   let pendingListPrefix: string | null = null;
+  let activeListPrefix: string | null = null;
+  let activeListIndent = -1;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -76,8 +79,7 @@ function extractFieldRefs(filePath: string): FieldRef[] {
       continue;
     }
 
-    // If this line has a list component, the itemPrefix is list-scoped — skip fieldKey extraction
-    // (the list wrapper reads itemPrefix, not fieldKey)
+    // Pre-built list components (single-line, self-closing): LinkList / TextList / ContentBlockList
     if (
       pendingListPrefix &&
       (line.includes("<LinkList") || line.includes("<TextList") || line.includes("<ContentBlockList"))
@@ -96,6 +98,37 @@ function extractFieldRefs(filePath: string): FieldRef[] {
       continue;
     }
 
+    // <EditableList — multi-line scope. Nested fieldKey refs resolve to <prefix>.<n>.<key>.
+    // Scope ends on the matching closer: a line that trims to "/>" at the SAME indent column
+    // as the opener (so inner self-closers like "<line ... />" at deeper indent don't close it).
+    if (pendingListPrefix && line.includes("<EditableList")) {
+      activeListPrefix = pendingListPrefix;
+      activeListIndent = line.match(/^(\s*)/)?.[1].length ?? 0;
+      pendingListPrefix = null;
+      // itemPrefix on the same line as the opener — emit it now so we don't double-count below
+      const ipMatch = line.match(/itemPrefix="([^"]+)"/);
+      if (ipMatch) {
+        refs.push({
+          fieldKey: ipMatch[1],
+          file: relPath,
+          line: lineNum,
+          isItemPrefix: true,
+        });
+      }
+      continue;
+    }
+
+    // End of EditableList scope — "/>" at the opener's indent, or </EditableList>.
+    if (activeListPrefix) {
+      const trimmed = line.trim();
+      const indent = line.match(/^(\s*)/)?.[1].length ?? 0;
+      if ((trimmed === "/>" && indent === activeListIndent) || line.includes("</EditableList>")) {
+        activeListPrefix = null;
+        activeListIndent = -1;
+        continue;
+      }
+    }
+
     // If we had a pending prefix but this line isn't a list component, clear it
     if (pendingListPrefix && !line.trim().startsWith("{/*")) {
       pendingListPrefix = null;
@@ -106,7 +139,12 @@ function extractFieldRefs(filePath: string): FieldRef[] {
     let fkMatch;
     while ((fkMatch = fieldKeyPattern.exec(line)) !== null) {
       const rawKey = fkMatch[1];
-      refs.push({ fieldKey: rawKey, file: relPath, line: lineNum });
+      refs.push({
+        fieldKey: rawKey,
+        file: relPath,
+        line: lineNum,
+        listPrefix: activeListPrefix ?? undefined,
+      });
     }
 
     // Also extract standalone itemPrefix references
