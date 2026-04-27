@@ -1,11 +1,65 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ydm-gold: #D38605;
-  --color-ydm-cream: #F8F1E6;
-  --color-ydm-ink: #1A0F00;
-  --color-ydm-off: #FDFDFD;
+  /* Brand palette — sampled from live ydministries.ca Elementor CSS */
+  --color-ydm-gold:        #D38605;   /* --e-global-color-accent — "MINISTRIES" gold */
+  --color-ydm-gold-light:  #FFBC3F;   /* lighter accent variant on live (--8fba85b) */
+  --color-ydm-amber:       #ED5A2F;   /* warm secondary accent — countdown / hover */
+  --color-ydm-cream:       #F8F1E6;   /* --e-global-color-alternate */
+  --color-ydm-ink:         #1D1D1D;   /* --e-global-color-secondary — headings + dark sections */
+  --color-ydm-text:        #252628;   /* --e-global-color-text — body text */
+  --color-ydm-muted:       #968B87;   /* --e-global-color-tertiary */
+  --color-ydm-navy:        #1D3557;   /* --e-global-color-primary — floating service card */
+  --color-ydm-line:        #DEDEDE;   /* --e-global-color-border */
+  --color-ydm-surface:     #FFFFFF;
+  --color-ydm-dark:        #0E0E0E;   /* footer */
 
-  --font-display: "Bebas Neue", sans-serif;
-  --font-body: "Barlow", sans-serif;
+  /* Type stack — backed by next/font/local CSS variables (set in app/layout.tsx) */
+  --font-display: var(--font-bebas), "Bebas Neue", Impact, sans-serif;
+  --font-body:    var(--font-barlow), system-ui, sans-serif;
+  --font-serif:   var(--font-lora), Georgia, serif;
+  --font-accent:  var(--font-barlow-condensed), "Barlow Condensed", system-ui, sans-serif;
+  --font-script:  var(--font-abuget), "Brush Script MT", cursive;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-body text-ydm-text antialiased;
+  }
+  h1 {
+    @apply font-display uppercase tracking-wide text-5xl sm:text-6xl text-ydm-ink leading-none mb-6;
+  }
+  h2 {
+    @apply font-display uppercase tracking-wide text-4xl text-ydm-ink mt-12 mb-4;
+  }
+  h3 {
+    @apply font-display uppercase tracking-wide text-2xl text-ydm-ink mt-8 mb-3;
+  }
+  p {
+    @apply font-serif text-base leading-relaxed text-ydm-text mb-4;
+  }
+  a {
+    @apply text-ydm-gold hover:text-ydm-amber transition-colors;
+  }
+
+  /* Defensive: any leftover inline <svg> in editable prose (e.g. WP
+   * share-widget remnants we missed) must not render at viewport width. Used
+   * by SermonTemplate, MinistryTemplate, and any future BlogTemplate. */
+  .editable-prose svg {
+    @apply inline-block h-6 max-w-6;
+  }
+  .editable-prose a[href*="facebook.com/sharer"],
+  .editable-prose a[href*="twitter.com/intent"],
+  .editable-prose a[href*="linkedin.com/shareArticle"] {
+    @apply hidden;
+  }
 }

@@ -1,0 +1,808 @@
+{
+  "generatedAt": "2026-04-26T17:55:54.845Z",
+  "count": 64,
+  "items": [
+    {
+      "oldPath": "/",
+      "oldSlug": "home",
+      "newPath": "/",
+      "type": "home",
+      "key": "home",
+      "scrapeFile": "home.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/aboutydm/",
+      "oldSlug": "aboutydm",
+      "newPath": "/about",
+      "type": "page",
+      "key": "about",
+      "scrapeFile": "aboutydm.json",
+      "aliases": [
+        "/about-us/"
+      ]
+    },
+    {
+      "oldPath": "/ask/",
+      "oldSlug": "ask",
+      "newPath": "/ask",
+      "type": "page",
+      "key": "ask",
+      "scrapeFile": "ask.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/blog-page/",
+      "oldSlug": "blog-page",
+      "newPath": "/blog",
+      "type": "index",
+      "key": "blog.index",
+      "scrapeFile": "blog-page.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/author/ydm-admin/",
+      "oldSlug": "author/ydm-admin",
+      "newPath": "/blog?author=ydm-admin",
+      "type": "index_filter",
+      "key": "blog.author.ydm-admin",
+      "scrapeFile": "author_ydm-admin.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/category/faith/",
+      "oldSlug": "category/faith",
+      "newPath": "/blog?category=faith",
+      "type": "index_filter",
+      "key": "blog.cat.faith",
+      "scrapeFile": "category_faith.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/category/gods-word/",
+      "oldSlug": "category/gods-word",
+      "newPath": "/blog?category=gods-word",
+      "type": "index_filter",
+      "key": "blog.cat.gods-word",
+      "scrapeFile": "category_gods-word.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/category/jesus/",
+      "oldSlug": "category/jesus",
+      "newPath": "/blog?category=jesus",
+      "type": "index_filter",
+      "key": "blog.cat.jesus",
+      "scrapeFile": "category_jesus.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/tag/churchfamily/",
+      "oldSlug": "tag/churchfamily",
+      "newPath": "/blog?tag=churchfamily",
+      "type": "index_filter",
+      "key": "blog.tag.churchfamily",
+      "scrapeFile": "tag_churchfamily.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/tag/godsword/",
+      "oldSlug": "tag/godsword",
+      "newPath": "/blog?tag=godsword",
+      "type": "index_filter",
+      "key": "blog.tag.godsword",
+      "scrapeFile": "tag_godsword.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/tag/loveoneanother/",
+      "oldSlug": "tag/loveoneanother",
+      "newPath": "/blog?tag=loveoneanother",
+      "type": "index_filter",
+      "key": "blog.tag.loveoneanother",
+      "scrapeFile": "tag_loveoneanother.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/tag/pastor/",
+      "oldSlug": "tag/pastor",
+      "newPath": "/blog?tag=pastor",
+      "type": "index_filter",
+      "key": "blog.tag.pastor",
+      "scrapeFile": "tag_pastor.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/tag/podcast/",
+      "oldSlug": "tag/podcast",
+      "newPath": "/blog?tag=podcast",
+      "type": "index_filter",
+      "key": "blog.tag.podcast",
+      "scrapeFile": "tag_podcast.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/tag/worship/",
+      "oldSlug": "tag/worship",
+      "newPath": "/blog?tag=worship",
+      "type": "index_filter",
+      "key": "blog.tag.worship",
+      "scrapeFile": "tag_worship.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/discovering-the-power-of-waiting/",
+      "oldSlug": "discovering-the-power-of-waiting",
+      "newPath": "/blog/discovering-the-power-of-waiting",
+      "type": "blog",
+      "key": "blog.discovering-the-power-of-waiting",
+      "scrapeFile": "discovering-the-power-of-waiting.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison/",
+      "oldSlug": "do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
+      "newPath": "/blog/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
+      "type": "blog",
+      "key": "blog.do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
+      "scrapeFile": "do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/experiencing-the-freedom-of-gods-presence/",
+      "oldSlug": "experiencing-the-freedom-of-gods-presence",
+      "newPath": "/blog/experiencing-the-freedom-of-gods-presence",
+      "type": "blog",
+      "key": "blog.experiencing-the-freedom-of-gods-presence",
+      "scrapeFile": "experiencing-the-freedom-of-gods-presence.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/four-things-our-church-should-still-focus-on/",
+      "oldSlug": "four-things-our-church-should-still-focus-on",
+      "newPath": "/blog/four-things-our-church-should-still-focus-on",
+      "type": "blog",
+      "key": "blog.four-things-our-church-should-still-focus-on",
+      "scrapeFile": "four-things-our-church-should-still-focus-on.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/how-do-i-intercede-for-family-who-dont-believe-in-jesus/",
+      "oldSlug": "how-do-i-intercede-for-family-who-dont-believe-in-jesus",
+      "newPath": "/blog/how-do-i-intercede-for-family-who-dont-believe-in-jesus",
+      "type": "blog",
+      "key": "blog.how-do-i-intercede-for-family-who-dont-believe-in-jesus",
+      "scrapeFile": "how-do-i-intercede-for-family-who-dont-believe-in-jesus.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/how-to-develop-a-habit-of-worship/",
+      "oldSlug": "how-to-develop-a-habit-of-worship",
+      "newPath": "/blog/how-to-develop-a-habit-of-worship",
+      "type": "blog",
+      "key": "blog.how-to-develop-a-habit-of-worship",
+      "scrapeFile": "how-to-develop-a-habit-of-worship.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/i-ruined-my-lifeis-there-hope-for-me/",
+      "oldSlug": "i-ruined-my-lifeis-there-hope-for-me",
+      "newPath": "/blog/i-ruined-my-lifeis-there-hope-for-me",
+      "type": "blog",
+      "key": "blog.i-ruined-my-lifeis-there-hope-for-me",
+      "scrapeFile": "i-ruined-my-lifeis-there-hope-for-me.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/whats-your-view-of-marriage/",
+      "oldSlug": "whats-your-view-of-marriage",
+      "newPath": "/blog/whats-your-view-of-marriage",
+      "type": "blog",
+      "key": "blog.whats-your-view-of-marriage",
+      "scrapeFile": "whats-your-view-of-marriage.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/your-mission-should-you-choose-to-accept-it/",
+      "oldSlug": "your-mission-should-you-choose-to-accept-it",
+      "newPath": "/blog/your-mission-should-you-choose-to-accept-it",
+      "type": "blog",
+      "key": "blog.your-mission-should-you-choose-to-accept-it",
+      "scrapeFile": "your-mission-should-you-choose-to-accept-it.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/contact/",
+      "oldSlug": "contact",
+      "newPath": "/contact",
+      "type": "page",
+      "key": "contact",
+      "scrapeFile": "contact.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/events-page/",
+      "oldSlug": "events-page",
+      "newPath": "/events",
+      "type": "index",
+      "key": "events.index",
+      "scrapeFile": "events-page.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/events/category/services/",
+      "oldSlug": "events/category/services",
+      "newPath": "/events?category=services",
+      "type": "index_filter",
+      "key": "events.cat.services",
+      "scrapeFile": "events_category_services.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/events/category/study-group/",
+      "oldSlug": "events/category/study-group",
+      "newPath": "/events?category=study-group",
+      "type": "index_filter",
+      "key": "events.cat.study-group",
+      "scrapeFile": "events_category_study-group.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/event/weekly-bible-study-group/",
+      "oldSlug": "event/weekly-bible-study-group",
+      "newPath": "/events/weekly-bible-study-group",
+      "type": "event",
+      "key": "events.weekly-bible-study-group",
+      "scrapeFile": "event_weekly-bible-study-group.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/event/young-adults-connect/",
+      "oldSlug": "event/young-adults-connect",
+      "newPath": "/events/young-adults-connect",
+      "type": "event",
+      "key": "events.young-adults-connect",
+      "scrapeFile": "event_young-adults-connect.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/gallery/",
+      "oldSlug": "gallery",
+      "newPath": "/gallery",
+      "type": "page",
+      "key": "gallery",
+      "scrapeFile": "gallery.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/our-campaigns/",
+      "oldSlug": "our-campaigns",
+      "newPath": "/give",
+      "type": "index",
+      "key": "give.index",
+      "scrapeFile": "our-campaigns.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/campaigns/supportydm/",
+      "oldSlug": "campaigns/supportydm",
+      "newPath": "/give/supportydm",
+      "type": "campaign",
+      "key": "give.supportydm",
+      "scrapeFile": "campaigns_supportydm.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/campaigns/techfund/",
+      "oldSlug": "campaigns/techfund",
+      "newPath": "/give/techfund",
+      "type": "campaign",
+      "key": "give.techfund",
+      "scrapeFile": "campaigns_techfund.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/guestbook/",
+      "oldSlug": "guestbook",
+      "newPath": "/guestbook",
+      "type": "page",
+      "key": "guestbook",
+      "scrapeFile": "guestbook.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/live/",
+      "oldSlug": "live",
+      "newPath": "/live",
+      "type": "page",
+      "key": "live",
+      "scrapeFile": "live.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/maltoncog/",
+      "oldSlug": "maltoncog",
+      "newPath": "/locations/maltoncog",
+      "type": "location",
+      "key": "locations.maltoncog",
+      "scrapeFile": "maltoncog.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/westtoronto/",
+      "oldSlug": "westtoronto",
+      "newPath": "/locations/westtoronto",
+      "type": "location",
+      "key": "locations.westtoronto",
+      "scrapeFile": "westtoronto.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/our-ministries/",
+      "oldSlug": "our-ministries",
+      "newPath": "/ministries",
+      "type": "index",
+      "key": "ministries.index",
+      "scrapeFile": "our-ministries.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/ministries/ask-bishop/",
+      "oldSlug": "ministries/ask-bishop",
+      "newPath": "/ministries/ask-bishop",
+      "type": "ministry",
+      "key": "ministries.ask-bishop",
+      "scrapeFile": "ministries_ask-bishop.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/ministries/family/",
+      "oldSlug": "ministries/family",
+      "newPath": "/ministries/family",
+      "type": "ministry",
+      "key": "ministries.family",
+      "scrapeFile": "ministries_family.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/ministries/leadership/",
+      "oldSlug": "ministries/leadership",
+      "newPath": "/ministries/leadership",
+      "type": "ministry",
+      "key": "ministries.leadership",
+      "scrapeFile": "ministries_leadership.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/ministries/outreach/",
+      "oldSlug": "ministries/outreach",
+      "newPath": "/ministries/outreach",
+      "type": "ministry",
+      "key": "ministries.outreach",
+      "scrapeFile": "ministries_outreach.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/ministries/partnership/",
+      "oldSlug": "ministries/partnership",
+      "newPath": "/ministries/partnership",
+      "type": "ministry",
+      "key": "ministries.partnership",
+      "scrapeFile": "ministries_partnership.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/ministries/wordwide/",
+      "oldSlug": "ministries/wordwide",
+      "newPath": "/ministries/wordwide",
+      "type": "ministry",
+      "key": "ministries.wordwide",
+      "scrapeFile": "ministries_wordwide.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/ministries/worship/",
+      "oldSlug": "ministries/worship",
+      "newPath": "/ministries/worship",
+      "type": "ministry",
+      "key": "ministries.worship",
+      "scrapeFile": "ministries_worship.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/prayer-requests/",
+      "oldSlug": "prayer-requests",
+      "newPath": "/prayer",
+      "type": "page",
+      "key": "prayer",
+      "scrapeFile": "prayer-requests.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/latest-sermons/",
+      "oldSlug": "latest-sermons",
+      "newPath": "/sermons",
+      "type": "index",
+      "key": "sermons.index",
+      "scrapeFile": "latest-sermons.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermons-category/expository/",
+      "oldSlug": "sermons-category/expository",
+      "newPath": "/sermons?category=expository",
+      "type": "index_filter",
+      "key": "sermons.cat.expository",
+      "scrapeFile": "sermons-category_expository.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermons-category/narrative/",
+      "oldSlug": "sermons-category/narrative",
+      "newPath": "/sermons?category=narrative",
+      "type": "index_filter",
+      "key": "sermons.cat.narrative",
+      "scrapeFile": "sermons-category_narrative.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermons-category/textual/",
+      "oldSlug": "sermons-category/textual",
+      "newPath": "/sermons?category=textual",
+      "type": "index_filter",
+      "key": "sermons.cat.textual",
+      "scrapeFile": "sermons-category_textual.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermons-category/topical/",
+      "oldSlug": "sermons-category/topical",
+      "newPath": "/sermons?category=topical",
+      "type": "index_filter",
+      "key": "sermons.cat.topical",
+      "scrapeFile": "sermons-category_topical.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermon/gilgal-the-place-of-new-beginnings/",
+      "oldSlug": "sermon/gilgal-the-place-of-new-beginnings",
+      "newPath": "/sermons/gilgal-the-place-of-new-beginnings",
+      "type": "sermon",
+      "key": "sermons.gilgal-the-place-of-new-beginnings",
+      "scrapeFile": "sermon_gilgal-the-place-of-new-beginnings.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermon/here-am-i-send-me-a-vision-for-mission/",
+      "oldSlug": "sermon/here-am-i-send-me-a-vision-for-mission",
+      "newPath": "/sermons/here-am-i-send-me-a-vision-for-mission",
+      "type": "sermon",
+      "key": "sermons.here-am-i-send-me-a-vision-for-mission",
+      "scrapeFile": "sermon_here-am-i-send-me-a-vision-for-mission.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermon/jesus-is-coming-soon-signs-prophecy-hope/",
+      "oldSlug": "sermon/jesus-is-coming-soon-signs-prophecy-hope",
+      "newPath": "/sermons/jesus-is-coming-soon-signs-prophecy-hope",
+      "type": "sermon",
+      "key": "sermons.jesus-is-coming-soon-signs-prophecy-hope",
+      "scrapeFile": "sermon_jesus-is-coming-soon-signs-prophecy-hope.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermon/jesus-the-ultimate-transformational-leader/",
+      "oldSlug": "sermon/jesus-the-ultimate-transformational-leader",
+      "newPath": "/sermons/jesus-the-ultimate-transformational-leader",
+      "type": "sermon",
+      "key": "sermons.jesus-the-ultimate-transformational-leader",
+      "scrapeFile": "sermon_jesus-the-ultimate-transformational-leader.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermon/repent-the-kingdom-of-god-is-at-hand/",
+      "oldSlug": "sermon/repent-the-kingdom-of-god-is-at-hand",
+      "newPath": "/sermons/repent-the-kingdom-of-god-is-at-hand",
+      "type": "sermon",
+      "key": "sermons.repent-the-kingdom-of-god-is-at-hand",
+      "scrapeFile": "sermon_repent-the-kingdom-of-god-is-at-hand.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/sermon/the-heritage-of-a-godly-mother/",
+      "oldSlug": "sermon/the-heritage-of-a-godly-mother",
+      "newPath": "/sermons/the-heritage-of-a-godly-mother",
+      "type": "sermon",
+      "key": "sermons.the-heritage-of-a-godly-mother",
+      "scrapeFile": "sermon_the-heritage-of-a-godly-mother.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/our-team/",
+      "oldSlug": "our-team",
+      "newPath": "/team",
+      "type": "index",
+      "key": "team.index",
+      "scrapeFile": "our-team.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/cmsms_profile_category/pastor/",
+      "oldSlug": "cmsms_profile_category/pastor",
+      "newPath": "/team?category=pastor",
+      "type": "index_filter",
+      "key": "team.cat.pastor",
+      "scrapeFile": "cmsms_profile_category_pastor.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/cmsms_profile_category/senior-priest/",
+      "oldSlug": "cmsms_profile_category/senior-priest",
+      "newPath": "/team?category=senior-priest",
+      "type": "index_filter",
+      "key": "team.cat.senior-priest",
+      "scrapeFile": "cmsms_profile_category_senior-priest.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/huelwilsonbio/",
+      "oldSlug": "huelwilsonbio",
+      "newPath": "/team/bishop-huel-wilson",
+      "type": "team",
+      "key": "team.huel_wilson",
+      "scrapeFile": "huelwilsonbio.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/cmsms_profile/bishopwilson/",
+      "oldSlug": "cmsms_profile/bishopwilson",
+      "newPath": "/team/bishopwilson",
+      "type": "team",
+      "key": "team.bishopwilson",
+      "scrapeFile": "cmsms_profile_bishopwilson.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/cmsms_profile/clementinawilson/",
+      "oldSlug": "cmsms_profile/clementinawilson",
+      "newPath": "/team/clementinawilson",
+      "type": "team",
+      "key": "team.clementinawilson",
+      "scrapeFile": "cmsms_profile_clementinawilson.json",
+      "aliases": []
+    },
+    {
+      "oldPath": "/huel-clementina/",
+      "oldSlug": "huel-clementina",
+      "newPath": "/team/huel-and-clementina-wilson",
+      "type": "team",
+      "key": "team.huel_clementina",
+      "scrapeFile": "huel-clementina.json",
+      "aliases": []
+    }
+  ],
+  "dropped": [
+    {
+      "oldPath": "/home-three/",
+      "scrapeFile": "home-three.json",
+      "reason": "theme demo variant — not migrated"
+    },
+    {
+      "oldPath": "/home-two/",
+      "scrapeFile": "home-two.json",
+      "reason": "theme demo variant — not migrated"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-home-1.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-home-1.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-home-3.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-home-3.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-home-4.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-home-4.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-home-7.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-home-7.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-home-8.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-home-8.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-instagram-1.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-instagram-1.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-instagram-2.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-instagram-2.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-1.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-1.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-11.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-11.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-12.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-12.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-13.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-13.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-14.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-14.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-15.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-15.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-2.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-2.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-3.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-3.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-4.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-4.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-5.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-5.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-7.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-7.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-8.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-8.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/02/58-open-post-9.webp/",
+      "scrapeFile": "wp-content_uploads_2025_02_58-open-post-9.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-home-3-10.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-home-3-10.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-home-3-3.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-home-3-3.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-home-3-4.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-home-3-4.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-home-3-7-1.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-home-3-7-1.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-home-3-8.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-home-3-8.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-home-3-9.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-home-3-9.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-instagram-1.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-instagram-1.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-instagram-4.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-instagram-4.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-instagram-5.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-instagram-5.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/58-open-ministry-1-1.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_58-open-ministry-1-1.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/home-2-2-tablet.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_home-2-2-tablet.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/home-2-6.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_home-2-6.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/home-2-7.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_home-2-7.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/home-2-8.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_home-2-8.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/megamenu-4.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_megamenu-4.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/open-post-1.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_open-post-1.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/open-post-2.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_open-post-2.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/open-post-27.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_open-post-27.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/open-post-28.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_open-post-28.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/open-post-29.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_open-post-29.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/03/open-post-30.webp/",
+      "scrapeFile": "wp-content_uploads_2025_03_open-post-30.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    },
+    {
+      "oldPath": "/uploads/2025/09/megamenu-4-4.webp/",
+      "scrapeFile": "wp-content_uploads_2025_09_megamenu-4-4.webp.json",
+      "reason": "media stub (wp-content/uploads attachment, not a page)"
+    }
+  ],
+  "collisions": [],
+  "needs_review": []
+}

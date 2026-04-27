@@ -4,7 +4,7 @@
 ## Webmaster: Mikey
 ## Target Stack: Next.js 16.2.2 (App Router) + Tailwind CSS + Supabase + Custom Admin Panel
 ## Deploy: GitHub → Vercel
-## Project Root: /Users/mikeymusiq/nanoclaw/projects/ydm
+## Project Root: /Users/mikeymusiq/Documents/Claude/Projects/YDM
 
 ---
 

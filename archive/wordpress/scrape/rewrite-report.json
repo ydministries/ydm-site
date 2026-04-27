@@ -1,0 +1,445 @@
+{
+  "generatedAt": "2026-04-26T17:50:18.262Z",
+  "filesProcessed": 109,
+  "totalReplacements": 3516,
+  "byFile": [
+    {
+      "file": "latest-sermons.json",
+      "replacements": 227
+    },
+    {
+      "file": "live.json",
+      "replacements": 227
+    },
+    {
+      "file": "blog-page.json",
+      "replacements": 163
+    },
+    {
+      "file": "sermon_gilgal-the-place-of-new-beginnings.json",
+      "replacements": 129
+    },
+    {
+      "file": "sermon_here-am-i-send-me-a-vision-for-mission.json",
+      "replacements": 129
+    },
+    {
+      "file": "sermon_jesus-is-coming-soon-signs-prophecy-hope.json",
+      "replacements": 129
+    },
+    {
+      "file": "sermon_jesus-the-ultimate-transformational-leader.json",
+      "replacements": 129
+    },
+    {
+      "file": "sermon_repent-the-kingdom-of-god-is-at-hand.json",
+      "replacements": 129
+    },
+    {
+      "file": "sermon_the-heritage-of-a-godly-mother.json",
+      "replacements": 129
+    },
+    {
+      "file": "home-three.json",
+      "replacements": 113
+    },
+    {
+      "file": "home.json",
+      "replacements": 89
+    },
+    {
+      "file": "do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison.json",
+      "replacements": 87
+    },
+    {
+      "file": "gallery.json",
+      "replacements": 83
+    },
+    {
+      "file": "home-two.json",
+      "replacements": 81
+    },
+    {
+      "file": "i-ruined-my-lifeis-there-hope-for-me.json",
+      "replacements": 74
+    },
+    {
+      "file": "your-mission-should-you-choose-to-accept-it.json",
+      "replacements": 70
+    },
+    {
+      "file": "how-to-develop-a-habit-of-worship.json",
+      "replacements": 64
+    },
+    {
+      "file": "whats-your-view-of-marriage.json",
+      "replacements": 55
+    },
+    {
+      "file": "experiencing-the-freedom-of-gods-presence.json",
+      "replacements": 51
+    },
+    {
+      "file": "ministries_ask-bishop.json",
+      "replacements": 50
+    },
+    {
+      "file": "ministries_family.json",
+      "replacements": 50
+    },
+    {
+      "file": "ministries_leadership.json",
+      "replacements": 50
+    },
+    {
+      "file": "ministries_outreach.json",
+      "replacements": 50
+    },
+    {
+      "file": "ministries_partnership.json",
+      "replacements": 50
+    },
+    {
+      "file": "ministries_wordwide.json",
+      "replacements": 50
+    },
+    {
+      "file": "ministries_worship.json",
+      "replacements": 50
+    },
+    {
+      "file": "four-things-our-church-should-still-focus-on.json",
+      "replacements": 47
+    },
+    {
+      "file": "how-do-i-intercede-for-family-who-dont-believe-in-jesus.json",
+      "replacements": 47
+    },
+    {
+      "file": "author_ydm-admin.json",
+      "replacements": 35
+    },
+    {
+      "file": "events-page.json",
+      "replacements": 35
+    },
+    {
+      "file": "contact.json",
+      "replacements": 33
+    },
+    {
+      "file": "tag_godsword.json",
+      "replacements": 32
+    },
+    {
+      "file": "our-campaigns.json",
+      "replacements": 31
+    },
+    {
+      "file": "category_gods-word.json",
+      "replacements": 30
+    },
+    {
+      "file": "tag_churchfamily.json",
+      "replacements": 30
+    },
+    {
+      "file": "category_faith.json",
+      "replacements": 29
+    },
+    {
+      "file": "tag_pastor.json",
+      "replacements": 29
+    },
+    {
+      "file": "tag_podcast.json",
+      "replacements": 29
+    },
+    {
+      "file": "tag_worship.json",
+      "replacements": 29
+    },
+    {
+      "file": "category_jesus.json",
+      "replacements": 28
+    },
+    {
+      "file": "sermons-category_expository.json",
+      "replacements": 28
+    },
+    {
+      "file": "sermons-category_topical.json",
+      "replacements": 28
+    },
+    {
+      "file": "tag_loveoneanother.json",
+      "replacements": 28
+    },
+    {
+      "file": "cmsms_profile_category_pastor.json",
+      "replacements": 27
+    },
+    {
+      "file": "cmsms_profile_category_senior-priest.json",
+      "replacements": 27
+    },
+    {
+      "file": "discovering-the-power-of-waiting.json",
+      "replacements": 27
+    },
+    {
+      "file": "sermons-category_narrative.json",
+      "replacements": 27
+    },
+    {
+      "file": "sermons-category_textual.json",
+      "replacements": 27
+    },
+    {
+      "file": "cmsms_profile_bishopwilson.json",
+      "replacements": 24
+    },
+    {
+      "file": "cmsms_profile_clementinawilson.json",
+      "replacements": 24
+    },
+    {
+      "file": "campaigns_supportydm.json",
+      "replacements": 21
+    },
+    {
+      "file": "campaigns_techfund.json",
+      "replacements": 21
+    },
+    {
+      "file": "event_weekly-bible-study-group.json",
+      "replacements": 21
+    },
+    {
+      "file": "events_category_study-group.json",
+      "replacements": 19
+    },
+    {
+      "file": "event_young-adults-connect.json",
+      "replacements": 17
+    },
+    {
+      "file": "events_category_services.json",
+      "replacements": 15
+    },
+    {
+      "file": "about-us.json",
+      "replacements": 11
+    },
+    {
+      "file": "aboutydm.json",
+      "replacements": 11
+    },
+    {
+      "file": "ask.json",
+      "replacements": 11
+    },
+    {
+      "file": "guestbook.json",
+      "replacements": 11
+    },
+    {
+      "file": "huel-clementina.json",
+      "replacements": 11
+    },
+    {
+      "file": "huelwilsonbio.json",
+      "replacements": 11
+    },
+    {
+      "file": "maltoncog.json",
+      "replacements": 11
+    },
+    {
+      "file": "our-ministries.json",
+      "replacements": 11
+    },
+    {
+      "file": "our-team.json",
+      "replacements": 11
+    },
+    {
+      "file": "prayer-requests.json",
+      "replacements": 11
+    },
+    {
+      "file": "westtoronto.json",
+      "replacements": 11
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-home-1.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-home-3.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-home-4.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-home-7.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-home-8.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-instagram-1.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-instagram-2.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-1.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-11.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-12.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-13.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-14.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-15.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-2.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-3.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-4.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-5.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-7.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-8.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_02_58-open-post-9.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-home-3-10.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-home-3-3.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-home-3-4.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-home-3-7-1.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-home-3-8.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-home-3-9.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-instagram-1.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-instagram-4.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-instagram-5.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_58-open-ministry-1-1.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_home-2-2-tablet.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_home-2-6.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_home-2-7.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_home-2-8.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_megamenu-4.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_open-post-1.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_open-post-2.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_open-post-27.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_open-post-28.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_open-post-29.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_03_open-post-30.webp.json",
+      "replacements": 1
+    },
+    {
+      "file": "wp-content_uploads_2025_09_megamenu-4-4.webp.json",
+      "replacements": 1
+    }
+  ],
+  "unmatchedUrls": [],
+  "unmatchedCount": 0
+}

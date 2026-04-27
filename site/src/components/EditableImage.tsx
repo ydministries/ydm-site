@@ -2,37 +2,38 @@
 
 import { useContent } from "./ContentProvider";
 import { useItemScope } from "./ItemProvider";
+import { useAssets } from "./AssetProvider";
 import type { HTMLAttributes } from "react";
 
 /**
- * Renders an image from the assets table via an asset_key reference
- * stored in page_content. The field's value is the asset_key string
- * (e.g. "home.hero.bg"), which will be resolved to a storage URL
- * once the assets table is populated (Step 3).
- *
- * For now, renders a placeholder with the asset_key for debugging.
- * <img src="..."> is forbidden in page files — use this component.
+ * Reads a URL value from page_content (via fieldKey), then renders an <img>.
+ * If a row in the assets table matches the URL, alt/width/height are pulled
+ * from there. Otherwise the URL renders directly with empty alt and lazy
+ * loading. Production never shows a placeholder — missing values render null.
  */
-interface EditableImageProps extends HTMLAttributes<HTMLElement> {
+interface EditableImageProps extends HTMLAttributes<HTMLImageElement> {
   fieldKey: string;
   alt?: string;
 }
 
 export function EditableImage({
   fieldKey,
-  alt: _alt,
+  alt,
   className,
   ...rest
 }: EditableImageProps) {
   const { content } = useContent();
   const scope = useItemScope();
+  const assets = useAssets();
+
   const resolvedKey = scope
     ? `${scope.prefix}.${scope.indexKey}.${fieldKey}`
     : fieldKey;
 
   const row = content.get(resolvedKey);
+  const value = row?.value;
 
-  if (!row) {
+  if (!value) {
     if (process.env.NODE_ENV === "development") {
       return (
         <div
@@ -44,7 +45,6 @@ export function EditableImage({
             padding: "1rem",
             textAlign: "center",
           }}
-          {...rest}
         >
           [MISSING IMAGE: {resolvedKey}]
         </div>
@@ -53,15 +53,26 @@ export function EditableImage({
     return null;
   }
 
-  // Until assets table is wired, show the asset_key as a placeholder
+  // Try to find a matching assets row by storage_path or asset_key.
+  const assetRow =
+    [...assets.values()].find((a) => a.storage_path === value) ??
+    assets.get(value);
+
+  const resolvedAlt = alt ?? assetRow?.alt ?? "";
+  const width = assetRow?.width ?? undefined;
+  const height = assetRow?.height ?? undefined;
+
+  // eslint-disable-next-line @next/next/no-img-element
   return (
-    <div
-      className={`flex items-center justify-center bg-ydm-ink/10 ${className ?? ""}`}
+    <img
+      src={value}
+      alt={resolvedAlt}
+      loading="lazy"
+      decoding="async"
+      width={width}
+      height={height}
+      className={className}
       {...rest}
-    >
-      <span className="text-sm text-ydm-ink/40">
-        [asset: {row.value}]
-      </span>
-    </div>
+    />
   );
 }

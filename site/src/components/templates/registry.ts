@@ -1,0 +1,42 @@
+/**
+ * Template registry — codegen consults this to decide whether to emit a thin
+ * template-shim page.tsx (provider wrappers + a single template component) or
+ * fall back to the per-key dump.
+ *
+ *  - byKey takes precedence over byType.
+ *  - Each entry maps to { importPath, exportName }; codegen uses both to write
+ *    the import + JSX in the shim.
+ *  - As more page types get hand-designed, extend byType (sermon, ministry,
+ *    team, blog, …).
+ */
+
+export type TemplateRef = { importPath: string; exportName: string };
+
+export const templateRegistry: {
+  byKey: Record<string, TemplateRef>;
+  byType: Record<string, TemplateRef>;
+  /**
+   * Page keys that should redirect (server-side redirect shim) instead of
+   * rendering a template. Maps page_key → destination URL. Codegen emits a
+   * minimal page.tsx that calls Next's redirect() at request time. Wins over
+   * byKey/byType lookup.
+   */
+  redirectKeys: Record<string, string>;
+  fallback: TemplateRef | null;
+} = {
+  byKey: {
+    home: { importPath: "@/components/templates/HomeTemplate", exportName: "HomeTemplate" },
+  },
+  byType: {
+    sermon:   { importPath: "@/components/templates/SermonTemplate",   exportName: "SermonTemplate" },
+    ministry: { importPath: "@/components/templates/MinistryTemplate", exportName: "MinistryTemplate" },
+    team:     { importPath: "@/components/templates/TeamTemplate",     exportName: "TeamTemplate" },
+  },
+  redirectKeys: {
+    // Bishop has two source page_keys — huel_wilson (the canonical bio page)
+    // and bishopwilson (the cmsms profile duplicate). Send the duplicate to
+    // the canonical URL.
+    "team.bishopwilson": "/team/bishop-huel-wilson",
+  },
+  fallback: null,
+};

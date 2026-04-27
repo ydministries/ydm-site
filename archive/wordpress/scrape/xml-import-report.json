@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-04-26T18:22:19.747Z",
+  "xmlItemsParsed": 114,
+  "routeMapItems": 64,
+  "matched": 46,
+  "unmatched": [],
+  "filesUpdated": 35,
+  "rewritesApplied": 236,
+  "wpContentLeaks": 0,
+  "unmatchedRewriteUrls": [],
+  "acceptanceFailures": [
+    {
+      "key": "ask",
+      "type": "page",
+      "bodyChars": 0
+    },
+    {
+      "key": "guestbook",
+      "type": "page",
+      "bodyChars": 0
+    },
+    {
+      "key": "prayer",
+      "type": "page",
+      "bodyChars": 0
+    }
+  ]
+}

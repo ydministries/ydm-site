@@ -1,0 +1,189 @@
+{
+  "global": {
+    "site_name": "Yeshua Deliverance Ministries",
+    "site_short": "YDM",
+    "tagline": "YDM: a home for your soul.",
+    "meta.title": "Yeshua Deliverance Ministries — A home for your soul.",
+    "meta.description": "Yeshua Deliverance Ministries — a Christ-centered community for worship, discipleship, and service. Led by Bishop Huel O. Wilson in Mississauga, ON.",
+    "meta.og_image": "https://media.ydministries.ca/uploads/2025/02/58-home-1.webp",
+    "contact.phone": "+1 (416) 895-5178",
+    "contact.email": "Info@YDMinistries.ca",
+    "contact.address": "P.O. Box #20001, Chinguacousy Rd, Brampton, ON L6Y 0J0",
+    "service.sunday": "1:00 PM, every 4th Sunday",
+    "service.bible_study": "Thursdays, 7:00 PM",
+    "social.facebook": "https://www.facebook.com/profile.php?id=61580380624275",
+    "social.youtube": "https://www.youtube.com/@BishopHuelWilson",
+    "social.instagram": "https://www.instagram.com/yd.ministries/",
+    "footer.copyright": "© 2026 Yeshua Deliverance Ministries — All Rights Reserved",
+    "footer.tagline": "Uniting hearts in faith and fellowship.",
+    "nav.donate_label": "Give",
+    "nav.live_label": "Watch Live"
+  },
+  "home": {
+    "welcome_band.headline":   "YDM: A Home for Your Soul.",
+    "welcome_band.kicker":     "WE ARE YDM",
+    "we_are_ydm.eyebrow":      "WE ARE YDM",
+    "we_are_ydm.cta_label":    "JOIN US",
+    "founded_in_faith.eyebrow":   "FOUNDED IN FAITH",
+    "founded_in_faith.heading":   "A Christ-Centered Community for Worship & Growth",
+    "founded_in_faith.body":      "<p>Yeshua Deliverance Ministries was founded by Bishop Huel O. Wilson with a single conviction: every soul deserves a place to encounter Jesus. From our home base inside the Mississauga Church of God, we have grown into a worldwide community committed to teaching the unchanging truth of God's Word, raising up the next generation of disciples, and serving our neighbors in love. Whether you are exploring faith for the first time or have walked with Christ for decades, you belong with us.</p>",
+    "founded_in_faith.cta_label": "OUR STORY",
+    "ministries_grid.eyebrow": "GET PLUGGED IN",
+    "ministries_grid.title":   "YDM MINISTRIES",
+    "ministries_grid.script":  "Get Plugged In",
+    "events.eyebrow":          "UPCOMING EVENTS",
+    "events.script":           "Come as you are",
+    "events.cta_label":        "VIEW ALL EVENTS",
+    "mission_vision.script":   "You're always welcome here.",
+    "featured_sermons.eyebrow":  "FROM THE PULPIT",
+    "featured_sermons.title":    "FEATURED SERMONS",
+    "featured_sermons.cta_label": "VIEW ALL SERMONS",
+    "countdown.eyebrow":         "DON'T MISS THE NEXT SERVICE",
+    "countdown.script":          "Be the light.",
+    "countdown.cta_label":       "JOIN US",
+    "leaders.eyebrow":           "OUR LEADERSHIP",
+    "leaders.script":            "Leading with Love",
+    "leaders.title":             "Meet Our Leaders",
+    "leaders.cta_label":         "MEET FULL TEAM",
+    "support.eyebrow":           "SUPPORT OUR MISSION",
+    "support.script":            "Make a difference",
+    "support.cta_label":         "GIVE NOW",
+    "get_involved.eyebrow":      "GET INVOLVED",
+    "get_involved.script":       "We're here for you!",
+    "newsletter.script":         "Stay connected"
+  },
+  "ask": {
+    "meta.description": "Submit your faith and scripture questions to Bishop Huel Wilson.",
+    "h1.01": "Ask Bishop",
+    "p.01": "Have a question about faith, scripture, or the Christian walk? Submit it below and Bishop Wilson will share his response in an upcoming message.",
+    "form.label.question": "Your Question",
+    "form.label.email": "Email (so we can let you know when it's answered)",
+    "form.button": "Submit Question",
+    "form.success": "Thank you — your question has been received. Watch for a response in an upcoming sermon or post.",
+    "form.error": "Something went wrong sending your question. Please try again or email us directly."
+  },
+  "guestbook": {
+    "meta.description": "Sign the YDM guestbook and share a word of encouragement with our church family.",
+    "h1.01": "Guestbook",
+    "p.01": "Leave a note for the YDM family. Share what God is doing in your life, a word of encouragement, or a greeting from wherever you're worshipping with us.",
+    "form.label.name": "Your Name",
+    "form.label.message": "Your Message",
+    "form.button": "Sign the Guestbook",
+    "form.success": "Your message has been added to our guestbook. Thank you for being part of the YDM family.",
+    "form.error": "We couldn't post your message. Please try again."
+  },
+  "team.huel_wilson": {
+    "portrait_url":   "https://media.ydministries.ca/uploads/2026/04/bishop-huel.png",
+    "person_name":    "Bishop Huel O. Wilson",
+    "person_title":   "Founder & Senior Pastor",
+    "person_bio":     "<p>Bishop Huel O. Wilson is the founder and senior pastor of Yeshua Deliverance Ministries, a Christ-centered community based in Mississauga, Ontario. With decades of dedication to the Word of God and a heart for evangelism, Bishop Wilson teaches, preaches, and leads with the conviction that every soul deserves to encounter Jesus.</p><p>Under his leadership, YDM has grown from a local fellowship into a worldwide community of believers reached through in-person services, online streaming, and global outreach. Bishop Wilson is married to First Lady Clementina Wilson, who serves alongside him in ministry.</p>",
+    "preaching":      "true",
+    "ministries_led": "ask-bishop,leadership,outreach,wordwide"
+  },
+  "team.clementinawilson": {
+    "portrait_url":   "https://media.ydministries.ca/uploads/2026/04/clementina.png",
+    "person_name":    "Clementina Wilson",
+    "person_title":   "First Lady & Family Ministry Lead",
+    "person_bio":     "<p>Clementina Wilson serves as the First Lady of Yeshua Deliverance Ministries and leads the family ministry alongside her husband, Bishop Huel O. Wilson. She has a deep heart for women's ministry, intercessory prayer, and supporting families as they grow in faith.</p><p>Clementina's ministry is marked by warmth, hospitality, and a steady commitment to seeing every member of the YDM family thrive — children, youth, parents, and elders alike.</p>",
+    "preaching":      "false",
+    "ministries_led": "family"
+  },
+  "team.huel_clementina": {
+    "portrait_url":   "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
+    "person_name":    "Bishop Huel & Clementina Wilson",
+    "person_title":   "Founders, Yeshua Deliverance Ministries",
+    "person_bio":     "<p>Bishop Huel O. Wilson and his wife Clementina founded Yeshua Deliverance Ministries with one shared conviction: every soul deserves a place to encounter Jesus. Together they have led the YDM community for decades, raising up disciples, planting outreach efforts, and pastoring the family of believers that calls YDM home.</p><p>Their partnership in ministry — uniting Bishop's preaching and teaching gifts with First Lady Clementina's heart for family and intercession — is the foundation on which YDM has been built.</p>",
+    "preaching":      "false",
+    "ministries_led": "leadership"
+  },
+  "ministries.ask-bishop": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/FastFoto_0017_a.jpg",
+    "tagline":     "Submit your faith and scripture questions to Bishop Wilson.",
+    "leader_name": "Bishop Huel O. Wilson",
+    "leader_role": "Senior Pastor",
+    "leader_bio":  "<p>Bishop Wilson personally responds to questions submitted by the YDM community, sharing scripture-grounded insight on faith, doctrine, and the Christian walk.</p>"
+  },
+  "ministries.worship": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/pexels-jibarofoto-2014775-scaled-e1758244273295.jpg",
+    "tagline":     "Encounter God through music, song, and creative arts.",
+    "leader_name": "Worship Ministry Lead",
+    "leader_role": "Director of Worship",
+    "leader_bio":  "<p>Our worship team leads the YDM family in lifting praise to the Lord every Sunday and at special services. We welcome musicians, vocalists, and tech volunteers who feel called to serve.</p>"
+  },
+  "ministries.outreach": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/ChatGPT-Image-Sep-21-2025-10_33_09-PM.png",
+    "tagline":     "Serving our community with the love of Christ.",
+    "leader_name": "Outreach Coordinator",
+    "leader_role": "Compassion & Outreach Lead",
+    "leader_bio":  "<p>We bring the gospel and practical care to those in need — through food drives, shelter visits, prison ministry, and partnerships with local agencies serving Mississauga and the Greater Toronto Area.</p>"
+  },
+  "ministries.family": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/istockphoto-1456111870-612x612-1-e1758243411865.jpg",
+    "tagline":     "Strengthening homes and raising children in faith.",
+    "leader_name": "Family Ministry Lead",
+    "leader_role": "Family & Children's Ministry",
+    "leader_bio":  "<p>From children's church to marriage enrichment, the family ministry exists to support every generation in growing closer to Christ together.</p>"
+  },
+  "ministries.leadership": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/360_F_1226027780_lEOLyeTK87dfMWN2KCXkOjeVx7RlmzE8.jpg",
+    "tagline":     "Raising up the next generation of Christ-centered leaders.",
+    "leader_name": "Bishop Huel O. Wilson",
+    "leader_role": "Founder & Senior Pastor",
+    "leader_bio":  "<p>YDM's leadership ministry equips disciples to serve in ministry roles, mentor others, and carry the gospel forward through teaching, training, and apprenticeship.</p>"
+  },
+  "ministries.partnership": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/partner.jpg",
+    "tagline":     "Stand with YDM as we expand our reach.",
+    "leader_name": "Partnership Coordinator",
+    "leader_role": "Ministry Partnerships",
+    "leader_bio":  "<p>Partners support YDM through prayer, monthly giving, and active service. Together we extend the gospel further than any of us could alone.</p>"
+  },
+  "ministries.wordwide": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/35bb24c2-2640-40c9-9d8b-a8012e14fcae-e1758243636977.jpg",
+    "tagline":     "Carrying the gospel beyond borders.",
+    "leader_name": "Worldwide Outreach Director",
+    "leader_role": "Global Ministry Lead",
+    "leader_bio":  "<p>Our worldwide ministry connects YDM with believers across continents through online services, missions, and international partnerships rooted in the Great Commission.</p>"
+  },
+  "sermons.gilgal-the-place-of-new-beginnings": {
+    "audio_filename":    "Gilgal_-The-Place-of-New-Beginnings-_-Bishop-Huel-Wilson-Sermon.mp3",
+    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-10.50.38-PM.png",
+    "scripture_primary": "Joshua 5:9"
+  },
+  "sermons.here-am-i-send-me-a-vision-for-mission": {
+    "audio_filename":    "Bishop-Huel-O.-Wilson-Here-Am-I-Send-Me_-A-Vision-for-Mission-Isaiah-6-Live-@-EUMCNYC.mp3",
+    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-8.26.41-PM.png",
+    "scripture_primary": "Isaiah 6:8"
+  },
+  "sermons.jesus-is-coming-soon-signs-prophecy-hope": {
+    "audio_filename":    "Jesus-is-Coming-Soon_-Signs-Prophecy-Hope-_-Bishop-Huel-Wilson-Sermon.mp3",
+    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-10.37.58-PM.png",
+    "scripture_primary": "Matthew 24"
+  },
+  "sermons.jesus-the-ultimate-transformational-leader": {
+    "audio_filename":    "Jesus_-The-Ultimate-Transformational-Leader-How-He-Changes-Lives-Bishop-Huel-Wilson-YDM.mp3",
+    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-8.31.12-PM.png",
+    "scripture_primary": "Matthew 11:28-30"
+  },
+  "sermons.repent-the-kingdom-of-god-is-at-hand": {
+    "audio_filename":    "Repent_-The-Kingdom-of-God-Is-At-Hand-_-Bishop-Huel-Wilson-Sermon.mp3",
+    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-11.04.30-PM.png",
+    "scripture_primary": "Matthew 4:17"
+  },
+  "sermons.the-heritage-of-a-godly-mother": {
+    "audio_filename":    "The-Heritage-of-a-Godly-Mother_-Honoring-Mothers-on-Mothers-Day-_-Bishop-Huel-Wilson.mp3",
+    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-11.20.17-PM.png",
+    "scripture_primary": "Proverbs 31"
+  },
+  "prayer": {
+    "meta.description": "Submit a prayer request to Bishop Wilson and the YDM prayer team.",
+    "h1.01": "Prayer Requests",
+    "p.01": "Submit your prayer request below. Bishop, the elders, and the YDM prayer team will lift your need before the Lord.",
+    "p.02": "Your request will be shared only with the YDM prayer team unless you tell us otherwise.",
+    "form.label.request": "Your Prayer Request",
+    "form.label.email_optional": "Email (optional — for follow-up)",
+    "form.button": "Send Prayer Request",
+    "form.success": "Your request has been received. We will be praying with you.",
+    "form.error": "We couldn't submit your request. Please try again."
+  }
+}

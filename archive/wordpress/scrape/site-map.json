@@ -1,891 +1,327 @@
-{
-  "baseUrl": "https://ydministries.ca",
-  "totalPages": 177,
-  "pages": [
-    {
-      "url": "https://ydministries.ca",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca/",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca/aboutydm/",
-      "slug": "aboutydm",
-      "title": "Yeshua Deliverance Ministries \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/huel-clementina/",
-      "slug": "huel-clementina",
-      "title": "Huel & Clementina Wilson \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/huelwilsonbio/",
-      "slug": "huelwilsonbio",
-      "title": "Bishop Wilson \u2013 Bio \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/maltoncog/",
-      "slug": "maltoncog",
-      "title": "Malton Church of God \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/westtoronto/",
-      "slug": "westtoronto",
-      "title": "West Toronto Church of God \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/our-ministries/",
-      "slug": "our-ministries",
-      "title": "Our Ministries \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/our-team/",
-      "slug": "our-team",
-      "title": "Our Team \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/events-page/",
-      "slug": "events-page",
-      "title": "Events Page \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/gallery/",
-      "slug": "gallery",
-      "title": "Gallery \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/live/",
-      "slug": "live",
-      "title": "Watch Live \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/latest-sermons/",
-      "slug": "latest-sermons",
-      "title": "Latest Sermons \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/our-campaigns/",
-      "slug": "our-campaigns",
-      "title": "Our Campaigns \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/blog-page/",
-      "slug": "blog-page",
-      "title": "Blog Page \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/contact/",
-      "slug": "contact",
-      "title": "Contact YDM \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/ask/",
-      "slug": "ask",
-      "title": "Ask \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/prayer-requests/",
-      "slug": "prayer-requests",
-      "title": "Prayer Requests \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/guestbook/",
-      "slug": "guestbook",
-      "title": "Guestbook \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca#cmsmasters-popup-196",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca/campaigns/supportydm/",
-      "slug": "campaigns/supportydm",
-      "title": "Support Our Ministry \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca#cmsmasters-popup-133",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca/home-two/",
-      "slug": "home-two",
-      "title": "Home Two \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/home-three/",
-      "slug": "home-three",
-      "title": "Home Three \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/about-us/",
-      "slug": "about-us",
-      "title": "About Us \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca#cmsmasters-scroll-top",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca/event/weekly-bible-study-group/",
-      "slug": "event/weekly-bible-study-group",
-      "title": "Weekly Bible Study Group \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/event/young-adults-connect/",
-      "slug": "event/young-adults-connect",
-      "title": "Yeshua Sunday Service \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJ0eXBlIjoidmlkZW8iLCJ2aWRlb1R5cGUiOiJ5b3V0dWJlIiwidXJsIjoiaHR0cHM6XC9cL3d3dy55b3V0dWJlLmNvbVwvZW1iZWRcL0NrWVVVbXVJLU1rP2ZlYXR1cmU9b2VtYmVkIn0%3D",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca/cmsms_profile/bishopwilson/",
-      "slug": "cmsms_profile/bishopwilson",
-      "title": "Bishop Huel O. Wilson \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/cmsms_profile/clementinawilson/",
-      "slug": "cmsms_profile/clementinawilson",
-      "title": "Clementina Wilson \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/ministries/ask-bishop/",
-      "slug": "ministries/ask-bishop",
-      "title": "Ask Bishop \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/ministries/worship/",
-      "slug": "ministries/worship",
-      "title": "Worship Ministry \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/ministries/outreach/",
-      "slug": "ministries/outreach",
-      "title": "Compassion & Outreach \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/ministries/family/",
-      "slug": "ministries/family",
-      "title": "Family Ministry \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/ministries/wordwide/",
-      "slug": "ministries/wordwide",
-      "title": "Worldwide Ministry (Online) \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/ministries/leadership/",
-      "slug": "ministries/leadership",
-      "title": "Leadership & Development \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/our-ministries/?cmsmasters-page-033fdb5=2",
-      "slug": "our-ministries",
-      "title": "Our Ministries \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/events/category/study-group/",
-      "slug": "events/category/study-group",
-      "title": "Events from September 25, 2025 \u2013 September 25, 2025 \u203a Study Group \u203a  \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/events/category/services/",
-      "slug": "events/category/services",
-      "title": "Events from September 29, 2025 \u2013 September 29, 2025 \u203a Services \u203a  \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/open-post-30.webp",
-      "slug": "wp-content/uploads/2025/03/open-post-30.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/open-post-29.webp",
-      "slug": "wp-content/uploads/2025/03/open-post-29.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-instagram-1.webp",
-      "slug": "wp-content/uploads/2025/03/58-instagram-1.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/megamenu-4.webp",
-      "slug": "wp-content/uploads/2025/03/megamenu-4.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-open-ministry-1-1.webp",
-      "slug": "wp-content/uploads/2025/03/58-open-ministry-1-1.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-instagram-5.webp",
-      "slug": "wp-content/uploads/2025/03/58-instagram-5.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-instagram-4.webp",
-      "slug": "wp-content/uploads/2025/03/58-instagram-4.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/09/megamenu-4-4.webp",
-      "slug": "wp-content/uploads/2025/09/megamenu-4-4.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-home-3-3.webp",
-      "slug": "wp-content/uploads/2025/03/58-home-3-3.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-home-3-4.webp",
-      "slug": "wp-content/uploads/2025/03/58-home-3-4.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/home-2-2-tablet.webp",
-      "slug": "wp-content/uploads/2025/03/home-2-2-tablet.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-instagram-2.webp",
-      "slug": "wp-content/uploads/2025/02/58-instagram-2.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-instagram-1.webp",
-      "slug": "wp-content/uploads/2025/02/58-instagram-1.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-home-8.webp",
-      "slug": "wp-content/uploads/2025/02/58-home-8.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-home-7.webp",
-      "slug": "wp-content/uploads/2025/02/58-home-7.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-home-1.webp",
-      "slug": "wp-content/uploads/2025/02/58-home-1.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-home-3.webp",
-      "slug": "wp-content/uploads/2025/02/58-home-3.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-home-4.webp",
-      "slug": "wp-content/uploads/2025/02/58-home-4.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/author/ydm-admin/",
-      "slug": "author/ydm-admin",
-      "title": "YDM Admin \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermon/here-am-i-send-me-a-vision-for-mission/",
-      "slug": "sermon/here-am-i-send-me-a-vision-for-mission",
-      "title": "Here Am I, Send Me: A Vision for Mission \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca#cmsmasters-popup-162",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#cmsmasters-popup-165",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca/sermon/jesus-the-ultimate-transformational-leader/",
-      "slug": "sermon/jesus-the-ultimate-transformational-leader",
-      "title": "Jesus: The Ultimate Transformational Leader & How He Changes Lives \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermon/jesus-is-coming-soon-signs-prophecy-hope/",
-      "slug": "sermon/jesus-is-coming-soon-signs-prophecy-hope",
-      "title": "Jesus is Coming Soon: Signs, Prophecy, & Hope \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermon/gilgal-the-place-of-new-beginnings/",
-      "slug": "sermon/gilgal-the-place-of-new-beginnings",
-      "title": "Gilgal: The Place of New Beginnings \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermon/repent-the-kingdom-of-god-is-at-hand/",
-      "slug": "sermon/repent-the-kingdom-of-god-is-at-hand",
-      "title": "Repent: The Kingdom of God Is At Hand \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermon/the-heritage-of-a-godly-mother/",
-      "slug": "sermon/the-heritage-of-a-godly-mother",
-      "title": "The Heritage of a Godly Mother (Mothers Day 2024) \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/campaigns/techfund/",
-      "slug": "campaigns/techfund",
-      "title": "YDM Tech Fund \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/discovering-the-power-of-waiting/",
-      "slug": "discovering-the-power-of-waiting",
-      "title": "Discovering the Power of Waiting \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/category/faith/",
-      "slug": "category/faith",
-      "title": "Faith \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/category/gods-word/",
-      "slug": "category/gods-word",
-      "title": "God`s Word \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/how-to-develop-a-habit-of-worship/",
-      "slug": "how-to-develop-a-habit-of-worship",
-      "title": "How to Develop a Habit of Worship \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/category/jesus/",
-      "slug": "category/jesus",
-      "title": "Jesus \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/whats-your-view-of-marriage/",
-      "slug": "whats-your-view-of-marriage",
-      "title": "What\u2019s Your View of Marriage? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/how-do-i-intercede-for-family-who-dont-believe-in-jesus/",
-      "slug": "how-do-i-intercede-for-family-who-dont-believe-in-jesus",
-      "title": "How Do I Intercede For Family Who Don\u2019t Believe In Jesus? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/your-mission-should-you-choose-to-accept-it/",
-      "slug": "your-mission-should-you-choose-to-accept-it",
-      "title": "Your Mission \u2013 Should You Choose to Accept It \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/i-ruined-my-lifeis-there-hope-for-me/",
-      "slug": "i-ruined-my-lifeis-there-hope-for-me",
-      "title": "I Ruined My life\u2026is There Hope for Me? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison/",
-      "slug": "do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
-      "title": "Do Not Lose Heart \u2013 Your Future in Christ is Beyond All Comparison \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/four-things-our-church-should-still-focus-on/",
-      "slug": "four-things-our-church-should-still-focus-on",
-      "title": "Four Things Our Church Should Still Focus On \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/home-2-7.webp",
-      "slug": "wp-content/uploads/2025/03/home-2-7.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/home-2-6.webp",
-      "slug": "wp-content/uploads/2025/03/home-2-6.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/home-2-8.webp",
-      "slug": "wp-content/uploads/2025/03/home-2-8.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-home-3-7-1.webp",
-      "slug": "wp-content/uploads/2025/03/58-home-3-7-1.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-home-3-8.webp",
-      "slug": "wp-content/uploads/2025/03/58-home-3-8.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-home-3-9.webp",
-      "slug": "wp-content/uploads/2025/03/58-home-3-9.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/58-home-3-10.webp",
-      "slug": "wp-content/uploads/2025/03/58-home-3-10.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/cmsms_profile_category/pastor/",
-      "slug": "cmsms_profile_category/pastor",
-      "title": "Pastor \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/cmsms_profile_category/senior-priest/",
-      "slug": "cmsms_profile_category/senior-priest",
-      "title": "Senior Priest \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/ministries/partnership/",
-      "slug": "ministries/partnership",
-      "title": "Partnership & Support Ministry \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/our-ministries/?cmsmasters-page-033fdb5=1",
-      "slug": "our-ministries",
-      "title": "Our Ministries \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermons-category/topical/",
-      "slug": "sermons-category/topical",
-      "title": "Topical \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermons-category/narrative/",
-      "slug": "sermons-category/narrative",
-      "title": "Narrative \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermons-category/textual/",
-      "slug": "sermons-category/textual",
-      "title": "Textual \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/sermons-category/expository/",
-      "slug": "sermons-category/expository",
-      "title": "Expository \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/discovering-the-power-of-waiting/?replytocom=15#respond",
-      "slug": "discovering-the-power-of-waiting",
-      "title": "Discovering the Power of Waiting \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/discovering-the-power-of-waiting/#respond",
-      "slug": "discovering-the-power-of-waiting",
-      "title": "Discovering the Power of Waiting \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/i-ruined-my-lifeis-there-hope-for-me/#comment-23",
-      "slug": "i-ruined-my-lifeis-there-hope-for-me",
-      "title": "I Ruined My life\u2026is There Hope for Me? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison/#comment-25",
-      "slug": "do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
-      "title": "Do Not Lose Heart \u2013 Your Future in Christ is Beyond All Comparison \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/four-things-our-church-should-still-focus-on/#comment-29",
-      "slug": "four-things-our-church-should-still-focus-on",
-      "title": "Four Things Our Church Should Still Focus On \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/four-things-our-church-should-still-focus-on/#comment-28",
-      "slug": "four-things-our-church-should-still-focus-on",
-      "title": "Four Things Our Church Should Still Focus On \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/how-to-develop-a-habit-of-worship/#comment-7",
-      "slug": "how-to-develop-a-habit-of-worship",
-      "title": "How to Develop a Habit of Worship \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-12.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-12.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-11.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-11.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/tag/churchfamily/",
-      "slug": "tag/churchfamily",
-      "title": "ChurchFamily \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/tag/godsword/",
-      "slug": "tag/godsword",
-      "title": "GodsWord \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/tag/loveoneanother/",
-      "slug": "tag/loveoneanother",
-      "title": "LoveOneAnother \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/?replytocom=8#respond",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/?replytocom=13#respond",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/?replytocom=9#respond",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/?replytocom=11#respond",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/?replytocom=10#respond",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/?replytocom=14#respond",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/?replytocom=12#respond",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/experiencing-the-freedom-of-gods-presence/#respond",
-      "slug": "experiencing-the-freedom-of-gods-presence",
-      "title": "Experiencing the Freedom of God\u2019s Presence \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-13.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-13.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-7.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-7.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-8.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-8.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/how-to-develop-a-habit-of-worship/?replytocom=6#respond",
-      "slug": "how-to-develop-a-habit-of-worship",
-      "title": "How to Develop a Habit of Worship \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/how-to-develop-a-habit-of-worship/?replytocom=7#respond",
-      "slug": "how-to-develop-a-habit-of-worship",
-      "title": "How to Develop a Habit of Worship \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/how-to-develop-a-habit-of-worship/#respond",
-      "slug": "how-to-develop-a-habit-of-worship",
-      "title": "How to Develop a Habit of Worship \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/tag/pastor/",
-      "slug": "tag/pastor",
-      "title": "Pastor \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/tag/podcast/",
-      "slug": "tag/podcast",
-      "title": "Podcast \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/tag/worship/",
-      "slug": "tag/worship",
-      "title": "Worship \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/whats-your-view-of-marriage/?replytocom=4#respond",
-      "slug": "whats-your-view-of-marriage",
-      "title": "What\u2019s Your View of Marriage? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/whats-your-view-of-marriage/?replytocom=5#respond",
-      "slug": "whats-your-view-of-marriage",
-      "title": "What\u2019s Your View of Marriage? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/whats-your-view-of-marriage/#respond",
-      "slug": "whats-your-view-of-marriage",
-      "title": "What\u2019s Your View of Marriage? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/how-do-i-intercede-for-family-who-dont-believe-in-jesus/#respond",
-      "slug": "how-do-i-intercede-for-family-who-dont-believe-in-jesus",
-      "title": "How Do I Intercede For Family Who Don\u2019t Believe In Jesus? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/open-post-28.webp",
-      "slug": "wp-content/uploads/2025/03/open-post-28.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/open-post-27.webp",
-      "slug": "wp-content/uploads/2025/03/open-post-27.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/open-post-2.webp",
-      "slug": "wp-content/uploads/2025/03/open-post-2.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/03/open-post-1.webp",
-      "slug": "wp-content/uploads/2025/03/open-post-1.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/your-mission-should-you-choose-to-accept-it/?replytocom=2#respond",
-      "slug": "your-mission-should-you-choose-to-accept-it",
-      "title": "Your Mission \u2013 Should You Choose to Accept It \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/your-mission-should-you-choose-to-accept-it/?replytocom=3#respond",
-      "slug": "your-mission-should-you-choose-to-accept-it",
-      "title": "Your Mission \u2013 Should You Choose to Accept It \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/your-mission-should-you-choose-to-accept-it/#respond",
-      "slug": "your-mission-should-you-choose-to-accept-it",
-      "title": "Your Mission \u2013 Should You Choose to Accept It \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-15.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-15.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-14.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-14.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-9.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-9.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/i-ruined-my-lifeis-there-hope-for-me/?replytocom=22#respond",
-      "slug": "i-ruined-my-lifeis-there-hope-for-me",
-      "title": "I Ruined My life\u2026is There Hope for Me? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/i-ruined-my-lifeis-there-hope-for-me/?replytocom=23#respond",
-      "slug": "i-ruined-my-lifeis-there-hope-for-me",
-      "title": "I Ruined My life\u2026is There Hope for Me? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/i-ruined-my-lifeis-there-hope-for-me/#respond",
-      "slug": "i-ruined-my-lifeis-there-hope-for-me",
-      "title": "I Ruined My life\u2026is There Hope for Me? \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison/?replytocom=24#respond",
-      "slug": "do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
-      "title": "Do Not Lose Heart \u2013 Your Future in Christ is Beyond All Comparison \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison/?replytocom=25#respond",
-      "slug": "do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
-      "title": "Do Not Lose Heart \u2013 Your Future in Christ is Beyond All Comparison \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison/#respond",
-      "slug": "do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
-      "title": "Do Not Lose Heart \u2013 Your Future in Christ is Beyond All Comparison \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-2.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-2.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-3.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-3.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-4.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-4.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-5.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-5.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/wp-content/uploads/2025/02/58-open-post-1.webp",
-      "slug": "wp-content/uploads/2025/02/58-open-post-1.webp",
-      "title": ""
-    },
-    {
-      "url": "https://ydministries.ca/four-things-our-church-should-still-focus-on/?replytocom=26#respond",
-      "slug": "four-things-our-church-should-still-focus-on",
-      "title": "Four Things Our Church Should Still Focus On \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/four-things-our-church-should-still-focus-on/?replytocom=28#respond",
-      "slug": "four-things-our-church-should-still-focus-on",
-      "title": "Four Things Our Church Should Still Focus On \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/four-things-our-church-should-still-focus-on/?replytocom=27#respond",
-      "slug": "four-things-our-church-should-still-focus-on",
-      "title": "Four Things Our Church Should Still Focus On \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/four-things-our-church-should-still-focus-on/?replytocom=29#respond",
-      "slug": "four-things-our-church-should-still-focus-on",
-      "title": "Four Things Our Church Should Still Focus On \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca/four-things-our-church-should-still-focus-on/#respond",
-      "slug": "four-things-our-church-should-still-focus-on",
-      "title": "Four Things Our Church Should Still Focus On \u2013 YDM \u2013 Yeshua Deliverance Ministries"
-    },
-    {
-      "url": "https://ydministries.ca#comment-15",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-8",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-13",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-9",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-11",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-10",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-14",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-12",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-6",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-7",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-4",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-5",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-2",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-3",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-22",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-23",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-24",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-25",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-26",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-28",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-27",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    },
-    {
-      "url": "https://ydministries.ca#comment-29",
-      "slug": "home",
-      "title": "YDM \u2013 Yeshua Deliverance Ministries \u2013 Ministry by Bishop H.O. WIlson"
-    }
-  ]
-}
+[
+  {
+    "source": "/about-us/",
+    "destination": "/about",
+    "permanent": true
+  },
+  {
+    "source": "/team/bishopwilson",
+    "destination": "/team/bishop-huel-wilson",
+    "permanent": true
+  },
+  {
+    "source": "/aboutydm/",
+    "destination": "/about",
+    "permanent": true
+  },
+  {
+    "source": "/ask/",
+    "destination": "/ask",
+    "permanent": true
+  },
+  {
+    "source": "/author/ydm-admin/",
+    "destination": "/blog?author=ydm-admin",
+    "permanent": true
+  },
+  {
+    "source": "/blog-page/",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/campaigns/supportydm/",
+    "destination": "/give/supportydm",
+    "permanent": true
+  },
+  {
+    "source": "/campaigns/techfund/",
+    "destination": "/give/techfund",
+    "permanent": true
+  },
+  {
+    "source": "/category/faith/",
+    "destination": "/blog?category=faith",
+    "permanent": true
+  },
+  {
+    "source": "/category/gods-word/",
+    "destination": "/blog?category=gods-word",
+    "permanent": true
+  },
+  {
+    "source": "/category/jesus/",
+    "destination": "/blog?category=jesus",
+    "permanent": true
+  },
+  {
+    "source": "/cmsms_profile_category/pastor/",
+    "destination": "/team?category=pastor",
+    "permanent": true
+  },
+  {
+    "source": "/cmsms_profile_category/senior-priest/",
+    "destination": "/team?category=senior-priest",
+    "permanent": true
+  },
+  {
+    "source": "/cmsms_profile/bishopwilson/",
+    "destination": "/team/bishopwilson",
+    "permanent": true
+  },
+  {
+    "source": "/cmsms_profile/clementinawilson/",
+    "destination": "/team/clementinawilson",
+    "permanent": true
+  },
+  {
+    "source": "/contact/",
+    "destination": "/contact",
+    "permanent": true
+  },
+  {
+    "source": "/discovering-the-power-of-waiting/",
+    "destination": "/blog/discovering-the-power-of-waiting",
+    "permanent": true
+  },
+  {
+    "source": "/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison/",
+    "destination": "/blog/do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison",
+    "permanent": true
+  },
+  {
+    "source": "/event/weekly-bible-study-group/",
+    "destination": "/events/weekly-bible-study-group",
+    "permanent": true
+  },
+  {
+    "source": "/event/young-adults-connect/",
+    "destination": "/events/young-adults-connect",
+    "permanent": true
+  },
+  {
+    "source": "/events-page/",
+    "destination": "/events",
+    "permanent": true
+  },
+  {
+    "source": "/events/category/services/",
+    "destination": "/events?category=services",
+    "permanent": true
+  },
+  {
+    "source": "/events/category/study-group/",
+    "destination": "/events?category=study-group",
+    "permanent": true
+  },
+  {
+    "source": "/experiencing-the-freedom-of-gods-presence/",
+    "destination": "/blog/experiencing-the-freedom-of-gods-presence",
+    "permanent": true
+  },
+  {
+    "source": "/four-things-our-church-should-still-focus-on/",
+    "destination": "/blog/four-things-our-church-should-still-focus-on",
+    "permanent": true
+  },
+  {
+    "source": "/gallery/",
+    "destination": "/gallery",
+    "permanent": true
+  },
+  {
+    "source": "/guestbook/",
+    "destination": "/guestbook",
+    "permanent": true
+  },
+  {
+    "source": "/how-do-i-intercede-for-family-who-dont-believe-in-jesus/",
+    "destination": "/blog/how-do-i-intercede-for-family-who-dont-believe-in-jesus",
+    "permanent": true
+  },
+  {
+    "source": "/how-to-develop-a-habit-of-worship/",
+    "destination": "/blog/how-to-develop-a-habit-of-worship",
+    "permanent": true
+  },
+  {
+    "source": "/huel-clementina/",
+    "destination": "/team/huel-and-clementina-wilson",
+    "permanent": true
+  },
+  {
+    "source": "/huelwilsonbio/",
+    "destination": "/team/bishop-huel-wilson",
+    "permanent": true
+  },
+  {
+    "source": "/i-ruined-my-lifeis-there-hope-for-me/",
+    "destination": "/blog/i-ruined-my-lifeis-there-hope-for-me",
+    "permanent": true
+  },
+  {
+    "source": "/latest-sermons/",
+    "destination": "/sermons",
+    "permanent": true
+  },
+  {
+    "source": "/live/",
+    "destination": "/live",
+    "permanent": true
+  },
+  {
+    "source": "/maltoncog/",
+    "destination": "/locations/maltoncog",
+    "permanent": true
+  },
+  {
+    "source": "/ministries/ask-bishop/",
+    "destination": "/ministries/ask-bishop",
+    "permanent": true
+  },
+  {
+    "source": "/ministries/family/",
+    "destination": "/ministries/family",
+    "permanent": true
+  },
+  {
+    "source": "/ministries/leadership/",
+    "destination": "/ministries/leadership",
+    "permanent": true
+  },
+  {
+    "source": "/ministries/outreach/",
+    "destination": "/ministries/outreach",
+    "permanent": true
+  },
+  {
+    "source": "/ministries/partnership/",
+    "destination": "/ministries/partnership",
+    "permanent": true
+  },
+  {
+    "source": "/ministries/wordwide/",
+    "destination": "/ministries/wordwide",
+    "permanent": true
+  },
+  {
+    "source": "/ministries/worship/",
+    "destination": "/ministries/worship",
+    "permanent": true
+  },
+  {
+    "source": "/our-campaigns/",
+    "destination": "/give",
+    "permanent": true
+  },
+  {
+    "source": "/our-ministries/",
+    "destination": "/ministries",
+    "permanent": true
+  },
+  {
+    "source": "/our-team/",
+    "destination": "/team",
+    "permanent": true
+  },
+  {
+    "source": "/prayer-requests/",
+    "destination": "/prayer",
+    "permanent": true
+  },
+  {
+    "source": "/sermon/gilgal-the-place-of-new-beginnings/",
+    "destination": "/sermons/gilgal-the-place-of-new-beginnings",
+    "permanent": true
+  },
+  {
+    "source": "/sermon/here-am-i-send-me-a-vision-for-mission/",
+    "destination": "/sermons/here-am-i-send-me-a-vision-for-mission",
+    "permanent": true
+  },
+  {
+    "source": "/sermon/jesus-is-coming-soon-signs-prophecy-hope/",
+    "destination": "/sermons/jesus-is-coming-soon-signs-prophecy-hope",
+    "permanent": true
+  },
+  {
+    "source": "/sermon/jesus-the-ultimate-transformational-leader/",
+    "destination": "/sermons/jesus-the-ultimate-transformational-leader",
+    "permanent": true
+  },
+  {
+    "source": "/sermon/repent-the-kingdom-of-god-is-at-hand/",
+    "destination": "/sermons/repent-the-kingdom-of-god-is-at-hand",
+    "permanent": true
+  },
+  {
+    "source": "/sermon/the-heritage-of-a-godly-mother/",
+    "destination": "/sermons/the-heritage-of-a-godly-mother",
+    "permanent": true
+  },
+  {
+    "source": "/sermons-category/expository/",
+    "destination": "/sermons?category=expository",
+    "permanent": true
+  },
+  {
+    "source": "/sermons-category/narrative/",
+    "destination": "/sermons?category=narrative",
+    "permanent": true
+  },
+  {
+    "source": "/sermons-category/textual/",
+    "destination": "/sermons?category=textual",
+    "permanent": true
+  },
+  {
+    "source": "/sermons-category/topical/",
+    "destination": "/sermons?category=topical",
+    "permanent": true
+  },
+  {
+    "source": "/tag/churchfamily/",
+    "destination": "/blog?tag=churchfamily",
+    "permanent": true
+  },
+  {
+    "source": "/tag/godsword/",
+    "destination": "/blog?tag=godsword",
+    "permanent": true
+  },
+  {
+    "source": "/tag/loveoneanother/",
+    "destination": "/blog?tag=loveoneanother",
+    "permanent": true
+  },
+  {
+    "source": "/tag/pastor/",
+    "destination": "/blog?tag=pastor",
+    "permanent": true
+  },
+  {
+    "source": "/tag/podcast/",
+    "destination": "/blog?tag=podcast",
+    "permanent": true
+  },
+  {
+    "source": "/tag/worship/",
+    "destination": "/blog?tag=worship",
+    "permanent": true
+  },
+  {
+    "source": "/westtoronto/",
+    "destination": "/locations/westtoronto",
+    "permanent": true
+  },
+  {
+    "source": "/whats-your-view-of-marriage/",
+    "destination": "/blog/whats-your-view-of-marriage",
+    "permanent": true
+  },
+  {
+    "source": "/your-mission-should-you-choose-to-accept-it/",
+    "destination": "/blog/your-mission-should-you-choose-to-accept-it",
+    "permanent": true
+  }
+]

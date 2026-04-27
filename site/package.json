@@ -9,14 +9,28 @@
     "lint": "eslint src",
     "validate": "tsx scripts/validate-content.ts",
     "validate:syntax": "tsx scripts/validate-content.ts --syntax",
-    "codegen": "tsx scripts/codegen-pages.ts"
+    "codegen": "tsx scripts/codegen-pages.ts",
+    "codegen:pages": "tsx scripts/codegen-pages.ts",
+    "seed:fixups": "tsx scripts/seed-fixups.ts",
+    "seed:fixups:commit": "tsx scripts/seed-fixups.ts --commit",
+    "migrate:media": "tsx scripts/migrate-media-to-r2.ts",
+    "rewrite:media": "tsx scripts/rewrite-media-urls.ts",
+    "build:route-map": "tsx scripts/build-route-map.ts",
+    "import:xml": "tsx scripts/import-from-xml.ts",
+    "seed:content:dry": "tsx scripts/seed-content.ts --dry-run",
+    "seed:content": "tsx scripts/seed-content.ts --commit",
+    "cleanup:stale": "tsx scripts/cleanup-stale-content.ts",
+    "enrich:sermons": "tsx scripts/enrich-sermons.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1037.0",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.8",
     "clsx": "^2.1.1",
     "isomorphic-dompurify": "^3.10.0",
+    "mime-types": "^3.0.2",
     "next": "16.2.2",
+    "node-html-parser": "^7.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwind-merge": "^2.4.0"
@@ -24,6 +38,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@tailwindcss/postcss": "^4.1.7",
+    "@types/mime-types": "^3.0.1",
     "@types/node": "^20.17.57",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
