@@ -5,7 +5,7 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-04-26] - <commit-hash>
+## [2026-04-26] - 045acb2
 
 ### Codegen + content infrastructure
 - feat(F+G): codegen rewrite — 64 pages bound to route-map.json keys + seeded field_keys; per-key dump fallback for routes without templates
