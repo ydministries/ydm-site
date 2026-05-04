@@ -9,7 +9,11 @@
  * Server-only — do NOT import from a client component (it would leak the
  * secret access key into the browser bundle).
  */
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import {
+  S3Client,
+  PutObjectCommand,
+  DeleteObjectCommand,
+} from "@aws-sdk/client-s3";
 
 const ACCOUNT_ID = process.env.R2_ACCOUNT_ID;
 const BUCKET = process.env.R2_BUCKET_NAME ?? "ydm-media";
@@ -56,6 +60,25 @@ export async function uploadToR2(
     }),
   );
   return `${PUBLIC_URL}/${key}`;
+}
+
+/**
+ * Extract the R2 object key from a public storage URL.
+ * Returns null if the URL isn't on the configured R2 public domain — the
+ * caller should treat that as "external asset, skip R2 delete".
+ */
+export function r2KeyFromPublicUrl(url: string): string | null {
+  if (!url) return null;
+  const prefix = `${PUBLIC_URL}/`;
+  if (!url.startsWith(prefix)) return null;
+  const rest = url.slice(prefix.length);
+  return rest.length > 0 ? rest : null;
+}
+
+export async function deleteFromR2(key: string): Promise<void> {
+  await client().send(
+    new DeleteObjectCommand({ Bucket: BUCKET, Key: key }),
+  );
 }
 
 export function r2KeyForUpload(filename: string): string {

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createServerClient } from "@/lib/supabase/server";
 import { UploadButton } from "./UploadButton";
 import { CopyUrlButton } from "./CopyUrlButton";
+import { DeleteButton } from "./DeleteButton";
 
 export const dynamic = "force-dynamic";
 
@@ -83,7 +84,13 @@ export default async function AssetsPage() {
                 <span className="font-accent text-[10px] uppercase tracking-wider text-ydm-muted">
                   {a.mime_type?.split("/")[1] ?? "—"}
                 </span>
-                <CopyUrlButton url={a.storage_path} />
+                <div className="flex items-center gap-1">
+                  <CopyUrlButton url={a.storage_path} />
+                  <DeleteButton
+                    assetKey={a.asset_key}
+                    fileName={a.caption ?? a.asset_key}
+                  />
+                </div>
               </div>
             </div>
           </li>
