@@ -1,4 +1,4 @@
-import { createServerClient } from "./supabase";
+import { createServerClient } from "./supabase/server";
 
 /**
  * Auth guards for API routes and server actions.
@@ -12,7 +12,7 @@ export interface AuthResult {
 }
 
 async function getProfile(): Promise<AuthResult | null> {
-  const supabase = createServerClient();
+  const supabase = await createServerClient();
 
   const {
     data: { user },

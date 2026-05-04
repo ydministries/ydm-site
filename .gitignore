@@ -23,3 +23,11 @@ npm-debug.log*
 # large files (exceed GitHub limits)
 archive/wordpress/scrape/styles.json
 *.mp3
+
+# LibreOffice / OpenOffice lock files
+.~lock.*#
+
+# Temp files
+*.tmp
+*.swp
+*.swo
