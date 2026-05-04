@@ -5,7 +5,7 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-05-04] - PENDING
+## [2026-05-04] - 8cf7d0d
 
 ### Phase N — remaining per-type + index templates
 - feat(N): BlogTemplate, EventTemplate, CampaignTemplate, LocationTemplate registered in template registry by type
