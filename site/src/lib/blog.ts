@@ -8,6 +8,31 @@ export interface BlogPost {
   date: string;
 }
 
+// WP scrape captured CMSMasters demo theme thumbnails as `image.01` for
+// every blog post — those hosts aren't whitelisted in next.config and
+// would crash <Image>. Only allow URLs from the canonical R2-backed YDM
+// host; everything else falls back to the gradient placeholder.
+const TRUSTED_IMAGE_HOSTS = new Set(["media.ydministries.ca"]);
+
+function pickThumbnail(fields: Record<string, string>): string {
+  const candidates = [
+    fields["hero_image"],
+    fields["image.01"],
+    fields["image.01.url"],
+  ];
+  for (const url of candidates) {
+    if (!url) continue;
+    try {
+      const host = new URL(url).hostname;
+      if (TRUSTED_IMAGE_HOSTS.has(host)) return url;
+    } catch {
+      // Not an absolute URL — assume same-origin path, accept.
+      if (url.startsWith("/")) return url;
+    }
+  }
+  return "";
+}
+
 /**
  * Returns ALL blog post detail pages, excluding the index/author/category/tag
  * archive pages. Ordered by date_published DESC.
@@ -22,7 +47,14 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
     .not("page_key", "like", "blog.cat.%")
     .not("page_key", "like", "blog.tag.%")
     .not("page_key", "like", "blog.author.%")
-    .in("field_key", ["meta.title", "excerpt", "image.01", "image.01.url", "date_published"]);
+    .in("field_key", [
+      "meta.title",
+      "excerpt",
+      "hero_image",
+      "image.01",
+      "image.01.url",
+      "date_published",
+    ]);
   if (error) {
     console.error("[blog] getAllBlogPosts failed:", error);
     return [];
@@ -38,7 +70,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
       slug: pageKey.replace(/^blog\./, ""),
       title: fields["meta.title"] ?? "",
       excerpt: fields["excerpt"] ?? "",
-      thumbnail: fields["image.01"] ?? fields["image.01.url"] ?? "",
+      thumbnail: pickThumbnail(fields),
       date: fields["date_published"] ?? "",
     });
   }

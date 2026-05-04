@@ -133,6 +133,42 @@
     "service_times": "Visit-by-arrangement — contact us for current service times.",
     "parking_note":  "Street parking available nearby."
   },
+  "about": {
+    "hero_image":              "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
+    "hero_eyebrow":             "ABOUT YDM",
+    "hero_script":              "Welcome home",
+    "hero_title":               "About Yeshua Deliverance Ministries",
+    "story_eyebrow":            "OUR STORY",
+    "values_eyebrow":           "WHAT WE BELIEVE",
+    "leaders_teaser_eyebrow":   "OUR LEADERSHIP",
+    "leaders_teaser_script":    "Meet our leaders",
+    "locations_teaser_eyebrow": "FIND US",
+    "locations_teaser_script":  "Two locations, one family",
+    "cta_title":                "Visit Us This Sunday",
+    "cta_body":                 "Join us in person or online for worship every 4th Sunday at 1:00 PM.",
+    "cta_label":                "Plan Your Visit"
+  },
+  "contact": {
+    "hero_image":   "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-46.jpg",
+    "hero_eyebrow": "GET IN TOUCH",
+    "hero_script":  "We'd love to hear from you",
+    "hero_title":   "Contact Us",
+    "form_eyebrow": "SEND US A MESSAGE",
+    "form_intro":   "Fill out the form below and we'll get back to you as soon as we can.",
+    "info_eyebrow": "QUICK INFO"
+  },
+  "live": {
+    "hero_image":          "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_eyebrow":        "WORSHIP WITH US",
+    "hero_script":         "Join us live",
+    "hero_title":          "Watch Live",
+    "hero_subtitle":       "Tune in for our worship services and special broadcasts.",
+    "youtube_channel_id":  "UC7JM1kSVzeKSJ5MmiHIE7IA",
+    "youtube_channel_url": "https://www.youtube.com/@YDMWorldwide",
+    "schedule_eyebrow":    "WHEN WE GO LIVE",
+    "schedule_body":       "Sunday Service streams every 4th Sunday at 1:00 PM Eastern. Bible Study streams Thursdays at 7:00 PM Eastern.",
+    "subscribe_label":     "Subscribe on YouTube"
+  },
   "ask": {
     "meta.description": "Submit your faith and scripture questions to Bishop Huel Wilson.",
     "h1.01": "Ask Bishop",
@@ -257,14 +293,22 @@
     "scripture_primary": "Proverbs 31"
   },
   "prayer": {
-    "meta.description": "Submit a prayer request to Bishop Wilson and the YDM prayer team.",
-    "h1.01": "Prayer Requests",
-    "p.01": "Submit your prayer request below. Bishop, the elders, and the YDM prayer team will lift your need before the Lord.",
-    "p.02": "Your request will be shared only with the YDM prayer team unless you tell us otherwise.",
-    "form.label.request": "Your Prayer Request",
+    "meta.description":          "Submit a prayer request to Bishop Wilson and the YDM prayer team.",
+    "h1.01":                     "Prayer Requests",
+    "p.01":                      "Submit your prayer request below. Bishop, the elders, and the YDM prayer team will lift your need before the Lord.",
+    "p.02":                      "Your request will be shared only with the YDM prayer team unless you tell us otherwise.",
+    "form.label.request":        "Your Prayer Request",
     "form.label.email_optional": "Email (optional — for follow-up)",
-    "form.button": "Send Prayer Request",
-    "form.success": "Your request has been received. We will be praying with you.",
-    "form.error": "We couldn't submit your request. Please try again."
+    "form.button":               "Send Prayer Request",
+    "form.success":              "Your request has been received. We will be praying with you.",
+    "form.error":                "We couldn't submit your request. Please try again.",
+    "hero_image":                "https://media.ydministries.ca/uploads/2025/09/wmremove-transformed-1.jpeg",
+    "hero_eyebrow":              "PRAYER REQUESTS",
+    "hero_script":               "Stand with us",
+    "hero_title":                "Prayer Requests",
+    "form_eyebrow":              "SUBMIT A REQUEST",
+    "form_intro":                "Submit your prayer request below. Bishop, the elders, and the YDM prayer team will lift your need before the Lord.",
+    "privacy_title":             "Your privacy",
+    "privacy_body":              "Your request will be shared only with the YDM prayer team unless you tell us otherwise. We do not publish or republish prayer requests."
   }
 }

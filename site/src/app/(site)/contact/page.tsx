@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import { fetchPageContent, fetchAssets } from "@/lib/content";
 import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
-import { EditableContent } from "@/components/EditableContent";
-import { EditableRichText } from "@/components/EditableRichText";
-import { EditableImage } from "@/components/EditableImage";
+import { ContactTemplate } from "@/components/templates/ContactTemplate";
 
 const PAGE_KEY = "contact";
 
@@ -29,69 +27,7 @@ export default async function ContactPage() {
   return (
     <ContentProviderWrapper pageKey={PAGE_KEY} entries={contentEntries}>
       <AssetProviderWrapper entries={assetEntries}>
-        <section data-group="h3">
-          <EditableContent fieldKey="h3.01" as="h3" />
-          <EditableContent fieldKey="h3.02" as="h3" />
-          <EditableContent fieldKey="h3.03" as="h3" />
-        </section>
-        <section data-group="p">
-          <EditableRichText fieldKey="p.01" />
-          <EditableRichText fieldKey="p.02" />
-          <EditableRichText fieldKey="p.03" />
-          <EditableRichText fieldKey="p.04" />
-          <EditableRichText fieldKey="p.05" />
-          <EditableRichText fieldKey="p.06" />
-          <EditableRichText fieldKey="p.07" />
-          <EditableRichText fieldKey="p.08" />
-          <EditableRichText fieldKey="p.09" />
-        </section>
-        <section data-group="list">
-          <EditableRichText fieldKey="list.01" />
-        </section>
-        <section data-group="image">
-          <EditableImage fieldKey="image.01" />
-          <EditableImage fieldKey="image.02" />
-        </section>
-        <section data-group="form">
-          <EditableContent fieldKey="form.category.1.label" as="span" />
-          <EditableContent fieldKey="form.category.2.label" as="span" />
-          <EditableContent fieldKey="form.category.3.label" as="span" />
-          <EditableContent fieldKey="form.category.4.label" as="span" />
-          <EditableContent fieldKey="form.category.5.label" as="span" />
-          <EditableContent fieldKey="form.category.6.label" as="span" />
-          <EditableContent fieldKey="form.category.7.label" as="span" />
-          <EditableContent fieldKey="form.category.8.label" as="span" />
-          <EditableContent fieldKey="form.category.9.label" as="span" />
-          <EditableContent fieldKey="form.field.category_label" as="span" />
-          <EditableContent fieldKey="form.field.consent_label" as="span" />
-          <EditableContent fieldKey="form.field.email_label" as="span" />
-          <EditableContent fieldKey="form.field.message_label" as="span" />
-          <EditableContent fieldKey="form.field.name_label" as="span" />
-          <EditableContent fieldKey="form.field.org_label" as="span" />
-          <EditableContent fieldKey="form.field.phone_label" as="span" />
-          <EditableRichText fieldKey="form.intro" />
-          <EditableContent fieldKey="form.submit.label" as="span" />
-          <EditableRichText fieldKey="form.success.body" />
-          <EditableContent fieldKey="form.success.title" as="span" />
-          <EditableContent fieldKey="form.title" as="span" />
-        </section>
-        <section data-group="other">
-          <EditableContent fieldKey="hero.subtitle" as="span" />
-          <EditableContent fieldKey="hero.title" as="span" />
-          <EditableContent fieldKey="hours.biblestudy_note" as="span" />
-          <EditableContent fieldKey="hours.sunday_note" as="span" />
-          <EditableContent fieldKey="hours.title" as="span" />
-          <EditableContent fieldKey="info.address_label" as="span" />
-          <EditableRichText fieldKey="info.body" />
-          <EditableContent fieldKey="info.email_label" as="span" />
-          <EditableContent fieldKey="info.phone_label" as="span" />
-          <EditableContent fieldKey="info.title" as="span" />
-          <EditableContent fieldKey="info.venue_label" as="span" />
-          <EditableContent fieldKey="map.caption" as="span" />
-          <EditableContent fieldKey="map.embed_lat" as="span" />
-          <EditableContent fieldKey="map.embed_lng" as="span" />
-          <EditableContent fieldKey="map.title" as="span" />
-        </section>
+        <ContactTemplate pageKey={PAGE_KEY} />
       </AssetProviderWrapper>
     </ContentProviderWrapper>
   );
