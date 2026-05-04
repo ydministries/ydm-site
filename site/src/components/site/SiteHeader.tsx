@@ -7,10 +7,9 @@ import { MobileNav } from "./MobileNav";
 const NAV: Array<{ href: string; label: string }> = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/ministries", label: "Ministries" },
   { href: "/sermons", label: "Sermons" },
+  { href: "/ministries", label: "Ministries" },
   { href: "/events", label: "Events" },
-  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 

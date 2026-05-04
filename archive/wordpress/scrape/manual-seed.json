@@ -2,7 +2,8 @@
   "global": {
     "site_name": "Yeshua Deliverance Ministries",
     "site_short": "YDM",
-    "tagline": "YDM: a home for your soul.",
+    "tagline": "A home for your soul.",
+    "tagline.full": "Uniting hearts in faith and fellowship. A home for your soul.",
     "meta.title": "Yeshua Deliverance Ministries — A home for your soul.",
     "meta.description": "Yeshua Deliverance Ministries — a Christ-centered community for worship, discipleship, and service. Led by Bishop Huel O. Wilson in Mississauga, ON.",
     "meta.og_image": "https://media.ydministries.ca/uploads/2025/02/58-home-1.webp",
@@ -12,45 +13,75 @@
     "service.sunday": "1:00 PM, every 4th Sunday",
     "service.bible_study": "Thursdays, 7:00 PM",
     "social.facebook": "https://www.facebook.com/profile.php?id=61580380624275",
-    "social.youtube": "https://www.youtube.com/@BishopHuelWilson",
+    "social.youtube": "https://www.youtube.com/@YDMWorldwide",
     "social.instagram": "https://www.instagram.com/yd.ministries/",
+    "social.linkedin": "https://www.linkedin.com/in/bishop-huel-wilson-3378602b/",
     "footer.copyright": "© 2026 Yeshua Deliverance Ministries — All Rights Reserved",
-    "footer.tagline": "Uniting hearts in faith and fellowship.",
+    "footer.tagline": "Uniting hearts in faith and fellowship. A home for your soul.",
     "nav.donate_label": "Give",
     "nav.live_label": "Watch Live"
   },
   "home": {
-    "welcome_band.headline":   "YDM: A Home for Your Soul.",
-    "welcome_band.kicker":     "WE ARE YDM",
-    "we_are_ydm.eyebrow":      "WE ARE YDM",
-    "we_are_ydm.cta_label":    "JOIN US",
+    "welcome.kicker":             "YOU'RE ALWAYS WELCOME HERE",
+    "hero.title_line1":           "Yeshua Deliverance",
+    "hero.subtitle":              "Uniting hearts in faith and fellowship.",
+
+    "welcome_band.headline":      "YDM: A Home for Your Soul.",
+    "welcome_band.kicker":        "WE ARE YDM",
+    "welcome.body":               "<p>In a world that is constantly changing, some things remain constant. The love of God is one of them.</p><p>We believe that every person deserves a place where they feel known, accepted, and loved &mdash; a place to grow in faith, find community, and discover the purpose God has for their life. Whether you are new to faith, exploring what it means to follow Jesus, or have been walking with Him for years, there is a place for you here.</p><p>We are not a building. We are a family &mdash; gathered around Jesus, sent into the world.</p>",
+
+    "we_are_ydm.eyebrow":         "WE ARE YDM",
+    "we_are_ydm.cta_label":       "JOIN US",
+
     "founded_in_faith.eyebrow":   "FOUNDED IN FAITH",
-    "founded_in_faith.heading":   "A Christ-Centered Community for Worship & Growth",
-    "founded_in_faith.body":      "<p>Yeshua Deliverance Ministries was founded by Bishop Huel O. Wilson with a single conviction: every soul deserves a place to encounter Jesus. From our home base inside the Mississauga Church of God, we have grown into a worldwide community committed to teaching the unchanging truth of God's Word, raising up the next generation of disciples, and serving our neighbors in love. Whether you are exploring faith for the first time or have walked with Christ for decades, you belong with us.</p>",
+    "founded_in_faith.heading":   "Fifty Years of Faithful Ministry, One New Calling",
+    "founded_in_faith.body":      "<p>Yeshua Deliverance Ministries was founded in 2020 by Bishop Huel O. Wilson &mdash; the late-career calling of a man who has shepherded God's people for over fifty years. From a small congregation in Malton with three members and a guitar, to a thriving worldwide ministry reaching every continent through the spoken Word, Bishop Wilson has spent his life learning how to lead God's people home.</p><p>YDM was built for this moment: a Spirit-led ministry of deliverance, healing, and restoration; a church that takes scripture seriously and the Holy Spirit seriously; a community that equips believers for spiritual warfare and victorious living. Whether you join us in person or anywhere in the world online, you belong with us.</p>",
     "founded_in_faith.cta_label": "OUR STORY",
-    "ministries_grid.eyebrow": "GET PLUGGED IN",
-    "ministries_grid.title":   "YDM MINISTRIES",
-    "ministries_grid.script":  "Get Plugged In",
-    "events.eyebrow":          "UPCOMING EVENTS",
-    "events.script":           "Come as you are",
-    "events.cta_label":        "VIEW ALL EVENTS",
-    "mission_vision.script":   "You're always welcome here.",
-    "featured_sermons.eyebrow":  "FROM THE PULPIT",
-    "featured_sermons.title":    "FEATURED SERMONS",
+
+    "mission.title":              "Our Mission",
+    "mission.body":               "<p>To share and spread the love of Christ through worship, discipleship, and service.</p>",
+
+    "vision.title":               "Our Vision",
+    "vision.body":                "<p>A thriving community of empowered disciples transformed by faith, love, and action.</p>",
+
+    "values.title":               "Our Values",
+    "values.body":                "<p><strong>Faith.</strong> We trust the unchanging Word of God in a changing world.</p><p><strong>Community.</strong> We do not walk alone. We grow together.</p><p><strong>Service.</strong> Love that does not act is not love at all.</p><p><strong>Compassion.</strong> We meet people where they are, the way Jesus did.</p>",
+
+    "mission_vision.script":      "You're always welcome here.",
+
+    "ministries_grid.eyebrow":    "GET PLUGGED IN",
+    "ministries_grid.title":      "YDM MINISTRIES",
+    "ministries_grid.script":     "Get Plugged In",
+
+    "featured_sermons.eyebrow":   "FROM THE PULPIT",
+    "featured_sermons.title":     "Featured Sermons",
     "featured_sermons.cta_label": "VIEW ALL SERMONS",
-    "countdown.eyebrow":         "DON'T MISS THE NEXT SERVICE",
-    "countdown.script":          "Be the light.",
-    "countdown.cta_label":       "JOIN US",
-    "leaders.eyebrow":           "OUR LEADERSHIP",
-    "leaders.script":            "Leading with Love",
-    "leaders.title":             "Meet Our Leaders",
-    "leaders.cta_label":         "MEET FULL TEAM",
-    "support.eyebrow":           "SUPPORT OUR MISSION",
-    "support.script":            "Make a difference",
-    "support.cta_label":         "GIVE NOW",
-    "get_involved.eyebrow":      "GET INVOLVED",
-    "get_involved.script":       "We're here for you!",
-    "newsletter.script":         "Stay connected"
+
+    "events.eyebrow":             "UPCOMING EVENTS",
+    "events.script":              "Come as you are",
+    "events.cta_label":           "VIEW ALL EVENTS",
+
+    "countdown.eyebrow":          "DON'T MISS THE NEXT SERVICE",
+    "countdown.script":           "Be the light.",
+    "countdown.cta_label":        "JOIN US",
+
+    "leaders.eyebrow":            "OUR LEADERSHIP",
+    "leaders.script":             "Leading with Love",
+    "leaders.title":              "Meet Our Leaders",
+    "leaders.cta_label":          "MEET FULL TEAM",
+
+    "get_involved.eyebrow":       "GET INVOLVED",
+    "get_involved.script":        "We're here for you!",
+
+    "support.eyebrow":            "SUPPORT OUR MISSION",
+    "support.script":             "Make a difference",
+    "support_banner.title":       "Support YDM's Mission",
+    "support_banner.body":        "<p>Your generosity sustains the work. Every gift strengthens our worship ministry, equips leaders for Kingdom work, extends compassion through outreach, and carries the gospel worldwide. Stand with us &mdash; one-time or monthly.</p>",
+    "support.cta_label":          "GIVE NOW",
+
+    "newsletter.script":          "Stay connected",
+    "newsletter.title":           "Subscribe",
+    "newsletter.prompt":          "Get sermons, prayer updates, and event reminders straight to your inbox."
   },
   "blog.discovering-the-power-of-waiting": {
     "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",

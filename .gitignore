@@ -31,3 +31,7 @@ archive/wordpress/scrape/styles.json
 *.tmp
 *.swp
 *.swo
+
+# Content drafts — keep .md source, exclude binary exports
+*.docx
+*.pdf

@@ -6,6 +6,8 @@ const QUICK_LINKS: Array<{ href: string; label: string }> = [
   { href: "/about", label: "About" },
   { href: "/sermons", label: "Sermons" },
   { href: "/ministries", label: "Ministries" },
+  { href: "/team", label: "Team" },
+  { href: "/blog", label: "Blog" },
   { href: "/give", label: "Give" },
   { href: "/contact", label: "Contact" },
 ];
