@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { fetchPageContent } from "@/lib/content";
 import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
+import { AdminEditProvider } from "@/components/admin/AdminEditProvider";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { createServerClient } from "@/lib/supabase/server";
 
 export async function generateMetadata(): Promise<Metadata> {
   const global = await fetchPageContent("global");
@@ -37,13 +39,33 @@ export default async function SiteLayout({
   const globalContent = await fetchPageContent("global");
   const globalEntries = Array.from(globalContent.values());
 
+  // Detect admin/bishop server-side so the (site) tree can render the
+  // inline-edit overlay for editors. Anonymous visitors get isAdmin=false
+  // and the overlay collapses to a no-op.
+  const supabase = await createServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  let isAdmin = false;
+  if (user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", user.id)
+      .maybeSingle();
+    const role = profile?.role;
+    isAdmin = role === "admin" || role === "bishop";
+  }
+
   return (
     <ContentProviderWrapper pageKey="global" entries={globalEntries}>
-      <SiteHeader />
-      <main className="min-h-screen bg-ydm-cream text-ydm-ink font-body">
-        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">{children}</div>
-      </main>
-      <SiteFooter />
+      <AdminEditProvider isAdmin={isAdmin}>
+        <SiteHeader />
+        <main className="min-h-screen bg-ydm-cream text-ydm-ink font-body">
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">{children}</div>
+        </main>
+        <SiteFooter />
+      </AdminEditProvider>
     </ContentProviderWrapper>
   );
 }

@@ -2,7 +2,8 @@
 
 import { useContent } from "./ContentProvider";
 import { useItemScope } from "./ItemProvider";
-import type { ElementType, HTMLAttributes } from "react";
+import { useAdminEdit } from "./admin/AdminEditProvider";
+import type { ElementType, HTMLAttributes, MouseEvent } from "react";
 
 /**
  * Zero-fallback editable **plain text** component.
@@ -14,7 +15,8 @@ import type { ElementType, HTMLAttributes } from "react";
  * No `defaultValue`. No `fallback`. No `children`. No `placeholder`.
  * Missing key → loud "[MISSING: fieldKey]" in dev.
  *
- * This is the mechanical guarantee from PLAN.md §2.3.
+ * Admin mode: when an admin/bishop is signed in, hovering shows a gold
+ * dotted outline + ✎ badge; clicking opens the inline edit modal.
  */
 interface EditableContentProps extends HTMLAttributes<HTMLElement> {
   fieldKey: string;
@@ -25,12 +27,13 @@ export function EditableContent({
   fieldKey,
   as: Tag = "span",
   className,
+  onClick,
   ...rest
 }: EditableContentProps) {
-  const { content } = useContent();
+  const { content, pageKey } = useContent();
   const scope = useItemScope();
+  const { isAdmin, openEdit } = useAdminEdit();
 
-  // Inside an ItemProvider, prepend the list scope to the fieldKey
   const resolvedKey = scope
     ? `${scope.prefix}.${scope.indexKey}.${fieldKey}`
     : fieldKey;
@@ -52,8 +55,36 @@ export function EditableContent({
     return null;
   }
 
+  if (!isAdmin) {
+    return (
+      <Tag className={className} {...rest}>
+        {row.value}
+      </Tag>
+    );
+  }
+
+  const handleClick = (e: MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openEdit({
+      pageKey,
+      fieldKey: resolvedKey,
+      currentValue: row.value,
+      valueType: "text",
+    });
+    onClick?.(e);
+  };
+
+  const adminClass =
+    "ydm-editable group relative cursor-pointer outline-dashed outline-1 outline-offset-2 outline-transparent transition-[outline-color] hover:outline-ydm-gold/70";
+
   return (
-    <Tag className={className} {...rest}>
+    <Tag
+      className={`${className ?? ""} ${adminClass}`.trim()}
+      onClick={handleClick}
+      title={`Edit: ${resolvedKey}`}
+      {...rest}
+    >
       {row.value}
     </Tag>
   );

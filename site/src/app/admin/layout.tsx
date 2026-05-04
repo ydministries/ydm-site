@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 const SIDEBAR_LINKS = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/content", label: "Content" },
+  { href: "/admin/assets", label: "Assets" },
   { href: "/admin/profile", label: "Profile" },
 ];
 
@@ -88,6 +89,14 @@ export default async function AdminLayout({
                 </li>
               ))}
             </ul>
+            <div className="mt-6 border-t border-ydm-line pt-4">
+              <Link
+                href="/"
+                className="block rounded px-3 py-2 text-sm font-medium text-ydm-muted no-underline hover:bg-ydm-surface hover:text-ydm-ink"
+              >
+                ← View site
+              </Link>
+            </div>
           </nav>
           <form action="/admin/logout" method="post" className="border-t border-ydm-line p-4">
             <button

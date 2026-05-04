@@ -42,9 +42,20 @@ export default async function AdminDashboardPage() {
   } = await supabase.auth.getUser();
 
   // Counts for the dashboard cards.
-  const { count: pageCount } = await supabase
+  const { count: fieldCount } = await supabase
     .from("page_content")
     .select("page_key", { count: "exact", head: true });
+
+  // Distinct page_keys — fetch keys and dedupe in memory (Supabase JS doesn't
+  // expose DISTINCT directly).
+  const { data: keyRows } = await supabase
+    .from("page_content")
+    .select("page_key");
+  const pageCount = keyRows ? new Set(keyRows.map((r) => r.page_key)).size : 0;
+
+  const { count: assetCount } = await supabase
+    .from("assets")
+    .select("id", { count: "exact", head: true });
 
   return (
     <div className="mx-auto max-w-5xl">
@@ -58,9 +69,9 @@ export default async function AdminDashboardPage() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Card
           href="/admin/content"
-          title={`Content (${pageCount ?? 0} rows)`}
+          title={`Content (${pageCount} pages · ${fieldCount ?? 0} fields)`}
           body="Edit headings, body copy, taglines, and CTAs across every page on the site."
-          status="soon"
+          status="ready"
         />
         <Card
           href="/admin/profile"
@@ -75,10 +86,10 @@ export default async function AdminDashboardPage() {
           status="soon"
         />
         <Card
-          href="/admin/media"
-          title="Media"
-          body="Upload and manage images across pages, blog posts, sermons, and ministries."
-          status="soon"
+          href="/admin/assets"
+          title={`Assets (${assetCount ?? 0})`}
+          body="Upload images and copy URLs for use in content fields."
+          status="ready"
         />
         <Card
           href="/admin/sermons"
