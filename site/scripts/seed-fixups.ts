@@ -63,6 +63,19 @@ function inferValueType(fieldKey: string): string {
   if (fieldKey === 'person_bio') return 'html';
   if (fieldKey === 'preaching') return 'text';
   if (fieldKey === 'ministries_led') return 'text';
+  // Phase O — blog/event/campaign/location detail fields
+  if (fieldKey === 'hero_image') return 'url';
+  if (fieldKey === 'author_name') return 'text';
+  if (fieldKey === 'category') return 'text';
+  if (fieldKey === 'date_iso') return 'text';
+  if (fieldKey === 'location_name') return 'text';
+  if (fieldKey === 'location_addr') return 'text';
+  if (fieldKey === 'duration') return 'text';
+  if (fieldKey === 'goal_label') return 'text';
+  if (fieldKey === 'cta_label') return 'text';
+  if (fieldKey === 'address') return 'text';
+  if (fieldKey === 'service_times') return 'text';
+  if (fieldKey === 'parking_note') return 'text';
   return 'text';
 }
 

@@ -5,6 +5,18 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-04] - PENDING
+
+### Phase N — remaining per-type + index templates
+- feat(N): BlogTemplate, EventTemplate, CampaignTemplate, LocationTemplate registered in template registry by type
+- feat(N): index templates for blog, events, give, ministries, sermons, team registered by page key
+- feat(N): lib accessors for blog, campaigns, events, locations (parallel to ministries/sermons/team)
+- chore(N): refactor 17 generated `(site)/*` pages to delegate to template registry (374 + / 419 -)
+- chore: ignore `.vercel/` in `site/.gitignore`
+- chore: seed-fixups + manual-seed.json adjustments
+
+---
+
 ## [2026-04-26] - 045acb2
 
 ### Codegen + content infrastructure

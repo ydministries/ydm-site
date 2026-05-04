@@ -62,6 +62,42 @@ export async function getRecentSermons(
   return sermons.slice(0, limit);
 }
 
+/**
+ * Same shape as RecentSermon — used by the /sermons index. Returns ALL sermon
+ * detail pages, not capped, ordered by date_published DESC.
+ */
+export async function getAllSermons(): Promise<RecentSermon[]> {
+  const sb = createServerClient();
+  const { data, error } = await sb
+    .from("page_content")
+    .select("page_key, field_key, value")
+    .like("page_key", "sermons.%")
+    .neq("page_key", "sermons.index")
+    .not("page_key", "like", "sermons.cat.%")
+    .in("field_key", ["meta.title", "thumbnail_url", "date_published", "scripture_primary"]);
+  if (error) {
+    console.error("[sermons] getAllSermons failed:", error);
+    return [];
+  }
+  const byPage = new Map<string, Record<string, string>>();
+  for (const row of data ?? []) {
+    if (!byPage.has(row.page_key)) byPage.set(row.page_key, {});
+    byPage.get(row.page_key)![row.field_key] = row.value;
+  }
+  const sermons: RecentSermon[] = [];
+  for (const [pageKey, fields] of byPage) {
+    sermons.push({
+      slug: pageKey.replace(/^sermons\./, ""),
+      title: fields["meta.title"] ?? "",
+      thumbnail: fields["thumbnail_url"] ?? "",
+      date: fields["date_published"] ?? "",
+      scripture: fields["scripture_primary"] ?? "",
+    });
+  }
+  sermons.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return sermons;
+}
+
 export interface ScriptureRef {
   ref: string;
   text: string;

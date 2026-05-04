@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import { fetchPageContent, fetchAssets } from "@/lib/content";
 import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
-import { EditableContent } from "@/components/EditableContent";
-import { EditableRichText } from "@/components/EditableRichText";
-import { EditableImage } from "@/components/EditableImage";
+import { BlogTemplate } from "@/components/templates/BlogTemplate";
 
 const PAGE_KEY = "blog.do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison";
 
@@ -29,25 +27,7 @@ export default async function BlogDoNotLoseHeartYourFutureInChristIsBeyondAllCom
   return (
     <ContentProviderWrapper pageKey={PAGE_KEY} entries={contentEntries}>
       <AssetProviderWrapper entries={assetEntries}>
-        <section data-group="h3">
-          <EditableContent fieldKey="h3.01" as="h3" />
-          <EditableContent fieldKey="h3.02" as="h3" />
-          <EditableContent fieldKey="h3.03" as="h3" />
-          <EditableContent fieldKey="h3.04" as="h3" />
-          <EditableContent fieldKey="h3.05" as="h3" />
-          <EditableContent fieldKey="h3.06" as="h3" />
-        </section>
-        <section data-group="p">
-          <EditableRichText fieldKey="p.01" />
-          <EditableRichText fieldKey="p.02" />
-          <EditableRichText fieldKey="p.03" />
-        </section>
-        <section data-group="image">
-          <EditableImage fieldKey="image.01" />
-          <EditableImage fieldKey="image.02" />
-          <EditableImage fieldKey="image.03" />
-          <EditableImage fieldKey="image.04" />
-        </section>
+        <BlogTemplate pageKey={PAGE_KEY} />
       </AssetProviderWrapper>
     </ContentProviderWrapper>
   );

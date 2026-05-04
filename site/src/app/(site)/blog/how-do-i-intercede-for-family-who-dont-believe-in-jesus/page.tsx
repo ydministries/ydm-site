@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import { fetchPageContent, fetchAssets } from "@/lib/content";
 import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
-import { EditableContent } from "@/components/EditableContent";
-import { EditableRichText } from "@/components/EditableRichText";
-import { EditableImage } from "@/components/EditableImage";
+import { BlogTemplate } from "@/components/templates/BlogTemplate";
 
 const PAGE_KEY = "blog.how-do-i-intercede-for-family-who-dont-believe-in-jesus";
 
@@ -29,30 +27,7 @@ export default async function BlogHowDoIIntercedeForFamilyWhoDontBelieveInJesusP
   return (
     <ContentProviderWrapper pageKey={PAGE_KEY} entries={contentEntries}>
       <AssetProviderWrapper entries={assetEntries}>
-        <section data-group="h3">
-          <EditableContent fieldKey="h3.01" as="h3" />
-          <EditableContent fieldKey="h3.02" as="h3" />
-          <EditableContent fieldKey="h3.03" as="h3" />
-        </section>
-        <section data-group="p">
-          <EditableRichText fieldKey="p.01" />
-          <EditableRichText fieldKey="p.02" />
-          <EditableRichText fieldKey="p.03" />
-          <EditableRichText fieldKey="p.04" />
-          <EditableRichText fieldKey="p.05" />
-          <EditableRichText fieldKey="p.06" />
-          <EditableRichText fieldKey="p.07" />
-          <EditableRichText fieldKey="p.08" />
-          <EditableRichText fieldKey="p.09" />
-          <EditableRichText fieldKey="p.10" />
-        </section>
-        <section data-group="list">
-          <EditableRichText fieldKey="list.01" />
-          <EditableRichText fieldKey="list.02" />
-        </section>
-        <section data-group="image">
-          <EditableImage fieldKey="image.01" />
-        </section>
+        <BlogTemplate pageKey={PAGE_KEY} />
       </AssetProviderWrapper>
     </ContentProviderWrapper>
   );

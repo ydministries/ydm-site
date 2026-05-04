@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import { fetchPageContent, fetchAssets } from "@/lib/content";
 import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
-import { EditableContent } from "@/components/EditableContent";
-import { EditableRichText } from "@/components/EditableRichText";
-import { EditableImage } from "@/components/EditableImage";
+import { EventsIndexTemplate } from "@/components/templates/EventsIndexTemplate";
 
 const PAGE_KEY = "events.index";
 
@@ -29,24 +27,7 @@ export default async function EventsIndexPage() {
   return (
     <ContentProviderWrapper pageKey={PAGE_KEY} entries={contentEntries}>
       <AssetProviderWrapper entries={assetEntries}>
-        <section data-group="h1">
-          <EditableContent fieldKey="h1.01" as="h1" />
-        </section>
-        <section data-group="h3">
-          <EditableContent fieldKey="h3.01" as="h3" />
-          <EditableContent fieldKey="h3.02" as="h3" />
-        </section>
-        <section data-group="p">
-          <EditableRichText fieldKey="p.01" />
-          <EditableRichText fieldKey="p.02" />
-        </section>
-        <section data-group="image">
-          <EditableImage fieldKey="image.01" />
-          <EditableImage fieldKey="image.02" />
-        </section>
-        <section data-group="list-placeholder">
-          {/* TODO Phase H: <ListSection /> for child query */}
-        </section>
+        <EventsIndexTemplate pageKey={PAGE_KEY} />
       </AssetProviderWrapper>
     </ContentProviderWrapper>
   );

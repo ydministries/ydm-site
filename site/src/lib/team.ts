@@ -69,6 +69,45 @@ export async function getOtherTeam(
   return out.slice(0, limit);
 }
 
+/**
+ * Returns ALL rendered team profiles for the /team index — excludes the
+ * redirect-keyed team.bishopwilson duplicate, the index page, and category
+ * archives. Alphabetical by name.
+ */
+export async function getAllTeam(): Promise<RelatedPerson[]> {
+  const sb = createServerClient();
+  const allowedKeys = Object.keys(TEAM_KEY_TO_SLUG);
+  if (allowedKeys.length === 0) return [];
+
+  const { data, error } = await sb
+    .from("page_content")
+    .select("page_key, field_key, value")
+    .in("page_key", allowedKeys)
+    .in("field_key", ["person_name", "person_title", "portrait_url"]);
+  if (error) {
+    console.error("[team] getAllTeam failed:", error);
+    return [];
+  }
+  const byPage = new Map<string, Record<string, string>>();
+  for (const row of data ?? []) {
+    if (!byPage.has(row.page_key)) byPage.set(row.page_key, {});
+    byPage.get(row.page_key)![row.field_key] = row.value;
+  }
+  const out: RelatedPerson[] = [];
+  for (const [pageKey, fields] of byPage) {
+    const slug = TEAM_KEY_TO_SLUG[pageKey];
+    if (!slug) continue;
+    out.push({
+      slug,
+      name: fields["person_name"] ?? "",
+      title: fields["person_title"] ?? "",
+      portrait: fields["portrait_url"] ?? "",
+    });
+  }
+  out.sort((a, b) => a.name.localeCompare(b.name));
+  return out;
+}
+
 export interface PreachedSermon {
   slug: string;
   title: string;

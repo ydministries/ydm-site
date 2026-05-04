@@ -26,11 +26,21 @@ export const templateRegistry: {
 } = {
   byKey: {
     home: { importPath: "@/components/templates/HomeTemplate", exportName: "HomeTemplate" },
+    "sermons.index":    { importPath: "@/components/templates/SermonsIndexTemplate",    exportName: "SermonsIndexTemplate" },
+    "ministries.index": { importPath: "@/components/templates/MinistriesIndexTemplate", exportName: "MinistriesIndexTemplate" },
+    "team.index":       { importPath: "@/components/templates/TeamIndexTemplate",       exportName: "TeamIndexTemplate" },
+    "blog.index":       { importPath: "@/components/templates/BlogIndexTemplate",       exportName: "BlogIndexTemplate" },
+    "events.index":     { importPath: "@/components/templates/EventsIndexTemplate",     exportName: "EventsIndexTemplate" },
+    "give.index":       { importPath: "@/components/templates/GiveIndexTemplate",       exportName: "GiveIndexTemplate" },
   },
   byType: {
     sermon:   { importPath: "@/components/templates/SermonTemplate",   exportName: "SermonTemplate" },
     ministry: { importPath: "@/components/templates/MinistryTemplate", exportName: "MinistryTemplate" },
     team:     { importPath: "@/components/templates/TeamTemplate",     exportName: "TeamTemplate" },
+    blog:     { importPath: "@/components/templates/BlogTemplate",     exportName: "BlogTemplate" },
+    event:    { importPath: "@/components/templates/EventTemplate",    exportName: "EventTemplate" },
+    campaign: { importPath: "@/components/templates/CampaignTemplate", exportName: "CampaignTemplate" },
+    location: { importPath: "@/components/templates/LocationTemplate", exportName: "LocationTemplate" },
   },
   redirectKeys: {
     // Bishop has two source page_keys — huel_wilson (the canonical bio page)

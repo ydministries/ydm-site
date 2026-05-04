@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import { fetchPageContent, fetchAssets } from "@/lib/content";
 import { ContentProviderWrapper } from "@/components/ContentProviderWrapper";
 import { AssetProviderWrapper } from "@/components/AssetProviderWrapper";
-import { EditableContent } from "@/components/EditableContent";
-import { EditableImage } from "@/components/EditableImage";
+import { SermonsIndexTemplate } from "@/components/templates/SermonsIndexTemplate";
 
 const PAGE_KEY = "sermons.index";
 
@@ -28,35 +27,7 @@ export default async function SermonsIndexPage() {
   return (
     <ContentProviderWrapper pageKey={PAGE_KEY} entries={contentEntries}>
       <AssetProviderWrapper entries={assetEntries}>
-        <section data-group="h1">
-          <EditableContent fieldKey="h1.01" as="h1" />
-        </section>
-        <section data-group="h3">
-          <EditableContent fieldKey="h3.01" as="h3" />
-          <EditableContent fieldKey="h3.02" as="h3" />
-          <EditableContent fieldKey="h3.03" as="h3" />
-          <EditableContent fieldKey="h3.04" as="h3" />
-          <EditableContent fieldKey="h3.05" as="h3" />
-          <EditableContent fieldKey="h3.06" as="h3" />
-        </section>
-        <section data-group="image">
-          <EditableImage fieldKey="image.01" />
-          <EditableImage fieldKey="image.02" />
-          <EditableImage fieldKey="image.03" />
-          <EditableImage fieldKey="image.04" />
-          <EditableImage fieldKey="image.05" />
-          <EditableImage fieldKey="image.06.url" />
-          <EditableImage fieldKey="image.07.url" />
-          <EditableImage fieldKey="image.08.url" />
-          <EditableImage fieldKey="image.09.url" />
-          <EditableImage fieldKey="image.10.url" />
-          <EditableImage fieldKey="image.11.url" />
-          <EditableImage fieldKey="image.12.url" />
-          <EditableImage fieldKey="image.13.url" />
-        </section>
-        <section data-group="list-placeholder">
-          {/* TODO Phase H: <ListSection /> for child query */}
-        </section>
+        <SermonsIndexTemplate pageKey={PAGE_KEY} />
       </AssetProviderWrapper>
     </ContentProviderWrapper>
   );

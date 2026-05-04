@@ -51,3 +51,38 @@ export async function getRelatedMinistries(
   ministries.sort((a, b) => a.title.localeCompare(b.title));
   return ministries.slice(0, limit);
 }
+
+/**
+ * Returns ALL ministry detail pages for the /ministries index. Same shape as
+ * RelatedMinistry; alphabetical by title.
+ */
+export async function getAllMinistries(): Promise<RelatedMinistry[]> {
+  const sb = createServerClient();
+  const { data, error } = await sb
+    .from("page_content")
+    .select("page_key, field_key, value")
+    .like("page_key", "ministries.%")
+    .neq("page_key", "ministries.index")
+    .not("page_key", "like", "ministries.cat.%")
+    .in("field_key", ["meta.title", "hero_image", "tagline"]);
+  if (error) {
+    console.error("[ministries] getAllMinistries failed:", error);
+    return [];
+  }
+  const byPage = new Map<string, Record<string, string>>();
+  for (const row of data ?? []) {
+    if (!byPage.has(row.page_key)) byPage.set(row.page_key, {});
+    byPage.get(row.page_key)![row.field_key] = row.value;
+  }
+  const ministries: RelatedMinistry[] = [];
+  for (const [pageKey, fields] of byPage) {
+    ministries.push({
+      slug: pageKey.replace(/^ministries\./, ""),
+      title: fields["meta.title"] ?? "",
+      hero_image: fields["hero_image"] ?? "",
+      tagline: fields["tagline"] ?? "",
+    });
+  }
+  ministries.sort((a, b) => a.title.localeCompare(b.title));
+  return ministries;
+}

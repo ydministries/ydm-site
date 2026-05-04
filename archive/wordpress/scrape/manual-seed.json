@@ -52,6 +52,87 @@
     "get_involved.script":       "We're here for you!",
     "newsletter.script":         "Stay connected"
   },
+  "blog.discovering-the-power-of-waiting": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Faith & Reflection"
+  },
+  "blog.do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Faith & Reflection"
+  },
+  "blog.experiencing-the-freedom-of-gods-presence": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Worship"
+  },
+  "blog.four-things-our-church-should-still-focus-on": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Church Life"
+  },
+  "blog.how-do-i-intercede-for-family-who-dont-believe-in-jesus": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Prayer"
+  },
+  "blog.how-to-develop-a-habit-of-worship": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Worship"
+  },
+  "blog.i-ruined-my-lifeis-there-hope-for-me": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Faith & Reflection"
+  },
+  "blog.whats-your-view-of-marriage": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Family"
+  },
+  "blog.your-mission-should-you-choose-to-accept-it": {
+    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "author_name": "YDM Admin",
+    "category":    "Mission"
+  },
+  "events.weekly-bible-study-group": {
+    "hero_image":    "https://media.ydministries.ca/uploads/2025/01/wmremove-transformed.webp",
+    "date_iso":      "2026-04-30T19:00:00-04:00",
+    "location_name": "Salvation Army Erin Mills Church (host venue)",
+    "location_addr": "1599 Trinity Common Blvd, Brampton, ON L6X 4A8",
+    "duration":      "90 minutes"
+  },
+  "events.young-adults-connect": {
+    "hero_image":    "https://media.ydministries.ca/uploads/2025/01/d4bd005b-e92d-4db0-a7b6-160c2dc6d22e-e1758157433747.jpg",
+    "date_iso":      "2026-05-24T13:00:00-04:00",
+    "location_name": "Mississauga Church of God",
+    "location_addr": "2460 The Collegeway, Mississauga, ON L5L 1V3",
+    "duration":      "1 hour"
+  },
+  "give.supportydm": {
+    "hero_image": "https://media.ydministries.ca/uploads/2025/01/wmremove-transformed.webp",
+    "goal_label": "Help us reach our goal",
+    "cta_label":  "Give to this Campaign"
+  },
+  "give.techfund": {
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-51-4-1-e1758582433856.jpg",
+    "goal_label": "Help us reach our goal",
+    "cta_label":  "Give to this Campaign"
+  },
+  "locations.maltoncog": {
+    "hero_image":    "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
+    "address":       "Mississauga Church of God\n2460 The Collegeway\nMississauga, ON L5L 1V3",
+    "service_times": "Sunday 1:00 PM — Yeshua Sunday Service (every 4th Sunday)\nThursday 7:00 PM — Weekly Bible Study",
+    "parking_note":  "Free on-site parking available."
+  },
+  "locations.westtoronto": {
+    "hero_image":    "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-51-4-1-e1758582433856.jpg",
+    "address":       "West Toronto Church of God\nWest Toronto, ON",
+    "service_times": "Visit-by-arrangement — contact us for current service times.",
+    "parking_note":  "Street parking available nearby."
+  },
   "ask": {
     "meta.description": "Submit your faith and scripture questions to Bishop Huel Wilson.",
     "h1.01": "Ask Bishop",
