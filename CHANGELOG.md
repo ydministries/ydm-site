@@ -5,6 +5,21 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-04] - 8e3a4d3
+
+### Phase Q — About / Contact / Live / Prayer templates
+- feat(Q): AboutTemplate — 6-section about page (hero, story split, mission/vision/values, leaders teaser, locations teaser, gold CTA band)
+- feat(Q): ContactTemplate — FOM-style 2-col layout (info column with icon-square rows + branded YDM card on left, ContactForm on right) with 14-reason optgroup select, dynamic placeholder, per-reason success messages
+- feat(Q): LiveTemplate — full-bleed hero, 16:9 YouTube live-stream iframe (`UC7JM1kSVzeKSJ5MmiHIE7IA` / `@YDMWorldwide`), schedule band, subscribe CTA, catch-up link
+- feat(Q): PrayerTemplate — hero, intro, mailto form (5 reasons + 3 sharing options), privacy card, give/contact CTAs
+- feat(Q): `_helpers/MailtoForm.tsx` (generic, used by PrayerTemplate) + `_helpers/ContactForm.tsx` (controlled-state, FOM-style, used by ContactTemplate)
+- feat(Q): registered all 4 templates in `byKey` of `templateRegistry`; codegen rewired `(site)/about|contact|live|prayer/page.tsx` as thin shims
+- chore(Q): manual-seed entries for about (13 fields), contact (7), live (10), prayer (8 new merged with 9 existing) — 38 net-new rows after `seed:fixups:commit`
+- chore(Q): updated `global.social.youtube` from `@BishopHuelWilson` → `@YDMWorldwide` (DB-only, REST PATCH)
+- fix: `lib/blog.ts` filters non-canonical image hosts (CMSMasters demo URLs would crash `<Image>`); prefers seeded `hero_image` over scraped `image.01`
+
+---
+
 ## [2026-05-04] - 8cf7d0d
 
 ### Phase N — remaining per-type + index templates
