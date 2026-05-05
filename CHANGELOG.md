@@ -5,7 +5,7 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-05-05] - <pending>
+## [2026-05-05] - b910970
 
 ### Phase CC — Newsletter signup
 - feat(CC): `newsletter_subscribers` Supabase table — email (unique), status (subscribed/unsubscribed/bounced), source, unsubscribe_token (uuid default), resend_contact_id, resend_audience_id, metadata jsonb. RLS: anon INSERT, admin/bishop SELECT+UPDATE; service-role bypass for the unsubscribe flow.
@@ -13,7 +13,9 @@ Every push to GitHub or Vercel must be recorded here.
 - feat(CC): `/api/newsletter/subscribe` POST — honeypot + validate + upsert (re-subscribe path supported) + push to Resend Audience + welcome email + bishop notification, all best-effort with the DB row as source of truth.
 - feat(CC): `/api/newsletter/unsubscribe/[token]` GET — service-role flip to status='unsubscribed', sync to Resend, render inline brand-styled confirmation page (success / already / invalid / error).
 - feat(CC): wire `NewsletterForm` (was preventDefault stub) — submitting / success / error states, accessible (sr-only label, aria-describedby, role=alert), honeypot field, disabled-during-submit.
-- env: requires `RESEND_NEWSLETTER_AUDIENCE_ID` (graceful skip if unset — DB still works, audience push is the only thing that no-ops).
+- env: requires `RESEND_NEWSLETTER_AUDIENCE_ID` (graceful skip if unset — DB still works, audience push is the only thing that no-ops). Live audience: `a9fd8c6e-cedf-4e72-ab09-ac8db579fea8`.
+- chore(CC): subscribe route uses service-role (was anon during initial implementation). Anon RLS only grants INSERT but PostgREST upsert needs INSERT + UPDATE + RETURNING — anon's UPDATE branch silently failed. Service-role mirrors the existing unsubscribe pattern; route-level honeypot + email validation are the gatekeeper.
+- chore(CC): migration replaces a pre-existing empty `newsletter_subscribers` table from the orphaned `003_domain_tables.sql` scaffold — `DROP TABLE IF EXISTS … CASCADE` then `CREATE TABLE` (no `IF NOT EXISTS`) so the schema is authoritative, not idempotent.
 
 ---
 
