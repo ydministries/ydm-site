@@ -5,6 +5,18 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-05] - <pending>
+
+### Phase AA — Photo Gallery
+- feat(AA): GalleryTemplate — masonry grid (CSS columns, 4-col desktop / 2 tablet / 1 mobile, 10px gap mirroring the live elementor config) + lightbox client component (`_helpers/GalleryGrid.tsx`)
+- feat(AA): lightbox supports prev/next, keyboard nav (← → Esc), touch swipe, body-scroll lock, focus-visible ring, click-backdrop-to-close, position counter (n / N), per-photo caption
+- feat(AA): `lib/gallery.ts` — getAllGalleryPhotos() reads `assets` rows where asset_key LIKE 'gallery.image.%', ordered ASC for stable curated sequence
+- chore(AA): seeded 14 gallery photos into Supabase `assets` (asset_key = `gallery.image.01..14`) from the live elementor masonry widget; all images already on R2 (verified against media-manifest.json)
+- chore(AA): registered `gallery` in templateRegistry.byKey; gallery is now the last route to graduate from per-key dump fallback (46/46 live routes templated)
+- note: photos are currently demo-theme stock (CMSMasters Faith Connect); bishop will replace via /admin/assets — alt + caption are admin-editable per-asset
+
+---
+
 ## [2026-05-05] - f84d3cd
 
 ### Phase Z — decommission index_filter stubs
