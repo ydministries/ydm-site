@@ -5,7 +5,7 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-05-05] - <pending-EE>
+## [2026-05-05] - 9420372
 
 ### Phase EE — Resend Auth SMTP + branded auth emails + password reset + signup lockdown
 - security(EE): removed public Sign Up tab from /admin/login. The previous tab let anyone create a `bishop`-role profile (via the on_auth_user_created trigger) and gain content-edit access — gap closed at the UI layer.
@@ -21,7 +21,7 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-05-05] - <pending>
+## [2026-05-05] - efefd88
 
 ### Phase DD — Bishop Mode dashboard
 - feat(DD): role-aware admin landing — bishop sees 4 plain-language cards (Edit pages / Messages / Newsletter / Photos) with friendly framing + a "click pencil to edit live" tip card; admin keeps the technical 6-card view including Profile + Users (soon)
