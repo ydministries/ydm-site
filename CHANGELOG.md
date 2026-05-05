@@ -5,7 +5,7 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-05-05] - <pending>
+## [2026-05-05] - 04e31d3
 
 ### Phase AA — Photo Gallery
 - feat(AA): GalleryTemplate — masonry grid (CSS columns, 4-col desktop / 2 tablet / 1 mobile, 10px gap mirroring the live elementor config) + lightbox client component (`_helpers/GalleryGrid.tsx`)
