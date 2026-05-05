@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import DOMPurify from "isomorphic-dompurify";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { fetchPageContent } from "@/lib/content";
 import { EditableRichText } from "@/components/EditableRichText";
 import { getRelatedMinistries } from "@/lib/ministries";
@@ -89,7 +89,7 @@ export async function MinistryTemplate({ pageKey }: Props) {
                 {leaderBio ? (
                   <div
                     className="font-serif text-sm leading-relaxed text-ydm-text [&_p]:mb-2 [&_p:last-child]:mb-0"
-                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(leaderBio) }}
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(leaderBio) }}
                   />
                 ) : null}
               </div>

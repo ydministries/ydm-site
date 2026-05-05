@@ -1,6 +1,6 @@
 "use client";
 
-import DOMPurify from "isomorphic-dompurify";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { useContent } from "./ContentProvider";
 import { useItemScope } from "./ItemProvider";
 import { useAdminEdit } from "./admin/AdminEditProvider";
@@ -8,7 +8,7 @@ import type { HTMLAttributes, MouseEvent } from "react";
 
 /**
  * Renders richtext / html / markdown content from the DB.
- * All HTML is sanitized via DOMPurify before rendering.
+ * All HTML is sanitized via lib/sanitize before rendering.
  *
  * Admin mode: signed-in editors see a hover affordance + click-to-edit modal
  * exactly like EditableContent. The modal opens with valueType="html".
@@ -48,7 +48,7 @@ export function EditableRichText({
     return null;
   }
 
-  const html = DOMPurify.sanitize(row.value);
+  const html = sanitizeHtml(row.value);
 
   if (!isAdmin) {
     return (

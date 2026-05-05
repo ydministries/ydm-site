@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import DOMPurify from "isomorphic-dompurify";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { fetchPageContent } from "@/lib/content";
 import { EditableFallback } from "./_helpers/EditableFallback";
 
@@ -111,7 +111,7 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
               {storyBody ? (
                 <div
                   className="editable-prose font-serif text-lg leading-relaxed text-ydm-text [&_p]:mb-4 [&_p:last-child]:mb-0"
-                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(storyBody) }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(storyBody) }}
                 />
               ) : (
                 <p className="m-0 font-serif text-lg leading-relaxed text-ydm-text">

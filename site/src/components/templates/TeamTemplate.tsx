@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import DOMPurify from "isomorphic-dompurify";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { fetchPageContent } from "@/lib/content";
 import {
   getMinistriesByName,
@@ -109,7 +109,7 @@ export async function TeamTemplate({ pageKey }: Props) {
             </div>
             <div
               className="editable-prose font-serif text-base leading-relaxed text-ydm-text [&_p]:mb-4 [&_p:last-child]:mb-0"
-              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(personBio) }}
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(personBio) }}
             />
           </div>
         </section>
