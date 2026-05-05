@@ -5,6 +5,22 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-05] - <pending-EE>
+
+### Phase EE — Resend Auth SMTP + branded auth emails + password reset + signup lockdown
+- security(EE): removed public Sign Up tab from /admin/login. The previous tab let anyone create a `bishop`-role profile (via the on_auth_user_created trigger) and gain content-edit access — gap closed at the UI layer.
+- security(EE): paired with toggling off "Allow new users to sign up" in Supabase Auth settings (Dashboard) — defense in depth at the API layer too. Direct calls to `auth.signUp()` are now rejected.
+- security(EE): /admin/login now only offers Sign In + Forgot password. Footer card directs would-be users to email yeshuawebmaster@gmail.com for invitation. New editors are added by Mikey via Supabase Dashboard → Authentication → Users → Invite User (sends a magic link via the new branded SMTP) or via direct SQL with service-role.
+- security(EE): error param surfaced on /admin/login if /admin/auth/callback bounces with a verifyOtp failure — no silent dead-ends.
+- feat(EE): `/admin/auth/reset` client page — handles both URL-hash recovery flow (legacy Supabase `#access_token=…&type=recovery`) AND token-hash query flow (`?token_hash=…&type=recovery` from our branded templates), shows a "set new password" form, redirects to /admin on success, friendly error message for expired/used links
+- feat(EE): `/admin/auth/callback` route now handles `?token_hash=…&type=signup|magiclink|email_change` via `verifyOtp` in addition to the existing OAuth `?code=…` PKCE flow — branded YDM email templates can now use the canonical callback for everything except recovery (which deep-links to /admin/auth/reset)
+- feat(EE): 4 branded auth email templates saved to `docs/auth-email-templates/` (confirm-signup, magic-link, reset-password, change-email) — gold accent rule, cream bg, "YESHUA DELIVERANCE MINISTRIES" heading, matches newsletter welcome email styling. Templates are version-controlled here as source of truth; live copies live in Supabase Dashboard → Authentication → Emails.
+- feat(EE): templates use `{{ .SiteURL }}/admin/auth/{callback,reset}?token_hash={{ .TokenHash }}&type=…` instead of `{{ .ConfirmationURL }}` so deep-links work without needing Site URL changes — recovery goes straight to the password form, signup confirmation lands on /admin
+- chore(EE): /admin/login forgot-password handler now redirects to `/admin/auth/reset` (was `/admin/login` which silently dropped the recovery hash)
+- ops(EE): Resend wired as Supabase Auth SMTP provider via Dashboard → Auth → SMTP Settings (host: smtp.resend.com, port 465, user: `resend`, password: existing RESEND_API_KEY, sender: noreply@ydministries.ca). Fixes silent-drop / 4-emails-per-hour bottleneck on Supabase's default SMTP that prevented bishop signup confirmation from arriving.
+
+---
+
 ## [2026-05-05] - <pending>
 
 ### Phase DD — Bishop Mode dashboard

@@ -4,19 +4,32 @@ import { useState, type FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createBrowserClient } from "@/lib/supabase/client";
 
-type Mode = "signin" | "signup" | "forgot";
+type Mode = "signin" | "forgot";
 
+/**
+ * YDM admin sign-in page.
+ *
+ * Public sign-up is intentionally NOT exposed here — admin access is by
+ * invitation only. Add new editors via:
+ *  1. Supabase Dashboard → Authentication → Users → Invite User (sends a
+ *     magic link via the configured SMTP), OR
+ *  2. SQL `INSERT INTO auth.users` with the service-role key
+ *
+ * "Allow new users to sign up" is also disabled in Supabase Auth settings
+ * so direct API calls to `auth.signUp()` are rejected at the API layer too
+ * — defense in depth against the UI being bypassed.
+ */
 export default function LoginPage() {
   const router = useRouter();
   const search = useSearchParams();
   const next = search.get("next") || "/admin";
+  const errorParam = search.get("error");
 
   const [mode, setMode] = useState<Mode>("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirm, setConfirm] = useState("");
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(errorParam ?? "");
   const [info, setInfo] = useState("");
 
   const supabase = createBrowserClient();
@@ -26,50 +39,15 @@ export default function LoginPage() {
     setBusy(true);
     setError("");
     setInfo("");
-    const { error: err } = await supabase.auth.signInWithPassword({ email, password });
-    if (err) {
-      setError(err.message);
-      setBusy(false);
-      return;
-    }
-    router.push(next);
-    router.refresh();
-  }
-
-  async function handleSignUp(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setBusy(true);
-    setError("");
-    setInfo("");
-    if (password !== confirm) {
-      setError("Passwords don't match.");
-      setBusy(false);
-      return;
-    }
-    if (password.length < 8) {
-      setError("Password must be at least 8 characters.");
-      setBusy(false);
-      return;
-    }
-    const { data, error: err } = await supabase.auth.signUp({
+    const { error: err } = await supabase.auth.signInWithPassword({
       email,
       password,
-      options: {
-        emailRedirectTo: `${window.location.origin}/admin/auth/callback?next=${encodeURIComponent(next)}`,
-      },
     });
     if (err) {
       setError(err.message);
       setBusy(false);
       return;
     }
-    if (data.user && !data.session) {
-      // Email confirmation required.
-      setInfo("Check your email to confirm your address. After confirming you'll be redirected back here.");
-      setBusy(false);
-      return;
-    }
-    // Confirmation disabled — already signed in.
     router.push(next);
     router.refresh();
   }
@@ -80,52 +58,29 @@ export default function LoginPage() {
     setError("");
     setInfo("");
     const { error: err } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/admin/login`,
+      redirectTo: `${window.location.origin}/admin/auth/reset`,
     });
     if (err) {
       setError(err.message);
       setBusy(false);
       return;
     }
-    setInfo("Check your email for a password-reset link.");
+    setInfo(
+      "If an account exists for that email, a password-reset link is on the way.",
+    );
     setBusy(false);
   }
 
   return (
     <div className="rounded-lg border border-ydm-line bg-ydm-surface p-8 shadow-sm">
-      {/* Tabs */}
-      <div className="mb-6 flex border-b border-ydm-line">
-        <button
-          type="button"
-          onClick={() => {
-            setMode("signin");
-            setError("");
-            setInfo("");
-          }}
-          className={`flex-1 border-b-2 py-2 text-sm font-medium ${
-            mode === "signin"
-              ? "border-ydm-gold text-ydm-ink"
-              : "border-transparent text-ydm-muted hover:text-ydm-ink"
-          }`}
-        >
-          Sign In
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setMode("signup");
-            setError("");
-            setInfo("");
-          }}
-          className={`flex-1 border-b-2 py-2 text-sm font-medium ${
-            mode === "signup"
-              ? "border-ydm-gold text-ydm-ink"
-              : "border-transparent text-ydm-muted hover:text-ydm-ink"
-          }`}
-        >
-          Sign Up
-        </button>
-      </div>
+      <h1 className="m-0 mb-2 font-display text-xl uppercase tracking-wide text-ydm-ink">
+        {mode === "signin" ? "Sign in" : "Reset password"}
+      </h1>
+      <p className="m-0 mb-6 text-xs text-ydm-muted">
+        {mode === "signin"
+          ? "YDM admin access is by invitation."
+          : "Enter your account email and we'll send you a reset link."}
+      </p>
 
       {error ? (
         <div className="mb-4 rounded border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-700">
@@ -140,8 +95,22 @@ export default function LoginPage() {
 
       {mode === "signin" && (
         <form onSubmit={handleSignIn} className="space-y-4">
-          <Field id="email" label="Email" type="email" value={email} onChange={setEmail} required />
-          <Field id="password" label="Password" type="password" value={password} onChange={setPassword} required />
+          <Field
+            id="email"
+            label="Email"
+            type="email"
+            value={email}
+            onChange={setEmail}
+            required
+          />
+          <Field
+            id="password"
+            label="Password"
+            type="password"
+            value={password}
+            onChange={setPassword}
+            required
+          />
           <button
             type="submit"
             disabled={busy}
@@ -163,34 +132,22 @@ export default function LoginPage() {
         </form>
       )}
 
-      {mode === "signup" && (
-        <form onSubmit={handleSignUp} className="space-y-4">
-          <Field id="email" label="Email" type="email" value={email} onChange={setEmail} required />
-          <Field id="password" label="Password" type="password" value={password} onChange={setPassword} required hint="At least 8 characters" />
-          <Field id="confirm" label="Confirm Password" type="password" value={confirm} onChange={setConfirm} required />
-          <button
-            type="submit"
-            disabled={busy}
-            className="w-full rounded-full bg-ydm-gold px-4 py-2.5 text-sm font-semibold text-ydm-ink hover:bg-ydm-gold/90 disabled:opacity-60"
-          >
-            {busy ? "Creating account…" : "Create Account"}
-          </button>
-          <p className="text-center text-xs text-ydm-muted">
-            By signing up you'll be granted Bishop-level access. Admin elevation
-            requires a manual database update.
-          </p>
-        </form>
-      )}
-
       {mode === "forgot" && (
         <form onSubmit={handleForgot} className="space-y-4">
-          <Field id="email" label="Email" type="email" value={email} onChange={setEmail} required />
+          <Field
+            id="email"
+            label="Email"
+            type="email"
+            value={email}
+            onChange={setEmail}
+            required
+          />
           <button
             type="submit"
             disabled={busy}
             className="w-full rounded-full bg-ydm-gold px-4 py-2.5 text-sm font-semibold text-ydm-ink hover:bg-ydm-gold/90 disabled:opacity-60"
           >
-            {busy ? "Sending…" : "Send Reset Link"}
+            {busy ? "Sending…" : "Send reset link"}
           </button>
           <button
             type="button"
@@ -205,6 +162,17 @@ export default function LoginPage() {
           </button>
         </form>
       )}
+
+      <p className="mt-8 border-t border-ydm-line pt-4 text-center text-[11px] leading-relaxed text-ydm-muted">
+        Need access? Email{" "}
+        <a
+          href="mailto:yeshuawebmaster@gmail.com?subject=YDM%20admin%20access%20request"
+          className="text-ydm-ink underline"
+        >
+          yeshuawebmaster@gmail.com
+        </a>{" "}
+        and we'll get back to you.
+      </p>
     </div>
   );
 }
@@ -228,7 +196,10 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="mb-1 block text-xs font-medium uppercase tracking-wider text-ydm-ink">
+      <label
+        htmlFor={id}
+        className="mb-1 block text-xs font-medium uppercase tracking-wider text-ydm-ink"
+      >
         {label}
       </label>
       <input
