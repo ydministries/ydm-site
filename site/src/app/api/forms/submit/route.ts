@@ -5,7 +5,7 @@ import {
   SENDER_FORMS_EMAIL,
   BISHOP_INBOX,
 } from "@/lib/resend";
-import { createServerClient } from "@/lib/supabase/server";
+import { createAnonClient } from "@/lib/supabase/anon";
 
 type FormType = "contact" | "prayer" | "ask" | "guestbook";
 
@@ -76,8 +76,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Message is required" }, { status: 400 });
   }
 
-  // 3. Persist a pending row. RLS allows anon inserts.
-  const supabase = await createServerClient();
+  // 3. Persist a pending row. Bare anon client — public submissions don't
+  //    need cookie/session context, and the cookie-aware client can 401 on
+  //    stale auth cookies even when the RLS policy permits anon.
+  const supabase = createAnonClient();
   const { data: row, error: insertErr } = await supabase
     .from("form_submissions")
     .insert({
@@ -137,7 +139,18 @@ export async function POST(req: NextRequest) {
   });
 
   if (bishopErr) {
-    console.error("[forms/submit] Resend bishop send failed:", bishopErr);
+    // Log the full object — Resend errors carry more than .message
+    // (statusCode, name, the offending field). Show JSON so it lands
+    // legibly in Vercel logs.
+    try {
+      console.error(
+        "[forms/submit] Resend bishop send failed:",
+        JSON.stringify(bishopErr, Object.getOwnPropertyNames(bishopErr)),
+      );
+    } catch {
+      console.error("[forms/submit] Resend bishop send failed:", bishopErr);
+    }
+    console.error("[forms/submit] Resend response payload:", bishopRes);
     if (row?.id) {
       await supabase
         .from("form_submissions")
