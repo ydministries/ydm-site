@@ -5,6 +5,18 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-05] - <pending>
+
+### Phase DD — Bishop Mode dashboard
+- feat(DD): role-aware admin landing — bishop sees 4 plain-language cards (Edit pages / Messages / Newsletter / Photos) with friendly framing + a "click pencil to edit live" tip card; admin keeps the technical 6-card view including Profile + Users (soon)
+- feat(DD): role-aware sidebar — bishop labels (Home / Edit pages / Messages / Newsletter / Photos / My account) vs admin labels (Dashboard / Content / Messages / Subscribers / Assets / Profile)
+- feat(DD): `/admin/messages` — server-rendered form_submissions browser, filter chips by type (contact / prayer / ask / guestbook) with live counts, message-card list with name + email + category + truncated body, mailto reply button, admin-only failed-send badge + error-string surface
+- feat(DD): `/admin/subscribers` — newsletter_subscribers browser, filter chips (active / unsubscribed / all), table with email + status pill + source (admin only) + signup date + per-row Remove/Re-add buttons (server actions); CSV export route at `/admin/subscribers/export?status=...`
+- feat(DD): `getCurrentProfile()` non-throwing helper in `lib/apiAuth.ts` (sibling to `requireAdmin`/`requireBishop`) — for layouts/landing that branch on role rather than gate on it
+- chore(DD): server actions return Promise&lt;void&gt; per React form-action contract; revalidatePath on the subscribers list refreshes the table after Remove/Re-add
+
+---
+
 ## [2026-05-05] - b910970
 
 ### Phase CC — Newsletter signup

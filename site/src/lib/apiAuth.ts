@@ -11,6 +11,15 @@ export interface AuthResult {
   role: "admin" | "bishop";
 }
 
+/**
+ * Non-throwing variant — returns the current user's profile or null if
+ * unauthenticated / no profile row. Use in layouts and landing pages where
+ * we want to render conditionally on role rather than redirect/throw.
+ */
+export async function getCurrentProfile(): Promise<AuthResult | null> {
+  return getProfile();
+}
+
 async function getProfile(): Promise<AuthResult | null> {
   const supabase = await createServerClient();
 

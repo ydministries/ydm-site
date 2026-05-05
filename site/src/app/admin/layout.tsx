@@ -2,17 +2,37 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { createServerClient } from "@/lib/supabase/server";
+import { getCurrentProfile } from "@/lib/apiAuth";
 
 export const metadata: Metadata = {
   title: "Admin — YDM",
   robots: { index: false, follow: false },
 };
 
-const SIDEBAR_LINKS = [
+interface SidebarLink {
+  href: string;
+  label: string;
+}
+
+// Admin (Mikey) sees the technical surface — page_content, asset URLs,
+// version history, etc. Bishop sees a plain-language reskin where the same
+// underlying routes are framed in language the writer thinks in.
+const ADMIN_SIDEBAR: SidebarLink[] = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/content", label: "Content" },
+  { href: "/admin/messages", label: "Messages" },
+  { href: "/admin/subscribers", label: "Subscribers" },
   { href: "/admin/assets", label: "Assets" },
   { href: "/admin/profile", label: "Profile" },
+];
+
+const BISHOP_SIDEBAR: SidebarLink[] = [
+  { href: "/admin", label: "Home" },
+  { href: "/admin/content", label: "Edit pages" },
+  { href: "/admin/messages", label: "Messages" },
+  { href: "/admin/subscribers", label: "Newsletter" },
+  { href: "/admin/assets", label: "Photos" },
+  { href: "/admin/profile", label: "My account" },
 ];
 
 export default async function AdminLayout({
@@ -24,6 +44,12 @@ export default async function AdminLayout({
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  // Pull profile for role-aware sidebar. Falls back to admin sidebar if the
+  // profile lookup fails (defensive — shouldn't happen for authed users).
+  const profile = user ? await getCurrentProfile() : null;
+  const sidebarLinks =
+    profile?.role === "bishop" ? BISHOP_SIDEBAR : ADMIN_SIDEBAR;
 
   // /admin/login renders under this layout while the user is unauthed.
   // Render a minimal centred shell in that case (no sidebar — it would only
@@ -78,7 +104,7 @@ export default async function AdminLayout({
           </Link>
           <nav className="flex-1 px-4 py-6">
             <ul className="space-y-1">
-              {SIDEBAR_LINKS.map((l) => (
+              {sidebarLinks.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
