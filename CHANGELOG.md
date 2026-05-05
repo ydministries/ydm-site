@@ -5,6 +5,18 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-05] - <pending>
+
+### Phase CC — Newsletter signup
+- feat(CC): `newsletter_subscribers` Supabase table — email (unique), status (subscribed/unsubscribed/bounced), source, unsubscribe_token (uuid default), resend_contact_id, resend_audience_id, metadata jsonb. RLS: anon INSERT, admin/bishop SELECT+UPDATE; service-role bypass for the unsubscribe flow.
+- feat(CC): `lib/newsletter.ts` — Resend Audience integration (contacts.create/update via SDK 6.12.2), brand-styled welcome HTML email, bishop-notify helper, plausible-email validator, unsubscribe URL builder.
+- feat(CC): `/api/newsletter/subscribe` POST — honeypot + validate + upsert (re-subscribe path supported) + push to Resend Audience + welcome email + bishop notification, all best-effort with the DB row as source of truth.
+- feat(CC): `/api/newsletter/unsubscribe/[token]` GET — service-role flip to status='unsubscribed', sync to Resend, render inline brand-styled confirmation page (success / already / invalid / error).
+- feat(CC): wire `NewsletterForm` (was preventDefault stub) — submitting / success / error states, accessible (sr-only label, aria-describedby, role=alert), honeypot field, disabled-during-submit.
+- env: requires `RESEND_NEWSLETTER_AUDIENCE_ID` (graceful skip if unset — DB still works, audience push is the only thing that no-ops).
+
+---
+
 ## [2026-05-05] - 04e31d3
 
 ### Phase AA — Photo Gallery
