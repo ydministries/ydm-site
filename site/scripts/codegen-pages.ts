@@ -591,6 +591,19 @@ async function main() {
   const skippedHandEdited: string[] = [];
 
   for (const item of routeMap.items) {
+    // Phase Z: index_filter routes are decommissioned. Their legacy WP URLs
+    // (/category/*, /tag/*, /author/*, /sermons-category/*, /events/category/*,
+    // /cmsms_profile_category/*) all redirect via next.config siteMap entries
+    // to the canonical index pages with ?category= / ?tag= / ?author= query
+    // params. The query-param filtering on those indexes is intentionally NOT
+    // implemented — most filter slugs have no underlying data to filter on
+    // (sermons/events/team have no category field; blog categories don't
+    // match the slugs). Skipping codegen here prevents dead stub pages from
+    // being prerendered into the build.
+    if (item.type === 'index_filter') {
+      continue;
+    }
+
     const outRel = outputPathFor(item);
     const outAbs = join(OUT_DIR, outRel);
 

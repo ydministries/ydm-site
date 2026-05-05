@@ -5,6 +5,18 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-05] - c98ff74
+
+### Phase Z — decommission index_filter stubs
+- chore(Z): codegen-pages.ts now skips `type: "index_filter"` routes entirely (no more "Filtered list — wiring in Phase H" stubs)
+- chore(Z): deleted 18 generated stub pages across 5 trees: `(site)/{category,tag,author,sermons-category,cmsms_profile_category}` and `(site)/events/category`
+- .codegen-manifest.json count: 64 → 46 (drops the 18 index_filter entries)
+- Behavior preserved: legacy WP filter URLs still 308-redirect to canonical indexes (`/blog?category=…`, `/blog?tag=…`, `/blog?author=…`, `/sermons?category=…`, `/events?category=…`, `/team?category=…`) via existing next.config siteMap entries
+- Note: query-param filtering on the canonical index pages is intentionally NOT wired — most filter slugs have no underlying data (sermons/events/team have no category field; blog categories don't match the WP slugs). Filter URLs render the unfiltered index, which is acceptable for archive URLs that nobody links to internally
+- 18 `*.cat.*`/`*.tag.*`/`*.author.*` page_content rows in Supabase remain as meta-only seed (per memory entry "intentionally meta-only"); admin can still edit their meta titles for SEO if filtering is wired in a future phase
+
+---
+
 ## [2026-05-04] - 8e3a4d3
 
 ### Phase Q — About / Contact / Live / Prayer templates
