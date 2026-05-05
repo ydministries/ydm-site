@@ -1,7 +1,59 @@
 import Image from "next/image";
 import { fetchPageContent } from "@/lib/content";
 import { EditableFallback } from "./_helpers/EditableFallback";
-import { ContactForm } from "./_helpers/ContactForm";
+import { BackendForm, type BackendFormField } from "./_helpers/BackendForm";
+
+const CONTACT_FIELDS: BackendFormField[] = [
+  { name: "name", label: "Name", type: "text", required: true },
+  { name: "email", label: "Email", type: "email", required: true },
+  { name: "phone", label: "Phone Number", type: "tel" },
+  {
+    name: "category",
+    label: "Reason for Contact",
+    type: "select",
+    options: [
+      {
+        group: "Spiritual & Personal Care",
+        options: [
+          "Prayer Request",
+          "Pastoral Care & Counseling",
+          "Testimony",
+          "Baptism & Membership",
+        ],
+      },
+      {
+        group: "Ministry & Discipleship",
+        options: [
+          "Bible Study Question",
+          "Volunteer / Serve",
+          "Sunday Service",
+          "Ministry Question",
+        ],
+      },
+      {
+        group: "Partnership & Legacy",
+        options: [
+          "Donations & Partnership",
+          "Sponsor an Event",
+          "Media / Press",
+          "Building Fund",
+        ],
+      },
+      {
+        group: "General & Technical",
+        options: ["Website Feedback", "General Inquiry"],
+      },
+    ],
+  },
+  {
+    name: "message",
+    label: "Message",
+    type: "textarea",
+    required: true,
+    rows: 6,
+    placeholder: "Your message…",
+  },
+];
 
 function IconPin({ className }: { className?: string }) {
   return (
@@ -229,7 +281,14 @@ export async function ContactTemplate(_props: { pageKey?: string } = {}) {
               className="m-0 font-serif text-base leading-relaxed text-ydm-muted"
             />
 
-            <ContactForm />
+            <div className="mt-6">
+              <BackendForm
+                formType="contact"
+                fields={CONTACT_FIELDS}
+                submitLabel="Send Message"
+                successLabel="Thank you for contacting YDM. We'll be in touch soon."
+              />
+            </div>
 
             <p className="mt-4 text-center font-serif text-xs text-ydm-muted">
               Need immediate help? Call{" "}

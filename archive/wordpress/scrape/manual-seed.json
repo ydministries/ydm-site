@@ -22,183 +22,168 @@
     "nav.live_label": "Watch Live"
   },
   "home": {
-    "welcome.kicker":             "YOU'RE ALWAYS WELCOME HERE",
-    "hero.title_line1":           "Yeshua Deliverance",
-    "hero.subtitle":              "Uniting hearts in faith and fellowship.",
-
-    "welcome_band.headline":      "YDM: A Home for Your Soul.",
-    "welcome_band.kicker":        "WE ARE YDM",
-    "welcome.body":               "<p>In a world that is constantly changing, some things remain constant. The love of God is one of them.</p><p>We believe that every person deserves a place where they feel known, accepted, and loved &mdash; a place to grow in faith, find community, and discover the purpose God has for their life. Whether you are new to faith, exploring what it means to follow Jesus, or have been walking with Him for years, there is a place for you here.</p><p>We are not a building. We are a family &mdash; gathered around Jesus, sent into the world.</p>",
-
-    "we_are_ydm.eyebrow":         "WE ARE YDM",
-    "we_are_ydm.cta_label":       "JOIN US",
-
-    "founded_in_faith.eyebrow":   "FOUNDED IN FAITH",
-    "founded_in_faith.heading":   "Fifty Years of Faithful Ministry, One New Calling",
-    "founded_in_faith.body":      "<p>Yeshua Deliverance Ministries was founded in 2020 by Bishop Huel O. Wilson &mdash; the late-career calling of a man who has shepherded God's people for over fifty years. From a small congregation in Malton with three members and a guitar, to a thriving worldwide ministry reaching every continent through the spoken Word, Bishop Wilson has spent his life learning how to lead God's people home.</p><p>YDM was built for this moment: a Spirit-led ministry of deliverance, healing, and restoration; a church that takes scripture seriously and the Holy Spirit seriously; a community that equips believers for spiritual warfare and victorious living. Whether you join us in person or anywhere in the world online, you belong with us.</p>",
+    "welcome.kicker": "YOU'RE ALWAYS WELCOME HERE",
+    "hero.title_line1": "Yeshua Deliverance",
+    "hero.subtitle": "Uniting hearts in faith and fellowship.",
+    "welcome_band.headline": "YDM: A Home for Your Soul.",
+    "welcome_band.kicker": "WE ARE YDM",
+    "welcome.body": "<p>In a world that is constantly changing, some things remain constant. The love of God is one of them.</p><p>We believe that every person deserves a place where they feel known, accepted, and loved &mdash; a place to grow in faith, find community, and discover the purpose God has for their life. Whether you are new to faith, exploring what it means to follow Jesus, or have been walking with Him for years, there is a place for you here.</p><p>We are not a building. We are a family &mdash; gathered around Jesus, sent into the world.</p>",
+    "we_are_ydm.eyebrow": "WE ARE YDM",
+    "we_are_ydm.cta_label": "JOIN US",
+    "founded_in_faith.eyebrow": "FOUNDED IN FAITH",
+    "founded_in_faith.heading": "Fifty Years of Faithful Ministry, One New Calling",
+    "founded_in_faith.body": "<p>Yeshua Deliverance Ministries was founded in 2020 by Bishop Huel O. Wilson &mdash; the late-career calling of a man who has shepherded God's people for over fifty years. From a small congregation in Malton with three members and a guitar, to a thriving worldwide ministry reaching every continent through the spoken Word, Bishop Wilson has spent his life learning how to lead God's people home.</p><p>YDM was built for this moment: a Spirit-led ministry of deliverance, healing, and restoration; a church that takes scripture seriously and the Holy Spirit seriously; a community that equips believers for spiritual warfare and victorious living. Whether you join us in person or anywhere in the world online, you belong with us.</p>",
     "founded_in_faith.cta_label": "OUR STORY",
-
-    "mission.title":              "Our Mission",
-    "mission.body":               "<p>To share and spread the love of Christ through worship, discipleship, and service.</p>",
-
-    "vision.title":               "Our Vision",
-    "vision.body":                "<p>A thriving community of empowered disciples transformed by faith, love, and action.</p>",
-
-    "values.title":               "Our Values",
-    "values.body":                "<p><strong>Faith.</strong> We trust the unchanging Word of God in a changing world.</p><p><strong>Community.</strong> We do not walk alone. We grow together.</p><p><strong>Service.</strong> Love that does not act is not love at all.</p><p><strong>Compassion.</strong> We meet people where they are, the way Jesus did.</p>",
-
-    "mission_vision.script":      "You're always welcome here.",
-
-    "ministries_grid.eyebrow":    "GET PLUGGED IN",
-    "ministries_grid.title":      "YDM MINISTRIES",
-    "ministries_grid.script":     "Get Plugged In",
-
-    "featured_sermons.eyebrow":   "FROM THE PULPIT",
-    "featured_sermons.title":     "Featured Sermons",
+    "mission.title": "Our Mission",
+    "mission.body": "<p>To share and spread the love of Christ through worship, discipleship, and service.</p>",
+    "vision.title": "Our Vision",
+    "vision.body": "<p>A thriving community of empowered disciples transformed by faith, love, and action.</p>",
+    "values.title": "Our Values",
+    "values.body": "<p><strong>Faith.</strong> We trust the unchanging Word of God in a changing world.</p><p><strong>Community.</strong> We do not walk alone. We grow together.</p><p><strong>Service.</strong> Love that does not act is not love at all.</p><p><strong>Compassion.</strong> We meet people where they are, the way Jesus did.</p>",
+    "mission_vision.script": "You're always welcome here.",
+    "ministries_grid.eyebrow": "GET PLUGGED IN",
+    "ministries_grid.title": "YDM MINISTRIES",
+    "ministries_grid.script": "Get Plugged In",
+    "featured_sermons.eyebrow": "FROM THE PULPIT",
+    "featured_sermons.title": "Featured Sermons",
     "featured_sermons.cta_label": "VIEW ALL SERMONS",
-
-    "events.eyebrow":             "UPCOMING EVENTS",
-    "events.script":              "Come as you are",
-    "events.cta_label":           "VIEW ALL EVENTS",
-
-    "countdown.eyebrow":          "DON'T MISS THE NEXT SERVICE",
-    "countdown.script":           "Be the light.",
-    "countdown.cta_label":        "JOIN US",
-
-    "leaders.eyebrow":            "OUR LEADERSHIP",
-    "leaders.script":             "Leading with Love",
-    "leaders.title":              "Meet Our Leaders",
-    "leaders.cta_label":          "MEET FULL TEAM",
-
-    "get_involved.eyebrow":       "GET INVOLVED",
-    "get_involved.script":        "We're here for you!",
-
-    "support.eyebrow":            "SUPPORT OUR MISSION",
-    "support.script":             "Make a difference",
-    "support_banner.title":       "Support YDM's Mission",
-    "support_banner.body":        "<p>Your generosity sustains the work. Every gift strengthens our worship ministry, equips leaders for Kingdom work, extends compassion through outreach, and carries the gospel worldwide. Stand with us &mdash; one-time or monthly.</p>",
-    "support.cta_label":          "GIVE NOW",
-
-    "newsletter.script":          "Stay connected",
-    "newsletter.title":           "Subscribe",
-    "newsletter.prompt":          "Get sermons, prayer updates, and event reminders straight to your inbox."
+    "events.eyebrow": "UPCOMING EVENTS",
+    "events.script": "Come as you are",
+    "events.cta_label": "VIEW ALL EVENTS",
+    "countdown.eyebrow": "DON'T MISS THE NEXT SERVICE",
+    "countdown.script": "Be the light.",
+    "countdown.cta_label": "JOIN US",
+    "leaders.eyebrow": "OUR LEADERSHIP",
+    "leaders.script": "Leading with Love",
+    "leaders.title": "Meet Our Leaders",
+    "leaders.cta_label": "MEET FULL TEAM",
+    "get_involved.eyebrow": "GET INVOLVED",
+    "get_involved.script": "We're here for you!",
+    "support.eyebrow": "SUPPORT OUR MISSION",
+    "support.script": "Make a difference",
+    "support_banner.title": "Support YDM's Mission",
+    "support_banner.body": "<p>Your generosity sustains the work. Every gift strengthens our worship ministry, equips leaders for Kingdom work, extends compassion through outreach, and carries the gospel worldwide. Stand with us &mdash; one-time or monthly.</p>",
+    "support.cta_label": "GIVE NOW",
+    "newsletter.script": "Stay connected",
+    "newsletter.title": "Subscribe",
+    "newsletter.prompt": "Get sermons, prayer updates, and event reminders straight to your inbox."
   },
   "blog.discovering-the-power-of-waiting": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Faith & Reflection"
+    "category": "Faith & Reflection"
   },
   "blog.do-not-lose-heart-your-future-in-christ-is-beyond-all-comparison": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Faith & Reflection"
+    "category": "Faith & Reflection"
   },
   "blog.experiencing-the-freedom-of-gods-presence": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Worship"
+    "category": "Worship"
   },
   "blog.four-things-our-church-should-still-focus-on": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Church Life"
+    "category": "Church Life"
   },
   "blog.how-do-i-intercede-for-family-who-dont-believe-in-jesus": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Prayer"
+    "category": "Prayer"
   },
   "blog.how-to-develop-a-habit-of-worship": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Worship"
+    "category": "Worship"
   },
   "blog.i-ruined-my-lifeis-there-hope-for-me": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Faith & Reflection"
+    "category": "Faith & Reflection"
   },
   "blog.whats-your-view-of-marriage": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Family"
+    "category": "Family"
   },
   "blog.your-mission-should-you-choose-to-accept-it": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
     "author_name": "YDM Admin",
-    "category":    "Mission"
+    "category": "Mission"
   },
   "events.weekly-bible-study-group": {
-    "hero_image":    "https://media.ydministries.ca/uploads/2025/01/wmremove-transformed.webp",
-    "date_iso":      "2026-04-30T19:00:00-04:00",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/01/wmremove-transformed.webp",
+    "date_iso": "2026-04-30T19:00:00-04:00",
     "location_name": "Salvation Army Erin Mills Church (host venue)",
     "location_addr": "1599 Trinity Common Blvd, Brampton, ON L6X 4A8",
-    "duration":      "90 minutes"
+    "duration": "90 minutes"
   },
   "events.young-adults-connect": {
-    "hero_image":    "https://media.ydministries.ca/uploads/2025/01/d4bd005b-e92d-4db0-a7b6-160c2dc6d22e-e1758157433747.jpg",
-    "date_iso":      "2026-05-24T13:00:00-04:00",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/01/d4bd005b-e92d-4db0-a7b6-160c2dc6d22e-e1758157433747.jpg",
+    "date_iso": "2026-05-24T13:00:00-04:00",
     "location_name": "Mississauga Church of God",
     "location_addr": "2460 The Collegeway, Mississauga, ON L5L 1V3",
-    "duration":      "1 hour"
+    "duration": "1 hour"
   },
   "give.supportydm": {
     "hero_image": "https://media.ydministries.ca/uploads/2025/01/wmremove-transformed.webp",
     "goal_label": "Help us reach our goal",
-    "cta_label":  "Give to this Campaign"
+    "cta_label": "Give to this Campaign"
   },
   "give.techfund": {
     "hero_image": "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-51-4-1-e1758582433856.jpg",
     "goal_label": "Help us reach our goal",
-    "cta_label":  "Give to this Campaign"
+    "cta_label": "Give to this Campaign"
   },
   "locations.maltoncog": {
-    "hero_image":    "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
-    "address":       "Mississauga Church of God\n2460 The Collegeway\nMississauga, ON L5L 1V3",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
+    "address": "Mississauga Church of God\n2460 The Collegeway\nMississauga, ON L5L 1V3",
     "service_times": "Sunday 1:00 PM — Yeshua Sunday Service (every 4th Sunday)\nThursday 7:00 PM — Weekly Bible Study",
-    "parking_note":  "Free on-site parking available."
+    "parking_note": "Free on-site parking available."
   },
   "locations.westtoronto": {
-    "hero_image":    "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-51-4-1-e1758582433856.jpg",
-    "address":       "West Toronto Church of God\nWest Toronto, ON",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-51-4-1-e1758582433856.jpg",
+    "address": "West Toronto Church of God\nWest Toronto, ON",
     "service_times": "Visit-by-arrangement — contact us for current service times.",
-    "parking_note":  "Street parking available nearby."
+    "parking_note": "Street parking available nearby."
   },
   "about": {
-    "hero_image":              "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
-    "hero_eyebrow":             "ABOUT YDM",
-    "hero_script":              "Welcome home",
-    "hero_title":               "About Yeshua Deliverance Ministries",
-    "story_eyebrow":            "OUR STORY",
-    "values_eyebrow":           "WHAT WE BELIEVE",
-    "leaders_teaser_eyebrow":   "OUR LEADERSHIP",
-    "leaders_teaser_script":    "Meet our leaders",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
+    "hero_eyebrow": "ABOUT YDM",
+    "hero_script": "Welcome home",
+    "hero_title": "About Yeshua Deliverance Ministries",
+    "story_eyebrow": "OUR STORY",
+    "values_eyebrow": "WHAT WE BELIEVE",
+    "leaders_teaser_eyebrow": "OUR LEADERSHIP",
+    "leaders_teaser_script": "Meet our leaders",
     "locations_teaser_eyebrow": "FIND US",
-    "locations_teaser_script":  "Two locations, one family",
-    "cta_title":                "Visit Us This Sunday",
-    "cta_body":                 "Join us in person or online for worship every 4th Sunday at 1:00 PM.",
-    "cta_label":                "Plan Your Visit"
+    "locations_teaser_script": "Two locations, one family",
+    "cta_title": "Visit Us This Sunday",
+    "cta_body": "Join us in person or online for worship every 4th Sunday at 1:00 PM.",
+    "cta_label": "Plan Your Visit"
   },
   "contact": {
-    "hero_image":   "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-46.jpg",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-46.jpg",
     "hero_eyebrow": "GET IN TOUCH",
-    "hero_script":  "We'd love to hear from you",
-    "hero_title":   "Contact Us",
+    "hero_script": "We'd love to hear from you",
+    "hero_title": "Contact Us",
     "form_eyebrow": "SEND US A MESSAGE",
-    "form_intro":   "Fill out the form below and we'll get back to you as soon as we can.",
+    "form_intro": "Fill out the form below and we'll get back to you as soon as we can.",
     "info_eyebrow": "QUICK INFO"
   },
   "live": {
-    "hero_image":          "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
-    "hero_eyebrow":        "WORSHIP WITH US",
-    "hero_script":         "Join us live",
-    "hero_title":          "Watch Live",
-    "hero_subtitle":       "Tune in for our worship services and special broadcasts.",
-    "youtube_channel_id":  "UC7JM1kSVzeKSJ5MmiHIE7IA",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp",
+    "hero_eyebrow": "WORSHIP WITH US",
+    "hero_script": "Join us live",
+    "hero_title": "Watch Live",
+    "hero_subtitle": "Tune in for our worship services and special broadcasts.",
+    "youtube_channel_id": "UC7JM1kSVzeKSJ5MmiHIE7IA",
     "youtube_channel_url": "https://www.youtube.com/@YDMWorldwide",
-    "schedule_eyebrow":    "WHEN WE GO LIVE",
-    "schedule_body":       "Sunday Service streams every 4th Sunday at 1:00 PM Eastern. Bible Study streams Thursdays at 7:00 PM Eastern.",
-    "subscribe_label":     "Subscribe on YouTube"
+    "schedule_eyebrow": "WHEN WE GO LIVE",
+    "schedule_body": "Sunday Service streams every 4th Sunday at 1:00 PM Eastern. Bible Study streams Thursdays at 7:00 PM Eastern.",
+    "subscribe_label": "Subscribe on YouTube"
   },
   "ask": {
     "meta.description": "Submit your faith and scripture questions to Bishop Huel Wilson.",
@@ -208,7 +193,13 @@
     "form.label.email": "Email (so we can let you know when it's answered)",
     "form.button": "Submit Question",
     "form.success": "Thank you — your question has been received. Watch for a response in an upcoming sermon or post.",
-    "form.error": "Something went wrong sending your question. Please try again or email us directly."
+    "form.error": "Something went wrong sending your question. Please try again or email us directly.",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
+    "hero_eyebrow": "ASK BISHOP",
+    "hero_script": "Got a question?",
+    "hero_title": "Ask Bishop",
+    "form_eyebrow": "SUBMIT YOUR QUESTION",
+    "form_intro": "Have a question about faith, scripture, or the Christian walk? Bishop Wilson personally responds to questions submitted by the YDM community."
   },
   "guestbook": {
     "meta.description": "Sign the YDM guestbook and share a word of encouragement with our church family.",
@@ -218,128 +209,134 @@
     "form.label.message": "Your Message",
     "form.button": "Sign the Guestbook",
     "form.success": "Your message has been added to our guestbook. Thank you for being part of the YDM family.",
-    "form.error": "We couldn't post your message. Please try again."
+    "form.error": "We couldn't post your message. Please try again.",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-46.jpg",
+    "hero_eyebrow": "GUESTBOOK",
+    "hero_script": "Sign our wall",
+    "hero_title": "Guestbook",
+    "form_eyebrow": "LEAVE A NOTE",
+    "form_intro": "Sign our guestbook with a word of encouragement, a testimony, or just to say hello. Bishop loves hearing from the YDM family."
   },
   "team.huel_wilson": {
-    "portrait_url":   "https://media.ydministries.ca/uploads/2026/04/bishop-huel.png",
-    "person_name":    "Bishop Huel O. Wilson",
-    "person_title":   "Founder & Senior Pastor",
-    "person_bio":     "<p>Bishop Huel O. Wilson is the founder and senior pastor of Yeshua Deliverance Ministries, a Christ-centered community based in Mississauga, Ontario. With decades of dedication to the Word of God and a heart for evangelism, Bishop Wilson teaches, preaches, and leads with the conviction that every soul deserves to encounter Jesus.</p><p>Under his leadership, YDM has grown from a local fellowship into a worldwide community of believers reached through in-person services, online streaming, and global outreach. Bishop Wilson is married to First Lady Clementina Wilson, who serves alongside him in ministry.</p>",
-    "preaching":      "true",
+    "portrait_url": "https://media.ydministries.ca/uploads/2026/04/bishop-huel.png",
+    "person_name": "Bishop Huel O. Wilson",
+    "person_title": "Founder & Senior Pastor",
+    "person_bio": "<p>Bishop Huel O. Wilson is the founder and senior pastor of Yeshua Deliverance Ministries, a Christ-centered community based in Mississauga, Ontario. With decades of dedication to the Word of God and a heart for evangelism, Bishop Wilson teaches, preaches, and leads with the conviction that every soul deserves to encounter Jesus.</p><p>Under his leadership, YDM has grown from a local fellowship into a worldwide community of believers reached through in-person services, online streaming, and global outreach. Bishop Wilson is married to First Lady Clementina Wilson, who serves alongside him in ministry.</p>",
+    "preaching": "true",
     "ministries_led": "ask-bishop,leadership,outreach,wordwide"
   },
   "team.clementinawilson": {
-    "portrait_url":   "https://media.ydministries.ca/uploads/2026/04/clementina.png",
-    "person_name":    "Clementina Wilson",
-    "person_title":   "First Lady & Family Ministry Lead",
-    "person_bio":     "<p>Clementina Wilson serves as the First Lady of Yeshua Deliverance Ministries and leads the family ministry alongside her husband, Bishop Huel O. Wilson. She has a deep heart for women's ministry, intercessory prayer, and supporting families as they grow in faith.</p><p>Clementina's ministry is marked by warmth, hospitality, and a steady commitment to seeing every member of the YDM family thrive — children, youth, parents, and elders alike.</p>",
-    "preaching":      "false",
+    "portrait_url": "https://media.ydministries.ca/uploads/2026/04/clementina.png",
+    "person_name": "Clementina Wilson",
+    "person_title": "First Lady & Family Ministry Lead",
+    "person_bio": "<p>Clementina Wilson serves as the First Lady of Yeshua Deliverance Ministries and leads the family ministry alongside her husband, Bishop Huel O. Wilson. She has a deep heart for women's ministry, intercessory prayer, and supporting families as they grow in faith.</p><p>Clementina's ministry is marked by warmth, hospitality, and a steady commitment to seeing every member of the YDM family thrive — children, youth, parents, and elders alike.</p>",
+    "preaching": "false",
     "ministries_led": "family"
   },
   "team.huel_clementina": {
-    "portrait_url":   "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
-    "person_name":    "Bishop Huel & Clementina Wilson",
-    "person_title":   "Founders, Yeshua Deliverance Ministries",
-    "person_bio":     "<p>Bishop Huel O. Wilson and his wife Clementina founded Yeshua Deliverance Ministries with one shared conviction: every soul deserves a place to encounter Jesus. Together they have led the YDM community for decades, raising up disciples, planting outreach efforts, and pastoring the family of believers that calls YDM home.</p><p>Their partnership in ministry — uniting Bishop's preaching and teaching gifts with First Lady Clementina's heart for family and intercession — is the foundation on which YDM has been built.</p>",
-    "preaching":      "false",
+    "portrait_url": "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
+    "person_name": "Bishop Huel & Clementina Wilson",
+    "person_title": "Founders, Yeshua Deliverance Ministries",
+    "person_bio": "<p>Bishop Huel O. Wilson and his wife Clementina founded Yeshua Deliverance Ministries with one shared conviction: every soul deserves a place to encounter Jesus. Together they have led the YDM community for decades, raising up disciples, planting outreach efforts, and pastoring the family of believers that calls YDM home.</p><p>Their partnership in ministry — uniting Bishop's preaching and teaching gifts with First Lady Clementina's heart for family and intercession — is the foundation on which YDM has been built.</p>",
+    "preaching": "false",
     "ministries_led": "leadership"
   },
   "ministries.ask-bishop": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2025/09/FastFoto_0017_a.jpg",
-    "tagline":     "Submit your faith and scripture questions to Bishop Wilson.",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/FastFoto_0017_a.jpg",
+    "tagline": "Submit your faith and scripture questions to Bishop Wilson.",
     "leader_name": "Bishop Huel O. Wilson",
     "leader_role": "Senior Pastor",
-    "leader_bio":  "<p>Bishop Wilson personally responds to questions submitted by the YDM community, sharing scripture-grounded insight on faith, doctrine, and the Christian walk.</p>"
+    "leader_bio": "<p>Bishop Wilson personally responds to questions submitted by the YDM community, sharing scripture-grounded insight on faith, doctrine, and the Christian walk.</p>"
   },
   "ministries.worship": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/pexels-jibarofoto-2014775-scaled-e1758244273295.jpg",
-    "tagline":     "Encounter God through music, song, and creative arts.",
+    "hero_image": "https://media.ydministries.ca/uploads/2023/12/pexels-jibarofoto-2014775-scaled-e1758244273295.jpg",
+    "tagline": "Encounter God through music, song, and creative arts.",
     "leader_name": "Worship Ministry Lead",
     "leader_role": "Director of Worship",
-    "leader_bio":  "<p>Our worship team leads the YDM family in lifting praise to the Lord every Sunday and at special services. We welcome musicians, vocalists, and tech volunteers who feel called to serve.</p>"
+    "leader_bio": "<p>Our worship team leads the YDM family in lifting praise to the Lord every Sunday and at special services. We welcome musicians, vocalists, and tech volunteers who feel called to serve.</p>"
   },
   "ministries.outreach": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/ChatGPT-Image-Sep-21-2025-10_33_09-PM.png",
-    "tagline":     "Serving our community with the love of Christ.",
+    "hero_image": "https://media.ydministries.ca/uploads/2023/12/ChatGPT-Image-Sep-21-2025-10_33_09-PM.png",
+    "tagline": "Serving our community with the love of Christ.",
     "leader_name": "Outreach Coordinator",
     "leader_role": "Compassion & Outreach Lead",
-    "leader_bio":  "<p>We bring the gospel and practical care to those in need — through food drives, shelter visits, prison ministry, and partnerships with local agencies serving Mississauga and the Greater Toronto Area.</p>"
+    "leader_bio": "<p>We bring the gospel and practical care to those in need — through food drives, shelter visits, prison ministry, and partnerships with local agencies serving Mississauga and the Greater Toronto Area.</p>"
   },
   "ministries.family": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/istockphoto-1456111870-612x612-1-e1758243411865.jpg",
-    "tagline":     "Strengthening homes and raising children in faith.",
+    "hero_image": "https://media.ydministries.ca/uploads/2023/12/istockphoto-1456111870-612x612-1-e1758243411865.jpg",
+    "tagline": "Strengthening homes and raising children in faith.",
     "leader_name": "Family Ministry Lead",
     "leader_role": "Family & Children's Ministry",
-    "leader_bio":  "<p>From children's church to marriage enrichment, the family ministry exists to support every generation in growing closer to Christ together.</p>"
+    "leader_bio": "<p>From children's church to marriage enrichment, the family ministry exists to support every generation in growing closer to Christ together.</p>"
   },
   "ministries.leadership": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/360_F_1226027780_lEOLyeTK87dfMWN2KCXkOjeVx7RlmzE8.jpg",
-    "tagline":     "Raising up the next generation of Christ-centered leaders.",
+    "hero_image": "https://media.ydministries.ca/uploads/2023/12/360_F_1226027780_lEOLyeTK87dfMWN2KCXkOjeVx7RlmzE8.jpg",
+    "tagline": "Raising up the next generation of Christ-centered leaders.",
     "leader_name": "Bishop Huel O. Wilson",
     "leader_role": "Founder & Senior Pastor",
-    "leader_bio":  "<p>YDM's leadership ministry equips disciples to serve in ministry roles, mentor others, and carry the gospel forward through teaching, training, and apprenticeship.</p>"
+    "leader_bio": "<p>YDM's leadership ministry equips disciples to serve in ministry roles, mentor others, and carry the gospel forward through teaching, training, and apprenticeship.</p>"
   },
   "ministries.partnership": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/partner.jpg",
-    "tagline":     "Stand with YDM as we expand our reach.",
+    "hero_image": "https://media.ydministries.ca/uploads/2023/12/partner.jpg",
+    "tagline": "Stand with YDM as we expand our reach.",
     "leader_name": "Partnership Coordinator",
     "leader_role": "Ministry Partnerships",
-    "leader_bio":  "<p>Partners support YDM through prayer, monthly giving, and active service. Together we extend the gospel further than any of us could alone.</p>"
+    "leader_bio": "<p>Partners support YDM through prayer, monthly giving, and active service. Together we extend the gospel further than any of us could alone.</p>"
   },
   "ministries.wordwide": {
-    "hero_image":  "https://media.ydministries.ca/uploads/2023/12/35bb24c2-2640-40c9-9d8b-a8012e14fcae-e1758243636977.jpg",
-    "tagline":     "Carrying the gospel beyond borders.",
+    "hero_image": "https://media.ydministries.ca/uploads/2023/12/35bb24c2-2640-40c9-9d8b-a8012e14fcae-e1758243636977.jpg",
+    "tagline": "Carrying the gospel beyond borders.",
     "leader_name": "Worldwide Outreach Director",
     "leader_role": "Global Ministry Lead",
-    "leader_bio":  "<p>Our worldwide ministry connects YDM with believers across continents through online services, missions, and international partnerships rooted in the Great Commission.</p>"
+    "leader_bio": "<p>Our worldwide ministry connects YDM with believers across continents through online services, missions, and international partnerships rooted in the Great Commission.</p>"
   },
   "sermons.gilgal-the-place-of-new-beginnings": {
-    "audio_filename":    "Gilgal_-The-Place-of-New-Beginnings-_-Bishop-Huel-Wilson-Sermon.mp3",
-    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-10.50.38-PM.png",
+    "audio_filename": "Gilgal_-The-Place-of-New-Beginnings-_-Bishop-Huel-Wilson-Sermon.mp3",
+    "thumbnail_url": "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-10.50.38-PM.png",
     "scripture_primary": "Joshua 5:9"
   },
   "sermons.here-am-i-send-me-a-vision-for-mission": {
-    "audio_filename":    "Bishop-Huel-O.-Wilson-Here-Am-I-Send-Me_-A-Vision-for-Mission-Isaiah-6-Live-@-EUMCNYC.mp3",
-    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-8.26.41-PM.png",
+    "audio_filename": "Bishop-Huel-O.-Wilson-Here-Am-I-Send-Me_-A-Vision-for-Mission-Isaiah-6-Live-@-EUMCNYC.mp3",
+    "thumbnail_url": "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-8.26.41-PM.png",
     "scripture_primary": "Isaiah 6:8"
   },
   "sermons.jesus-is-coming-soon-signs-prophecy-hope": {
-    "audio_filename":    "Jesus-is-Coming-Soon_-Signs-Prophecy-Hope-_-Bishop-Huel-Wilson-Sermon.mp3",
-    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-10.37.58-PM.png",
+    "audio_filename": "Jesus-is-Coming-Soon_-Signs-Prophecy-Hope-_-Bishop-Huel-Wilson-Sermon.mp3",
+    "thumbnail_url": "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-10.37.58-PM.png",
     "scripture_primary": "Matthew 24"
   },
   "sermons.jesus-the-ultimate-transformational-leader": {
-    "audio_filename":    "Jesus_-The-Ultimate-Transformational-Leader-How-He-Changes-Lives-Bishop-Huel-Wilson-YDM.mp3",
-    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-8.31.12-PM.png",
+    "audio_filename": "Jesus_-The-Ultimate-Transformational-Leader-How-He-Changes-Lives-Bishop-Huel-Wilson-YDM.mp3",
+    "thumbnail_url": "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-8.31.12-PM.png",
     "scripture_primary": "Matthew 11:28-30"
   },
   "sermons.repent-the-kingdom-of-god-is-at-hand": {
-    "audio_filename":    "Repent_-The-Kingdom-of-God-Is-At-Hand-_-Bishop-Huel-Wilson-Sermon.mp3",
-    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-11.04.30-PM.png",
+    "audio_filename": "Repent_-The-Kingdom-of-God-Is-At-Hand-_-Bishop-Huel-Wilson-Sermon.mp3",
+    "thumbnail_url": "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-11.04.30-PM.png",
     "scripture_primary": "Matthew 4:17"
   },
   "sermons.the-heritage-of-a-godly-mother": {
-    "audio_filename":    "The-Heritage-of-a-Godly-Mother_-Honoring-Mothers-on-Mothers-Day-_-Bishop-Huel-Wilson.mp3",
-    "thumbnail_url":     "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-11.20.17-PM.png",
+    "audio_filename": "The-Heritage-of-a-Godly-Mother_-Honoring-Mothers-on-Mothers-Day-_-Bishop-Huel-Wilson.mp3",
+    "thumbnail_url": "https://media.ydministries.ca/uploads/2025/02/Screenshot-2025-09-22-at-11.20.17-PM.png",
     "scripture_primary": "Proverbs 31"
   },
   "prayer": {
-    "meta.description":          "Submit a prayer request to Bishop Wilson and the YDM prayer team.",
-    "h1.01":                     "Prayer Requests",
-    "p.01":                      "Submit your prayer request below. Bishop, the elders, and the YDM prayer team will lift your need before the Lord.",
-    "p.02":                      "Your request will be shared only with the YDM prayer team unless you tell us otherwise.",
-    "form.label.request":        "Your Prayer Request",
+    "meta.description": "Submit a prayer request to Bishop Wilson and the YDM prayer team.",
+    "h1.01": "Prayer Requests",
+    "p.01": "Submit your prayer request below. Bishop, the elders, and the YDM prayer team will lift your need before the Lord.",
+    "p.02": "Your request will be shared only with the YDM prayer team unless you tell us otherwise.",
+    "form.label.request": "Your Prayer Request",
     "form.label.email_optional": "Email (optional — for follow-up)",
-    "form.button":               "Send Prayer Request",
-    "form.success":              "Your request has been received. We will be praying with you.",
-    "form.error":                "We couldn't submit your request. Please try again.",
-    "hero_image":                "https://media.ydministries.ca/uploads/2025/09/wmremove-transformed-1.jpeg",
-    "hero_eyebrow":              "PRAYER REQUESTS",
-    "hero_script":               "Stand with us",
-    "hero_title":                "Prayer Requests",
-    "form_eyebrow":              "SUBMIT A REQUEST",
-    "form_intro":                "Submit your prayer request below. Bishop, the elders, and the YDM prayer team will lift your need before the Lord.",
-    "privacy_title":             "Your privacy",
-    "privacy_body":              "Your request will be shared only with the YDM prayer team unless you tell us otherwise. We do not publish or republish prayer requests."
+    "form.button": "Send Prayer Request",
+    "form.success": "Your request has been received. We will be praying with you.",
+    "form.error": "We couldn't submit your request. Please try again.",
+    "hero_image": "https://media.ydministries.ca/uploads/2025/09/wmremove-transformed-1.jpeg",
+    "hero_eyebrow": "PRAYER REQUESTS",
+    "hero_script": "Stand with us",
+    "hero_title": "Prayer Requests",
+    "form_eyebrow": "SUBMIT A REQUEST",
+    "form_intro": "Submit your prayer request below. Bishop, the elders, and the YDM prayer team will lift your need before the Lord.",
+    "privacy_title": "Your privacy",
+    "privacy_body": "Your request will be shared only with the YDM prayer team unless you tell us otherwise. We do not publish or republish prayer requests."
   }
 }

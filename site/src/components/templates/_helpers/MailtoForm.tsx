@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * @deprecated Phase Y replaced this with BackendForm. Kept temporarily as a
+ * fallback in case the Resend backend has issues; remove after confidence is
+ * built up. Not imported anywhere in the live tree as of Phase Y.
+ */
 import { useState, type FormEvent } from "react";
 
 export interface MailtoFormField {

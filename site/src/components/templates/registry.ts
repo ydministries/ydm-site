@@ -30,6 +30,8 @@ export const templateRegistry: {
     contact:            { importPath: "@/components/templates/ContactTemplate",         exportName: "ContactTemplate" },
     live:               { importPath: "@/components/templates/LiveTemplate",            exportName: "LiveTemplate" },
     prayer:             { importPath: "@/components/templates/PrayerTemplate",          exportName: "PrayerTemplate" },
+    ask:                { importPath: "@/components/templates/AskTemplate",             exportName: "AskTemplate" },
+    guestbook:          { importPath: "@/components/templates/GuestbookTemplate",       exportName: "GuestbookTemplate" },
     "sermons.index":    { importPath: "@/components/templates/SermonsIndexTemplate",    exportName: "SermonsIndexTemplate" },
     "ministries.index": { importPath: "@/components/templates/MinistriesIndexTemplate", exportName: "MinistriesIndexTemplate" },
     "team.index":       { importPath: "@/components/templates/TeamIndexTemplate",       exportName: "TeamIndexTemplate" },

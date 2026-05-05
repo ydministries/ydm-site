@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * @deprecated Phase Y replaced this with BackendForm via ContactTemplate.
+ * Kept as a fallback while the Resend backend bakes in. Not imported anywhere
+ * in the live tree as of Phase Y.
+ */
 import { useState, type FormEvent } from "react";
 
 const TO = "YDMinistries48@gmail.com";
