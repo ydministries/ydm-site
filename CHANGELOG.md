@@ -5,7 +5,7 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-05-05] - c98ff74
+## [2026-05-05] - f84d3cd
 
 ### Phase Z — decommission index_filter stubs
 - chore(Z): codegen-pages.ts now skips `type: "index_filter"` routes entirely (no more "Filtered list — wiring in Phase H" stubs)
