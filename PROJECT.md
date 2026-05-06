@@ -4,7 +4,7 @@
 Full-stack community web platform for a Christian ministry organization. WordPress migration to Next.js 16 + Supabase + custom admin panel.
 
 ## Status
-Setting up — project folder organized, migration guide written, ready to begin build.
+🟢 **Live in production** as of 2026-05-04. 11 feature phases shipped 2026-05-05/06. Site is handed over 2026-05-06. See [`HANDOVER.md`](./HANDOVER.md) for the maintainer reference.
 
 ## Key Info
 - **Short name:** YDM
@@ -107,18 +107,21 @@ _To be populated as routes are created._
 
 ## Outstanding Work & Technical Debt
 
-- [ ] Scrape WordPress site and generate content-map.json
-- [ ] Create Supabase project and run migrations
-- [ ] Run seed scripts to populate page_content
-- [ ] Scaffold Next.js 16 project in site/
-- [ ] Build core components (EditableContent, ContentProvider, AdminContext)
-- [ ] Build admin content editor (/admin/content/pages)
-- [ ] Build each public page with CMS-first workflow
-- [ ] Set up Stripe donations
-- [ ] Set up Resend newsletters
-- [ ] Set up gallery with albums
-- [ ] Configure Vercel deployment
+All Phase 1–10 work from PLAN.md is shipped. Remaining tasks are operational, not code:
+
+- [ ] Stripe live-mode verification (sandbox is wired; live keys flip activates real payments)
+- [ ] Bishop creates Printful products (catalog UX is in place; needs inventory)
+- [ ] Real leader portraits + sermon thumbnails (currently stock CMSMasters demo art)
+- [ ] Alt text for 62 images (list in `archive/wordpress/scrape/missing-alts.json`)
+- [ ] Replace stock gallery photos (currently 14 demo images)
+- [ ] CRA charity status decision → tax-receipt copy on `/give`
+
+See [`HANDOVER.md`](./HANDOVER.md) "Outstanding setup work" for the canonical post-handover task list.
 
 ## Session Log
 - **2026-03-23** — Project folder created
 - **2026-04-07** — Reorganized to match FOM structure, migration guide written, Payload removed
+- **2026-04-23** — Schema migrations + admin auth + role system shipped
+- **2026-04-26** — Codegen + 64-route content seed + 433 R2 media migration + HomeTemplate
+- **2026-05-04** — Domain cutover to Vercel; site goes live
+- **2026-05-05/06** — 11 feature phases shipped (Z, AA, CC, DD, EE, GG, HH, II, JJ, KK, LL); handover doc written

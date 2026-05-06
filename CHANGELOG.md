@@ -7,6 +7,16 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-06] - <pending>
 
+### Phase MM — Handover docs
+- docs(MM): `HANDOVER.md` (root) — comprehensive maintainer reference: every public + admin route, env var inventory, bishop's daily task playbook, post-handover setup checklist, troubleshooting, common-failure recipes
+- docs(MM): `SMOKE_TEST.md` (root) — pre-handover verification checklist covering public-site walkthrough, admin walkthrough as both roles, email cutover sanity, Stripe + Shop happy paths (when accounts ready), auth flows
+- docs(MM): `README.md` — added "Live at ydministries.ca" banner + maintainer pointers to HANDOVER + SMOKE_TEST + CHANGELOG
+- docs(MM): `PROJECT.md` — refreshed "setting up" status to "live in production"; replaced stale outstanding-work checklist with operational items only; updated session log with all milestones through 2026-05-06
+
+---
+
+## [2026-05-06] - e11ff45
+
 ### Phase LL — Shop (Printful + Stripe)
 - feat(LL): `lib/printful.ts` — env-gated wrapper for Printful Sync Products API. `listProducts()` / `getProductBySlug()` / `getProductById()` with Next.js fetch revalidation (5 min). `createPrintfulOrder()` for webhook-triggered fulfillment. Catalog NOT synced to Supabase — fetched at request time.
 - feat(LL): `/shop` public catalog (hand-authored). 3-up grid with Printful thumbnails. Graceful empty states for "PRINTFUL_API_KEY unset" and "no products yet" — no broken-shop appearance.

@@ -1,6 +1,10 @@
 # Yeshua Deliverance Ministries (YDM) — Website
 
-Full-stack community web platform for a Christian ministry organization. Built with Next.js 16, Supabase, Stripe, and deployed on Vercel.
+🟢 **Live at [ydministries.ca](https://ydministries.ca)** — handed over 2026-05-06.
+
+Full-stack community web platform for a Christian ministry organization. Built with Next.js 16, Supabase, Stripe, Resend, Printful, and Cloudflare. Deployed on Vercel.
+
+**For maintainers:** read [`HANDOVER.md`](./HANDOVER.md) first. It's the comprehensive operations + admin reference. [`SMOKE_TEST.md`](./SMOKE_TEST.md) is the pre-handover verification checklist. [`CHANGELOG.md`](./CHANGELOG.md) has the full development history.
 
 ## Tech Stack
 
