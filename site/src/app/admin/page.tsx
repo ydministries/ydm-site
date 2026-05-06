@@ -165,8 +165,7 @@ export default async function AdminDashboardPage() {
         <Card
           href="/admin/users"
           title="Users"
-          body="Manage who can sign in and edit. Admin-only feature."
-          status="soon"
+          body="Invite editors, change roles, revoke access. Admin-only."
         />
       </div>
     </div>

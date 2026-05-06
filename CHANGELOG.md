@@ -5,6 +5,21 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-05] - <pending>
+
+### Phase HH — /admin/users invite UI
+- feat(HH): `/admin/users` page (admin-only — bishop redirects to /admin) listing all editors with role pill + last-sign-in + joined date, plus a separate "Pending invites" section for unconfirmed accounts
+- feat(HH): invite form posts to `inviteUserAction` server action — calls `auth.admin.inviteUserByEmail()` with redirectTo `/admin/auth/reset`, then UPDATEs the auto-created profile row to admin if requested (default bishop). Branded YDM-gold invite email arrives via Resend SMTP.
+- feat(HH): per-row `RoleSelect` client component auto-submits on change (server action handles the UPDATE), `Revoke` button calls `deleteUserAction` (deletes profile + auth user). Both server-side guards prevent self-demotion / self-deletion.
+- feat(HH): `Cancel invite` action on pending invites — uses the same delete path
+- feat(HH): 5th branded auth email template `docs/auth-email-templates/invite-user.html` — gold accent, "You're invited" eyebrow, "Set up my account" CTA, deep-links to `/admin/auth/reset?token_hash=...&type=invite`
+- feat(HH): `/admin/auth/reset` now handles `type=invite` in addition to `type=recovery` — same UX (set a password) with adapted headline ("Welcome to YDM admin" vs "Set a new password")
+- fix(HH): reset page now robust to three landing flows — (1) query-param `?token_hash=…&type=…` from branded templates, (2) URL-hash `#access_token=…&type=…` from default templates / verify-endpoint redirects, (3) existing session. Prior implementation only handled (1) and silently failed (1) when SSR client raced the useEffect. Added explicit hash parsing → `setSession()` for (2), and an `onAuthStateChange` listener with 3s timeout for the race window.
+- chore(HH): admin landing's Users card flipped from "Coming soon" → live (links to `/admin/users`); admin sidebar gains a Users entry between Assets and Profile (bishop sidebar unchanged — Users is admin-only)
+- ops(HH): requires the `Invite User` template to be pasted into Supabase Dashboard (Auth → Email Templates) with subject `You're invited to manage the YDM website` for the branded email to fire
+
+---
+
 ## [2026-05-05] - 9420372
 
 ### Phase EE — Resend Auth SMTP + branded auth emails + password reset + signup lockdown

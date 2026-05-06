@@ -21,7 +21,7 @@ the source of truth — the actual templates live in the Supabase Dashboard
 | Magic Link | `Your YDM sign-in link` |
 | Change Email Address | `Confirm your new email — Yeshua Deliverance Ministries` |
 | Reset Password | `Reset your YDM password` |
-| Invite user | `You've been invited to YDM admin` |
+| Invite user | `You're invited to manage the YDM website` |
 
 ## Template variables
 

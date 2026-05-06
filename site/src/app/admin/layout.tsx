@@ -23,6 +23,7 @@ const ADMIN_SIDEBAR: SidebarLink[] = [
   { href: "/admin/messages", label: "Messages" },
   { href: "/admin/subscribers", label: "Subscribers" },
   { href: "/admin/assets", label: "Assets" },
+  { href: "/admin/users", label: "Users" },
   { href: "/admin/profile", label: "Profile" },
 ];
 

@@ -30,49 +30,125 @@ export default function ResetPasswordPage() {
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
+  const [isInvite, setIsInvite] = useState(false);
 
   const supabase = createBrowserClient();
 
   useEffect(() => {
     let cancelled = false;
+    let unsubscribe: (() => void) | null = null;
+
     async function init() {
-      // Try query-param token_hash flow first.
+      // Three possible flows can land here, in order of preference:
+      //
+      // 1. Query-param token_hash flow (`?token_hash=…&type=recovery|invite`)
+      //    — used by our branded templates. Verify via verifyOtp.
+      //
+      // 2. URL-hash implicit flow (`#access_token=…&refresh_token=…&type=…`)
+      //    — used by Supabase's default templates AND by verify-endpoint
+      //    redirects. The SSR browser client auto-detects this on load,
+      //    but the timing races our useEffect — so we explicitly parse
+      //    and call setSession.
+      //
+      // 3. Already-authenticated session — user landed here directly while
+      //    signed in. Just show the password form.
+
       const url = new URL(window.location.href);
+
+      // ── Flow 1: query-param token_hash ──────────────────────────────────
       const tokenHash = url.searchParams.get("token_hash");
-      const type = url.searchParams.get("type");
-      if (tokenHash && type === "recovery") {
+      const queryType = url.searchParams.get("type");
+      if (
+        tokenHash &&
+        (queryType === "recovery" || queryType === "invite")
+      ) {
         const { error: verifyErr } = await supabase.auth.verifyOtp({
           token_hash: tokenHash,
-          type: "recovery",
+          type: queryType,
         });
         if (verifyErr) {
           if (cancelled) return;
           setError(
-            "This reset link is no longer valid. It may have expired or already been used. Request a new one from the sign-in page.",
+            queryType === "invite"
+              ? "This invite link is no longer valid. It may have expired or already been used. Ask the admin to send a new invite."
+              : "This reset link is no longer valid. It may have expired or already been used. Request a new one from the sign-in page.",
           );
           setPhase("error");
           return;
         }
-        // Strip the query string so the URL doesn't show the token after refresh.
+        if (queryType === "invite") setIsInvite(true);
         window.history.replaceState({}, "", "/admin/auth/reset");
-      }
-
-      // Whether we just verified an OTP or arrived with a recovery hash, the
-      // SSR client should have established a session by now. Confirm it:
-      const { data: { session } } = await supabase.auth.getSession();
-      if (cancelled) return;
-      if (!session) {
-        setError(
-          "We couldn't verify your reset link. Open the most recent password-reset email and click the link again, or request a new one from the sign-in page.",
-        );
-        setPhase("error");
+        if (cancelled) return;
+        setPhase("ready");
         return;
       }
-      setPhase("ready");
+
+      // ── Flow 2: URL hash implicit (#access_token=…) ─────────────────────
+      // Parse the hash to detect invite vs recovery + extract tokens.
+      const hashParams = new URLSearchParams(
+        window.location.hash.replace(/^#/, ""),
+      );
+      const hashAccess = hashParams.get("access_token");
+      const hashRefresh = hashParams.get("refresh_token");
+      const hashType = hashParams.get("type");
+      if (hashAccess && hashRefresh) {
+        const { error: setErr } = await supabase.auth.setSession({
+          access_token: hashAccess,
+          refresh_token: hashRefresh,
+        });
+        if (cancelled) return;
+        if (setErr) {
+          setError(
+            hashType === "invite"
+              ? "This invite link is no longer valid. It may have expired or already been used. Ask the admin to send a new invite."
+              : "This reset link is no longer valid. It may have expired or already been used. Request a new one from the sign-in page.",
+          );
+          setPhase("error");
+          return;
+        }
+        if (hashType === "invite") setIsInvite(true);
+        window.history.replaceState({}, "", "/admin/auth/reset");
+        setPhase("ready");
+        return;
+      }
+
+      // ── Flow 3: existing session (or maybe SSR client already settled)
+      // Give the SSR client a brief moment to finish processing, then check.
+      const { data: { session } } = await supabase.auth.getSession();
+      if (cancelled) return;
+      if (session) {
+        setPhase("ready");
+        return;
+      }
+
+      // Subscribe to auth state changes — if the SSR client picks up a
+      // session within the timeout window, we can still proceed.
+      const { data: sub } = supabase.auth.onAuthStateChange((_event, sess) => {
+        if (cancelled) return;
+        if (sess) {
+          setPhase("ready");
+          sub.subscription.unsubscribe();
+        }
+      });
+      unsubscribe = () => sub.subscription.unsubscribe();
+
+      // Bail after 3s — anything beyond that is an actual failure.
+      setTimeout(() => {
+        if (cancelled) return;
+        supabase.auth.getSession().then(({ data }) => {
+          if (cancelled || data.session) return;
+          setError(
+            "We couldn't verify your link. Open the most recent email and click the link again, or request a new one from the sign-in page.",
+          );
+          setPhase("error");
+          if (unsubscribe) unsubscribe();
+        });
+      }, 3000);
     }
     init();
     return () => {
       cancelled = true;
+      if (unsubscribe) unsubscribe();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -105,10 +181,12 @@ export default function ResetPasswordPage() {
   return (
     <div className="rounded-lg border border-ydm-line bg-ydm-surface p-8 shadow-sm">
       <h1 className="m-0 mb-2 font-display text-2xl uppercase tracking-wide text-ydm-ink">
-        Set a new password
+        {isInvite ? "Welcome to YDM admin" : "Set a new password"}
       </h1>
       <p className="m-0 mb-6 text-sm text-ydm-muted">
-        Choose a password for your YDM admin account.
+        {isInvite
+          ? "Choose a password to finish setting up your account. You'll be signed in right after."
+          : "Choose a password for your YDM admin account."}
       </p>
 
       {phase === "checking" && (
