@@ -5,6 +5,18 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-06] - <commit-hash>
+
+### Phase OO — Ministry page H3 fixes + demo footer strip
+- Fixed H3 heading on 4 ministry pages where heading text didn't match the page topic: ask-bishop, family, outreach, wordwide.
+- Stripped trailing demo footer block (Lake Building / Redding CA address from cmsmasters Faith Connect WP theme) from 6 ministry pages: ask-bishop, family, leadership, outreach, partnership, wordwide.
+- leadership and partnership H3s left untouched (topically correct; pattern alignment deferred to copy pass).
+- worship page already clean — no change.
+- Body paragraphs under each H3 intentionally preserved; full rewrite deferred to Bishop's copy revision pass (see copy-pass-tracker.md).
+- Migration applied via Supabase Dashboard SQL Editor; verified clean against rendered DOM on all 7 ministry pages.
+
+---
+
 ## [2026-05-06] - 7770411
 
 ### Phase NN — Shop UX polish
