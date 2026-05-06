@@ -62,11 +62,19 @@ export async function getRecentSermons(
   return sermons.slice(0, limit);
 }
 
+/** A sermon shape that includes optional series_name (for grouped index views). */
+export interface SermonListItem extends RecentSermon {
+  /** Bishop-edited series name. Sermons sharing a series_name group together
+   * on /sermons. Sermons without a value land in the "Standalone" group. */
+  series: string;
+}
+
 /**
- * Same shape as RecentSermon — used by the /sermons index. Returns ALL sermon
- * detail pages, not capped, ordered by date_published DESC.
+ * Same shape as RecentSermon plus an optional series field — used by the
+ * /sermons index. Returns ALL sermon detail pages, not capped, ordered by
+ * date_published DESC within each series.
  */
-export async function getAllSermons(): Promise<RecentSermon[]> {
+export async function getAllSermons(): Promise<SermonListItem[]> {
   const sb = createServerClient();
   const { data, error } = await sb
     .from("page_content")
@@ -74,7 +82,13 @@ export async function getAllSermons(): Promise<RecentSermon[]> {
     .like("page_key", "sermons.%")
     .neq("page_key", "sermons.index")
     .not("page_key", "like", "sermons.cat.%")
-    .in("field_key", ["meta.title", "thumbnail_url", "date_published", "scripture_primary"]);
+    .in("field_key", [
+      "meta.title",
+      "thumbnail_url",
+      "date_published",
+      "scripture_primary",
+      "series_name",
+    ]);
   if (error) {
     console.error("[sermons] getAllSermons failed:", error);
     return [];
@@ -84,7 +98,7 @@ export async function getAllSermons(): Promise<RecentSermon[]> {
     if (!byPage.has(row.page_key)) byPage.set(row.page_key, {});
     byPage.get(row.page_key)![row.field_key] = row.value;
   }
-  const sermons: RecentSermon[] = [];
+  const sermons: SermonListItem[] = [];
   for (const [pageKey, fields] of byPage) {
     sermons.push({
       slug: pageKey.replace(/^sermons\./, ""),
@@ -92,10 +106,31 @@ export async function getAllSermons(): Promise<RecentSermon[]> {
       thumbnail: fields["thumbnail_url"] ?? "",
       date: fields["date_published"] ?? "",
       scripture: fields["scripture_primary"] ?? "",
+      series: (fields["series_name"] ?? "").trim(),
     });
   }
   sermons.sort((a, b) => (a.date < b.date ? 1 : -1));
   return sermons;
+}
+
+/** Group sermons by series_name. Sermons with no series go into a "" key
+ * (rendered as "Standalone messages" in the UI). */
+export function groupSermonsBySeries(
+  sermons: SermonListItem[],
+): { series: string; sermons: SermonListItem[] }[] {
+  const groups = new Map<string, SermonListItem[]>();
+  for (const s of sermons) {
+    const key = s.series || "";
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key)!.push(s);
+  }
+  // Order: named series first (alpha), then standalone group last.
+  const named = [...groups.entries()].filter(([k]) => k !== "");
+  named.sort((a, b) => a[0].localeCompare(b[0]));
+  const standalone = groups.get("") ?? [];
+  const out = named.map(([series, sermons]) => ({ series, sermons }));
+  if (standalone.length > 0) out.push({ series: "", sermons: standalone });
+  return out;
 }
 
 export interface ScriptureRef {

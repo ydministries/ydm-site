@@ -7,6 +7,19 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-05] - <pending>
 
+### Phase II — Sermon series + scripture index
+- feat(II): `/sermons/scripture` — public scripture index (NOT in route-map.json; hand-authored, codegen-skipped). Lists every Bible passage referenced across all sermons grouped by book → chapter → verse. Each entry shows the verse text (cached by Phase K), translation, and links to the sermon(s) that mentioned it. Same gold-accent / cream / display-font styling as other site pages.
+- feat(II): `lib/scriptureIndex.ts` — `parseRef()` handles `Joshua 4:19-20` / `Matthew 16:18` / `Romans 12` / `1 Corinthians 13:1-3` shapes including leading-number books and common aliases (Psalm/Psalms, Song of Songs/Solomon). `BOOK_ORDER` is the canonical 66-book Protestant ordering used for sorting.
+- feat(II): `getScriptureIndex()` aggregates refs across all sermons in one round-trip; same `ref` string from multiple sermons merges into one entry with multiple sermon links. Verse-range overlaps (e.g. `Joshua 4:17-20` vs `Joshua 4:19-20`) stay separate entries by design — preserves what each sermon actually quoted.
+- feat(II): `lib/sermons.ts` — `SermonListItem` extends `RecentSermon` with `series` field. `getAllSermons()` now reads optional `series_name` page_content field. New `groupSermonsBySeries()` helper sorts named series alphabetically, standalone sermons last (rendered as "More Sermons" header).
+- feat(II): `SermonsIndexTemplate` renders grouped or flat depending on whether any sermon has `series_name` set — fallback is flat view (current UX). When at least one series is assigned, all sermons render in series sections with "Series" eyebrow + series name as the section header.
+- feat(II): "Browse by scripture →" link on `/sermons` hero pointing to the new index. Reverse "← Back to all sermons" link on the scripture index hero.
+- note: no sermons have `series_name` seeded — bishop opts in via `/admin/content/sermons.<slug>` adding the `series_name` field whenever he wants to group sermons. Until then, the flat view (current UX) keeps rendering. Series feature is dormant-but-ready.
+
+---
+
+## [2026-05-05] - 5c361bb
+
 ### Phase HH — /admin/users invite UI
 - feat(HH): `/admin/users` page (admin-only — bishop redirects to /admin) listing all editors with role pill + last-sign-in + joined date, plus a separate "Pending invites" section for unconfirmed accounts
 - feat(HH): invite form posts to `inviteUserAction` server action — calls `auth.admin.inviteUserByEmail()` with redirectTo `/admin/auth/reset`, then UPDATEs the auto-created profile row to admin if requested (default bishop). Branded YDM-gold invite email arrives via Resend SMTP.
