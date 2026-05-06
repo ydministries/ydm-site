@@ -5,7 +5,17 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-05-06] - <pending>
+## [2026-05-06] - 7770411
+
+### Phase NN — Shop UX polish
+- feat(NN): product image lightbox — clicking the hero image OR clicking an already-selected color thumb opens a fullscreen overlay with prev/next/Esc keyboard nav, body-scroll lock, click-backdrop-to-close. Lightbox auto-syncs the selected variant when navigating between colors so closing leaves the user on the visual they last viewed.
+- feat(NN): variant thumbs grid extended from 4 across to 6 across on desktop (more colors visible without scrolling); small "Tap a color to switch · double-tap or click hero to enlarge" hint added.
+- chore(NN): "How it works" step 3 changed `Printful prints and ships directly to you` → `Your item is custom made and ships directly to you` per Mikey's polish pass.
+- fix(NN): `lib/printful.ts` filter changed from `!is_ignored` to `synced > 0`. Root cause of "only 4 products showing on /shop" — the `is_ignored` flag was hiding products that legitimately belonged in the catalog. Now we filter only on whether variants are synced (no point showing an empty product).
+
+---
+
+## [2026-05-06] - 9d88ac7
 
 ### Phase MM — Handover docs
 - docs(MM): `HANDOVER.md` (root) — comprehensive maintainer reference: every public + admin route, env var inventory, bishop's daily task playbook, post-handover setup checklist, troubleshooting, common-failure recipes
