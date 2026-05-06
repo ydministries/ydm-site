@@ -23,6 +23,7 @@ const ADMIN_SIDEBAR: SidebarLink[] = [
   { href: "/admin/messages", label: "Messages" },
   { href: "/admin/testimonials", label: "Testimonies" },
   { href: "/admin/subscribers", label: "Subscribers" },
+  { href: "/admin/donations", label: "Donations" },
   { href: "/admin/assets", label: "Assets" },
   { href: "/admin/users", label: "Users" },
   { href: "/admin/profile", label: "Profile" },
@@ -34,6 +35,7 @@ const BISHOP_SIDEBAR: SidebarLink[] = [
   { href: "/admin/messages", label: "Messages" },
   { href: "/admin/testimonials", label: "Testimonies" },
   { href: "/admin/subscribers", label: "Newsletter" },
+  { href: "/admin/donations", label: "Donations" },
   { href: "/admin/assets", label: "Photos" },
   { href: "/admin/profile", label: "My account" },
 ];

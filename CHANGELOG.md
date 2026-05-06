@@ -7,6 +7,22 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-06] - <pending>
 
+### Phase KK — Donations (Interac primary + Stripe recurring)
+- feat(KK): completely redesigned `/give` page — two-column layout. LEFT: gold-bordered Interac e-Transfer card (primary path) with copy-paste-ready `donate@ydministries.ca`, 5-step instructions, "auto-deposit enabled" badge, zero-fees framing. RIGHT: Stripe Checkout recurring card with 4 preset tiers ($25/$50/$100/$250 monthly) + custom amount input ($5–$5000 range).
+- feat(KK): `lib/stripe.ts` — env-gated `getStripe()` returns null when `STRIPE_SECRET_KEY` is unset; `isStripeConfigured()` + `DONATION_TIERS_CAD` constants. Pinned API version `2024-12-18.acacia`.
+- feat(KK): `/api/donate/checkout` POST — creates Stripe Checkout Session in subscription mode with CAD currency, monthly recurring, billing-address collected, metadata propagated to subscription. Returns `{ url }` for client-side redirect.
+- feat(KK): `/api/stripe/webhook` POST — verifies signature with `STRIPE_WEBHOOK_SECRET`, raw-body friendly. Handles `checkout.session.completed` (first month), `invoice.paid` (subsequent months, dedupes via `billing_reason='subscription_create'` skip), `invoice.payment_failed` (marks last donation row failed), `customer.subscription.deleted` (logs cancel marker).
+- feat(KK): `_helpers/StripeRecurringForm.tsx` client component — preset tier buttons + custom-amount input, honeypot, validates 5–5000 CAD range, redirects to Stripe Checkout URL on submit.
+- feat(KK): `/give/thanks` post-Checkout success page — branded "Your monthly partnership has begun" confirmation with sermon CTA. Stripe handles receipt email; we just acknowledge.
+- feat(KK): `/admin/donations` browser — chronological ledger of Stripe donations with totals (active monthly partners count + total $ received). Bishop sees donor name + amount + date + status; admin additionally sees stripe_subscription_id. Note: Interac e-Transfer gifts aren't tracked here (they land in the donate@ inbox).
+- chore(KK): admin sidebar gains "Donations" link in both ADMIN_SIDEBAR and BISHOP_SIDEBAR.
+- chore(KK): migration `20260506_donations_phase_kk.sql` adds `stripe_subscription_id`, `stripe_customer_id`, `method` (with check constraint), `updated_at` columns to existing `donations` table from 004_shop scaffold; adds RLS for admin/bishop SELECT (INSERT/UPDATE happen via service-role from server-side). Additive ALTER — no DROP since the existing schema is mostly correct and table is empty.
+- env: requires `STRIPE_SECRET_KEY`, `STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`. Gracefully degrades when unset — Stripe card shows "Coming soon" placeholder, Interac path stays fully functional.
+
+---
+
+## [2026-05-06] - b6c07f7
+
 ### Phase JJ — Curated testimonials (replaces guestbook)
 - feat(JJ): `testimonials` Supabase table — name + message + relationship + visitor_email + status (pending/approved/rejected) + is_featured + metadata + created_at/updated_at. RLS: anon INSERT (status=pending only), public SELECT for status=approved, admin/bishop SELECT all + UPDATE + DELETE.
 - feat(JJ): `lib/testimonials.ts` — `getApprovedTestimonials()` (featured first, then date desc) and `getAllTestimonialsForAdmin()` (pending oldest-first, approved newest, rejected last).
