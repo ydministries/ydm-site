@@ -91,12 +91,28 @@ export interface SyncProductDetail {
 
 // ── Public API ─────────────────────────────────────────────────────────────
 
-/** List all sync products configured in the YDM Printful store. */
+/**
+ * List all sync products configured in the YDM Printful store.
+ *
+ * Note on filtering: we only filter out products with `synced === 0`
+ * (no synced variants — they have nothing to display or sell). We do NOT
+ * filter on `is_ignored` because that flag's behavior was inconsistent —
+ * some products marked ignored in Printful's UI still belonged in the
+ * catalog. Mikey reported "only 4 of multiple products showing" 2026-05-06;
+ * relaxing the filter to `synced > 0` solved it.
+ *
+ * If a product appears here that bishop wants hidden, the cleanest path is
+ * to delete (or archive) it in the Printful dashboard rather than relying
+ * on `is_ignored`.
+ */
 export async function listProducts(): Promise<SyncProductSummary[]> {
   if (!isPrintfulConfigured()) return [];
-  const result = await pf<SyncProductSummary[]>("/store/products?limit=100");
+  // /sync/products is the OAuth-token-scope-friendly path. /store/products
+  // exists too but requires stores_list/read which isn't on the default
+  // store-scoped token Bishop is using.
+  const result = await pf<SyncProductSummary[]>("/sync/products?limit=100");
   if (!result) return [];
-  return result.filter((p) => !p.is_ignored);
+  return result.filter((p) => p.synced > 0);
 }
 
 /** Fetch full product detail (sync_product + variants) by Printful ID. */
@@ -104,7 +120,7 @@ export async function getProductById(
   id: number,
 ): Promise<SyncProductDetail | null> {
   if (!isPrintfulConfigured()) return null;
-  return pf<SyncProductDetail>(`/store/products/${id}`);
+  return pf<SyncProductDetail>(`/sync/products/${id}`);
 }
 
 /**
