@@ -2,6 +2,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { createClient } from "@supabase/supabase-js";
 import { getStripe } from "@/lib/stripe";
+import { createPrintfulOrder } from "@/lib/printful";
 
 /**
  * Stripe webhook handler.
@@ -65,6 +66,125 @@ export async function POST(req: NextRequest) {
     switch (event.type) {
       case "checkout.session.completed": {
         const session = event.data.object as Stripe.Checkout.Session;
+        const kind = (session.metadata?.ydm_kind ?? "donation") as
+          | "donation"
+          | "shop";
+
+        if (kind === "shop") {
+          // ── Shop order ──────────────────────────────────────────────────
+          const amountCad = session.amount_total ?? 0; // cents
+          const currency = (session.currency ?? "cad").toUpperCase();
+          const email =
+            session.customer_details?.email ?? session.customer_email ?? null;
+          const name = session.customer_details?.name ?? null;
+          const paymentIntentId =
+            typeof session.payment_intent === "string"
+              ? session.payment_intent
+              : session.payment_intent?.id ?? null;
+
+          const shipping = session.collected_information?.shipping_details ??
+            null;
+          const phone = session.customer_details?.phone ?? null;
+
+          const variantId = Number(
+            session.metadata?.printful_sync_variant_id,
+          );
+
+          // Persist a row immediately — even if the Printful create fails,
+          // bishop has the order on file and can reconcile manually.
+          const { data: orderRow, error: insertErr } = await sb
+            .from("orders")
+            .insert({
+              stripe_session_id: session.id,
+              stripe_payment_intent_id: paymentIntentId,
+              customer_email: email ?? "(unknown)",
+              customer_name: name,
+              shipping_address: shipping?.address ?? null,
+              total_cad: amountCad,
+              currency,
+              status: "paid",
+              fulfillment_status: "pending",
+              printful_recipient: shipping
+                ? {
+                    name: shipping.name ?? name,
+                    address1: shipping.address?.line1 ?? "",
+                    address2: shipping.address?.line2 ?? null,
+                    city: shipping.address?.city ?? "",
+                    state_code: shipping.address?.state ?? null,
+                    country_code: shipping.address?.country ?? "",
+                    zip: shipping.address?.postal_code ?? "",
+                    email,
+                    phone,
+                  }
+                : null,
+            })
+            .select("id")
+            .single();
+
+          if (insertErr || !orderRow) {
+            console.error(
+              "[stripe/webhook] shop order insert failed:",
+              insertErr,
+            );
+            break;
+          }
+
+          // Persist a single line item (single-quantity buy now).
+          if (Number.isFinite(variantId) && variantId > 0) {
+            const itemName =
+              session.line_items?.data?.[0]?.description ??
+              session.metadata?.printful_sync_variant_id ??
+              "(item)";
+            await sb.from("order_items").insert({
+              order_id: orderRow.id,
+              printful_variant_id: String(variantId),
+              name: itemName,
+              quantity: 1,
+              unit_price_cad: amountCad,
+            });
+
+            // Create the Printful order. Best-effort — failures don't
+            // block; bishop sees the orphan order in /admin/orders.
+            if (shipping?.address) {
+              const created = await createPrintfulOrder({
+                external_id: session.id,
+                recipient: {
+                  name: shipping.name ?? name ?? "Customer",
+                  address1: shipping.address.line1 ?? "",
+                  address2: shipping.address.line2 ?? null,
+                  city: shipping.address.city ?? "",
+                  state_code: shipping.address.state ?? null,
+                  country_code: shipping.address.country ?? "",
+                  zip: shipping.address.postal_code ?? "",
+                  email: email ?? undefined,
+                  phone: phone ?? undefined,
+                },
+                items: [{ sync_variant_id: variantId, quantity: 1 }],
+              });
+              if (created?.id) {
+                await sb
+                  .from("orders")
+                  .update({
+                    printful_order_id: String(created.id),
+                    fulfillment_status: "submitted",
+                  })
+                  .eq("id", orderRow.id);
+              } else {
+                await sb
+                  .from("orders")
+                  .update({
+                    fulfillment_status: "submission_failed",
+                    notes:
+                      "Stripe payment captured but Printful order creation failed — manual reconciliation needed.",
+                  })
+                  .eq("id", orderRow.id);
+              }
+            }
+          }
+          break;
+        }
+
+        // ── Donation (existing recurring path) ─────────────────────────
         const subscriptionId =
           typeof session.subscription === "string"
             ? session.subscription
@@ -73,7 +193,7 @@ export async function POST(req: NextRequest) {
           typeof session.customer === "string"
             ? session.customer
             : session.customer?.id ?? null;
-        const amountCad = session.amount_total ?? 0; // in cents
+        const amountCad = session.amount_total ?? 0;
         const currency = (session.currency ?? "cad").toUpperCase();
         const email =
           session.customer_details?.email ?? session.customer_email ?? null;

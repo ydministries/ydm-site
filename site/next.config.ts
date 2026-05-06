@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "media.ydministries.ca",
       },
+      // Printful product mockups served from various CDN hosts
+      { protocol: "https", hostname: "files.cdn.printful.com" },
+      { protocol: "https", hostname: "*.cdn.printful.com" },
+      { protocol: "https", hostname: "*.printful.com" },
     ],
   },
   async headers() {

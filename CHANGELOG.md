@@ -7,6 +7,25 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-06] - <pending>
 
+### Phase LL — Shop (Printful + Stripe)
+- feat(LL): `lib/printful.ts` — env-gated wrapper for Printful Sync Products API. `listProducts()` / `getProductBySlug()` / `getProductById()` with Next.js fetch revalidation (5 min). `createPrintfulOrder()` for webhook-triggered fulfillment. Catalog NOT synced to Supabase — fetched at request time.
+- feat(LL): `/shop` public catalog (hand-authored). 3-up grid with Printful thumbnails. Graceful empty states for "PRINTFUL_API_KEY unset" and "no products yet" — no broken-shop appearance.
+- feat(LL): `/shop/[slug]` product detail page with image gallery (1 hero + 4 thumbs from variant preview files), variant select, and `BuyNow` client island that POSTs to `/api/shop/checkout`.
+- feat(LL): `/api/shop/checkout` POST — validates variant against live Printful catalog (don't trust client price), creates Stripe Checkout Session in `mode='payment'` with shipping address collection enabled (CA/US/GB/AU/NZ), phone collection on. Metadata flags `ydm_kind='shop'` so the webhook can branch.
+- feat(LL): `/api/stripe/webhook` extended — `checkout.session.completed` now branches on `ydm_kind`. Shop branch: insert into `orders` (status='paid', fulfillment_status='pending'), insert `order_items`, create Printful order via `createPrintfulOrder()`, update `printful_order_id` + fulfillment_status='submitted'. If Printful submission fails, fulfillment_status='submission_failed' and a `notes` field flags the orphan for manual reconcile. Donation branch (recurring) unchanged.
+- feat(LL): `/shop/success` post-checkout success page — branded thank-you with link to keep shopping.
+- feat(LL): `/admin/orders` admin browser — chronological table with payment status pill + fulfillment status pill. Top-of-page banner alerts admin when there are orphaned-paid orders that failed Printful submission. Bishop sees customer name + email + total + status; admin additionally sees printful_order_id.
+- chore(LL): migration `20260506_shop_phase_ll.sql` adds `stripe_payment_intent_id`, `tracking_url`, `printful_recipient` (jsonb), `notes` columns to existing `orders` table from 004_shop scaffold; enables RLS on `orders` + `order_items` with admin/bishop SELECT (INSERT/UPDATE happen via service-role from webhook).
+- chore(LL): `next.config.ts` adds Printful CDN hostnames (`files.cdn.printful.com`, `*.cdn.printful.com`, `*.printful.com`) to image remotePatterns.
+- chore(LL): public site nav gains "Shop" link between Testimonies and Contact. Admin sidebar gains "Orders" link in both ADMIN_SIDEBAR and BISHOP_SIDEBAR.
+- env: requires `PRINTFUL_API_KEY` plus the existing `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET`. Without Printful key: catalog shows "Shop opening soon", routes still build, no errors. Without Stripe keys: BuyNow button hits 503 with a friendly message.
+- v1 limitation noted: cart is single-quantity Buy Now (one product per checkout). Multi-item cart is v2.
+- v1 limitation noted: Printful orders are created in DRAFT status (Bishop reviews + confirms in Printful dashboard). Auto-confirm can be flipped on later via Printful settings.
+
+---
+
+## [2026-05-06] - 434ce54
+
 ### Phase KK — Donations (Interac primary + Stripe recurring)
 - feat(KK): completely redesigned `/give` page — two-column layout. LEFT: gold-bordered Interac e-Transfer card (primary path) with copy-paste-ready `donate@ydministries.ca`, 5-step instructions, "auto-deposit enabled" badge, zero-fees framing. RIGHT: Stripe Checkout recurring card with 4 preset tiers ($25/$50/$100/$250 monthly) + custom amount input ($5–$5000 range).
 - feat(KK): `lib/stripe.ts` — env-gated `getStripe()` returns null when `STRIPE_SECRET_KEY` is unset; `isStripeConfigured()` + `DONATION_TIERS_CAD` constants. Pinned API version `2024-12-18.acacia`.
