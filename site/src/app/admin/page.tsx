@@ -59,6 +59,7 @@ export default async function AdminDashboardPage() {
     { count: assetCount },
     { count: messageCount },
     { count: subscriberCount },
+    { count: pendingTestimonials },
   ] = await Promise.all([
     supabase.from("page_content").select("page_key", { count: "exact", head: true }),
     supabase.from("page_content").select("page_key"),
@@ -68,6 +69,10 @@ export default async function AdminDashboardPage() {
       .from("newsletter_subscribers")
       .select("id", { count: "exact", head: true })
       .eq("status", "subscribed"),
+    supabase
+      .from("testimonials")
+      .select("id", { count: "exact", head: true })
+      .eq("status", "pending"),
   ]);
   const pageCount = keyRows
     ? new Set(keyRows.map((r) => r.page_key)).size
@@ -84,7 +89,7 @@ export default async function AdminDashboardPage() {
           changes.
         </p>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Card
             href="/admin/content"
             title="Edit pages"
@@ -101,6 +106,16 @@ export default async function AdminDashboardPage() {
             title="Newsletter"
             badge={subscriberCount ? `${subscriberCount} subscribed` : undefined}
             body="People who've signed up for YDM email updates. Export the list anytime."
+          />
+          <Card
+            href="/admin/testimonials"
+            title="Testimonies"
+            badge={
+              pendingTestimonials
+                ? `${pendingTestimonials} to review`
+                : undefined
+            }
+            body="Stories shared by members and visitors. Review and approve before they appear publicly."
           />
           <Card
             href="/admin/assets"
@@ -151,6 +166,11 @@ export default async function AdminDashboardPage() {
           href="/admin/subscribers"
           title={`Subscribers (${subscriberCount ?? 0} subscribed)`}
           body="Newsletter signups and unsubscribes; CSV export + manual unsub."
+        />
+        <Card
+          href="/admin/testimonials"
+          title={`Testimonies${pendingTestimonials ? ` (${pendingTestimonials} pending)` : ""}`}
+          body="Curated testimonials with approval workflow. Pending → approved → public grid."
         />
         <Card
           href="/admin/assets"

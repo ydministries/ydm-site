@@ -5,7 +5,23 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
-## [2026-05-05] - <pending>
+## [2026-05-06] - <pending>
+
+### Phase JJ — Curated testimonials (replaces guestbook)
+- feat(JJ): `testimonials` Supabase table — name + message + relationship + visitor_email + status (pending/approved/rejected) + is_featured + metadata + created_at/updated_at. RLS: anon INSERT (status=pending only), public SELECT for status=approved, admin/bishop SELECT all + UPDATE + DELETE.
+- feat(JJ): `lib/testimonials.ts` — `getApprovedTestimonials()` (featured first, then date desc) and `getAllTestimonialsForAdmin()` (pending oldest-first, approved newest, rejected last).
+- feat(JJ): `/testimonials` public page (hand-authored, NOT codegen) — hero, optional featured section with gold-bordered large card, 3-up grid for non-featured, submission form below. Empty state encourages first submission.
+- feat(JJ): `_helpers/TestimonialForm.tsx` client component — name + relationship + email (hidden) + message, honeypot, character count, submit/success/error states.
+- feat(JJ): `/api/testimonials/submit` POST — honeypot + validate + insert with status='pending' + email-notify bishop with link to moderation queue.
+- feat(JJ): `/admin/testimonials` moderation — three sections (Pending review / Live / Rejected) with per-row Approve, Reject, Reopen, Feature/Unfeature, Delete actions. Pending count badge surfaces on bishop landing card.
+- feat(JJ): admin landing card "Testimonies" added with `${pending} to review` badge for bishop / `${pending} pending` for admin. Bishop view re-laid-out to lg:grid-cols-3 to fit the 5th card.
+- feat(JJ): admin sidebar gains "Testimonies" link in both ADMIN_SIDEBAR (between Messages and Subscribers) and BISHOP_SIDEBAR.
+- feat(JJ): public site nav gains "Testimonies" link between Events and Contact.
+- chore(JJ): `/guestbook` → `/testimonials` 308 redirect added in next.config (replaces old unmoderated guestbook flow). Existing GuestbookTemplate stays as dead code (codegen will keep regenerating /guestbook/page.tsx; redirect wins; cleanup deferred).
+
+---
+
+## [2026-05-05] - b19c5f6
 
 ### Phase II — Sermon series + scripture index
 - feat(II): `/sermons/scripture` — public scripture index (NOT in route-map.json; hand-authored, codegen-skipped). Lists every Bible passage referenced across all sermons grouped by book → chapter → verse. Each entry shows the verse text (cached by Phase K), translation, and links to the sermon(s) that mentioned it. Same gold-accent / cream / display-font styling as other site pages.

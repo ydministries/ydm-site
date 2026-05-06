@@ -46,7 +46,16 @@ const nextConfig: NextConfig = {
         source: r.source === "/" ? "/" : r.source.replace(/\/$/, ""),
       }))
       .filter((r) => r.source !== r.destination);
-    console.log(`[next.config] loaded ${cleaned.length} redirects (after trailing-slash strip)`);
+
+    // Phase JJ — guestbook is retired in favor of curated testimonials.
+    // Anyone with a bookmark to /guestbook lands on /testimonials.
+    cleaned.push({
+      source: "/guestbook",
+      destination: "/testimonials",
+      permanent: true,
+    });
+
+    console.log(`[next.config] loaded ${cleaned.length} redirects (after trailing-slash strip + Phase JJ guestbook→testimonials)`);
     return cleaned;
   },
 };

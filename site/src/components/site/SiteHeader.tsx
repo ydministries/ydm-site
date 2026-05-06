@@ -10,6 +10,7 @@ const NAV: Array<{ href: string; label: string }> = [
   { href: "/sermons", label: "Sermons" },
   { href: "/ministries", label: "Ministries" },
   { href: "/events", label: "Events" },
+  { href: "/testimonials", label: "Testimonies" },
   { href: "/contact", label: "Contact" },
 ];
 
