@@ -94,6 +94,9 @@ export function ProductView({ product }: ProductViewProps) {
     };
   }, [lightboxIdx, gallery, variantId, closeLightbox, nextLightbox, prevLightbox]);
 
+  // NOTE: dead code while SHOP_CHECKOUT_ENABLED=false in Vercel
+  // Production. Restored to live use when Stripe live verification
+  // clears (see HANDOVER.md "Known issues"). Do not refactor out.
   async function onBuy() {
     if (!selected) return;
     setError("");
@@ -264,18 +267,16 @@ export function ProductView({ product }: ProductViewProps) {
 
             <button
               type="button"
-              onClick={onBuy}
-              disabled={!selected || status === "submitting"}
-              className="w-full rounded-full bg-ydm-gold px-7 py-3 text-base font-semibold text-ydm-ink transition hover:bg-ydm-gold/90 disabled:cursor-not-allowed disabled:opacity-70"
+              disabled
+              aria-disabled="true"
+              className="w-full cursor-not-allowed rounded-full bg-stone-300 px-7 py-3 text-base font-semibold text-stone-500"
             >
-              {status === "submitting"
-                ? "Redirecting to checkout…"
-                : "Buy now (1 item)"}
+              Currently unavailable
             </button>
 
             <p className="m-0 text-center font-serif text-xs leading-relaxed text-ydm-muted">
-              Secure checkout via Stripe · Made-to-order by Printful · Ships
-              directly to you
+              Online ordering is temporarily paused while we finalize
+              payment setup. Check back soon.
             </p>
           </div>
         )}

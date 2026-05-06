@@ -7,6 +7,17 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-06] - <commit-hash>
 
+### Phase PP — Shop checkout disabled pending Stripe verification
+- /shop/[slug] buy button(s) replaced with a disabled "Currently unavailable" state and explanatory subtext.
+- /shop landing banner added: "Our online shop is taking a brief pause while we finalize payment setup."
+- /api/shop/checkout returns 503 at handler entry, gated on SHOP_CHECKOUT_ENABLED env var.
+- Vercel Production env requires SHOP_CHECKOUT_ENABLED=false manually set; Preview/Dev unaffected.
+- Stripe live-mode flip (originally Prompt 2 of audit fix sequence) deferred until Bishop Wilson completes Stripe business verification.
+
+---
+
+## [2026-05-06] - <commit-hash>
+
 ### Phase OO — Ministry page H3 fixes + demo footer strip
 - Fixed H3 heading on 4 ministry pages where heading text didn't match the page topic: ask-bishop, family, outreach, wordwide.
 - Stripped trailing demo footer block (Lake Building / Redding CA address from cmsmasters Faith Connect WP theme) from 6 ministry pages: ask-bishop, family, leadership, outreach, partnership, wordwide.

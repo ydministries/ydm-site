@@ -42,6 +42,17 @@ export default async function ShopPage() {
         </div>
       </section>
 
+      <div
+        role="status"
+        className="-mx-4 border-y-2 border-ydm-gold bg-ydm-cream py-4 sm:-mx-6"
+      >
+        <p className="m-0 mx-auto max-w-4xl px-4 text-center font-serif text-sm leading-relaxed text-ydm-ink sm:px-6 sm:text-base">
+          Our online shop is taking a brief pause while we finalize payment
+          setup. Browse our products below — purchasing will be available
+          again soon.
+        </p>
+      </div>
+
       <section className="bg-ydm-surface py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
           {!configured ? (

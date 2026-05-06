@@ -24,6 +24,20 @@ interface CheckoutPayload {
  * Printful order via createPrintfulOrder().
  */
 export async function POST(req: NextRequest) {
+  // Hard gate — set SHOP_CHECKOUT_ENABLED=false in Vercel Production while
+  // Stripe live-mode verification is pending. Defense-in-depth alongside
+  // the disabled buy button in /shop/[slug] (see HANDOVER.md "Known issues"
+  // for the full re-enable runbook).
+  const checkoutEnabled = process.env.SHOP_CHECKOUT_ENABLED !== "false";
+  if (!checkoutEnabled) {
+    return new Response(
+      JSON.stringify({
+        error: "Shop checkout is temporarily unavailable. We'll be back soon.",
+      }),
+      { status: 503, headers: { "Content-Type": "application/json" } },
+    );
+  }
+
   const stripe = getStripe();
   if (!stripe) {
     return NextResponse.json(

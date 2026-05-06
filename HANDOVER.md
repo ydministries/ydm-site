@@ -182,6 +182,22 @@ If a row in `/admin/orders` shows red ("submission_failed"), Stripe captured pay
 
 ---
 
+## Known issues
+
+### Shop checkout disabled pending Stripe live-mode activation
+
+`/shop/[slug]` displays the buy CTA in a disabled "Currently unavailable" state and `/api/shop/checkout` returns `503` at handler entry. Both are gated on the `SHOP_CHECKOUT_ENABLED` env var (defaults to enabled when unset; Vercel Production has it set to `"false"`). The `/shop` landing also carries a notice banner explaining the pause to visitors.
+
+To re-enable:
+
+1. Bishop Wilson completes Stripe business verification at Stripe Dashboard → Settings → Business profile.
+2. Rotate `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` in Vercel Production env to live values (`sk_live_...`, new `whsec_...`).
+3. Create live-mode webhook at `https://ydministries.ca/api/stripe/webhook` subscribed to: `checkout.session.completed`, `invoice.paid`, `invoice.payment_failed`, `customer.subscription.deleted`.
+4. Remove `SHOP_CHECKOUT_ENABLED` from Vercel Production env (or set to `"true"`).
+5. Trigger redeploy with build cache busted.
+
+---
+
 ## Outstanding setup work (post-handover)
 
 Things that need YOU (the maintainer) to act, not code:

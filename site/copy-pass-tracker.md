@@ -27,6 +27,13 @@ sequence.
 - **meta.description missing** on 57+ pages. Will be addressed in the
   Group B seeding pass alongside the orphan-field cleanup.
 
+## Pending Bishop input
+
+- **Stripe business verification** — required to activate live-mode
+  Stripe payments. Until then, /shop checkout is disabled (Phase PP).
+  Bishop must complete Stripe Dashboard → Settings → Business profile
+  flow himself; Mikey doesn't have the org documents.
+
 ## Cleanup deferred
 
 Audit artifacts left on disk for the next debugging session; remove
