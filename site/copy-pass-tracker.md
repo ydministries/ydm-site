@@ -41,19 +41,42 @@ sequence.
   re-emit these as routes. Cosmetic loose end — clean up the script
   to skip these patterns when revisiting Phase Z work.
   (Surfaced 2026-05-06 during Phase QQ Phase A audit.)
+- Audit warning #15 partially closed by Phase RR — `src/app/sitemap.ts`
+  and `src/app/robots.ts` now use `NEXT_PUBLIC_SITE_URL` instead of a
+  hardcoded literal. Two remaining files still hardcode
+  `https://ydministries.ca`:
+    - `src/app/api/testimonials/submit/route.ts:96` (admin URL inside
+      the bishop-notification email template)
+    - `src/app/api/newsletter/unsubscribe/[token]/route.ts:139-140`
+      (return-to-site links inside the unsubscribe confirmation page)
+  To consolidate in a later Group C prompt.
+- `team.bishopwilson` has THREE independent redirect mechanisms:
+  codegen `templateRegistry.redirectKeys`, the
+  `archive/wordpress/scrape/site-map.json` redirect entry consumed by
+  `next.config.ts`, and historically a `team.bishopwilson` row in
+  `page_content` (Phase QQ swept that DB row but the page.tsx redirect
+  shim still emits independently from codegen). Rationalizing these
+  to one mechanism is out of scope for the audit fix sequence but
+  worth a future "redirect-system audit" pass.
+  (Surfaced 2026-05-06 during Phase RR Phase A.)
 
 ## Cleanup deferred
 
 Audit artifacts left on disk for the next debugging session; remove
 during the repo hygiene phase.
 
-- `site/scripts/_audit-ministries.ts` — service-role query that pulls
-  all `ministries.*` body_html rows; used by Phase OO verification.
-- `site/scripts/_audit-fields.ts` — service-role query that enumerates
-  every field on each ministry page; surfaced the parallel-field issue
-  noted above.
-- `/tmp/ministries-current.json` — pre-Phase-OO snapshot of the seven
-  body_html values (rollback reference).
-- `/tmp/ministries-after.txt` — post-migration verification output.
-- `/tmp/ydm-min/*.html` — captured rendered HTML from each
-  `/ministries/<slug>` route during Phase OO verification.
+Untracked scripts in `site/scripts/` (4):
+- `_audit-ministries.ts` — Phase OO body_html query.
+- `_audit-fields.ts` — Phase OO field enumeration; surfaced parallel-
+  field issue addressed by Phase QQ.
+- `_audit-cleanup.ts` — Phase QQ pre-deletion snapshot generator.
+- `_audit-postcleanup.ts` — Phase QQ post-deletion verification.
+
+Untracked `/tmp` artifacts:
+- `/tmp/ministries-current.json` — pre-Phase-OO body_html snapshot.
+- `/tmp/ministries-after.txt` — post-Phase-OO verification output.
+- `/tmp/ydm-min/*.html` — Phase OO rendered HTML captures.
+- `/tmp/ydm-min-postqq/*.html` — Phase QQ rendered HTML captures.
+- `/tmp/ydm-prompt3/pre-cleanup-snapshot.json` — Phase QQ pre-DELETE row dump.
+- `/tmp/ydm-prompt4/{new,prod}-{sitemap.xml,urls.txt}` — Phase RR sitemap diff.
+- `/tmp/strip-scripts.py`, `/tmp/find-cheapest-variant.py` — one-off helpers.

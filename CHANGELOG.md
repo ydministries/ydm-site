@@ -7,6 +7,19 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-06] - <commit-hash>
 
+### Phase RR — Sitemap regen from live routes + robots URL env var
+- `src/app/sitemap.ts` now derives URLs from a hardcoded STATIC_ROUTES list inside the file (49 entries) plus a runtime expansion of `/shop/[slug]` from Printful's catalog. The previous source — `archive/wordpress/scrape/route-map.json` — was frozen pre-launch and missed every post-codegen hand-authored route.
+- Added 9 URLs that were live since Phases II–LL but missing from the sitemap: `/testimonials` (Phase JJ), `/sermons/scripture` (Phase II), `/shop` + `/shop/success` + 4 Printful product pages (Phase LL), `/give/thanks` (Phase KK).
+- Removed 2 URLs that were 308-redirect sources: `/guestbook` (→ /testimonials) and `/team/bishopwilson` (→ /team/bishop-huel-wilson).
+- Net: 46 → 53 URLs.
+- `revalidate = 3600` so new Printful products surface in the sitemap within an hour without redeploy. Listing call wrapped in try/catch — sitemap still ships every static route if Printful is unreachable.
+- Build/dev-time drift check (~20 lines at file bottom) walks `src/app/(site)/**/page.tsx` and warns if any page.tsx route is missing from STATIC_ROUTES. Silently no-ops on Vercel runtime where the source tree isn't bundled.
+- `src/app/sitemap.ts` and `src/app/robots.ts` now read `NEXT_PUBLIC_SITE_URL` (with hardcoded fallback) instead of hardcoding the URL. Audit warning #15 partially closed; two remaining files (`api/testimonials/submit/route.ts`, `api/newsletter/unsubscribe/[token]/route.ts`) still hardcode and are deferred to a Group C consolidation.
+
+---
+
+## [2026-05-06] - <commit-hash>
+
 ### Phase QQ — DB cleanup: stale page_keys + ministry orphan fields
 - Deleted 36 rows for decommissioned Phase Z filter routes (blog.cat.*, blog.tag.*, blog.author.ydm-admin, events.cat.*, sermons.cat.*, team.cat.*). Pages were removed in Phase Z but DB rows lingered.
 - Deleted 130 orphan field_key rows on ministries.* pages that weren't read by the ministry template (h3.0N, p.01–p.08, image.0N + .alt + .url variants, slug, date_published, h1.01). Public-facing rendering byte-identical to post-Phase-OO baseline; admin editor /content list is now cleaner for the upcoming copy pass.
