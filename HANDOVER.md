@@ -44,9 +44,8 @@ This site replaces the previous WordPress install at ydministries.ca with a cust
 | `/ask` | "Ask Bishop" form |
 | `/live` | Live stream embed (YouTube `@YDMWorldwide`) |
 | `/gallery` | Photo gallery with masonry + lightbox |
-| `/guestbook` | 308-redirects to `/testimonials` |
 
-Plus 65+ legacy WordPress URL redirects in `next.config.ts` so no inbound link breaks.
+Plus 54 legacy WordPress URL redirects in `next.config.ts` so no inbound link breaks (sourced from `archive/wordpress/scrape/site-map.json` after trailing-slash strip + the Phase JJ `/guestbook` → `/testimonials` redirect).
 
 ### Admin panel — `/admin`
 
@@ -74,7 +73,9 @@ When a user with `admin` or `bishop` role visits any public page, every editable
 
 ---
 
-## Today's deliverables (Phases shipped 2026-05-05/06)
+## Today's deliverables (Phases shipped through handover, 2026-05-05/06)
+
+For phases shipped after handover (MM onward, audit fix sequence), see `CHANGELOG.md`.
 
 | Phase | Title | Commit |
 |---|---|---|
@@ -204,8 +205,8 @@ Things that need YOU (the maintainer) to act, not code:
 
 ### Mandatory before going live with payments
 
-- [ ] **Stripe identity verification** — submit business docs at `https://dashboard.stripe.com/account/onboarding`. Until cleared, all card transactions are test-mode only.
-- [ ] **Switch Stripe to live mode**: get live keys (sk_live_..., pk_live_...) and replace the test ones in Vercel env vars. Re-create the webhook in live mode at the same URL, replace `STRIPE_WEBHOOK_SECRET`.
+Stripe live-mode activation: see the **Known issues → Shop checkout disabled pending Stripe live-mode activation** section above for the canonical 5-step runbook.
+
 - [ ] **Bank auto-deposit for `donate@ydministries.ca`** — set up in your bank's portal so Interac transfers auto-deposit. Without this, the e-Transfer card on `/give` is misleading.
 
 ### To activate the shop
@@ -217,7 +218,7 @@ Things that need YOU (the maintainer) to act, not code:
 
 - [ ] Replace **stock leader portraits** with real photos via `/admin/assets` + `/admin/content` for each team member
 - [ ] Replace **stock sermon thumbnails** (currently CMSMasters demo art) with branded YDM imagery
-- [ ] Add **alt text for 62 images** (list at `archive/wordpress/scrape/missing-alts.json`) — accessibility win
+- [ ] Alt text for ~58 images: Phase TT seeded 5 (1 hero descriptive + 4 explicit empty) and confirmed 14 gallery rows already correctly empty. 44 orphan asset rows skipped (deferred to a future asset-cleanup pass; see `site/copy-pass-tracker.md`). Bishop should review every image during copy pass via `/admin/assets`.
 - [ ] Replace **stock gallery photos** (currently 14 CMSMasters demo images) with real ministry photos via `/admin/assets`
 - [ ] Decide if **"Knowing Jesus" series** or any other series grouping fits — set `series_name` field on multiple sermons via `/admin/content/sermons.<slug>`
 

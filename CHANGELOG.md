@@ -7,6 +7,35 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-07] - <commit-hash>
 
+### Phase XX — Documentation drift cleanup
+Closes audit Warnings #19 and #20.
+
+**Surgical fixes (7):**
+- `README.md` — tech stack table:
+  - Tailwind row: `Tailwind CSS 3.4 with custom YDM tokens` → `Tailwind CSS v4 (no tailwind.config.ts; brand tokens in @theme block in src/app/globals.css)`.
+  - Removed phantom `Rich Text | TipTap 3.22.x` row (TipTap not in package.json or src/).
+  - Replaced phantom `Sharp + yet-another-react-lightbox` row with `Cloudflare R2 + next/image` (the actual image story).
+  - Added Printful row (Phase LL was missing from this table).
+- `PROJECT.md` — status + stack one-liner:
+  - "11 feature phases shipped 2026-05-05/06" → "22+ phases shipped through 2026-05-07 (Phase WW — audit fix sequence)" with cross-reference to CHANGELOG.
+  - Removed TipTap from Stack list, added Printful + Cloudflare R2, Tailwind → v4.
+- `HANDOVER.md` — public-routes + redirect count:
+  - Removed `/guestbook` row from the public-routes table (Phase WW removed the codegen artifact; it's now a redirect entry, not a route).
+  - "Plus 65+ legacy WordPress URL redirects" → "Plus 54 legacy WordPress URL redirects" (audit Warning #20; 65 was the site-map.json raw count, 54 is the active count after trailing-slash strip + Phase JJ guestbook addition).
+
+**Structural updates (5):**
+- `PROJECT.md` Database Tables — replaced ~30-line list of fictional tables (`pages`, `page_sections`, `team_members`, `posts`, `gallery_items`, `guestbook_entries`, etc.) with the actual 10-table list (page_content, assets, content_versions, profiles, form_submissions, newsletter_subscribers, testimonials, donations, orders, order_items).
+- `PROJECT.md` — deleted three empty TODO placeholder sections (Public Pages, Admin Pages, API Routes). HANDOVER.md carries the real route inventory.
+- `PROJECT.md` — deleted Session Log section (CHANGELOG is the canonical phase-by-phase history; Session Log was a parallel source of truth that stopped at handover).
+- `HANDOVER.md` "Today's deliverables" header — added "(through handover, 2026-05-05/06)" qualifier and a one-line pointer: "For phases shipped after handover (MM onward, audit fix sequence), see CHANGELOG.md." Original phase table preserved as the handover snapshot.
+- `HANDOVER.md` Outstanding setup work — removed two Stripe items duplicated by the Known issues subsection's 5-step runbook (added in Phase PP). Updated alt-text item to reflect Phase TT's partial seed and the 44 orphan rows tracked separately.
+
+`CLAUDE.md` reviewed in Phase A and confirmed clean — no edits.
+
+---
+
+## [2026-05-07] - <commit-hash>
+
 ### Phase WW — Dead code purge
 - Deleted unused helper components (deprecated since Phase Y, zero references in `src/`):
   - `src/components/templates/_helpers/ContactForm.tsx`

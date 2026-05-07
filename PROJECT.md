@@ -4,14 +4,14 @@
 Full-stack community web platform for a Christian ministry organization. WordPress migration to Next.js 16 + Supabase + custom admin panel.
 
 ## Status
-🟢 **Live in production** as of 2026-05-04. 11 feature phases shipped 2026-05-05/06. Site is handed over 2026-05-06. See [`HANDOVER.md`](./HANDOVER.md) for the maintainer reference.
+🟢 **Live in production** since 2026-05-04. Handed over 2026-05-06. 22+ phases shipped through 2026-05-07 (Phase WW — audit fix sequence). See [`HANDOVER.md`](./HANDOVER.md) for the maintainer reference and [`CHANGELOG.md`](./CHANGELOG.md) for the full phase-by-phase history.
 
 ## Key Info
 - **Short name:** YDM
 - **Type:** Ministry / Faith Organization
 - **Primary Contact:** Mikey
 - **Source Site:** https://ydministries.ca (WordPress)
-- **Stack:** Next.js 16.2.2, Supabase, Stripe, Resend, TipTap, Tailwind CSS
+- **Stack:** Next.js 16.2.2, Supabase, Stripe, Resend, Printful, Cloudflare R2, Tailwind CSS v4
 - **Deploy:** Vercel
 
 ## Project Structure
@@ -52,58 +52,22 @@ ydm/
 
 ## Database Tables
 
-_To be populated as tables are created. See `YDM_MIGRATION_GUIDE.md` section 4 for planned schema._
+Live tables in Supabase (definitions in `site/supabase/migrations/`).
 
-### Core CMS
 | Table | Purpose |
 |-------|---------|
-| `pages` | Page registry (route, title, status) |
-| `page_sections` | Ordered sections within each page |
-| `page_content` | Every piece of editable text on the site |
-| `page_content_history` | Content edit history |
+| `page_content` | Every editable text/image-URL field on the site, keyed by `(page_key, field_key)`. Renders via `<EditableContent>`. |
+| `assets` | Image catalog — `asset_key`, `storage_path` (R2 URL), `alt`, `width`, `height`. Looked up by URL in `EditableImage` for alt + dimensions. |
+| `content_versions` | Audit trail — every edit to `page_content` writes a version row before the update. |
+| `profiles` | Per-user role + email. `role IN ('admin', 'bishop')` per CHECK constraint. New auth users default to `bishop` via the `on_auth_user_created` trigger. |
+| `form_submissions` | Contact / prayer / ask submissions. RLS allows anon INSERT, admin/bishop SELECT. |
+| `newsletter_subscribers` | Email + status (`subscribed` / `unsubscribed` / `bounced`) + Resend audience reference. |
+| `testimonials` | Curated testimonials with moderation states (`pending` / `approved` / `rejected` / `featured`). RLS shows only `approved` to anon. |
+| `donations` | Stripe recurring donation ledger — sessions, subscriptions, customer references, status. |
+| `orders` | Shop orders — Stripe session, Printful fulfillment status, shipping address (as `printful_recipient` jsonb). |
+| `order_items` | Line items per order — `printful_variant_id`, name, quantity, unit price. |
 
-### Structured Content
-| Table | Purpose |
-|-------|---------|
-| `team_members` | Staff & leadership |
-| `testimonials` | Member testimonials |
-| `stats` | Ministry statistics |
-| `faqs` | Frequently asked questions |
-| `events` | Ministry events |
-| `posts` | Blog posts / sermons |
-| `gallery_items` | Gallery photos/videos |
-| `albums` | Gallery albums |
-| `newsletters` | Newsletter campaigns |
-| `donations` | Donation records |
-
-### Community
-| Table | Purpose |
-|-------|---------|
-| `guestbook_entries` | Visitor guestbook |
-| `prayer_requests` | Prayer requests |
-| `profiles` | User profiles with 5-tier roles |
-
-## Pages
-
-_To be populated as pages are built. Format: route, status, admin coverage._
-
-### Public Pages
-| Route | Status | Admin Editor |
-|-------|--------|-------------|
-| _Pages will be listed here as they are built_ | | |
-
-### Admin Pages
-| Route | Status | Purpose |
-|-------|--------|---------|
-| _Admin pages will be listed here as they are built_ | | |
-
-## API Routes
-
-_To be populated as routes are created._
-
-| Route | Method | Purpose |
-|-------|--------|---------|
-| _API routes will be listed here as they are built_ | | |
+For Supabase project ref + service-role/anon-key usage rules, see `HANDOVER.md`.
 
 ## Outstanding Work & Technical Debt
 
@@ -116,12 +80,4 @@ All Phase 1–10 work from PLAN.md is shipped. Remaining tasks are operational, 
 - [ ] Replace stock gallery photos (currently 14 demo images)
 - [ ] CRA charity status decision → tax-receipt copy on `/give`
 
-See [`HANDOVER.md`](./HANDOVER.md) "Outstanding setup work" for the canonical post-handover task list.
-
-## Session Log
-- **2026-03-23** — Project folder created
-- **2026-04-07** — Reorganized to match FOM structure, migration guide written, Payload removed
-- **2026-04-23** — Schema migrations + admin auth + role system shipped
-- **2026-04-26** — Codegen + 64-route content seed + 433 R2 media migration + HomeTemplate
-- **2026-05-04** — Domain cutover to Vercel; site goes live
-- **2026-05-05/06** — 11 feature phases shipped (Z, AA, CC, DD, EE, GG, HH, II, JJ, KK, LL); handover doc written
+See [`HANDOVER.md`](./HANDOVER.md) "Outstanding setup work" for the canonical post-handover task list and [`CHANGELOG.md`](./CHANGELOG.md) for the full phase-by-phase history.

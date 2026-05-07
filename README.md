@@ -12,12 +12,12 @@ Full-stack community web platform for a Christian ministry organization. Built w
 |-------|-----------|
 | Framework | Next.js 16.2.2 (App Router, React 19) |
 | Language | TypeScript (strict mode) |
-| Styling | Tailwind CSS 3.4 with custom YDM tokens |
+| Styling | Tailwind CSS v4 (no `tailwind.config.ts`; brand tokens in `@theme` block in `src/app/globals.css`) |
 | Database & Auth | Supabase (PostgreSQL + Auth + Storage) |
 | Payments | Stripe (donations, one-time + recurring, CAD) |
 | Email | Resend (newsletters, transactional) |
-| Rich Text | TipTap 3.22.x |
-| Images | Sharp (processing), yet-another-react-lightbox (gallery) |
+| Fulfillment | Printful (Sync Products API; orders submitted as drafts) |
+| Images | Cloudflare R2 (CDN at `media.ydministries.ca`) + `next/image` |
 | Hosting | Vercel |
 
 ## Project Structure
