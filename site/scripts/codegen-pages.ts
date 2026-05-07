@@ -49,6 +49,18 @@ type RouteMap = { generatedAt: string; count: number; items: RouteItem[] };
 
 type ContentField = { field_key: string; value_type: string; value: string };
 
+// Routes that exist in route-map.json but should NOT generate a page.tsx
+// because their redirect is owned by next.config.ts. Skipping here avoids
+// duplicating the redirect target in a second mechanism (e.g.
+// templateRegistry.redirectKeys, which would emit a redirect-shim page.tsx
+// that's dead at request time because the next.config redirect fires first).
+// Mirrors the Phase Z `type === 'index_filter'` skip pattern.
+const REDIRECT_ONLY_KEYS = new Set<string>([
+  // Phase JJ retired /guestbook in favor of /testimonials. The 308 lives in
+  // next.config.ts. Phase WW removes the codegen artifact.
+  "guestbook",
+]);
+
 // Fields that exist in the DB (so admin can edit, generateMetadata can read)
 // but should NEVER render as visible elements in the page body.
 const BODY_SKIP_KEYS = new Set<string>([
@@ -601,6 +613,13 @@ async function main() {
     // match the slugs). Skipping codegen here prevents dead stub pages from
     // being prerendered into the build.
     if (item.type === 'index_filter') {
+      continue;
+    }
+
+    // Phase WW: routes whose redirect is owned by next.config.ts get no
+    // page.tsx. The redirect fires before app routing, so any emitted page
+    // would be dead code.
+    if (REDIRECT_ONLY_KEYS.has(item.key)) {
       continue;
     }
 

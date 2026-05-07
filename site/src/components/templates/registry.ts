@@ -31,7 +31,6 @@ export const templateRegistry: {
     live:               { importPath: "@/components/templates/LiveTemplate",            exportName: "LiveTemplate" },
     prayer:             { importPath: "@/components/templates/PrayerTemplate",          exportName: "PrayerTemplate" },
     ask:                { importPath: "@/components/templates/AskTemplate",             exportName: "AskTemplate" },
-    guestbook:          { importPath: "@/components/templates/GuestbookTemplate",       exportName: "GuestbookTemplate" },
     gallery:            { importPath: "@/components/templates/GalleryTemplate",         exportName: "GalleryTemplate" },
     "sermons.index":    { importPath: "@/components/templates/SermonsIndexTemplate",    exportName: "SermonsIndexTemplate" },
     "ministries.index": { importPath: "@/components/templates/MinistriesIndexTemplate", exportName: "MinistriesIndexTemplate" },

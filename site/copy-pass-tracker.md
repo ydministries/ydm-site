@@ -45,15 +45,32 @@ sequence.
   re-emit these as routes. Cosmetic loose end — clean up the script
   to skip these patterns when revisiting Phase Z work.
   (Surfaced 2026-05-06 during Phase QQ Phase A audit.)
-- `team.bishopwilson` has THREE independent redirect mechanisms:
-  codegen `templateRegistry.redirectKeys`, the
-  `archive/wordpress/scrape/site-map.json` redirect entry consumed by
-  `next.config.ts`, and historically a `team.bishopwilson` row in
-  `page_content` (Phase QQ swept that DB row but the page.tsx redirect
-  shim still emits independently from codegen). Rationalizing these
-  to one mechanism is out of scope for the audit fix sequence but
-  worth a future "redirect-system audit" pass.
-  (Surfaced 2026-05-06 during Phase RR Phase A.)
+- `team.bishopwilson` has multiple independent redirect mechanisms:
+  codegen `templateRegistry.redirectKeys` (emits a redirect-shim
+  page.tsx), the `archive/wordpress/scrape/site-map.json` redirect
+  entry consumed by `next.config.ts`, and historically a
+  `team.bishopwilson` row in `page_content` (Phase QQ swept that DB
+  row). Rationalizing these to one mechanism is out of scope for the
+  audit fix sequence but worth a future "redirect-system audit" pass.
+  See cross-reference to the codegen-skip mechanism added in Phase WW
+  below — `team.bishopwilson` is a candidate to migrate from
+  `templateRegistry.redirectKeys` to `REDIRECT_ONLY_KEYS` since
+  next.config.ts already handles its redirect, making the redirect-
+  shim page.tsx dead code by the same logic that made guestbook's
+  page.tsx dead.
+  (Surfaced 2026-05-06 during Phase RR Phase A; cross-referenced
+  2026-05-07 during Phase WW.)
+- Two codegen skip mechanisms now exist:
+  `REDIRECT_ONLY_KEYS` (Phase WW, in `scripts/codegen-pages.ts` —
+  for routes whose redirect is owned by next.config.ts; emits no
+  page.tsx; currently `guestbook`) and
+  `templateRegistry.redirectKeys` (existing — emits a redirect-shim
+  page.tsx; currently `team.bishopwilson`). The two differ in
+  whether they emit a shim or nothing. A future redirect-system
+  audit pass should consolidate by migrating `team.bishopwilson`
+  to `REDIRECT_ONLY_KEYS` (next.config.ts already redirects it, so
+  the shim is dead code).
+  (Surfaced 2026-05-07 during Phase WW Phase A.)
 - `/shop/<slug>` product pages still use the global meta.description
   fallback. Should pull from the Printful product description via
   `generateMetadata` in `src/app/(site)/shop/[slug]/page.tsx`. Est.

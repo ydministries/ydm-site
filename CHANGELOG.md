@@ -7,6 +7,19 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-07] - <commit-hash>
 
+### Phase WW — Dead code purge
+- Deleted unused helper components (deprecated since Phase Y, zero references in `src/`):
+  - `src/components/templates/_helpers/ContactForm.tsx`
+  - `src/components/templates/_helpers/MailtoForm.tsx`
+- Removed the `/guestbook` codegen stack: `src/app/(site)/guestbook/page.tsx`, `src/components/templates/GuestbookTemplate.tsx`, and the `guestbook:` entry in `templateRegistry.byKey`. The `/guestbook → /testimonials` 308 redirect in `next.config.ts` (Phase JJ) is unchanged and continues to serve.
+- Added `REDIRECT_ONLY_KEYS = new Set(["guestbook"])` to `scripts/codegen-pages.ts` with an early-skip in the main loop, mirroring the Phase Z `index_filter` skip pattern. Future codegen re-runs will not regenerate the guestbook page.tsx. Chosen over adding to `templateRegistry.redirectKeys` because next.config.ts already owns the redirect — duplicating it would create the same anti-pattern flagged in tracker for `team.bishopwilson`.
+- Verified production build no longer emits a `/guestbook` route or any `*guestbook*` chunk in `.next/server/`. `/testimonials` continues to render with `<h1>Testimonies</h1>`. 5 control routes (`/`, `/about`, `/sermons`, `/shop`, `/ministries/family`) all return 200.
+- Closes audit Warning #12.
+
+---
+
+## [2026-05-07] - <commit-hash>
+
 ### Phase VV — Repo hygiene
 - **#16** — Renamed `src/middleware.ts` → `src/proxy.ts`, function name `middleware` → `proxy`, log prefix `[middleware]` → `[proxy]`. JSDoc reference in `lib/supabase/middleware.ts` updated to point at the new path. Next.js 16 deprecation warning gone at dev startup.
 - **#17** — Migrated `fast-xml-parser` (used by `site/scripts/import-from-xml.ts`) from root `/package.json` to `site/package.json` devDependencies. Deleted root `/package.json`, `/package-lock.json`, and `/node_modules/`. "Detected additional lockfiles" warning gone at dev startup.
