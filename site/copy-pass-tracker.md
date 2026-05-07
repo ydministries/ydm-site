@@ -45,15 +45,6 @@ sequence.
   re-emit these as routes. Cosmetic loose end — clean up the script
   to skip these patterns when revisiting Phase Z work.
   (Surfaced 2026-05-06 during Phase QQ Phase A audit.)
-- Audit warning #15 partially closed by Phase RR — `src/app/sitemap.ts`
-  and `src/app/robots.ts` now use `NEXT_PUBLIC_SITE_URL` instead of a
-  hardcoded literal. Two remaining files still hardcode
-  `https://ydministries.ca`:
-    - `src/app/api/testimonials/submit/route.ts:96` (admin URL inside
-      the bishop-notification email template)
-    - `src/app/api/newsletter/unsubscribe/[token]/route.ts:139-140`
-      (return-to-site links inside the unsubscribe confirmation page)
-  To consolidate in a later Group C prompt.
 - `team.bishopwilson` has THREE independent redirect mechanisms:
   codegen `templateRegistry.redirectKeys`, the
   `archive/wordpress/scrape/site-map.json` redirect entry consumed by

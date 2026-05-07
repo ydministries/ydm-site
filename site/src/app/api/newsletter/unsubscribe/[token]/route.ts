@@ -2,6 +2,9 @@ import { type NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { unsubscribeFromResendAudience } from "@/lib/newsletter";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ydministries.ca";
+
 /**
  * One-click unsubscribe via tokenized URL. Mutates state on GET — that's a
  * deliberate choice: every email-client unsubscribe link is a GET, and the
@@ -136,8 +139,8 @@ function unsubscribePage(result: UnsubResult, email?: string): string {
     <div class="rule" aria-hidden="true"></div>
     <h1>${escapeHtml(headline)}</h1>
     <p>${body}</p>
-    <a class="btn" href="https://ydministries.ca/">Return to ydministries.ca</a>
-    <p class="footer">Yeshua Deliverance Ministries · <a href="https://ydministries.ca/contact">Contact us</a></p>
+    <a class="btn" href="${SITE_URL}/">Return to ydministries.ca</a>
+    <p class="footer">Yeshua Deliverance Ministries · <a href="${SITE_URL}/contact">Contact us</a></p>
   </main>
 </body>
 </html>`.trim();

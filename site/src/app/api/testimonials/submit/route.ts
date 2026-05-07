@@ -2,6 +2,9 @@ import { type NextRequest, NextResponse } from "next/server";
 import { createAnonClient } from "@/lib/supabase/anon";
 import { resend, SENDER_FORMS_EMAIL, BISHOP_INBOX } from "@/lib/resend";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ydministries.ca";
+
 interface SubmitPayload {
   name?: string;
   message?: string;
@@ -93,7 +96,7 @@ export async function POST(req: NextRequest) {
           <hr style="border:none;border-top:1px solid #DEDEDE;margin:20px 0;">
           <p style="color:#968B87;font-size:12px;">
             Approve or reject in the admin panel:
-            <a href="https://ydministries.ca/admin/testimonials">/admin/testimonials</a>
+            <a href="${SITE_URL}/admin/testimonials">/admin/testimonials</a>
           </p>
         </div>
       `,

@@ -5,6 +5,17 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-07] - <commit-hash>
+
+### Phase UU — Site URL centralization closeout
+- Replaced hardcoded `https://ydministries.ca` with `NEXT_PUBLIC_SITE_URL` fallback in:
+  - `src/app/api/testimonials/submit/route.ts` — admin URL inside the bishop-notification email template (1 occurrence).
+  - `src/app/api/newsletter/unsubscribe/[token]/route.ts` — return-to-site links inside the unsubscribe confirmation HTML (2 occurrences).
+- Module-level `const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ydministries.ca"` matches the convention from the 6 already-converted files. The visible "Return to ydministries.ca" link text is intentionally unchanged — that's brand copy, not a URL.
+- Closes audit Warning #15 fully (Phase RR closed sitemap.ts + robots.ts; this closes the remaining 2 files).
+
+---
+
 ## [2026-05-06] - <commit-hash>
 
 ### Phase TT — LCP hero alt + asset alt-text seed
