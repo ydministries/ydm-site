@@ -7,6 +7,16 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-06] - <commit-hash>
 
+### Phase QQ — DB cleanup: stale page_keys + ministry orphan fields
+- Deleted 36 rows for decommissioned Phase Z filter routes (blog.cat.*, blog.tag.*, blog.author.ydm-admin, events.cat.*, sermons.cat.*, team.cat.*). Pages were removed in Phase Z but DB rows lingered.
+- Deleted 130 orphan field_key rows on ministries.* pages that weren't read by the ministry template (h3.0N, p.01–p.08, image.0N + .alt + .url variants, slug, date_published, h1.01). Public-facing rendering byte-identical to post-Phase-OO baseline; admin editor /content list is now cleaner for the upcoming copy pass.
+- Keep-list verified against MinistryTemplate.tsx + lib/ministries.ts: body_html, meta.title, hero_image, tagline, leader_name, leader_role, leader_bio (plus four future-proof entries that don't exist on ministries.* today).
+- Pre-deletion snapshot saved to /tmp/ydm-prompt3/pre-cleanup-snapshot.json (untracked, available for manual rollback if needed).
+
+---
+
+## [2026-05-06] - <commit-hash>
+
 ### Phase PP — Shop checkout disabled pending Stripe verification
 - /shop/[slug] buy button(s) replaced with a disabled "Currently unavailable" state and explanatory subtext.
 - /shop landing banner added: "Our online shop is taking a brief pause while we finalize payment setup."

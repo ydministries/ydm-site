@@ -14,14 +14,6 @@ sequence.
   `please email: example@cmsmasters.com` paragraphs were intentionally
   preserved by the Phase OO migration. Replace with real contact info
   or remove during copy pass.
-- **All 6 ministry pages with body_html updates** — parallel `h3.01`,
-  `p.01`–`p.06`, `image.0N` rows in `page_content` still hold
-  pre-migration demo copy. Invisible on public site (template renders
-  `body_html` only) but visible to Bishop in `/admin/content/ministries.X`.
-  Disposition: handled by the upcoming Group B DB cleanup pass —
-  DELETE if confirmed unreferenced by `templateRegistry`. No manual copy
-  work needed.
-
 ### Site-wide
 
 - **meta.description missing** on 57+ pages. Will be addressed in the
@@ -33,6 +25,22 @@ sequence.
   Stripe payments. Until then, /shop checkout is disabled (Phase PP).
   Bishop must complete Stripe Dashboard → Settings → Business profile
   flow himself; Mikey doesn't have the org documents.
+
+## Tech debt / future cleanup
+
+- Apex→www redirect returns 307 (temporary, method-preserving) on POST.
+  308 (permanent) would be more semantically correct for a canonical-
+  domain redirect and slightly better for SEO. Vercel platform-level
+  config — change at Project Settings → Domains. Not blocking; cosmetic.
+  (Surfaced 2026-05-06 during Phase PP verification.)
+- `scripts/build-route-map.ts` lines 96-110 still emit
+  `type: 'index_filter'` route entries for the decommissioned filter
+  patterns (blog.cat.*, blog.tag.*, events.cat.*, sermons.cat.*,
+  team.cat.*, ministries.cat.*). The DB rows are gone after Phase QQ
+  but if anyone re-runs `build-route-map.ts` the codegen path will
+  re-emit these as routes. Cosmetic loose end — clean up the script
+  to skip these patterns when revisiting Phase Z work.
+  (Surfaced 2026-05-06 during Phase QQ Phase A audit.)
 
 ## Cleanup deferred
 
