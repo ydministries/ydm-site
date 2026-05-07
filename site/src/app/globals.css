@@ -4,6 +4,9 @@
   /* Brand palette — sampled from live ydministries.ca Elementor CSS */
   --color-ydm-gold:        #D38605;   /* --e-global-color-accent — "MINISTRIES" gold */
   --color-ydm-gold-light:  #FFBC3F;   /* lighter accent variant on live (--8fba85b) */
+  --color-ydm-gold-dark:   #8C5A04;   /* darker gold for eyebrow labels on cream/white
+                                         backgrounds — passes WCAG AA (5.23:1 on cream,
+                                         5.87:1 on white). Phase ZZ. */
   --color-ydm-amber:       #ED5A2F;   /* warm secondary accent — countdown / hover */
   --color-ydm-cream:       #F8F1E6;   /* --e-global-color-alternate */
   --color-ydm-ink:         #1D1D1D;   /* --e-global-color-secondary — headings + dark sections */

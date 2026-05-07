@@ -29,6 +29,7 @@ export async function SiteHeader() {
             alt="YDM"
             width={48}
             height={48}
+            sizes="48px"
             priority
             className="h-12 w-12"
           />
@@ -48,7 +49,7 @@ export async function SiteHeader() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-ydm-muted no-underline hover:text-ydm-ink"
+                  className="text-sm font-medium text-ydm-ink no-underline hover:text-ydm-gold-dark"
                 >
                   {item.label}
                 </Link>
@@ -60,7 +61,7 @@ export async function SiteHeader() {
         <div className="hidden items-center gap-3 md:flex">
           <Link
             href="/live"
-            className="rounded-full border border-ydm-gold px-4 py-2 text-sm font-semibold text-ydm-gold no-underline hover:bg-ydm-gold/10"
+            className="rounded-full border border-ydm-gold px-4 py-2 text-sm font-semibold text-ydm-ink no-underline hover:bg-ydm-gold/10"
           >
             <EditableContent fieldKey="nav.live_label" as="span" />
           </Link>

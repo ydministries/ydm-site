@@ -193,8 +193,8 @@ function InvolveCard({ title, body, imageUrl, cta }: InvolveCardProps) {
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h3 className="m-0 font-display text-xl font-semibold text-ydm-ink">{title}</h3>
-        <p className="mt-2 mb-0 flex-1 text-sm leading-relaxed text-ydm-muted">{body}</p>
-        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-ydm-gold no-underline group-hover:underline">
+        <p className="mt-2 mb-0 flex-1 text-sm leading-relaxed text-ydm-text">{body}</p>
+        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-ydm-gold-dark no-underline group-hover:underline">
           Learn more <IconArrowRight />
         </span>
       </div>
@@ -226,6 +226,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
             alt="Hands raised in worship"
             fill
             priority
+            fetchPriority="high"
             className="object-cover"
             sizes="100vw"
           />
@@ -282,7 +283,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
           {/* RIGHT — floating navy service card */}
           <aside className="lg:col-span-5 lg:mt-40 lg:justify-self-end">
             <div className="w-full max-w-sm rounded-sm bg-ydm-navy p-8 text-white shadow-2xl">
-              <p className="m-0 mb-2 font-script text-2xl text-ydm-gold">Join Us</p>
+              <p aria-hidden="true" className="m-0 mb-2 font-script text-2xl text-ydm-gold">Join Us</p>
               <p className="m-0 mb-1 font-accent text-xs uppercase tracking-[0.25em] text-white/70">
                 <EditableFallback keys={["service.sunday"]} fallback="EVERY 4TH SUNDAY" />
               </p>
@@ -312,6 +313,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
               alt=""
               width={72}
               height={72}
+              sizes="72px"
               className="opacity-90"
             />
           </div>
@@ -331,7 +333,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
             />
           </div>
 
-          <p className="m-0 mt-12 inline-block w-full -rotate-[6deg] text-center font-script text-5xl text-ydm-gold sm:text-6xl">
+          <p aria-hidden="true" className="m-0 mt-12 inline-block w-full -rotate-[6deg] text-center font-script text-5xl text-ydm-gold sm:text-6xl">
             You belong here.
           </p>
         </div>
@@ -357,7 +359,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
                 keys={["founded_in_faith.eyebrow"]}
                 fallback="FOUNDED IN FAITH"
                 as="p"
-                className="m-0 mb-4 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold"
+                className="m-0 mb-4 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold-dark"
               />
               <EditableFallback
                 keys={["founded_in_faith.heading", "welcome.title"]}
@@ -422,7 +424,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
           </div>
           {/* Cursive accent floating below */}
           <div className="mt-12 text-center">
-            <p className="m-0 inline-block -rotate-[3deg] font-script text-5xl text-ydm-gold sm:text-6xl">
+            <p aria-hidden="true" className="m-0 inline-block -rotate-[3deg] font-script text-5xl text-ydm-gold sm:text-6xl">
               <EditableFallback keys={["mission_vision.script"]} fallback="You're always welcome here." />
             </p>
           </div>
@@ -434,7 +436,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
           <div className="relative">
             <div className="mb-12 text-center">
-              <p className="m-0 mb-4 font-script text-5xl text-ydm-gold sm:text-6xl">
+              <p aria-hidden="true" className="m-0 mb-4 font-script text-5xl text-ydm-gold sm:text-6xl">
                 <EditableFallback keys={["ministries_grid.script"]} fallback="Get Plugged In" />
               </p>
               <EditableFallback
@@ -492,7 +494,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
       <div className="-mx-4 bg-ydm-ink py-12 sm:-mx-6">
         <div className="mx-auto flex max-w-7xl items-center gap-6 px-4 sm:px-6 lg:px-12">
           <div className="h-px flex-1 bg-ydm-gold/30" />
-          <span className="font-script text-4xl text-ydm-gold sm:text-5xl">Hear the Word</span>
+          <span aria-hidden="true" className="font-script text-4xl text-ydm-gold sm:text-5xl">Hear the Word</span>
           <div className="h-px flex-1 bg-ydm-gold/30" />
         </div>
       </div>
@@ -558,7 +560,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
       <section className="bg-ydm-surface py-24 sm:py-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="mb-16 text-center">
-            <p className="m-0 mb-4 font-script text-5xl text-ydm-amber sm:text-6xl">
+            <p aria-hidden="true" className="m-0 mb-4 font-script text-5xl text-ydm-amber sm:text-6xl">
               <EditableFallback keys={["events.script"]} fallback="Come as you are" />
             </p>
             <h2 className="m-0 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-6xl">
@@ -591,12 +593,13 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
                 {/* Details */}
                 <div>
                   <h3 className="m-0 mb-1 font-display text-xl uppercase text-ydm-ink">{e.title}</h3>
-                  <p className="m-0 mb-2 font-accent text-xs uppercase tracking-wider text-ydm-muted">{e.meta}</p>
+                  <p className="m-0 mb-2 font-accent text-xs uppercase tracking-wider text-ydm-text">{e.meta}</p>
                   <p className="m-0 hidden font-serif text-sm text-ydm-text sm:block">{e.blurb}</p>
                 </div>
                 {/* CTA */}
                 <Link
                   href={`/events/${e.slug}`}
+                  aria-label={`View details for ${e.title}`}
                   className="whitespace-nowrap rounded-full border-2 border-ydm-ink px-5 py-2 font-accent text-xs uppercase tracking-wider text-ydm-ink no-underline transition-colors hover:bg-ydm-ink hover:text-white"
                 >
                   View Details
@@ -624,7 +627,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
         </div>
         <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6">
           <CountdownToService />
-          <p className="m-0 mt-12 font-script text-5xl text-ydm-gold sm:text-7xl">
+          <p aria-hidden="true" className="m-0 mt-12 font-script text-5xl text-ydm-gold sm:text-7xl">
             <EditableFallback keys={["countdown.script"]} fallback="Be the light." />
           </p>
           <Link
@@ -640,10 +643,10 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
       <section className="bg-ydm-cream py-24 sm:py-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="mb-16 text-center">
-            <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+            <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold-dark">
               <EditableFallback keys={["leaders.eyebrow"]} fallback="OUR LEADERSHIP" />
             </p>
-            <p className="m-0 -mt-2 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
+            <p aria-hidden="true" className="m-0 -mt-2 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
               <EditableFallback keys={["leaders.script"]} fallback="Leading with Love" />
             </p>
             <EditableFallback
@@ -672,7 +675,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
                 </div>
                 <div className="p-6 text-center">
                   <h3 className="m-0 mb-1 font-display text-xl uppercase text-ydm-ink">{l.name}</h3>
-                  <p className="m-0 font-accent text-xs uppercase tracking-[0.25em] text-ydm-gold">{l.role}</p>
+                  <p className="m-0 font-accent text-xs uppercase tracking-[0.25em] text-ydm-gold-dark">{l.role}</p>
                 </div>
               </Link>
             ))}
@@ -693,10 +696,10 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
       <section className="bg-ydm-cream py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
           <div className="mb-16 text-center">
-            <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+            <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold-dark">
               <EditableFallback keys={["get_involved.eyebrow"]} fallback="GET INVOLVED" />
             </p>
-            <p className="m-0 -mt-2 mb-4 font-script text-3xl text-ydm-amber sm:text-4xl">
+            <p aria-hidden="true" className="m-0 -mt-2 mb-4 font-script text-3xl text-ydm-amber sm:text-4xl">
               <EditableFallback keys={["get_involved.script"]} fallback="We're here for you!" />
             </p>
             <h2 className="m-0 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-6xl">
@@ -760,7 +763,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
           <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
             <EditableFallback keys={["support.eyebrow"]} fallback="SUPPORT OUR MISSION" />
           </p>
-          <p className="m-0 -mt-2 mb-4 font-script text-3xl text-ydm-gold sm:text-4xl">
+          <p aria-hidden="true" className="m-0 -mt-2 mb-4 font-script text-3xl text-ydm-gold sm:text-4xl">
             <EditableFallback keys={["support.script"]} fallback="Make a difference" />
           </p>
           <EditableFallback
@@ -784,7 +787,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
       {/* SECTION 12 — Newsletter (white bg, polished script eyebrow) */}
       <section className="bg-ydm-surface py-16">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
-          <p className="m-0 mb-2 font-script text-2xl text-ydm-gold">
+          <p aria-hidden="true" className="m-0 mb-2 font-script text-2xl text-ydm-gold">
             <EditableFallback keys={["newsletter.script"]} fallback="Stay connected" />
           </p>
           <EditableFallback

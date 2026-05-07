@@ -120,6 +120,23 @@ sequence.
   and potentially a parallel seed migration. (Surfaced 2026-05-06
   during Phase TT Phase A.)
 
+- YDM logo PNG source (`site/public/brand/ydm-logo.png`) is 300×300
+  served via Next.js Image. Even with the explicit `sizes="48px"` /
+  `sizes="72px"` hints added in Phase ZZ, Next still has to generate
+  variants from the 300×300 master. A one-time PNG re-export to
+  ~144×144 max would reduce the source bytes Next.js processes.
+  ~14 KiB savings on mobile per Lighthouse. Binary asset edit; not
+  reachable via code changes.
+  (Surfaced 2026-05-07 during Phase ZZ.)
+- Phase ZZ Lighthouse fixes were scoped to the home page only (Mikey
+  ran PageSpeed on `/` only). The same `text-ydm-gold` on cream/white
+  eyebrows, `text-ydm-muted` on cream body text, and `font-script`
+  decoratives recur across other templates (about, sermons, ministries,
+  team, give, etc.). If Bishop runs Lighthouse on those pages and the
+  same accessibility/contrast issues surface, sweep with the same
+  fix pattern (token swap + aria-hidden on script decoratives).
+  (Surfaced 2026-05-07 during Phase ZZ.)
+
 ## Cleanup deferred
 
 Audit artifacts left on disk for the next debugging session.

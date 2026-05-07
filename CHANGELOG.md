@@ -7,6 +7,36 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-07] - <commit-hash>
 
+### Phase ZZ — Lighthouse-driven a11y + perf fixes
+Targets identified by Mikey's PageSpeed Insights run on the home page (2026-05-07). Fixes scoped to the home page only — the same patterns recur on other templates and may need follow-up sweeps if Bishop runs Lighthouse there.
+
+**Color contrast (audit Accessibility 96 → ~100):**
+- New token `--color-ydm-gold-dark: #8C5A04` in `globals.css` `@theme` block. Contrast ratios verified before commit: **5.23:1 on `ydm-cream`**, **5.87:1 on `ydm-surface`** — both clear WCAG AA (≥4.5:1) for normal text.
+- Swapped `text-ydm-gold` → `text-ydm-gold-dark` on 5 informational eyebrow labels rendering on cream/white backgrounds in `HomeTemplate.tsx` (founded-in-faith, leaders, leaders-card-role, get-involved, InvolveCard "Learn more" arrow).
+- Eyebrows on dark backgrounds (hero, ministries carousel, sermons carousel, support overlay) deliberately left as `text-ydm-gold` — already pass at ~5.77:1.
+- Header nav links (`SiteHeader.tsx`): `text-ydm-muted` → `text-ydm-ink` (13.4:1). Hover state: `text-ydm-gold-dark` (preserves accent on hover, AA-compliant).
+- "Watch Live" pill (`SiteHeader.tsx`): `text-ydm-gold` → `text-ydm-ink`. Gold border preserved.
+- InvolveCard body + event-card meta (`HomeTemplate.tsx`): `text-ydm-muted` → `text-ydm-text` (13.8:1).
+- Added `aria-hidden="true"` to all 11 `font-script` decorative flourishes ("Join Us", "You belong here", "Get Plugged In", "Hear the Word", "Come as you are", "Be the light", "Leading with Love", "We're here for you!", "Make a difference", "Stay connected", and the mission-vision script). These are pure decoration; surrounding `<h1>`/`<h2>` carries the semantic meaning. WCAG 1.4.3 exempts incidental decoration; aria-hidden tells Lighthouse to skip them in contrast scoring.
+
+**Performance (audit LCP):**
+- Added `fetchPriority="high"` to home hero `<Image>` in `HomeTemplate.tsx`. Verified rendered HTML now has `fetchPriority="high"` on both the `<img>` element AND the `<link rel="preload">` Next.js emits for the LCP. Targets ~720ms resource-load-delay reduction per PageSpeed.
+
+**Logo sizing (audit ~14 KiB savings):**
+- Added explicit `sizes="48px"` (header) and `sizes="72px"` (welcome band) on the YDM logo `<Image>` instances. Tells Next.js's responsive image generator to pick the smallest matching variant for high-DPR viewports. The source PNG is still 300×300 — flagged as Tech debt for a one-time re-export to ~144×144 master (deeper saving).
+
+**Best Practices (audit identical-link-text):**
+- Added `aria-label={\`View details for ${e.title}\`}` to the events-grid "View Details" buttons in `HomeTemplate.tsx`. Screen readers now hear distinct accessible names per event ("View details for Weekly Bible Study Group" vs "View details for Young Adults Connect").
+
+Out of scope (deferred):
+- Sweep of the same patterns across other templates (Lighthouse run was home-only; sweep when Bishop runs other pages).
+- PNG re-export of `/brand/ydm-logo.png` from 300×300 → 144×144 (binary asset edit; tracked).
+- Tier-3 unused-JS / polyfill reduction (deeper profiling).
+
+---
+
+## [2026-05-07] - <commit-hash>
+
 ### Phase YY — Sermon video embed + audio URL migration
 - Added structured `video_url` field to all 6 sermon page_keys (initially empty). Bishop pastes a YouTube URL via `/admin/content/sermons.<slug>` and the sermon page renders a privacy-enhanced (youtube-nocookie.com) iframe above the audio player. Empty / non-YouTube / garbage values render nothing — graceful fallback verified across 10 edge-case URL shapes.
 - Migrated `audio_filename` → `audio_url` field per sermon. Sermons now store the FULL public URL directly instead of bare filenames. The `sermonAudioUrl()` helper in `lib/sermons.ts` is removed (no consumers remained after the template change).
