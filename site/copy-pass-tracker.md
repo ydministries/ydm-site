@@ -97,28 +97,12 @@ sequence.
 
 ## Cleanup deferred
 
-Audit artifacts left on disk for the next debugging session; remove
-during the repo hygiene phase.
+Audit artifacts left on disk for the next debugging session.
 
-Untracked scripts in `site/scripts/` (11 — pile is growing; sweep when
-this hygiene phase runs):
-- `_audit-ministries.ts` — Phase OO body_html query.
-- `_audit-fields.ts` — Phase OO field enumeration; surfaced parallel-
-  field issue addressed by Phase QQ.
-- `_audit-cleanup.ts` — Phase QQ pre-deletion snapshot generator.
-- `_audit-postcleanup.ts` — Phase QQ post-deletion verification.
-- `_audit-meta.ts` — Phase SS initial bucket audit (body_html extraction).
-- `_audit-meta-extras.ts` — Phase SS field probe (found seo.description /
-  excerpt / person_bio / tagline as cleaner sources than body_html).
-- `_audit-meta-final.ts` — Phase SS final proposal generator with
-  abbreviation-aware sentence-boundary truncator.
-- `_audit-meta-titles.ts` — Phase SS pre-flight check on the 3 meta.title
-  UPDATE targets (verified each WHERE clause matches exactly 1 row).
-- `_audit-meta-postcheck.ts` — Phase SS post-migration row-count and
-  meta.title verification.
-- `_audit-assets.ts` — Phase TT assets table dump + categorization.
-- `_audit-assets-postcheck.ts` — Phase TT post-migration alt-distribution
-  verification.
+Phase VV resolved the `site/scripts/_audit-*.ts` pile by gitignoring
+the glob — 11 scripts remain on disk for re-runs but no longer pollute
+`git status`. `printful/` (Bishop's local design-asset working dir) is
+also gitignored.
 
 Untracked `/tmp` artifacts:
 - `/tmp/ministries-current.json` — pre-Phase-OO body_html snapshot.

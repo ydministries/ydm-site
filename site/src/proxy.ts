@@ -25,7 +25,7 @@ function isPublicAdminPath(pathname: string): boolean {
   );
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { response, supabase, user } = await updateSession(request);
 
   const pathname = request.nextUrl.pathname;
@@ -60,7 +60,7 @@ export async function middleware(request: NextRequest) {
     // Most likely RLS policy issue (recursive policy → stack overflow, or
     // missing self-read policy). Log loudly so the next request shows up in
     // dev console with a clear cause.
-    console.error("[middleware] profile read failed:", error.message);
+    console.error("[proxy] profile read failed:", error.message);
   }
 
   const role = profile?.role as "admin" | "bishop" | undefined;

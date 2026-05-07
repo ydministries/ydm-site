@@ -78,6 +78,12 @@ export function ProductView({ product }: ProductViewProps) {
     if (lightboxIdx === null) return;
     const entry = gallery[lightboxIdx];
     if (entry && entry.variantId !== variantId) {
+      // Sync the selected variant to the lightbox image so closing leaves
+      // the user on the same color they were viewing — intentional in-effect
+      // setState; this is the cleanest expression of the gallery↔variant
+      // relationship for v1, and the cascading-render cost is one extra
+      // render per lightbox navigation.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVariantId(entry.variantId);
     }
     const onKey = (e: KeyboardEvent) => {

@@ -62,8 +62,8 @@ export function EditableImage({
   const width = assetRow?.width ?? undefined;
   const height = assetRow?.height ?? undefined;
 
-  // eslint-disable-next-line @next/next/no-img-element
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={value}
       alt={resolvedAlt}

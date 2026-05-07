@@ -31,6 +31,18 @@ archive/wordpress/scrape/styles.json
 *.tmp
 *.swp
 *.swo
+**/.temp/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Audit scripts (single-purpose verifiers from prior phases; useful for
+# re-runs but not part of the canonical scripts pile)
+site/scripts/_audit-*.ts
+
+# Local design-asset working dir (Bishop's Printful product source files —
+# binary art, kept locally, not deployed)
+printful/
 
 # Content drafts — keep .md source, exclude binary exports
 *.docx

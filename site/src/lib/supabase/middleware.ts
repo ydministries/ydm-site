@@ -7,7 +7,7 @@ type CookieRecord = { name: string; value: string; options?: CookieOptions };
  * Refresh the Supabase auth session on every matched request and return the
  * up-to-date NextResponse with synced cookies.
  *
- * Usage from site/middleware.ts:
+ * Usage from site/proxy.ts:
  *
  *   const { response, supabase, user } = await updateSession(request);
  *   // ...do role checks...

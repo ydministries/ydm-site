@@ -7,6 +7,23 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-07] - <commit-hash>
 
+### Phase VV — Repo hygiene
+- **#16** — Renamed `src/middleware.ts` → `src/proxy.ts`, function name `middleware` → `proxy`, log prefix `[middleware]` → `[proxy]`. JSDoc reference in `lib/supabase/middleware.ts` updated to point at the new path. Next.js 16 deprecation warning gone at dev startup.
+- **#17** — Migrated `fast-xml-parser` (used by `site/scripts/import-from-xml.ts`) from root `/package.json` to `site/package.json` devDependencies. Deleted root `/package.json`, `/package-lock.json`, and `/node_modules/`. "Detected additional lockfiles" warning gone at dev startup.
+- **#18** — Rewrote `site/eslint.config.mjs` to load `@next/eslint-plugin-next` and `eslint-plugin-react-hooks` directly (transitive deps from `eslint-config-next` 16.2.2). FlatCompat path failed on a circular-JSON crash in the React plugin chain; direct plugin imports work. Lint now actually enforces the rules referenced in `// eslint-disable-next-line` comments throughout the codebase.
+- **#40** — Added `*.tsbuildinfo`, `**/.temp/`, `site/scripts/_audit-*.ts`, and `printful/` (Bishop's local design-asset working dir) to root `.gitignore`. `git rm --cached` on `site/tsconfig.tsbuildinfo` and `supabase/.temp/cli-latest` so the new patterns actually clean up the working-tree noise.
+- Inline lint fixes (4 issues, within ≤5 budget once rules actually run):
+  - Removed unused `Image` import from `site/src/app/(site)/shop/page.tsx`.
+  - Renamed unused `kind` destructure to `_kind` in `site/src/app/admin/orders/page.tsx:186` (matches `argsIgnorePattern: "^_"`).
+  - Moved misplaced `// eslint-disable-next-line @next/next/no-img-element` comment in `EditableImage.tsx` from above `return (` to immediately above the `<img>` element it intends to suppress.
+  - Added `// eslint-disable-next-line react-hooks/set-state-in-effect` with justification comment on `ProductView.tsx:81` — gallery↔variant sync is intentional in-effect setState.
+  - The `'onBuy' is defined but never used` warning on `ProductView.tsx:106` is intentionally preserved — Phase TT comment block explains it's dead code while `SHOP_CHECKOUT_ENABLED=false`.
+- Closes audit Warnings #16, #17, #18, #40.
+
+---
+
+## [2026-05-07] - <commit-hash>
+
 ### Phase UU — Site URL centralization closeout
 - Replaced hardcoded `https://ydministries.ca` with `NEXT_PUBLIC_SITE_URL` fallback in:
   - `src/app/api/testimonials/submit/route.ts` — admin URL inside the bishop-notification email template (1 occurrence).

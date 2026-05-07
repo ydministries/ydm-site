@@ -183,7 +183,7 @@ export default async function OrdersAdminPage() {
 
 function StatusPill({
   status,
-  kind,
+  kind: _kind,
 }: {
   status: string;
   kind: "payment" | "fulfillment";
