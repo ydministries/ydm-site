@@ -58,7 +58,7 @@ function Block({ n, label }: { n: number; label: string }) {
       <p className="m-0 font-display text-6xl leading-none text-white tabular-nums sm:text-7xl">
         {String(n).padStart(2, "0")}
       </p>
-      <p className="m-0 mt-2 font-accent text-xs uppercase tracking-[0.3em] text-white/60">
+      <p className="m-0 mt-2 font-accent text-xs uppercase tracking-[0.3em] text-white/80">
         {label}
       </p>
     </div>

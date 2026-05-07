@@ -289,12 +289,12 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
               </p>
               <p className="m-0 mb-4 font-display text-5xl uppercase leading-none text-white">SUNDAY</p>
               <div className="mt-4 border-t border-white/15 pt-4">
-                <p className="m-0 font-accent text-xs uppercase tracking-wider text-white/60">Inside</p>
+                <p className="m-0 font-accent text-xs uppercase tracking-wider text-white/80">Inside</p>
                 <p className="m-0 font-serif text-base text-white">Mississauga Church of God</p>
               </div>
               <Link
                 href="/contact"
-                className="mt-6 inline-flex items-center gap-2 font-accent text-xs uppercase tracking-wider text-ydm-gold no-underline hover:text-ydm-gold-light"
+                className="mt-6 inline-flex items-center gap-2 font-accent text-xs uppercase tracking-wider text-ydm-gold-light no-underline hover:text-white"
               >
                 Plan Your Visit <span aria-hidden>→</span>
               </Link>
@@ -333,7 +333,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
             />
           </div>
 
-          <p aria-hidden="true" className="m-0 mt-12 inline-block w-full -rotate-[6deg] text-center font-script text-5xl text-ydm-gold sm:text-6xl">
+          <p aria-hidden="true" className="m-0 mt-12 inline-block w-full -rotate-[6deg] text-center font-script text-5xl text-ydm-gold-dark sm:text-6xl">
             You belong here.
           </p>
         </div>
@@ -424,7 +424,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
           </div>
           {/* Cursive accent floating below */}
           <div className="mt-12 text-center">
-            <p aria-hidden="true" className="m-0 inline-block -rotate-[3deg] font-script text-5xl text-ydm-gold sm:text-6xl">
+            <p aria-hidden="true" className="m-0 inline-block -rotate-[3deg] font-script text-5xl text-ydm-gold-dark sm:text-6xl">
               <EditableFallback keys={["mission_vision.script"]} fallback="You're always welcome here." />
             </p>
           </div>
@@ -539,7 +539,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
                     <h3 className="m-0 mb-2 font-display text-lg uppercase leading-tight text-white transition-colors group-hover:text-ydm-gold">
                       {s.title}
                     </h3>
-                    <p className="m-0 font-accent text-xs uppercase tracking-wider text-white/50">{s.meta}</p>
+                    <p className="m-0 font-accent text-xs uppercase tracking-wider text-white/80">{s.meta}</p>
                   </div>
                 </Link>
               ))}
@@ -560,7 +560,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
       <section className="bg-ydm-surface py-24 sm:py-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="mb-16 text-center">
-            <p aria-hidden="true" className="m-0 mb-4 font-script text-5xl text-ydm-amber sm:text-6xl">
+            <p aria-hidden="true" className="m-0 mb-4 font-script text-5xl text-ydm-gold-dark sm:text-6xl">
               <EditableFallback keys={["events.script"]} fallback="Come as you are" />
             </p>
             <h2 className="m-0 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-6xl">
@@ -646,7 +646,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
             <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold-dark">
               <EditableFallback keys={["leaders.eyebrow"]} fallback="OUR LEADERSHIP" />
             </p>
-            <p aria-hidden="true" className="m-0 -mt-2 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
+            <p aria-hidden="true" className="m-0 -mt-2 mb-4 font-script text-4xl text-ydm-gold-dark sm:text-5xl">
               <EditableFallback keys={["leaders.script"]} fallback="Leading with Love" />
             </p>
             <EditableFallback
@@ -699,7 +699,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
             <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold-dark">
               <EditableFallback keys={["get_involved.eyebrow"]} fallback="GET INVOLVED" />
             </p>
-            <p aria-hidden="true" className="m-0 -mt-2 mb-4 font-script text-3xl text-ydm-amber sm:text-4xl">
+            <p aria-hidden="true" className="m-0 -mt-2 mb-4 font-script text-3xl text-ydm-gold-dark sm:text-4xl">
               <EditableFallback keys={["get_involved.script"]} fallback="We're here for you!" />
             </p>
             <h2 className="m-0 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-6xl">
@@ -787,7 +787,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
       {/* SECTION 12 — Newsletter (white bg, polished script eyebrow) */}
       <section className="bg-ydm-surface py-16">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
-          <p aria-hidden="true" className="m-0 mb-2 font-script text-2xl text-ydm-gold">
+          <p aria-hidden="true" className="m-0 mb-2 font-script text-2xl text-ydm-gold-dark">
             <EditableFallback keys={["newsletter.script"]} fallback="Stay connected" />
           </p>
           <EditableFallback

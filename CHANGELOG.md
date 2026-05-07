@@ -7,6 +7,40 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-07] - <commit-hash>
 
+### Phase AAA — Targeted contrast cleanup post-Phase-ZZ
+Continuation of Phase ZZ. Fixed the remaining contrast failures Lighthouse flagged on the home page after the Phase ZZ deploy. 11 line edits across 2 files; no new tokens (the three-tier gold scale `gold-dark` / `gold` / `gold-light` was already complete in `globals.css`).
+
+**Script-font decoratives (6 swaps → unified gold-dark):**
+- L336 "You belong here." gold → gold-dark (cream bg)
+- L427 mission-vision script gold → gold-dark (cream bg)
+- L563 "Come as you are" amber → gold-dark (white bg, events section)
+- L649 "Leading with Love" amber → gold-dark (cream bg, leaders section)
+- L702 "We're here for you!" amber → gold-dark (cream bg, get-involved)
+- L790 "Stay connected" gold → gold-dark (white bg, newsletter)
+- Trade-off: amber → gold-dark on 3 elements drops the orange-warm hue in favor of brand consistency. If amber feel is missed later, follow-up adds an `ydm-amber-dark` token.
+
+**White-opacity bumps (3 swaps for Lighthouse safety margin):**
+- HomeTemplate L292 "Inside" label `text-white/60` → `text-white/80` (navy widget)
+- HomeTemplate L542 sermon meta `text-white/50` → `text-white/80` (dark carousel)
+- CountdownToService L61 day/hour/minute/second labels `text-white/60` → `text-white/80`
+
+**Plan Your Visit CTA — fixed gold-on-navy fail (was 4.23:1):**
+- HomeTemplate L298 `text-ydm-gold` → `text-ydm-gold-light` (#FFBC3F, 7.37:1 on navy)
+- Hover state `hover:text-ydm-gold-light` → `hover:text-white` (12.36:1)
+
+**`aria-hidden` additions from Phase ZZ stay in place.** axe-core's `color-contrast` rule doesn't respect aria-hidden but the additions still help screen-reader users skip the decoratives.
+
+`globals.css` unchanged — `--color-ydm-gold-light: #FFBC3F` already existed in the original brand palette setup; this commit just consumes it. The three-tier gold scale is now in active use:
+- `ydm-gold-dark` (#8C5A04) — text on light bgs (eyebrows, scripts on cream/white)
+- `ydm-gold` (#D38605) — base/decorative; preserved on dark backgrounds where it passes
+- `ydm-gold-light` (#FFBC3F) — text on dark bgs where regular gold fails (e.g. navy)
+
+Out of scope: cross-template sweep of same patterns (deferred until Bishop runs Lighthouse on other pages); mobile Performance optimization (tier-3 unused-JS / legacy-polyfill, deferred).
+
+---
+
+## [2026-05-07] - <commit-hash>
+
 ### Phase ZZ — Lighthouse-driven a11y + perf fixes
 Targets identified by Mikey's PageSpeed Insights run on the home page (2026-05-07). Fixes scoped to the home page only — the same patterns recur on other templates and may need follow-up sweeps if Bishop runs Lighthouse there.
 
