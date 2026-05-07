@@ -7,6 +7,20 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-07] - <commit-hash>
 
+### Phase BBB — Audit fix sequence wrap-up
+Documentation refresh closing the 14-phase audit fix sequence (OO–BBB) that ran 2026-05-06 / 2026-05-07. No code changes, no DB migrations. Three files touched.
+
+- `HANDOVER.md` gains a new "Post-handover audit fix sequence" section between the handover-snapshot phase table and the environment-variables reference. Summarizes audit closure (CRITICALs #1-#4, Warnings #5-#20 + #40, Warning #13, Info #38) at high level with pointers to `CHANGELOG.md` for per-phase detail. Notes the substantial feature shipped during the sequence (Phase YY structured YouTube embed). Final Lighthouse scores documented as accepted: mobile Performance ~90 (variance 87-92), Accessibility 96, Best Practices 100, SEO 100; desktop Performance 100, Accessibility 96, Best Practices 100, SEO 100. Mobile Performance 92→100 deferred (tier-3 unused-JS / legacy-polyfill); Accessibility 96→100 deferred (design tradeoff with decorative script elements that Lighthouse keeps flagging despite aria-hidden).
+- `site/copy-pass-tracker.md` updated:
+  - "Pending Bishop input" gains 2 new entries: CMSMasters demo content cleanup (CRITICAL #3) and image alt-text refinement cross-reference (Phase TT).
+  - "Tech debt / future cleanup" gains 2 new entries: mobile Performance 92→100 deferred and mobile Accessibility 96→100 accepted-with-tradeoff explanation.
+  - Audit-script pile count corrected from 11 → 13 (Phase YY added `_audit-sermons.ts` and `_audit-sermon-audio-fields.ts`).
+- Closes the audit fix sequence. Future Claude sessions that touch this codebase start fresh — no expectation of continuing the doubled-letter phase letter convention beyond BBB. New work picks whatever phase numbering convention is appropriate at the time.
+
+---
+
+## [2026-05-07] - <commit-hash>
+
 ### Phase AAA — Targeted contrast cleanup post-Phase-ZZ
 Continuation of Phase ZZ. Fixed the remaining contrast failures Lighthouse flagged on the home page after the Phase ZZ deploy. 11 line edits across 2 files; no new tokens (the three-tier gold scale `gold-dark` / `gold` / `gold-light` was already complete in `globals.css`).
 

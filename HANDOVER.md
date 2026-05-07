@@ -95,6 +95,29 @@ See `CHANGELOG.md` for everything before today.
 
 ---
 
+## Post-handover audit fix sequence (2026-05-06 / 2026-05-07)
+
+Following the handover, a comprehensive site audit ran on 2026-05-06. The 14-phase fix sequence (OO through BBB) addressed every actionable finding plus shipped one substantial feature. See `CHANGELOG.md` for per-phase detail.
+
+Audit closure:
+
+- **CRITICAL #1** (auth signup open) — closed manually via Supabase Dashboard toggle.
+- **CRITICAL #2** (ministry H3 mismatches + Lake Blvd demo footers) — Phase OO migration.
+- **CRITICAL #3** (~20 pages still carry cmsmasters demo content) — deferred to Bishop's copy pass; tracked in `site/copy-pass-tracker.md`.
+- **CRITICAL #4** (Stripe in test mode) — Phase PP disabled `/shop` checkout pending Bishop's Stripe business verification (see Known issues below).
+- **Warnings #5–#12, #15–#20, #40** — addressed across Phases QQ–XX, VV. Specifically: sitemap regen + canonical URLs (RR), meta.description seed (SS), LCP hero alt + asset alt-text seed (TT), site-URL centralization (UU), repo hygiene (VV), dead-code purge (WW), doc drift (XX).
+- **Warning #13** (sanitize iframe policy) — Phase YY: structured `video_url` field on sermon pages with template-rendered youtube-nocookie.com iframe replaces the need for allowlist widening.
+- **Info #38** (Lighthouse) — Phases ZZ + AAA. Final mobile scores: Performance ~90 (run variance 87-92), Accessibility 96, Best Practices 100, SEO 100. Desktop: Performance 100, Accessibility 96, Best Practices 100, SEO 100. Mobile Performance 92→100 and Accessibility 96→100 both deferred — tier-3 work for Performance, design tradeoff with decorative script elements for Accessibility.
+- **Phase BBB** (this commit) — HANDOVER + tracker refresh closing the audit fix sequence.
+
+Substantial feature added during the sequence:
+
+- **Phase YY**: structured YouTube video embed on sermon pages. Bishop pastes a YouTube URL into the `video_url` field on each sermon via `/admin/content/sermons.<slug>` and the page renders a privacy-enhanced embed above the audio player.
+
+Pending work tracked in `site/copy-pass-tracker.md`.
+
+---
+
 ## Environment variables
 
 Source of truth: `site/.env.local` (NEVER commit) and Vercel project settings.

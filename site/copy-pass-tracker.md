@@ -37,6 +37,27 @@ sequence.
   needed there. Suggested order of priority: most-recent sermons first
   (heritage-of-a-godly-mother, jesus-is-coming-soon, etc. by
   `date_published`).
+- **CMSMasters demo content cleanup** (audit CRITICAL #3) — ~20 pages
+  still carry residual cmsmasters Faith Connect WP-theme demo content
+  embedded in body_html / per-paragraph fields:
+    - `about`, `locations.maltoncog`, `locations.westtoronto`,
+      `team.huel_wilson`, `team.huel_clementina` — the "A Diverse and
+      Inclusive Community / Our curriculum…" school-themed block
+    - 9 blog posts — the "European languages are members of the same
+      family" / "wonderful serenity" filler text
+    - `ministries.ask-bishop` + `ministries.partnership` — mid-body
+      `please email: example@cmsmasters.com` paragraphs (intentionally
+      preserved by Phase OO; copy pass replaces)
+  The Phase OO migration trimmed the trailing demo footer on 6 ministry
+  pages but mid-body lorem-ipsum remains. Bishop rewrites each body
+  during the copy pass via `/admin/content`.
+- **Image alt text refinement** (Phase TT) — Phase TT seeded 5 alt rows
+  + confirmed 14 gallery rows already empty (decorative). 44 orphan
+  asset rows (not currently rendered) skipped — see Tech debt. Bishop
+  reviews every rendered image during the copy pass via `/admin/assets`
+  and fills in real alt where the image carries information beyond the
+  surrounding card/heading context. Cross-reference in `HANDOVER.md`
+  Outstanding setup work.
 
 ## Tech debt / future cleanup
 
@@ -136,15 +157,36 @@ sequence.
   same accessibility/contrast issues surface, sweep with the same
   fix pattern (token swap + aria-hidden on script decoratives).
   (Surfaced 2026-05-07 during Phase ZZ.)
+- **Mobile Performance 92→100 deferred** (audit Info #38). Phase ZZ
+  closed the LCP fetchPriority hint and logo-sizes optimizations.
+  Remaining gap is tier-3: unused-JS reduction, legacy-polyfill
+  trimming, and longer profiling work. Diminishing returns; not
+  blocking pre-launch. Three Lighthouse runs across Phases ZZ + AAA
+  showed mobile Performance variance of 87-92; desktop hits 100
+  cleanly. (Surfaced 2026-05-07 during Phases ZZ + AAA.)
+- **Mobile Accessibility 96→100 deferred** (audit Info #38). Phases
+  ZZ + AAA shipped 17+ contrast edits (gold-dark token, white-opacity
+  bumps, Plan-Your-Visit gold-light, aria-hidden on script
+  decoratives) but Lighthouse continued to flag at least one element
+  (likely a script decorative — axe-core's color-contrast rule
+  doesn't respect aria-hidden). Score plateaued at 96 on home mobile
+  + desktop. Chasing the last 4 points would require either: (a)
+  recoloring decorative scripts away from gold/amber to a passing
+  hue (loses brand visual), or (b) replacing scripts with inline SVG
+  images (binary asset complexity). Accepted as a design tradeoff;
+  cross-template sweep deferred separately. (Surfaced 2026-05-07
+  during Phase AAA.)
 
 ## Cleanup deferred
 
 Audit artifacts left on disk for the next debugging session.
 
 Phase VV resolved the `site/scripts/_audit-*.ts` pile by gitignoring
-the glob — 11 scripts remain on disk for re-runs but no longer pollute
-`git status`. `printful/` (Bishop's local design-asset working dir) is
-also gitignored.
+the glob — 13 scripts remain on disk for re-runs but no longer pollute
+`git status` (count grew from 11 → 13 in Phase YY when
+`_audit-sermons.ts` and `_audit-sermon-audio-fields.ts` were added
+during the sermon audio_url migration verification). `printful/`
+(Bishop's local design-asset working dir) is also gitignored.
 
 Untracked `/tmp` artifacts:
 - `/tmp/ministries-current.json` — pre-Phase-OO body_html snapshot.
