@@ -9,14 +9,6 @@ export interface RecentSermon {
 }
 
 /**
- * R2 public URL for a sermon mp3. The original migrate-to-r2 sweep stored
- * sermon audio under the `sermons/` prefix (not `uploads/`).
- */
-export function sermonAudioUrl(filename: string): string {
-  return `https://media.ydministries.ca/sermons/${filename}`;
-}
-
-/**
  * Fetch the most recent sermons (excluding the current page), ordered by
  * date_published DESC. Pulls meta.title + thumbnail_url + date_published +
  * scripture_primary in a single round-trip and pivots client-side.

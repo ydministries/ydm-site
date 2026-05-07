@@ -29,6 +29,14 @@ sequence.
   Stripe payments. Until then, /shop checkout is disabled (Phase PP).
   Bishop must complete Stripe Dashboard → Settings → Business profile
   flow himself; Mikey doesn't have the org documents.
+- **6 sermon pages need `video_url` populated** (Phase YY). Bishop
+  pastes the YouTube URL for each sermon via
+  `/admin/content/sermons.<slug>` in the `video_url` field. Template
+  renders a privacy-enhanced (youtube-nocookie.com) embed automatically.
+  Audio URLs already populated by the Phase YY migration; no action
+  needed there. Suggested order of priority: most-recent sermons first
+  (heritage-of-a-godly-mother, jesus-is-coming-soon, etc. by
+  `date_published`).
 
 ## Tech debt / future cleanup
 

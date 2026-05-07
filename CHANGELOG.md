@@ -7,6 +7,22 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-07] - <commit-hash>
 
+### Phase YY — Sermon video embed + audio URL migration
+- Added structured `video_url` field to all 6 sermon page_keys (initially empty). Bishop pastes a YouTube URL via `/admin/content/sermons.<slug>` and the sermon page renders a privacy-enhanced (youtube-nocookie.com) iframe above the audio player. Empty / non-YouTube / garbage values render nothing — graceful fallback verified across 10 edge-case URL shapes.
+- Migrated `audio_filename` → `audio_url` field per sermon. Sermons now store the FULL public URL directly instead of bare filenames. The `sermonAudioUrl()` helper in `lib/sermons.ts` is removed (no consumers remained after the template change).
+- Util: `extractYouTubeId()` + `youtubeEmbedUrl()` in `src/lib/youtube.ts`. Verified extraction for `watch?v=`, `youtu.be/`, `youtu.be/?si=`, `embed/`, `shorts/`, `m.youtube.com/watch?v=`, and `watch?v=…&t=…` shapes; returns `null` for non-YouTube and garbage inputs.
+- Sermon page layout (top to bottom): hero → **video embed (when set)** → audio player (when set) → body (sermon notes) → scripture cards → related sermons → share → back link.
+- Bishop's workflow for new sermons: upload MP3 to R2 via existing tooling (Cloudflare dashboard or rclone), then paste the audio URL and YouTube URL into `/admin/content/sermons.<slug>`. No admin-side MP3 upload UI was added (deliberately scoped out — Mikey continues to manage R2 uploads).
+- Migration shipped as a two-file zero-downtime split:
+  - `20260507171944_sermons_video_and_audio_urls.sql` — additive only (INSERT 6 video_url + 6 audio_url; leaves audio_filename in place).
+  - `20260507172549_drop_sermon_audio_filename.sql` — DELETE-only follow-up to be applied after the deploy verifies live audio.
+- NOTE: migration 2 was applied alongside migration 1 in a single SQL Editor session, collapsing the intended two-step zero-downtime pattern into a single cutover. Pre-launch state (no public traffic) made this functionally a no-op. The two-migration pattern still holds as the standard for future cutovers — sequence matters when real visitors are involved.
+- Sanitize.ts iframe decision documented (audit Warning #13 closed via decision: structured `video_url` field replaces the need for allowlist widening; `<iframe>` stays out of the user-supplied-HTML allowlist; documented in the file's header comment block).
+
+---
+
+## [2026-05-07] - <commit-hash>
+
 ### Phase XX — Documentation drift cleanup
 Closes audit Warnings #19 and #20.
 

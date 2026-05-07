@@ -5,8 +5,8 @@ import { EditableRichText } from "@/components/EditableRichText";
 import {
   getRecentSermons,
   parseScriptureRefs,
-  sermonAudioUrl,
 } from "@/lib/sermons";
+import { extractYouTubeId, youtubeEmbedUrl } from "@/lib/youtube";
 import { CustomAudioPlayer } from "./_helpers/CustomAudioPlayer";
 import { ShareButtons } from "./_helpers/ShareButtons";
 
@@ -31,7 +31,9 @@ export async function SermonTemplate({ pageKey }: Props) {
   const title = content.get("meta.title")?.value ?? "";
   const date = fmtDate(content.get("date_published")?.value);
   const thumbnail = content.get("thumbnail_url")?.value ?? "";
-  const audioFilename = content.get("audio_filename")?.value ?? "";
+  const audioUrl = content.get("audio_url")?.value ?? "";
+  const videoUrl = content.get("video_url")?.value ?? "";
+  const youtubeId = videoUrl ? extractYouTubeId(videoUrl) : null;
   const scripturePrimary = content.get("scripture_primary")?.value ?? "";
   const scriptureRefs = parseScriptureRefs(content.get("scripture_refs")?.value);
 
@@ -74,19 +76,40 @@ export async function SermonTemplate({ pageKey }: Props) {
         </div>
       </section>
 
-      {/* SECTION 2 — Audio player */}
-      {audioFilename ? (
+      {/* SECTION 2 — Video embed (privacy-enhanced YouTube) */}
+      {youtubeId ? (
+        <section className="bg-ydm-ink py-12 sm:py-16">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6">
+            <p className="m-0 mb-6 text-center font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+              WATCH
+            </p>
+            <div className="aspect-video overflow-hidden rounded-sm bg-black shadow-lg">
+              <iframe
+                src={youtubeEmbedUrl(youtubeId)}
+                title={`${title} — video`}
+                className="h-full w-full border-0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {/* SECTION 3 — Audio player */}
+      {audioUrl ? (
         <section className="bg-ydm-cream py-12 sm:py-16">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <p className="m-0 mb-6 text-center font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
               LISTEN
             </p>
-            <CustomAudioPlayer src={sermonAudioUrl(audioFilename)} />
+            <CustomAudioPlayer src={audioUrl} />
           </div>
         </section>
       ) : null}
 
-      {/* SECTION 3 — Sermon body */}
+      {/* SECTION 4 — Sermon body */}
       <section className="bg-ydm-surface py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <EditableRichText
@@ -96,7 +119,7 @@ export async function SermonTemplate({ pageKey }: Props) {
         </div>
       </section>
 
-      {/* SECTION 4 — Scripture cards */}
+      {/* SECTION 5 — Scripture cards */}
       {scriptureRefs.length > 0 ? (
         <section className="bg-ydm-cream py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
@@ -130,7 +153,7 @@ export async function SermonTemplate({ pageKey }: Props) {
         </section>
       ) : null}
 
-      {/* SECTION 5 — Related sermons */}
+      {/* SECTION 6 — Related sermons */}
       {recent.length > 0 ? (
         <section className="bg-ydm-surface py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
@@ -182,7 +205,7 @@ export async function SermonTemplate({ pageKey }: Props) {
         </section>
       ) : null}
 
-      {/* SECTION 6 — Share */}
+      {/* SECTION 7 — Share */}
       <section className="bg-ydm-cream py-12">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <p className="m-0 mb-4 font-accent text-xs uppercase tracking-[0.3em] text-ydm-muted">
@@ -192,7 +215,7 @@ export async function SermonTemplate({ pageKey }: Props) {
         </div>
       </section>
 
-      {/* SECTION 7 — Back link */}
+      {/* SECTION 8 — Back link */}
       <section className="bg-ydm-surface py-8">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <Link
