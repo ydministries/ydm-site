@@ -73,13 +73,43 @@ sequence.
   on every page are likely orphan from the original seed pipeline.
   Worth a future audit + DELETE pass similar to Phase QQ ministry-
   orphan cleanup. (Surfaced 2026-05-06 during Phase SS Phase A.)
+- 44 of 63 rows in the `assets` table are orphan — not rendered by
+  any current template (similar to Phase QQ's `page_content` orphans).
+  Affected `asset_key` families:
+    - `blog.index.image.*` (9)
+    - `contact.image.*` (2)
+    - `events.index.image.*` (2)
+    - `sermons.index.image.*` (13)
+    - `ministries.<slug>.image.*` (21, deorphaned by Phase QQ deletion
+      of the referencing `page_content` URLs)
+  Future asset-cleanup prompt should DELETE these after grep-confirmation
+  they're truly unreferenced. (Surfaced 2026-05-06 during Phase TT.)
+- `InvolveCard` component (HomeTemplate.tsx:180-203) hardcodes
+  `alt=""` on its `<img>`, doesn't read from the `assets` table even
+  when `assets.alt` is populated. The Phase TT seed row
+  `home.image.01.alt = "Hands raised in prayer"` sits in DB but
+  doesn't render because of this. Future refactor: pass `alt` as a
+  prop OR replace raw `<img>` with `EditableImage` (which does the
+  assets lookup). Same component is used 4× on homepage.
+  (Surfaced 2026-05-06 during Phase TT Phase C.)
+- 11 other page-template hero `<Image>` elements (sermons, ministries,
+  about, team, live, prayer, ask, contact, campaign, location, event,
+  blog) likely hardcode `alt=""` the same way `HomeTemplate.tsx:226`
+  did before Phase TT. Audit each and patch in a future image-alt-
+  sweep prompt. (Surfaced 2026-05-06 during Phase TT Phase A.)
+- Team-portrait alt rendering: team images don't appear in the
+  `assets` table per Phase TT Phase A. They render via a different
+  mechanism (likely direct R2 URLs in `page_content` or hardcoded).
+  To populate alt for team portraits, that mechanism needs investigation
+  and potentially a parallel seed migration. (Surfaced 2026-05-06
+  during Phase TT Phase A.)
 
 ## Cleanup deferred
 
 Audit artifacts left on disk for the next debugging session; remove
 during the repo hygiene phase.
 
-Untracked scripts in `site/scripts/` (9 — pile is growing; sweep when
+Untracked scripts in `site/scripts/` (11 — pile is growing; sweep when
 this hygiene phase runs):
 - `_audit-ministries.ts` — Phase OO body_html query.
 - `_audit-fields.ts` — Phase OO field enumeration; surfaced parallel-
@@ -95,6 +125,9 @@ this hygiene phase runs):
   UPDATE targets (verified each WHERE clause matches exactly 1 row).
 - `_audit-meta-postcheck.ts` — Phase SS post-migration row-count and
   meta.title verification.
+- `_audit-assets.ts` — Phase TT assets table dump + categorization.
+- `_audit-assets-postcheck.ts` — Phase TT post-migration alt-distribution
+  verification.
 
 Untracked `/tmp` artifacts:
 - `/tmp/ministries-current.json` — pre-Phase-OO body_html snapshot.

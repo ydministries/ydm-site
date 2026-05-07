@@ -223,7 +223,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
         <div className="absolute inset-0 -z-10">
           <Image
             src={HERO_PHOTO_URL}
-            alt=""
+            alt="Hands raised in worship"
             fill
             priority
             className="object-cover"

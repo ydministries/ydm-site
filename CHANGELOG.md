@@ -7,6 +7,22 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-06] - <commit-hash>
 
+### Phase TT — LCP hero alt + asset alt-text seed
+- Audit Warning #10 (no eager/priority hint on LCP image) investigated and confirmed **pre-resolved**. Next.js 16 emits `<link rel="preload" as="image" imageSrcSet="...">` in `<head>` for every priority-flagged hero across 12 templates — modern LCP optimization. The audit's grep targeted `loading="eager"` on `<img>` and missed the preload mechanism. No code change shipped for #10.
+- Audit Warning #9 (assets.alt all NULL) — partial fix:
+  - Hardcoded `alt="Hands raised in worship"` on the home LCP hero `<Image>` in `HomeTemplate.tsx:226` (was `alt=""`). Brand-static `/brand/hero-worship.jpeg` is the actual LCP, not in the assets table.
+  - Migration `20260507034815_seed_asset_alt_text.sql` updates 5 rows in `assets`:
+    - `home.image.01.alt` → `"Hands raised in prayer"` (forward-looking metadata; renders only when `InvolveCard` is later refactored to read alt from assets — see Tech debt).
+    - `home.image.02-04.alt` → `""` (decorative within InvolveCard heading context per WCAG decorative-in-described-context).
+    - `admin.<uuid>.<timestamp>.alt` → `""` (intentionally blank vs not yet set, distinguishes in /admin/assets editor).
+  - 14 gallery rows confirmed already correctly `""` (decorative photo grid). No change.
+  - 44 orphan asset rows skipped — they don't render today; tracked for a future asset-cleanup pass analogous to Phase QQ.
+- Bishop refines all alt during copy pass via /admin/assets.
+
+---
+
+## [2026-05-06] - <commit-hash>
+
 ### Phase SS — meta.description seed + stale meta.title fixes
 - Closes audit Warning #6 (parts of) — seeded 42 meta.description rows in page_content for pages that previously fell back to the global default. Sources verified Phase A:
   - 3 from existing seo.description rows (home, about, contact) — promoted to meta.description.
