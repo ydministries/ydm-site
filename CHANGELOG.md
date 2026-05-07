@@ -7,6 +7,26 @@ Every push to GitHub or Vercel must be recorded here.
 
 ## [2026-05-06] - <commit-hash>
 
+### Phase SS — meta.description seed + stale meta.title fixes
+- Closes audit Warning #6 (parts of) — seeded 42 meta.description rows in page_content for pages that previously fell back to the global default. Sources verified Phase A:
+  - 3 from existing seo.description rows (home, about, contact) — promoted to meta.description.
+  - 7 from existing tagline rows (each ministries.* page).
+  - 16 from existing excerpt rows (sermons, blog, events, give campaigns) minus 3 overrides.
+  - 3 from existing person_bio rows (HTML-stripped + sentence-truncated; team pages).
+  - 13 hand-templated for index/landing pages (gallery, give, ministries, sermons, blog, events, team, live, locations) plus 3 overrides for excerpts that pulled garbage (sermons.gilgal misattribution, sermons.here-am-i venue/date prefix, give.techfund WP-demo residue).
+- Closes audit Warnings #7 and #8 — 3 stale meta.title fixes:
+  - blog.index "Blog Page" → "Blog"
+  - events.index "Events Page" → "Events"
+  - events.young-adults-connect "Yeshua Sunday Service" → "Young Adults Connect" (slug/title mismatch)
+- Page-keys with explicit meta.description: 4 → 46. Verified on production HTML for 16 sampled pages — all render new descriptions; no global-fallback leak.
+- 7 routes intentionally not touched: /ask + /prayer (already had DB rows) and /shop, /shop/success, /give/thanks, /sermons/scripture, /testimonials (export metadata.description from page.tsx).
+- /shop/<slug> product pages still use the global fallback — should pull from Printful product description in /shop/[slug]/page.tsx generateMetadata. Tracked in copy-pass-tracker.md Tech debt.
+- First-pass copy may not match Bishop's preferred voice — copy pass refines via /admin/content/<page>/meta.description. 3 sub-100-char blog excerpts and 7 short ministry taglines flagged for SEO expansion in copy-pass-tracker.md Open items.
+
+---
+
+## [2026-05-06] - <commit-hash>
+
 ### Phase RR — Sitemap regen from live routes + robots URL env var
 - `src/app/sitemap.ts` now derives URLs from a hardcoded STATIC_ROUTES list inside the file (49 entries) plus a runtime expansion of `/shop/[slug]` from Printful's catalog. The previous source — `archive/wordpress/scrape/route-map.json` — was frozen pre-launch and missed every post-codegen hand-authored route.
 - Added 9 URLs that were live since Phases II–LL but missing from the sitemap: `/testimonials` (Phase JJ), `/sermons/scripture` (Phase II), `/shop` + `/shop/success` + 4 Printful product pages (Phase LL), `/give/thanks` (Phase KK).

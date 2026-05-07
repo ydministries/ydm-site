@@ -16,8 +16,12 @@ sequence.
   or remove during copy pass.
 ### Site-wide
 
-- **meta.description missing** on 57+ pages. Will be addressed in the
-  Group B seeding pass alongside the orphan-field cleanup.
+- Phase SS first-pass meta.descriptions are sub-optimal length on 3
+  blog posts (your-mission 51 chars, whats-your-view 71 chars,
+  i-ruined-my-life 99 chars) and 7 ministry pages (35–59 chars each;
+  derived from existing tagline rows). Bishop should expand each
+  toward ~120–145 chars during the copy pass for better SEO snippet
+  coverage. Edit per page via /admin/content/<page>/meta.description.
 
 ## Pending Bishop input
 
@@ -59,18 +63,38 @@ sequence.
   to one mechanism is out of scope for the audit fix sequence but
   worth a future "redirect-system audit" pass.
   (Surfaced 2026-05-06 during Phase RR Phase A.)
+- `/shop/<slug>` product pages still use the global meta.description
+  fallback. Should pull from the Printful product description via
+  `generateMetadata` in `src/app/(site)/shop/[slug]/page.tsx`. Est.
+  30 LOC change. (Surfaced 2026-05-06 during Phase SS.)
+- `page_content` has both `seo.description` and `meta.description`
+  field_keys. Templates render `meta.description` (per Phase RR
+  sitemap work + Phase SS investigation), so `seo.description` rows
+  on every page are likely orphan from the original seed pipeline.
+  Worth a future audit + DELETE pass similar to Phase QQ ministry-
+  orphan cleanup. (Surfaced 2026-05-06 during Phase SS Phase A.)
 
 ## Cleanup deferred
 
 Audit artifacts left on disk for the next debugging session; remove
 during the repo hygiene phase.
 
-Untracked scripts in `site/scripts/` (4):
+Untracked scripts in `site/scripts/` (9 — pile is growing; sweep when
+this hygiene phase runs):
 - `_audit-ministries.ts` — Phase OO body_html query.
 - `_audit-fields.ts` — Phase OO field enumeration; surfaced parallel-
   field issue addressed by Phase QQ.
 - `_audit-cleanup.ts` — Phase QQ pre-deletion snapshot generator.
 - `_audit-postcleanup.ts` — Phase QQ post-deletion verification.
+- `_audit-meta.ts` — Phase SS initial bucket audit (body_html extraction).
+- `_audit-meta-extras.ts` — Phase SS field probe (found seo.description /
+  excerpt / person_bio / tagline as cleaner sources than body_html).
+- `_audit-meta-final.ts` — Phase SS final proposal generator with
+  abbreviation-aware sentence-boundary truncator.
+- `_audit-meta-titles.ts` — Phase SS pre-flight check on the 3 meta.title
+  UPDATE targets (verified each WHERE clause matches exactly 1 row).
+- `_audit-meta-postcheck.ts` — Phase SS post-migration row-count and
+  meta.title verification.
 
 Untracked `/tmp` artifacts:
 - `/tmp/ministries-current.json` — pre-Phase-OO body_html snapshot.
@@ -79,4 +103,6 @@ Untracked `/tmp` artifacts:
 - `/tmp/ydm-min-postqq/*.html` — Phase QQ rendered HTML captures.
 - `/tmp/ydm-prompt3/pre-cleanup-snapshot.json` — Phase QQ pre-DELETE row dump.
 - `/tmp/ydm-prompt4/{new,prod}-{sitemap.xml,urls.txt}` — Phase RR sitemap diff.
+- `/tmp/ydm-prompt5/{state,plans}.json` — Phase SS bucket plan dumps.
+- `/tmp/verify-prod-meta.sh` — Phase SS production verification script.
 - `/tmp/strip-scripts.py`, `/tmp/find-cheapest-variant.py` — one-off helpers.
