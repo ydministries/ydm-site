@@ -26,17 +26,16 @@ export default async function ShopPage() {
       <section className="-mx-4 bg-ydm-cream py-16 sm:-mx-6 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
           <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-            APPAREL & MERCH
+            YDM MERCH
           </p>
           <p className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
-            Wear your faith
+            Wear the message
           </p>
           <h1 className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl">
-            Shop
+            YDM Shop
           </h1>
           <p className="m-0 font-serif text-lg leading-relaxed text-ydm-text">
-            Each item is made-to-order on demand by Printful, then shipped
-            directly to you. Proceeds support the ministry.
+            Apparel and gifts that carry the YDM message wherever you go. Every purchase supports the ministry.
           </p>
         </div>
       </section>

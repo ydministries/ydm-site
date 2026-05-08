@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { fetchPageContent } from "@/lib/content";
 import { EditableRichText } from "@/components/EditableRichText";
 import { getOtherLocations } from "@/lib/locations";
@@ -12,11 +13,25 @@ export async function LocationTemplate({ pageKey }: Props) {
   const content = await fetchPageContent(pageKey);
   const slug = pageKey.replace(/^locations\./, "");
 
-  const title = content.get("meta.title")?.value ?? "";
+  const title = content.get("title")?.value ?? content.get("meta.title")?.value ?? "";
   const heroImage = content.get("hero_image")?.value ?? "";
+  const heroEyebrow = content.get("hero_eyebrow")?.value ?? "";
+  const heroScript = content.get("hero_script")?.value ?? "";
+  const heroSubhead = content.get("hero_subhead")?.value ?? "";
   const address = content.get("address")?.value ?? "";
   const serviceTimes = content.get("service_times")?.value ?? "";
   const parkingNote = content.get("parking_note")?.value ?? "";
+
+  // Heritage-page narrative fields (optional)
+  const storyTitle = content.get("story.title")?.value ?? "";
+  const storyBody = content.get("story.body")?.value ?? "";
+  const whatItBuiltTitle = content.get("what_it_built.title")?.value ?? "";
+  const whatItBuiltBody = content.get("what_it_built.body")?.value ?? "";
+  const yearsServed = content.get("years_served")?.value ?? "";
+  const visitNoteTitle = content.get("visit_note.title")?.value ?? "";
+  const visitNoteBody = content.get("visit_note.body")?.value ?? "";
+
+  const isHeritagePage = !!(storyBody || whatItBuiltBody || yearsServed);
 
   // Plain-text address: pick a one-line version for the directions URL.
   const addressOneLine = address.replace(/\s*\n+\s*/g, ", ");
@@ -38,13 +53,93 @@ export async function LocationTemplate({ pageKey }: Props) {
         ) : null}
         <div className="relative mx-auto w-full max-w-4xl px-4 pb-24 pt-20 text-center sm:px-6">
           <p className="m-0 mb-4 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-            LOCATIONS
+            {heroEyebrow || "LOCATIONS"}
           </p>
+          {heroScript ? (
+            <p className="m-0 mb-4 -rotate-[3deg] font-script text-4xl text-ydm-gold sm:text-5xl">
+              {heroScript}
+            </p>
+          ) : null}
           <h1 className="m-0 font-display text-4xl uppercase leading-tight tracking-wide text-white sm:text-6xl">
             {title}
           </h1>
+          {heroSubhead ? (
+            <p className="m-0 mt-6 mx-auto max-w-3xl font-serif text-base leading-relaxed text-white/90 sm:text-lg">
+              {heroSubhead}
+            </p>
+          ) : null}
         </div>
       </section>
+
+      {/* HERITAGE — Story */}
+      {isHeritagePage && storyBody ? (
+        <section className="bg-ydm-surface py-20 sm:py-28">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            {storyTitle ? (
+              <div className="mb-8 text-center">
+                <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+                  {storyTitle.toUpperCase()}
+                </p>
+                <h2 className="m-0 font-display text-3xl uppercase leading-none text-ydm-ink sm:text-4xl">
+                  The Story
+                </h2>
+              </div>
+            ) : null}
+            <div
+              className="font-serif text-base leading-relaxed text-ydm-text [&_p]:mb-4 [&_p:last-child]:mb-0 [&_strong]:font-display [&_strong]:text-ydm-ink sm:text-lg"
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(storyBody) }}
+            />
+          </div>
+        </section>
+      ) : null}
+
+      {/* HERITAGE — Years Served pull-quote */}
+      {isHeritagePage && yearsServed ? (
+        <section className="-mx-4 bg-ydm-ink py-12 sm:-mx-6 sm:py-16">
+          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+            <p className="m-0 mb-2 font-accent text-xs uppercase tracking-[0.3em] text-ydm-gold">
+              YEARS SERVED
+            </p>
+            <p className="m-0 font-display text-3xl uppercase leading-tight text-white sm:text-4xl">
+              {yearsServed}
+            </p>
+          </div>
+        </section>
+      ) : null}
+
+      {/* HERITAGE — What It Built */}
+      {isHeritagePage && whatItBuiltBody ? (
+        <section className="bg-ydm-cream py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <div className="mb-6 text-center">
+              <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+                {whatItBuiltTitle ? whatItBuiltTitle.toUpperCase() : "WHAT IT BUILT"}
+              </p>
+            </div>
+            <div
+              className="font-serif text-base leading-relaxed text-ydm-text [&_p]:mb-4 [&_p:last-child]:mb-0 sm:text-lg"
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(whatItBuiltBody) }}
+            />
+          </div>
+        </section>
+      ) : null}
+
+      {/* HERITAGE — Visit Note (YDM currently meets at...) */}
+      {isHeritagePage && visitNoteBody ? (
+        <section className="bg-ydm-surface py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <div className="rounded-sm bg-ydm-cream p-8 shadow-sm sm:p-10">
+              <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+                {visitNoteTitle ? visitNoteTitle.toUpperCase() : "A NOTE ON VISITING"}
+              </p>
+              <div
+                className="font-serif text-base leading-relaxed text-ydm-text [&_em]:italic [&_p]:mb-3 [&_p:last-child]:mb-0 sm:text-lg"
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(visitNoteBody) }}
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* SECTION 2 — Address card (overlaps hero) */}
       <section className="-mt-12 mb-8 px-4 sm:px-6">
@@ -102,20 +197,22 @@ export async function LocationTemplate({ pageKey }: Props) {
         </section>
       ) : null}
 
-      {/* SECTION 4 — Description body (best-effort; falls back gracefully) */}
-      <section className="bg-ydm-cream py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <div className="mb-8 text-center">
-            <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-              ABOUT THIS LOCATION
-            </p>
+      {/* SECTION 4 — Description body (only for non-heritage pages) */}
+      {!isHeritagePage ? (
+        <section className="bg-ydm-cream py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <div className="mb-8 text-center">
+              <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+                ABOUT THIS LOCATION
+              </p>
+            </div>
+            <EditableRichText
+              fieldKey="body_html"
+              className="editable-prose font-serif text-base leading-relaxed text-ydm-text [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-2xl [&_h3]:uppercase [&_h3]:text-ydm-ink [&_p]:mb-4"
+            />
           </div>
-          <EditableRichText
-            fieldKey="body_html"
-            className="editable-prose font-serif text-base leading-relaxed text-ydm-text [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-2xl [&_h3]:uppercase [&_h3]:text-ydm-ink [&_p]:mb-4"
-          />
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       {/* SECTION 5 — Plan Your Visit CTA */}
       <section className="-mx-4 bg-ydm-gold py-16 sm:-mx-6 sm:py-20">

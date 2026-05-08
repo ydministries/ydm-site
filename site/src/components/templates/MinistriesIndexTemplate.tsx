@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllMinistries } from "@/lib/ministries";
+import { EditableFallback } from "./_helpers/EditableFallback";
 
 export async function MinistriesIndexTemplate(_props: { pageKey?: string } = {}) {
   const ministries = await getAllMinistries();
@@ -9,18 +10,30 @@ export async function MinistriesIndexTemplate(_props: { pageKey?: string } = {})
     <>
       <section className="-mx-4 bg-ydm-cream py-16 sm:-mx-6 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
-          <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-            GET PLUGGED IN
-          </p>
-          <p className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
-            Faithful in service
-          </p>
-          <h1 className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl">
-            Ministries
-          </h1>
-          <p className="m-0 font-serif text-lg leading-relaxed text-ydm-text">
-            Every YDM ministry exists to make Christ known and disciples whole. Find where your gifts and calling fit.
-          </p>
+          <EditableFallback
+            keys={["hero_eyebrow"]}
+            fallback="GET PLUGGED IN"
+            as="p"
+            className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold"
+          />
+          <EditableFallback
+            keys={["hero_script"]}
+            fallback="Get Plugged In"
+            as="p"
+            className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl"
+          />
+          <EditableFallback
+            keys={["hero_title"]}
+            fallback="How We Serve."
+            as="h1"
+            className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl"
+          />
+          <EditableFallback
+            keys={["hero_subhead"]}
+            fallback="Seven ministries. One mission. Each one a way for the love of Christ to take shape — in worship, in our families, in our city, and around the world."
+            as="p"
+            className="m-0 font-serif text-lg leading-relaxed text-ydm-text"
+          />
         </div>
       </section>
 

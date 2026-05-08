@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllBlogPosts } from "@/lib/blog";
+import { EditableFallback } from "./_helpers/EditableFallback";
 
 function fmtDate(iso: string | undefined): string {
   if (!iso) return "";
@@ -18,18 +19,30 @@ export async function BlogIndexTemplate(_props: { pageKey?: string } = {}) {
     <>
       <section className="-mx-4 bg-ydm-cream py-16 sm:-mx-6 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
-          <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-            FROM THE PEN
-          </p>
-          <p className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
-            Words for the journey
-          </p>
-          <h1 className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl">
-            Blog
-          </h1>
-          <p className="m-0 font-serif text-lg leading-relaxed text-ydm-text">
-            Reflections, teachings, and stories from the YDM family.
-          </p>
+          <EditableFallback
+            keys={["hero_eyebrow"]}
+            fallback="READ & REFLECT"
+            as="p"
+            className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold"
+          />
+          <EditableFallback
+            keys={["hero_script"]}
+            fallback="From the heart of YDM"
+            as="p"
+            className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl"
+          />
+          <EditableFallback
+            keys={["hero_title"]}
+            fallback="The YDM Blog"
+            as="h1"
+            className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl"
+          />
+          <EditableFallback
+            keys={["hero_subhead"]}
+            fallback="Reflections on faith, scripture, and the walk with Christ — written for the YDM family and anyone seeking the Lord."
+            as="p"
+            className="m-0 font-serif text-lg leading-relaxed text-ydm-text"
+          />
         </div>
       </section>
 

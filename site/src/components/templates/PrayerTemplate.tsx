@@ -76,9 +76,15 @@ export async function PrayerTemplate(_props: { pageKey?: string } = {}) {
           />
           <EditableFallback
             keys={["hero_title"]}
-            fallback="Prayer Requests"
+            fallback="Submit a Prayer Request"
             as="h1"
             className="m-0 font-display text-5xl uppercase leading-none text-white sm:text-7xl"
+          />
+          <EditableFallback
+            keys={["hero_subhead"]}
+            fallback="Whatever you're carrying, you don't have to carry it alone. Bishop Wilson and the YDM prayer team will pray over your request personally."
+            as="p"
+            className="m-0 mt-6 mx-auto max-w-3xl font-serif text-base leading-relaxed text-white/85 sm:text-lg"
           />
         </div>
       </section>
@@ -89,12 +95,13 @@ export async function PrayerTemplate(_props: { pageKey?: string } = {}) {
           <h2 className="m-0 mb-6 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-5xl">
             We pray for one another
           </h2>
-          <p className="m-0 font-serif text-lg leading-relaxed text-ydm-text">
-            Bishop, the elders, and the YDM prayer team faithfully lift every request
-            we receive. Whatever you&rsquo;re carrying — healing, family, direction,
-            provision — bring it before the Lord with us. We pray over each request
-            personally, then trust God for the answer.
-          </p>
+          <EditableFallback
+            keys={["intro_body"]}
+            mode="rich"
+            fallback="Bishop, the elders, and the YDM prayer team faithfully lift every request we receive. Whatever you're carrying — healing, family, direction, provision — bring it before the Lord with us. We pray over each request personally, then trust God for the answer."
+            as="div"
+            className="font-serif text-lg leading-relaxed text-ydm-text [&_em]:italic [&_p]:mb-4 [&_p:last-child]:mb-0"
+          />
         </div>
       </section>
 
@@ -142,6 +149,27 @@ export async function PrayerTemplate(_props: { pageKey?: string } = {}) {
               fallback="Your request will be shared only with the YDM prayer team unless you tell us otherwise. We do not publish or republish prayer requests."
               as="p"
               className="m-0 font-serif text-base leading-relaxed text-ydm-text"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4.5 — Urgent / crisis support */}
+      <section className="bg-ydm-surface py-12 sm:py-16">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6">
+          <div className="rounded-sm border-2 border-ydm-gold/30 bg-ydm-cream/40 p-6 sm:p-8">
+            <EditableFallback
+              keys={["urgent.title"]}
+              fallback="In an Urgent Situation"
+              as="h3"
+              className="m-0 mb-3 font-display text-xl uppercase text-ydm-ink"
+            />
+            <EditableFallback
+              keys={["urgent.body"]}
+              mode="rich"
+              fallback="If you are in crisis, please call 911 (or your local emergency line) right away. For immediate spiritual support, call the church at +1 (416) 895-5178 — leave a message and someone will return your call as soon as possible."
+              as="div"
+              className="font-serif text-base leading-relaxed text-ydm-text [&_p]:mb-2 [&_p:last-child]:mb-0 [&_strong]:font-display [&_strong]:text-ydm-ink"
             />
           </div>
         </div>

@@ -41,10 +41,15 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
   const heroImage =
     about.get("hero_image")?.value ?? "/brand/hero-worship.jpeg";
   const storyBody =
+    about.get("who_we_are.body")?.value ??
     about.get("story.body")?.value ??
     about.get("welcome.body")?.value ??
     home.get("founded_in_faith.body")?.value ??
     "";
+  const whyNameBody = about.get("why_name.body")?.value ?? "";
+  const whatMakesDifferentBody = about.get("what_makes_different.body")?.value ?? "";
+  const welcomeStatementBody = about.get("welcome_statement.body")?.value ?? "";
+  const closingInvitationBody = about.get("closing_invitation.body")?.value ?? "";
   const storyPhoto =
     "https://media.ydministries.ca/uploads/2025/09/wmremove-transformed-1.jpeg";
 
@@ -82,6 +87,12 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
             as="h1"
             className="m-0 font-display text-5xl uppercase leading-none text-white sm:text-7xl"
           />
+          <EditableFallback
+            keys={["hero_subhead"]}
+            fallback="A Christ-centered family. A worldwide voice. A burden for the lost — fifty years in the making."
+            as="p"
+            className="m-0 mt-6 font-serif text-lg leading-relaxed text-white/85 sm:text-xl"
+          />
         </div>
       </section>
 
@@ -101,13 +112,16 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
             <div>
               <EditableFallback
                 keys={["story_eyebrow"]}
-                fallback="OUR STORY"
+                fallback="WHO WE ARE"
                 as="p"
                 className="m-0 mb-4 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold"
               />
-              <h2 className="m-0 mb-6 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-5xl">
-                A Christ-Centered Community
-              </h2>
+              <EditableFallback
+                keys={["who_we_are.title"]}
+                fallback="A Christ-Centered Community"
+                as="h2"
+                className="m-0 mb-6 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-5xl"
+              />
               {storyBody ? (
                 <div
                   className="editable-prose font-serif text-lg leading-relaxed text-ydm-text [&_p]:mb-4 [&_p:last-child]:mb-0"
@@ -127,6 +141,52 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
           </div>
         </div>
       </section>
+
+      {/* SECTION 2.5 — Why the Name (Yeshua + Deliverance) */}
+      {whyNameBody ? (
+        <section className="-mx-4 bg-ydm-ink py-20 sm:-mx-6 sm:py-28">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-12">
+            <div className="mb-10 text-center">
+              <p className="m-0 mb-4 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+                THE NAME
+              </p>
+              <EditableFallback
+                keys={["why_name.title"]}
+                fallback="Why the Name — Yeshua. Deliverance."
+                as="h2"
+                className="m-0 font-display text-4xl uppercase leading-none text-white sm:text-5xl"
+              />
+            </div>
+            <div
+              className="editable-prose font-serif text-base leading-relaxed text-white/90 [&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:border-ydm-gold [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-ydm-gold [&_p]:mb-4 [&_p:last-child]:mb-0 [&_strong]:font-display [&_strong]:uppercase [&_strong]:text-ydm-gold sm:text-lg"
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(whyNameBody) }}
+            />
+          </div>
+        </section>
+      ) : null}
+
+      {/* SECTION 2.6 — What Makes YDM Different (three pillars) */}
+      {whatMakesDifferentBody ? (
+        <section className="bg-ydm-surface py-20 sm:py-28">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-12">
+            <div className="mb-10 text-center">
+              <p className="m-0 mb-4 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+                WHAT MAKES YDM DIFFERENT
+              </p>
+              <EditableFallback
+                keys={["what_makes_different.title"]}
+                fallback="Three Threads, One Calling"
+                as="h2"
+                className="m-0 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-5xl"
+              />
+            </div>
+            <div
+              className="editable-prose font-serif text-base leading-relaxed text-ydm-text [&_p]:mb-5 [&_p:last-child]:mb-0 [&_strong]:font-display [&_strong]:uppercase [&_strong]:text-ydm-gold sm:text-lg"
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(whatMakesDifferentBody) }}
+            />
+          </div>
+        </section>
+      ) : null}
 
       {/* SECTION 3 — Mission / Vision / Values 3-col */}
       <section className="-mx-4 bg-ydm-cream py-24 sm:-mx-6 sm:py-32">
@@ -184,6 +244,18 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
           </div>
         </div>
       </section>
+
+      {/* SECTION 3.5 — Welcome Statement (centered, scripture-style) */}
+      {welcomeStatementBody ? (
+        <section className="bg-ydm-surface py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+            <div
+              className="editable-prose font-serif text-lg leading-relaxed text-ydm-text [&_p]:mb-0"
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(welcomeStatementBody) }}
+            />
+          </div>
+        </section>
+      ) : null}
 
       {/* SECTION 4 — Meet Our Leaders teaser */}
       <section className="bg-ydm-surface py-20 sm:py-24">
@@ -295,6 +367,18 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
           </div>
         </div>
       </section>
+
+      {/* SECTION 5.5 — Closing Invitation */}
+      {closingInvitationBody ? (
+        <section className="bg-ydm-cream py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+            <div
+              className="editable-prose font-serif text-lg leading-relaxed text-ydm-text [&_p]:mb-0"
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(closingInvitationBody) }}
+            />
+          </div>
+        </section>
+      ) : null}
 
       {/* SECTION 6 — CTA band */}
       <section className="-mx-4 bg-ydm-gold py-20 sm:-mx-6 sm:py-24">

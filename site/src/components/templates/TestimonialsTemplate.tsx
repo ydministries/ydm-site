@@ -21,17 +21,16 @@ export async function TestimonialsTemplate(_props: { pageKey?: string } = {}) {
       <section className="-mx-4 bg-ydm-cream py-16 sm:-mx-6 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
           <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-            VOICES OF THE FAMILY
+            STORIES FROM THE FAMILY
           </p>
           <p className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
-            What God is doing
+            What God has done
           </p>
           <h1 className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl">
-            Testimonies
+            Testimonials
           </h1>
           <p className="m-0 font-serif text-lg leading-relaxed text-ydm-text">
-            Stories from members and visitors of how God has moved in their
-            lives through YDM.
+            God is at work — in your life and in this church family. These are some of the stories.
           </p>
         </div>
       </section>

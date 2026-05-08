@@ -71,6 +71,12 @@ export async function AskTemplate(_props: { pageKey?: string } = {}) {
             as="h1"
             className="m-0 font-display text-5xl uppercase leading-none text-white sm:text-7xl"
           />
+          <EditableFallback
+            keys={["hero_subhead"]}
+            fallback="Submit your faith and scripture questions to Bishop Wilson."
+            as="p"
+            className="m-0 mt-6 mx-auto max-w-3xl font-serif text-base leading-relaxed text-white/85 sm:text-lg"
+          />
         </div>
       </section>
 
@@ -81,10 +87,11 @@ export async function AskTemplate(_props: { pageKey?: string } = {}) {
             Bishop reads every question
           </h2>
           <EditableFallback
-            keys={["p.01"]}
+            keys={["intro_body", "p.01"]}
+            mode="rich"
             fallback="Have a question about faith, scripture, or the Christian walk? Submit it below and Bishop Wilson will share his response in an upcoming message."
-            as="p"
-            className="m-0 font-serif text-lg leading-relaxed text-ydm-text"
+            as="div"
+            className="font-serif text-lg leading-relaxed text-ydm-text [&_a]:text-ydm-gold [&_p]:mb-3 [&_p:last-child]:mb-0"
           />
         </div>
       </section>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllSermons, groupSermonsBySeries, type SermonListItem } from "@/lib/sermons";
+import { EditableFallback } from "./_helpers/EditableFallback";
 
 function fmtDate(iso: string | undefined): string {
   if (!iso) return "";
@@ -20,18 +21,30 @@ export async function SermonsIndexTemplate(_props: { pageKey?: string } = {}) {
     <>
       <section className="-mx-4 bg-ydm-cream py-16 sm:-mx-6 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
-          <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-            FROM THE PULPIT
-          </p>
-          <p className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
-            Hear the Word
-          </p>
-          <h1 className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl">
-            Sermons
-          </h1>
-          <p className="m-0 font-serif text-lg leading-relaxed text-ydm-text">
-            Recent messages from Bishop Huel Wilson and the YDM pulpit. Listen, share, and grow.
-          </p>
+          <EditableFallback
+            keys={["hero_eyebrow"]}
+            fallback="FROM THE PULPIT"
+            as="p"
+            className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold"
+          />
+          <EditableFallback
+            keys={["hero_script"]}
+            fallback="Hear the Word"
+            as="p"
+            className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl"
+          />
+          <EditableFallback
+            keys={["hero_title"]}
+            fallback="Sermons"
+            as="h1"
+            className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl"
+          />
+          <EditableFallback
+            keys={["hero_subhead", "intro_body"]}
+            fallback="Half a century of preaching. The library, the latest, and the live."
+            as="p"
+            className="m-0 font-serif text-lg leading-relaxed text-ydm-text"
+          />
           <p className="m-0 mt-6">
             <Link
               href="/sermons/scripture"

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllEvents } from "@/lib/events";
+import { EditableFallback } from "./_helpers/EditableFallback";
 
 export async function EventsIndexTemplate(_props: { pageKey?: string } = {}) {
   const events = await getAllEvents();
@@ -9,15 +10,30 @@ export async function EventsIndexTemplate(_props: { pageKey?: string } = {}) {
     <>
       <section className="-mx-4 bg-ydm-cream py-16 sm:-mx-6 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
-          <p className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
-            Come as you are
-          </p>
-          <h1 className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl">
-            Events
-          </h1>
-          <p className="m-0 font-serif text-lg leading-relaxed text-ydm-text">
-            Bible studies, services, and gatherings that bring our church family together.
-          </p>
+          <EditableFallback
+            keys={["hero_eyebrow"]}
+            fallback="UPCOMING EVENTS"
+            as="p"
+            className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold"
+          />
+          <EditableFallback
+            keys={["hero_script"]}
+            fallback="Come as you are"
+            as="p"
+            className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl"
+          />
+          <EditableFallback
+            keys={["hero_title"]}
+            fallback="Events at YDM"
+            as="h1"
+            className="m-0 mb-6 font-display text-5xl uppercase leading-none text-ydm-ink sm:text-7xl"
+          />
+          <EditableFallback
+            keys={["hero_subhead"]}
+            fallback="Worship. Teaching. Fellowship. The full life of YDM, on a calendar."
+            as="p"
+            className="m-0 font-serif text-lg leading-relaxed text-ydm-text"
+          />
         </div>
       </section>
 

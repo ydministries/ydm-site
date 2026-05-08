@@ -93,7 +93,7 @@ export async function LiveTemplate(_props: { pageKey?: string } = {}) {
           </h2>
           <EditableFallback
             keys={["schedule_body"]}
-            fallback="Sunday Service streams every 4th Sunday at 1:00 PM Eastern. Bible Study streams Thursdays at 7:00 PM Eastern."
+            fallback="Sunday Service streams every 4th Sunday at 1:00 PM Eastern. Bible Study streams Thursdays at 7:30 PM Eastern."
             as="p"
             className="m-0 font-serif text-lg leading-relaxed text-ydm-text"
           />

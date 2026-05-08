@@ -67,7 +67,8 @@ These strings appear across multiple pages. Every page must use the same wording
 | Legal entity | YDM Inc. |
 | Founder & Senior Pastor | Bishop Huel O. Wilson |
 | First Lady | Clementina Wilson |
-| Founded | 2020 |
+| Founded | 2014 |
+| Founding burden | To win the lost and evangelize the unsaved |
 | Tagline (lead) | **YDM: Uniting hearts in faith and fellowship. A home for your soul.** |
 | Tagline (short, for tight UI) | A home for your soul. |
 | Copyright | © 2026 Yeshua Deliverance Ministries — All Rights Reserved |
@@ -89,13 +90,13 @@ These strings appear across multiple pages. Every page must use the same wording
 |---|---|
 | Phone | +1 (416) 895-5178 |
 | Email | Info@YDMinistries.ca |
-| Mailing address | P.O. Box #20001, Chinguacousy Rd, Brampton, ON L6Y 0J0 |
+| Mailing address | 38 Arthurs Cres, Brampton, ON L6Y 4Y2 |
 | Worship venue | Mississauga Church of God (inside Salvation Army Erin Mills Church), 2460 The Collegeway, Mississauga, ON L5L 1V3 |
 
 ## 1.4 Service & Event Times
 
 - **Yeshua Sunday Service** — Every 4th Sunday of the month, **1:00 PM**
-- **Weekly Bible Study** — Every Thursday, **7:00 PM**
+- **Weekly Bible Study** — Every Thursday, **7:30 PM**
 - Both at Mississauga Church of God (inside Salvation Army Erin Mills Church)
 
 ## 1.5 Social Media
@@ -121,7 +122,7 @@ These strings appear across multiple pages. Every page must use the same wording
 **Address block**
 > Mississauga Church of God (inside Salvation Army Erin Mills Church)
 > 2460 The Collegeway, Mississauga, ON L5L 1V3
-> Mailing: P.O. Box #20001, Chinguacousy Rd, Brampton, ON L6Y 0J0
+> Mailing: 38 Arthurs Cres, Brampton, ON L6Y 4Y2
 > Info@YDMinistries.ca · +1 (416) 895-5178
 
 **Copyright row**
@@ -197,7 +198,7 @@ These strings appear across multiple pages. Every page must use the same wording
 > [Get directions] [Plan your visit]
 
 **Service card 2 — Weekly Bible Study**
-> **Every Thursday — 7:00 PM**
+> **Every Thursday — 7:30 PM**
 > Same location. Open to everyone.
 >
 > [Learn more about Bible study]
@@ -250,7 +251,7 @@ These strings appear across multiple pages. Every page must use the same wording
 **Body**
 > Bishop Huel O. Wilson has shepherded God's people for half a century — from a small congregation in Malton with three members and a guitar, to a thriving worldwide ministry reaching every continent through the spoken Word.
 >
-> In 2020, after a lifetime of pastoring, teaching, and serving the Church of God across Canada and beyond, Bishop Wilson founded Yeshua Deliverance Ministries — the late-career calling of a man who has spent his life learning how to lead God's people home.
+> In 2014, after a lifetime of pastoring, teaching, and serving the Church of God across Canada and beyond, Bishop Wilson founded Yeshua Deliverance Ministries — built around a single burden: to win the lost and evangelize the unsaved.
 
 **CTA**
 > [Read his full story →]
@@ -304,9 +305,11 @@ These strings appear across multiple pages. Every page must use the same wording
 
 ## 3.2 Who We Are
 
-> Yeshua Deliverance Ministries (YDM) is a Christ-centered ministry founded in 2020 by Bishop Huel O. Wilson — a pastor, teacher, and ordained Bishop with over 50 years of service to the Church of God in Canada and beyond.
+> Yeshua Deliverance Ministries (YDM) is a Christ-centered ministry founded in 2014 by Bishop Huel O. Wilson — a pastor, teacher, and ordained Bishop with over 50 years of service to the Church of God in Canada and beyond.
 >
-> We exist to share the love of Christ through three callings: the worship and teaching of God's Word, the equipping of believers and leaders for the work of ministry, and the carrying of the gospel far beyond our walls — into hospitals, prisons, nursing homes, and into homes around the world through every screen God has given us.
+> YDM was born from a single burden: to win the lost and evangelize the unsaved. After more than four decades of pastoring established congregations, Bishop Wilson believed the Church needed to recover its first calling — to bring the gospel to those who had not yet heard it, and to walk people out of spiritual bondage into the freedom of Christ.
+>
+> From that conviction, we exist to share the love of Christ through three callings: the worship and teaching of God's Word, the equipping of believers and leaders for the work of ministry, and the carrying of the gospel far beyond our walls — into hospitals, prisons, nursing homes, and into homes around the world through every screen God has given us.
 
 ---
 
@@ -354,7 +357,7 @@ These strings appear across multiple pages. Every page must use the same wording
 >
 > **Second, we are pastorally seasoned.** Bishop Wilson has been ordained for over fifty years. He has shepherded congregations through revival and through hardship, planted churches, mentored pastors, and served as Administrative Bishop for the Church of God in Eastern Canada. The wisdom he carries is not borrowed — it is the fruit of a half-century walk with the Lord.
 >
-> **Third, we are worldwide.** Our YouTube channel, online services, and digital library carry the Word far beyond our walls — to the Caribbean, to Africa, to Europe, to wherever the diaspora has scattered, to anyone with a phone and a heart for God. YDM was born in 2020 — a year when the world needed the Church to learn how to reach across distance — and that calling is part of our DNA.
+> **Third, we are worldwide.** Our YouTube channel, online services, and digital library carry the Word far beyond our walls — to the Caribbean, to Africa, to Europe, to wherever the diaspora has scattered, to anyone with a phone and a heart for God. YDM was founded in 2014 with a vision that knew no borders: to win the lost and evangelize the unsaved, in our city and around the world. Reaching every continent is part of our DNA.
 
 ---
 
@@ -468,29 +471,31 @@ These strings appear across multiple pages. Every page must use the same wording
 
 ## 4.7 Administrative Bishop — Church of God, Eastern Canada
 
-**Year of consecration:** 2000
+**Years:** 2000–2002
 
 > In the year 2000, after more than two decades of pastoral leadership at Malton, Bishop Wilson was consecrated as Administrative Bishop for the Church of God in Eastern Canada. In this role, he oversaw pastors, supported church planting, and facilitated regional unity across a wide geography.
 >
-> His administrative leadership strengthened the organization at every level — but his heart remained pastoral. Even in the bishopric, he was a pastor first: close to the people, committed to the local church, and most at home with a Bible open and a congregation in front of him.
+> His administrative leadership strengthened the organization at every level — but his heart remained pastoral. After two years in the bishopric, he was ready to return to the local church — to a Bible open and a congregation in front of him.
 
 ---
 
 ## 4.8 West Toronto Church of God
 
-**Years:** 2010–2015 *(placeholder — Bishop to confirm during final audit)*
+**Years:** 2002–2014 (Senior Pastor)
 
-> Following his years at Malton and his service as Administrative Bishop, Bishop Wilson was reassigned to West Toronto Church of God from roughly 2010 to 2015, where he continued his dynamic preaching and pastoral care. His tenure there extended his influence across the city of Toronto, uniting diverse believers and expanding outreach into new neighbourhoods.
+> In 2002, Bishop Wilson stepped down from his episcopal post and accepted the senior pastorate of West Toronto Church of God. For the next twelve years, he poured himself into the West Toronto congregation — preaching, teaching, and pastoring with the same depth and presence that had built Malton a generation earlier. His tenure extended his influence across the city, uniting diverse believers and expanding outreach into new neighbourhoods.
 
 ---
 
-## 4.9 Yeshua Deliverance Ministries — A Calling for the Now
+## 4.9 Yeshua Deliverance Ministries — A Burden for the Lost
 
-**Founded:** 2020
+**Founded:** 2014
 
-> In 2020 — at a moment when the world was learning, all at once, what it meant to be a Church without walls — Bishop Wilson answered a fresh call from God and founded Yeshua Deliverance Ministries.
+> In 2014, after more than four decades of pastoring established congregations and a season of episcopal leadership across Eastern Canada, Bishop Wilson answered a fresh call from God and founded Yeshua Deliverance Ministries.
 >
-> YDM was built around a vision he had carried for decades: a Spirit-led ministry of deliverance, healing, and restoration; a church that takes scripture seriously and the Holy Spirit seriously; a community that equips believers for spiritual warfare and victorious living. From the outset, the ministry was designed to reach far beyond a single building — across borders, across screens, across generations.
+> The vision was specific: a ministry burdened for the lost. After watching seekers walk into established churches and walk out unchanged, Bishop Wilson believed the Church needed to recover its first calling — to evangelize the unsaved, to bring the gospel to those who had not yet heard it, and to walk people out of spiritual bondage into the freedom of Christ.
+>
+> YDM was built around that conviction: a Spirit-led ministry of evangelism, deliverance, healing, and restoration; a church that takes scripture seriously and the Holy Spirit seriously; a community that equips believers for spiritual warfare and victorious living. From the outset, the ministry was designed to reach far beyond a single building — across borders, across screens, across generations.
 >
 > Today, YDM continues to thrive under his leadership, impacting lives across Canada and around the world.
 
@@ -520,8 +525,8 @@ These strings appear across multiple pages. Every page must use the same wording
 
 - **Ordained:** Bishop within the Church of God for over 50 years
 - **Education:** Foursquare Life Bible School (Cassia Park Road, Jamaica) · International Bible College (Moose Jaw, SK) · B.A., Canada Christian College · Doctor of Divinity, Vision International University
-- **Pastorates:** Agincourt Church of God (assistant, 1974–1976) · Malton Church of God (senior pastor, 1977 onward) · West Toronto Church of God · Founder & Senior Pastor, Yeshua Deliverance Ministries (2020–present)
-- **Episcopal service:** Administrative Bishop, Church of God in Eastern Canada (consecrated 2000)
+- **Pastorates:** Agincourt Church of God (assistant, 1974–1976) · Malton Church of God (senior pastor, 1977–2000) · West Toronto Church of God (senior pastor, 2002–2014) · Founder & Senior Pastor, Yeshua Deliverance Ministries (2014–present)
+- **Episcopal service:** Administrative Bishop, Church of God in Eastern Canada (2000–2002)
 - **Current chaplaincy:** West Side Long-Term Care, Toronto
 - **Family:** Married to Clementina Wilson (1976–present); two daughters
 
@@ -1018,10 +1023,10 @@ Each card: ministry name (h3), one-line tagline, 2-sentence description, [Learn 
 > [Get directions] [Add to calendar]
 
 ### Weekly Bible Study
-> **Every Thursday — 7:00 PM**
+> **Every Thursday — 7:30 PM**
 > Same location.
 >
-> Join us every Thursday night at 7:00 PM for an uplifting time of fellowship and study at the Mississauga Church of God. Our Bible study gatherings are a chance to dive deeper into God's Word, grow in faith, and build lasting connections with others. Whether you are new to studying the Bible or have been walking with Christ for years, you'll find encouragement, insight, and a welcoming community. Come ready to learn, share, and be strengthened in your spiritual walk. Everyone is welcome.
+> Join us every Thursday night at 7:30 PM for an uplifting time of fellowship and study at the Mississauga Church of God. Our Bible study gatherings are a chance to dive deeper into God's Word, grow in faith, and build lasting connections with others. Whether you are new to studying the Bible or have been walking with Christ for years, you'll find encouragement, insight, and a welcoming community. Come ready to learn, share, and be strengthened in your spiritual walk. Everyone is welcome.
 >
 > [Add to calendar]
 
@@ -1154,7 +1159,7 @@ Each card: ministry name (h3), one-line tagline, 2-sentence description, [Learn 
 |---|---|
 | 📧 **Email** | Info@YDMinistries.ca |
 | 📞 **Phone** | +1 (416) 895-5178 |
-| 📬 **Mailing address** | P.O. Box #20001, Chinguacousy Rd, Brampton, ON L6Y 0J0 |
+| 📬 **Mailing address** | 38 Arthurs Cres, Brampton, ON L6Y 4Y2 |
 
 ## 19.3 Visit Us
 
@@ -1166,7 +1171,7 @@ Each card: ministry name (h3), one-line tagline, 2-sentence description, [Learn 
 
 **When we gather**
 > **Yeshua Sunday Service** — Every 4th Sunday of the month at 1:00 PM
-> **Weekly Bible Study** — Every Thursday at 7:00 PM
+> **Weekly Bible Study** — Every Thursday at 7:30 PM
 >
 > Plenty of parking. Wheelchair accessible. First-time visitors are always welcome.
 >
@@ -1325,7 +1330,7 @@ For every page: `<title>` should be 50–60 chars; meta description 120–158 ch
 | Page | Title | Description |
 |---|---|---|
 | `/` | YDM — A home for your soul. | Yeshua Deliverance Ministries, led by Bishop Huel O. Wilson. Worship, teaching, and a worldwide ministry. Watch sermons, plan a visit. |
-| `/about` | About YDM — Yeshua Deliverance Ministries | A Christ-centered ministry founded in 2020 by Bishop Huel O. Wilson. Learn what we believe, why we exist, and what makes YDM unique. |
+| `/about` | About YDM — Yeshua Deliverance Ministries | A Christ-centered ministry founded in 2014 by Bishop Huel O. Wilson with a burden to win the lost and evangelize the unsaved. Learn what we believe and what makes YDM unique. |
 | `/about/bishop-wilson` | Bishop Huel O. Wilson — Founder of YDM | Fifty years of pastoral ministry. From Jamaica to Canada, from Malton to YDM Worldwide. The full story of Bishop Wilson's calling. |
 | `/team` | The YDM Team — Meet Our Leadership | Meet Bishop Huel O. Wilson, First Lady Clementina Wilson, and the team God has called to serve at Yeshua Deliverance Ministries. |
 | `/our-ministries` | Our Ministries — How YDM Serves | Seven ministries, one mission. Worship, leadership, family, outreach, online, partnership, and Ask Bishop — explore what YDM does. |
@@ -1355,7 +1360,7 @@ All decisions resolved 2026-05-04. The doc is publishable. Bishop should still a
 | # | Item | Decision | Page(s) affected |
 |---|---|---|---|
 | 1 | Admin Bishop region | **Eastern Canada** | §3.5, §4.7, §4.12 |
-| 2 | West Toronto Church of God years | **2010–2015 (placeholder, Bishop to audit)** | §4.8, §4.12 |
+| 2 | West Toronto Church of God years | **2002–2014 (Senior Pastor)** — confirmed by Mikey 2026-05-04 | §4.8, §4.12 |
 | 3 | Daughters' names | **Don't name them** — bio refers to "two daughters" | §4.10, §4.12 |
 | 4 | Other staff/elders/leaders | **None added** — YDM is intentionally Bishop-led; /team page lists Bishop + Clementina only | §5 |
 | 5 | Ask Bishop URL | **`/our-ministries/ask-bishop`** is canonical; `/ask` 301-redirects | §13 |
@@ -1364,12 +1369,13 @@ All decisions resolved 2026-05-04. The doc is publishable. Bishop should still a
 | 8 | Giving URL namespace | **`/give/*`** — `/our-campaigns`, `/campaigns/*`, `/donate` all 301-redirect | §18, §26 |
 | 9 | YouTube handle | **@YDMWorldwide** | site-wide |
 | 10 | Instagram handle | **@yd.ministries** | site-wide |
-| 11 | Bible study time | **Thursdays 7:00 PM** | site-wide |
+| 11 | Bible study time | **Thursdays 7:30 PM** *(corrected by Mikey 2026-05-07; was 7:00 PM)* | site-wide |
 | 12 | Voice strategy | **Balanced** — reverent on bio/about, warm elsewhere | site-wide |
 | 13 | Tagline | **"YDM: Uniting hearts in faith and fellowship. A home for your soul."** | site-wide |
 | 14 | About-page consolidation | **2 pages** — `/about` + `/about/bishop-wilson` | structure |
 | 15 | Heritage pages | **Folded into bio** — Malton + West Toronto live as bio sections, not standalone pages | structure |
-| 16 | Bio anchor dates | **Born 1948 · Married 1976 · Admin Bishop 2000 · YDM founded 2020** | §4 |
+| 16 | Bio anchor dates | **Born 1948 · Married 1976 · Malton 1977–2000 · Admin Bishop 2000–2002 · West Toronto 2002–2014 · YDM founded 2014** | §4 |
+| 16b | YDM founding burden | **"To win the lost and evangelize the unsaved"** — confirmed by Mikey 2026-05-04 | §3, §4.9, home |
 | 17 | "Why the Name" section | **Drafted** — Yeshua + Deliverance explained on About | §3.3 |
 | 18 | Hero homepage CTA | **Watch the latest sermon** | §2 |
 | 19 | `wordwide` URL typo | **Fixed** — `/our-ministries/worldwide` | §11 |
@@ -1487,7 +1493,7 @@ After Mikey approves this doc, the following route-map.json updates are needed t
 
 - **Fact checks:** 21/21 passed (mission/vision/contact/services/socials/dates/voice all verified against memory + interview answers)
 - **Page coverage:** 22 unique pages cover every canonical route in the new site map. Individual blog posts and sermons retain their existing WordPress bodies (migration, not rewrite).
-- **Decisions resolved:** **20 of 20** — every decision logged in §25 is locked. Bishop's final audit may surface adjustments to specific facts (most notably West Toronto years 2010–2015, currently a placeholder).
+- **Decisions resolved:** **21 of 21** — every decision logged in §25 is locked, including the corrected bio anchor dates (YDM founded 2014, Admin Bishop 2000–2002, West Toronto 2002–2014) and the YDM founding burden ("to win the lost and evangelize the unsaved"), all confirmed by Mikey 2026-05-04.
 
 ## Next Steps
 

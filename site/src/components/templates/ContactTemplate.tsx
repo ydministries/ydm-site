@@ -98,7 +98,7 @@ export async function ContactTemplate(_props: { pageKey?: string } = {}) {
   const phone = global.get("contact.phone")?.value ?? "+1 (416) 895-5178";
   const email = global.get("contact.email")?.value ?? "Info@YDMinistries.ca";
   const sundayService = global.get("service.sunday")?.value ?? "1:00 PM, every 4th Sunday";
-  const bibleStudy = global.get("service.bible_study")?.value ?? "Thursdays, 7:00 PM";
+  const bibleStudy = global.get("service.bible_study")?.value ?? "Thursdays, 7:30 PM";
 
   const venueAddress = "Mississauga Church of God\n2460 The Collegeway, Mississauga, ON L5L 1V3";
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -139,6 +139,12 @@ export async function ContactTemplate(_props: { pageKey?: string } = {}) {
             fallback="Contact Us"
             as="h1"
             className="m-0 font-display text-5xl uppercase leading-none text-white sm:text-7xl"
+          />
+          <EditableFallback
+            keys={["hero_subhead"]}
+            fallback="Whether you're planning your first visit, asking a question, or just saying hello — we'd love to hear from you."
+            as="p"
+            className="m-0 mt-6 mx-auto max-w-3xl font-serif text-base leading-relaxed text-white/85 sm:text-lg"
           />
         </div>
       </section>

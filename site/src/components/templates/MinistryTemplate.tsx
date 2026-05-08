@@ -25,10 +25,22 @@ export async function MinistryTemplate({ pageKey }: Props) {
 
   const title = content.get("meta.title")?.value ?? "";
   const heroImage = content.get("hero_image")?.value ?? "";
+  const heroScripture = content.get("hero_scripture")?.value ?? "";
+  const heroSubhead = content.get("hero_subhead")?.value ?? "";
   const tagline = content.get("tagline")?.value ?? "";
   const leaderName = content.get("leader_name")?.value ?? "";
   const leaderRole = content.get("leader_role")?.value ?? "";
   const leaderBio = content.get("leader_bio")?.value ?? "";
+  const bodyP1 = content.get("body_paragraph_1")?.value ?? "";
+  const bodyP2 = content.get("body_paragraph_2")?.value ?? "";
+  const whatWeDoTitle = content.get("what_we_do.title")?.value ?? "What This Ministry Does";
+  const whatWeDoList = content.get("what_we_do.list")?.value ?? "";
+  const whatWeDoBody = content.get("what_we_do.body")?.value ?? "";
+  const getInvolvedTitle = content.get("get_involved.title")?.value ?? "Get Involved";
+  const getInvolvedList = content.get("get_involved.list")?.value ?? "";
+
+  // Whether the new structured body sections are present (vs old body_html)
+  const hasStructuredBody = !!(bodyP1 || bodyP2 || whatWeDoList || whatWeDoBody);
 
   const related = await getRelatedMinistries(slug, 3);
 
@@ -50,9 +62,15 @@ export async function MinistryTemplate({ pageKey }: Props) {
           </div>
         ) : null}
         <div className="relative mx-auto w-full max-w-5xl px-4 py-16 text-center sm:px-6 lg:px-12">
-          <p className="m-0 mb-4 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-            OUR MINISTRIES
-          </p>
+          {heroScripture ? (
+            <p className="m-0 mb-6 max-w-2xl mx-auto font-serif text-base italic leading-relaxed text-ydm-gold/90 sm:text-lg">
+              {heroScripture}
+            </p>
+          ) : (
+            <p className="m-0 mb-4 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+              OUR MINISTRIES
+            </p>
+          )}
           {tagline ? (
             <p className="m-0 mb-6 -rotate-[3deg] font-script text-4xl text-ydm-gold sm:text-5xl">
               {tagline}
@@ -61,6 +79,11 @@ export async function MinistryTemplate({ pageKey }: Props) {
           <h1 className="m-0 font-display text-4xl uppercase leading-tight tracking-wide text-white sm:text-6xl">
             {title}
           </h1>
+          {heroSubhead ? (
+            <p className="m-0 mt-6 max-w-3xl mx-auto font-serif text-base leading-relaxed text-white/90 sm:text-lg">
+              {heroSubhead}
+            </p>
+          ) : null}
         </div>
       </section>
 
@@ -98,23 +121,93 @@ export async function MinistryTemplate({ pageKey }: Props) {
         </section>
       ) : null}
 
-      {/* SECTION 3 — What we do (body_html) */}
-      <section className="bg-ydm-surface py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <div className="mb-8 text-center">
-            <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
-              WHAT WE DO
-            </p>
-            <h2 className="m-0 font-display text-3xl uppercase leading-none text-ydm-ink sm:text-4xl">
-              About this Ministry
-            </h2>
+      {/* SECTION 3 — Body paragraphs (structured) */}
+      {hasStructuredBody ? (
+        <>
+          <section className="bg-ydm-surface py-16 sm:py-20">
+            <div className="mx-auto max-w-3xl px-4 sm:px-6">
+              <div className="mb-8 text-center">
+                <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+                  ABOUT THIS MINISTRY
+                </p>
+                <h2 className="m-0 font-display text-3xl uppercase leading-none text-ydm-ink sm:text-4xl">
+                  Our Work
+                </h2>
+              </div>
+              <div className="font-serif text-base leading-relaxed text-ydm-text sm:text-lg">
+                {bodyP1 ? (
+                  <div
+                    className="mb-6 [&_p]:mb-4 [&_p:last-child]:mb-0"
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(bodyP1) }}
+                  />
+                ) : null}
+                {bodyP2 ? (
+                  <div
+                    className="[&_p]:mb-4 [&_p:last-child]:mb-0"
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(bodyP2) }}
+                  />
+                ) : null}
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 3.5 — What This Ministry Does / Where We Serve / etc. */}
+          {(whatWeDoList || whatWeDoBody) ? (
+            <section className="bg-ydm-cream py-16 sm:py-20">
+              <div className="mx-auto max-w-3xl px-4 sm:px-6">
+                <h2 className="m-0 mb-6 text-center font-display text-2xl uppercase leading-none text-ydm-ink sm:text-3xl">
+                  {whatWeDoTitle}
+                </h2>
+                {whatWeDoBody ? (
+                  <div
+                    className="mb-4 font-serif text-base leading-relaxed text-ydm-text [&_p]:mb-3 [&_p:last-child]:mb-0 sm:text-lg"
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(whatWeDoBody) }}
+                  />
+                ) : null}
+                {whatWeDoList ? (
+                  <div
+                    className="font-serif text-base leading-relaxed text-ydm-text [&_li]:mb-2 [&_li:last-child]:mb-0 [&_strong]:font-display [&_strong]:text-ydm-ink [&_ul]:list-disc [&_ul]:pl-6 sm:text-lg"
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(whatWeDoList) }}
+                  />
+                ) : null}
+              </div>
+            </section>
+          ) : null}
+
+          {/* SECTION 3.75 — Get Involved checklist */}
+          {getInvolvedList ? (
+            <section className="bg-ydm-surface py-16 sm:py-20">
+              <div className="mx-auto max-w-3xl px-4 sm:px-6">
+                <h2 className="m-0 mb-6 text-center font-display text-2xl uppercase leading-none text-ydm-ink sm:text-3xl">
+                  {getInvolvedTitle}
+                </h2>
+                <div
+                  className="font-serif text-base leading-relaxed text-ydm-text [&_li]:mb-2 [&_li:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 sm:text-lg"
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(getInvolvedList) }}
+                />
+              </div>
+            </section>
+          ) : null}
+        </>
+      ) : (
+        // Fallback to legacy body_html field for ministries that haven't been migrated
+        <section className="bg-ydm-surface py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <div className="mb-8 text-center">
+              <p className="m-0 mb-3 font-accent text-sm uppercase tracking-[0.3em] text-ydm-gold">
+                WHAT WE DO
+              </p>
+              <h2 className="m-0 font-display text-3xl uppercase leading-none text-ydm-ink sm:text-4xl">
+                About this Ministry
+              </h2>
+            </div>
+            <EditableRichText
+              fieldKey="body_html"
+              className="editable-prose font-serif text-base leading-relaxed text-ydm-text [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-2xl [&_h3]:uppercase [&_h3]:text-ydm-ink [&_h6]:mb-4 [&_h6]:font-accent [&_h6]:text-sm [&_h6]:uppercase [&_h6]:tracking-wider [&_h6]:text-ydm-muted [&_li]:mb-2 [&_p]:mb-4 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6"
+            />
           </div>
-          <EditableRichText
-            fieldKey="body_html"
-            className="editable-prose font-serif text-base leading-relaxed text-ydm-text [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-2xl [&_h3]:uppercase [&_h3]:text-ydm-ink [&_h6]:mb-4 [&_h6]:font-accent [&_h6]:text-sm [&_h6]:uppercase [&_h6]:tracking-wider [&_h6]:text-ydm-muted [&_li]:mb-2 [&_p]:mb-4 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6"
-          />
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* SECTION 4 — Get Involved CTA (gold band) */}
       <section className="-mx-4 bg-ydm-gold py-20 sm:-mx-6 sm:py-24">
