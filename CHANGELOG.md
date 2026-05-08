@@ -5,6 +5,17 @@ Every push to GitHub or Vercel must be recorded here.
 
 ---
 
+## [2026-05-08] - <commit-hash>
+
+### fix(home): Support YDM's Mission body text invisible on dark bg
+Same specificity bug as the 2026-05-07 Why-the-Name fix (commit 13ff2a5), now caught on the home page. The Section 11 Support banner sits over a dark photo with a `from-ydm-ink/80 via-ydm-ink/65 to-ydm-gold/40` overlay, and the rich-text body wrapper had `text-white/90` — but the inner `<p>` (rendered by `EditableRichText` from `support_banner.body`) was picking up `globals.css` `p { @apply text-ydm-text }` instead, since the global element selector beats a parent class. Body copy rendered near-invisible against the dark bg (visible in the user-supplied screenshot).
+
+- `site/src/components/templates/HomeTemplate.tsx:775` — added `[&_p]:text-white/90 [&_p:last-child]:mb-0` to the support_banner.body wrapper. Arbitrary-variant generates `.\[\&_p\]\:text-white\/90 p` (specificity 0,1,1) which beats the global `p` rule (0,0,1).
+
+Audited the other five `mode="rich"` callsites in `HomeTemplate.tsx` (welcome.body L328, founded_in_faith.body L370, mission.body L396, vision.body L408, values.body L420) — all sit on light backgrounds with `text-ydm-text`, so the global rule is desired there. No other instances of the bug on this page.
+
+---
+
 ## [2026-05-07] - <commit-hash>
 
 ### Phase BBB — Audit fix sequence wrap-up

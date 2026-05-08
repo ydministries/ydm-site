@@ -772,7 +772,7 @@ export async function HomeTemplate(_props: { pageKey?: string } = {}) {
             as="h2"
             className="m-0 mb-6 font-display text-4xl uppercase leading-none text-white sm:text-6xl"
           />
-          <div className="mx-auto mb-8 max-w-2xl font-serif text-lg text-white/90">
+          <div className="mx-auto mb-8 max-w-2xl font-serif text-lg text-white/90 [&_p]:text-white/90 [&_p:last-child]:mb-0">
             <EditableFallback keys={["support_banner.body"]} mode="rich" fallback="" />
           </div>
           <Link
