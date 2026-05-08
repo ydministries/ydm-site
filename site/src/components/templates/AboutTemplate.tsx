@@ -26,12 +26,6 @@ const ABOUT_LOCATIONS = [
     address: "2460 The Collegeway\nMississauga, ON L5L 1V3",
     photo: "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
   },
-  {
-    slug: "westtoronto",
-    title: "West Toronto",
-    address: "West Toronto Church of God\nWest Toronto, ON",
-    photo: "https://media.ydministries.ca/uploads/2025/09/PHOTO-2025-04-11-11-50-51-4-1-e1758582433856.jpg",
-  },
 ];
 
 export async function AboutTemplate(_props: { pageKey?: string } = {}) {
@@ -158,7 +152,7 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
               />
             </div>
             <div
-              className="editable-prose font-serif text-base leading-relaxed text-white/90 [&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:border-ydm-gold [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-ydm-gold [&_p]:mb-4 [&_p:last-child]:mb-0 [&_strong]:font-display [&_strong]:uppercase [&_strong]:text-ydm-gold sm:text-lg"
+              className="editable-prose font-serif text-base leading-relaxed text-white/90 [&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:border-ydm-gold [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote_p]:text-ydm-gold [&_p]:mb-4 [&_p:last-child]:mb-0 [&_p]:text-white/90 [&_strong]:font-display [&_strong]:uppercase [&_strong]:text-ydm-gold sm:text-lg"
               dangerouslySetInnerHTML={{ __html: sanitizeHtml(whyNameBody) }}
             />
           </div>
@@ -315,7 +309,7 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
         </div>
       </section>
 
-      {/* SECTION 5 — Locations teaser */}
+      {/* SECTION 5 — Where we gather (Mississauga + Online) */}
       <section className="bg-ydm-cream py-20 sm:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="mb-12 text-center">
@@ -328,11 +322,11 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
             <p className="m-0 mb-4 font-script text-4xl text-ydm-amber sm:text-5xl">
               <EditableFallback
                 keys={["locations_teaser_script"]}
-                fallback="Two locations, one family"
+                fallback="In person and online"
               />
             </p>
             <h2 className="m-0 font-display text-4xl uppercase leading-none text-ydm-ink sm:text-5xl">
-              Our Locations
+              Where We Gather
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
@@ -364,6 +358,34 @@ export async function AboutTemplate(_props: { pageKey?: string } = {}) {
                 </div>
               </Link>
             ))}
+            {/* Online — companion card to the in-person home base */}
+            <Link
+              href="/live"
+              className="group block overflow-hidden rounded-sm bg-ydm-ink no-underline shadow-sm transition-shadow hover:shadow-lg"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src="https://media.ydministries.ca/uploads/2025/09/man-hands-palm-praying-worship-cross-eucharist-therapy-bless-god-helping-hope-faith-christian-religion-concept-raising-up-162020217.webp"
+                  alt="Worship online with YDM"
+                  fill
+                  className="object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ydm-ink via-ydm-ink/60 to-transparent" />
+              </div>
+              <div className="p-6">
+                <h3 className="m-0 mb-2 font-display text-xl uppercase text-white">
+                  Online (Worldwide)
+                </h3>
+                <p className="m-0 font-serif text-sm leading-relaxed text-white/70">
+                  Watch every Sunday service and Bible study live, or catch up
+                  on the YDM YouTube channel anytime.
+                </p>
+                <p className="m-0 mt-3 font-accent text-xs uppercase tracking-wider text-ydm-gold">
+                  Watch Live →
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
