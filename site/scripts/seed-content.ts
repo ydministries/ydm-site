@@ -24,8 +24,13 @@ const ZERO_BODY_EXEMPT_TYPES = new Set(['index_filter', 'index', 'home']);
 const args = new Set(process.argv.slice(2));
 const DRY_RUN = args.has('--dry-run');
 const COMMIT = args.has('--commit');
+const OVERWRITE = args.has('--overwrite');
 if (!DRY_RUN && !COMMIT) {
-  console.error('Usage: tsx scripts/seed-content.ts --dry-run | --commit');
+  console.error('Usage: tsx scripts/seed-content.ts --dry-run | --commit [--overwrite]');
+  process.exit(2);
+}
+if (OVERWRITE && !COMMIT) {
+  console.error('--overwrite requires --commit (no-op on dry-run).');
   process.exit(2);
 }
 
@@ -542,8 +547,12 @@ async function commitPlan(
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  // Upsert page_content with ignoreDuplicates so existing edited rows survive.
-  console.log(`→ Upserting ${contentRows.length} page_content rows…`);
+  // Default: ignoreDuplicates=true so existing edited rows survive.
+  // --overwrite flips to false → existing rows get replaced with seed-plan values.
+  // Use --overwrite when applying an approved bulk copy pass (e.g. from manual-seed.json).
+  console.log(
+    `→ Upserting ${contentRows.length} page_content rows… (mode: ${OVERWRITE ? 'OVERWRITE' : 'insert-only'})`,
+  );
   const CHUNK = 500;
   let inserted = 0;
   for (let i = 0; i < contentRows.length; i += CHUNK) {
@@ -552,7 +561,7 @@ async function commitPlan(
       .from('page_content')
       .upsert(slice, {
         onConflict: 'page_key,field_key',
-        ignoreDuplicates: true,
+        ignoreDuplicates: !OVERWRITE,
         count: 'exact',
       });
     if (error) {
@@ -564,7 +573,9 @@ async function commitPlan(
   }
   console.log(`  inserted (new rows only): ${inserted}`);
 
-  console.log(`→ Upserting ${assetRows.length} assets rows…`);
+  console.log(
+    `→ Upserting ${assetRows.length} assets rows… (mode: ${OVERWRITE ? 'OVERWRITE' : 'insert-only'})`,
+  );
   let assetsInserted = 0;
   for (let i = 0; i < assetRows.length; i += CHUNK) {
     const slice = assetRows.slice(i, i + CHUNK);
@@ -572,7 +583,7 @@ async function commitPlan(
       .from('assets')
       .upsert(slice, {
         onConflict: 'asset_key',
-        ignoreDuplicates: true,
+        ignoreDuplicates: !OVERWRITE,
         count: 'exact',
       });
     if (error) {
