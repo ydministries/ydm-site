@@ -570,15 +570,6 @@
       "key": "team.clementinawilson",
       "scrapeFile": "cmsms_profile_clementinawilson.json",
       "aliases": []
-    },
-    {
-      "oldPath": "/huel-clementina/",
-      "oldSlug": "huel-clementina",
-      "newPath": "/team/huel-and-clementina-wilson",
-      "type": "team",
-      "key": "team.huel_clementina",
-      "scrapeFile": "huel-clementina.json",
-      "aliases": []
     }
   ],
   "dropped": [

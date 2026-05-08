@@ -22,8 +22,9 @@ interface RouteEntry {
 //
 // Deliberately omitted (search engines should index the canonical destination,
 // not the redirect source):
-//   /guestbook            308 → /testimonials       (next.config.ts Phase JJ)
-//   /team/bishopwilson    308 → /team/bishop-huel-wilson  (codegen redirectKeys + site-map.json)
+//   /guestbook                          308 → /testimonials              (next.config.ts Phase JJ)
+//   /team/bishopwilson                  308 → /team/bishop-huel-wilson   (codegen redirectKeys + site-map.json)
+//   /team/huel-and-clementina-wilson    308 → /team/bishop-huel-wilson   (next.config.ts Phase CC)
 //
 // Dynamic /shop/[slug] is expanded from Printful's catalog at request time
 // (see end of this file).
@@ -65,10 +66,9 @@ const STATIC_ROUTES: RouteEntry[] = [
   { path: "/ministries/wordwide",       priority: 0.7, changeFrequency: "monthly" },
   { path: "/ministries/worship",        priority: 0.7, changeFrequency: "monthly" },
 
-  // ── Team (3 canonical; /team/bishopwilson redirects out) ───────────────
+  // ── Team (2 canonical; /team/bishopwilson and /team/huel-and-clementina-wilson redirect out) ──
   { path: "/team/bishop-huel-wilson",         priority: 0.7, changeFrequency: "monthly" },
   { path: "/team/clementinawilson",           priority: 0.7, changeFrequency: "monthly" },
-  { path: "/team/huel-and-clementina-wilson", priority: 0.7, changeFrequency: "monthly" },
 
   // ── Sermons (6) ────────────────────────────────────────────────────────
   { path: "/sermons/gilgal-the-place-of-new-beginnings",        priority: 0.7, changeFrequency: "monthly" },
@@ -144,6 +144,6 @@ function _walkRoutes(dir: string, base = ""): string[] {
     });
   } catch { return []; }
 }
-const _known = new Set([...STATIC_ROUTES.map((r) => r.path), "/shop/[slug]", "/guestbook", "/team/bishopwilson"]);
+const _known = new Set([...STATIC_ROUTES.map((r) => r.path), "/shop/[slug]", "/guestbook", "/team/bishopwilson", "/team/huel-and-clementina-wilson"]);
 const _missing = _walkRoutes(join(process.cwd(), "src/app/(site)")).filter((p) => !_known.has(p));
 if (_missing.length) console.warn(`[sitemap drift] page.tsx not in STATIC_ROUTES:\n  ${_missing.join("\n  ")}`);

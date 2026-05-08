@@ -14,7 +14,6 @@ export interface RelatedPerson {
 const TEAM_KEY_TO_SLUG: Record<string, string> = {
   "team.huel_wilson":      "bishop-huel-wilson",
   "team.clementinawilson": "clementinawilson",
-  "team.huel_clementina":  "huel-and-clementina-wilson",
 };
 
 // Reverse: URL slug → page_key.

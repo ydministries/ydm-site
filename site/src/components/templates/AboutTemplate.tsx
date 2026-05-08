@@ -24,7 +24,7 @@ const ABOUT_LOCATIONS = [
     slug: "maltoncog",
     title: "Mississauga (Home Base)",
     address: "2460 The Collegeway\nMississauga, ON L5L 1V3",
-    photo: "https://media.ydministries.ca/uploads/2025/09/197d2535-366a-4d08-838f-6ae99ec99188-e1758582608583.jpg",
+    photo: "/brand/mississauga-cog.avif",
   },
 ];
 

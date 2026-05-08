@@ -59,7 +59,15 @@ const nextConfig: NextConfig = {
       permanent: true,
     });
 
-    console.log(`[next.config] loaded ${cleaned.length} redirects (after trailing-slash strip + Phase JJ guestbook→testimonials)`);
+    // Phase CC — combined Wilson page retired. Bishop and First Lady each
+    // have their own /team/* page; the combined page added no new info.
+    cleaned.push({
+      source: "/team/huel-and-clementina-wilson",
+      destination: "/team/bishop-huel-wilson",
+      permanent: true,
+    });
+
+    console.log(`[next.config] loaded ${cleaned.length} redirects (after trailing-slash strip + Phase JJ guestbook→testimonials + Phase CC huel-and-clementina→bishop)`);
     return cleaned;
   },
 };
