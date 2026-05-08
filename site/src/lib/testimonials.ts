@@ -1,4 +1,5 @@
 import { createServerClient } from "./supabase";
+import { createServerClient as createSSRServerClient } from "./supabase/server";
 
 export interface Testimonial {
   id: string;
@@ -50,9 +51,14 @@ export async function getApprovedTestimonials(): Promise<Testimonial[]> {
  * Admin — all testimonials, used by /admin/testimonials moderation queue.
  * Returns pending first (oldest first so the oldest pending is at the top
  * of the queue), then approved (newest first), then rejected (newest first).
+ *
+ * IMPORTANT: must use the cookie-aware SSR client so auth.uid() resolves and
+ * the "Editors read all testimonials" RLS policy fires. The lighter anon
+ * client used by the public-facing function returns NULL for auth.uid() and
+ * therefore only sees approved rows — which would always show empty here.
  */
 export async function getAllTestimonialsForAdmin(): Promise<Testimonial[]> {
-  const sb = createServerClient();
+  const sb = await createSSRServerClient();
   const { data, error } = await sb
     .from("testimonials")
     .select(
